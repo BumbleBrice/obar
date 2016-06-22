@@ -19,6 +19,7 @@
                     <li class=""><a class="js-scrollTo" href="#bar_add">Ajouter un bar</a></li>
                     <li class=""><a class="js-scrollTo" href="#message">Messages</a></li>
                     <li class=""><a class="js-scrollTo" href="#users">Gestion utilisateurs</a></li>
+                    <li class=""><a class="js-scrollTo" href="#news_letter">Envoyer une news</a></li>
                 </ul>
             </nav>
 	</aside>

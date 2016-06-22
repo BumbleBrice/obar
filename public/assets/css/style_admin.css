@@ -49,11 +49,11 @@ a:hover {
 
 .wrapper {
    display: flex;
-   width: 600%;
+   width: 700%;
 }
 
 .module {
-    width: 16.66%;
+    width: 14.3%;
     height: 100%;
 }
 
@@ -83,4 +83,8 @@ a:hover {
 
 #users {
     background-color: darkgrey;
+}
+
+#news_letter {
+	background-color: grey;
 }

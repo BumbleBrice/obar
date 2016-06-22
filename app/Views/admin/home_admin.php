@@ -7,4 +7,5 @@
 	<div class="module" id="bar_add"><div class="contenue"><h1>Ajouter un bar</h1></div></div>
 	<div class="module" id="message"><div class="contenue"><h1>Messagerie</h1></div></div>
 	<div class="module" id="users"><div class="contenue"><h1>Gestion des utilisateurs</h1></div></div>
+	<div class="module" id="news_letter"><div class="contenue"><h1>Ajouter une news</h1></div></div>
 <?php $this->stop('main_content') ?>
