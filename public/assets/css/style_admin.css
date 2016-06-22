@@ -14,10 +14,13 @@ img {
 	max-width: 100%;
 }
 h1, h2, h3 {
-	color: #e04823;
+	color: #fff;
 }
 h1 {
 	font-size: 3rem;
+	text-align: center;
+	font-family: 'Droid Serif', serif;
+	text-transform: uppercase;
 }
 h2 {
 	font-size: 2.5rem;
