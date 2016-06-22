@@ -8,7 +8,6 @@
 	<div class="module" id="presentation">
 		<div class="contenue">
 			<?=$this->insert('admin/presentation');?>
-			lolaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 		</div>
 	</div>
 
