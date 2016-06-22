@@ -25,13 +25,12 @@
 			    </div>
 			    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		            <ul class="pam nav navbar-nav">
-		                <li class=""><a class="js-scrollTo" href="#presentation">Présentation<span class="sr-only">(current)</span></a></li>
-		                <li class=""><a class="js-scrollTo" href="#carte">Carte</a></li>
-		                <li class=""><a class="js-scrollTo" href="#bar_list">Liste des bars</a></li>
-		                <li class=""><a class="js-scrollTo" href="#bar_add">Ajouter un bar</a></li>
-		                <li class=""><a class="js-scrollTo" href="#message">Messages</a></li>
-		                <li class=""><a class="js-scrollTo" href="#users">Gestion utilisateurs</a></li>
-		                <li class=""><a class="js-scrollTo" href="#news_letter">Envoyer une news</a></li>
+		                <li class=""><a class="js-scrollTo lienNavBar" href="#presentation">Présentation<span class="sr-only">(current)</span></a></li>
+		                <li class=""><a class="js-scrollTo lienNavBar" href="#bar_list">Liste des bars</a></li>
+		                <li class=""><a class="js-scrollTo lienNavBar" href="#bar_add">Ajouter un bar</a></li>
+		                <li class=""><a class="js-scrollTo lienNavBar" href="#message">Messages</a></li>
+		                <li class=""><a class="js-scrollTo lienNavBar" href="#users">Gestion utilisateurs</a></li>
+		                <li class=""><a class="js-scrollTo lienNavBar" href="#news_letter">Envoyer une news</a></li>
 		            </ul>
 	            </div>
 	        </div>    	
