@@ -6,7 +6,6 @@
 
 	<link rel="stylesheet" href="<?= $this->assetUrl('css/bootstrap.css') ?>">
 	<link rel="stylesheet" href="<?= $this->assetUrl('css/style.css') ?>">
-	<link rel="stylesheet" href="<?= $this->assetUrl('css/style_admin.css') ?>">
 </head>
 <body>
 	<div class="container">

@@ -1,3 +1,5 @@
+/******RESET PAGE*****/
+
 * {
 	margin: 0;
 	padding: 0;
@@ -32,4 +34,52 @@ a {
 }
 a:hover {
 	color: #e04823;
+}
+
+
+
+/***********/
+
+#navigation {
+	width: 10%;
+    height: 100%;
+    position: fixed;
+    background: lightgrey;
+}
+
+.wrapper {
+   display: flex;
+   width: 600%;
+}
+
+.module {
+	
+    width: 20%;
+    height: 970px;
+}
+
+#presentation {
+
+    background-color: red;
+}
+
+#carte {
+
+    background-color: blue;
+}
+
+#bar_list {
+    background-color: yellow;
+}
+
+#bar_add {
+    background-color: green;
+}
+
+#message {
+    background-color: orange;
+}
+
+#users {
+    background-color: purple;
 }
