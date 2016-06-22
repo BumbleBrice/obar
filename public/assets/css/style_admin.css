@@ -53,33 +53,34 @@ a:hover {
 }
 
 .module {
-	
-    width: 20%;
-    height: 970px;
+    width: 16.66%;
+    height: 100%;
+}
+
+.contenue {
+	margin-left: 10%;
 }
 
 #presentation {
-
-    background-color: red;
+    background-color: grey;
 }
 
 #carte {
-
-    background-color: blue;
+    background-color: darkgrey;
 }
 
 #bar_list {
-    background-color: yellow;
+    background-color: grey;
 }
 
 #bar_add {
-    background-color: green;
+    background-color: darkgrey;
 }
 
 #message {
-    background-color: orange;
+    background-color: grey;
 }
 
 #users {
-    background-color: purple;
+    background-color: darkgrey;
 }
