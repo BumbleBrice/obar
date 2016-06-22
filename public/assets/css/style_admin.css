@@ -1,0 +1,35 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+html {
+	font: 62.5% arial, sans-serif;
+	color: #323232;
+	background: #ddd;
+}
+img {
+	max-width: 100%;
+}
+h1, h2, h3 {
+	color: #e04823;
+}
+h1 {
+	font-size: 3rem;
+}
+h2 {
+	font-size: 2.5rem;
+}
+h3 {
+	font-size: 2rem;
+}
+body {
+	font-size: 1.2rem;
+}
+a {
+	color: #e25e1c;
+	transition: color ease-in .2s;
+}
+a:hover {
+	color: #e04823;
+}
