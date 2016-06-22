@@ -17,10 +17,22 @@ h1, h2, h3 {
 	color: #fff;
 }
 h1 {
-	font-size: 3rem;
-	text-align: center;
-	font-family: 'Droid Serif', serif;
-	text-transform: uppercase;
+ 	color: #7c795d; 
+ 	font-family: 'Trocchi', serif; 
+ 	font-size: 9rem; 
+ 	font-weight: normal; 
+ 	line-height: 48px; 
+ 	text-shadow: 1px 1px 2px #082b34;
+ 	text-align: center;
+	/*color: #774a4a; 
+	font-family: 'Rouge Script', 
+	cursive; 
+	font-size: 9rem; 
+	font-weight: normal; 
+	line-height: 48px; 
+	 
+	text-align: center; 
+	text-shadow: 1px 1px 2px #082b34;*/
 }
 h2 {
 	font-size: 2.5rem;
@@ -32,7 +44,7 @@ body {
 	font-size: 1.2rem;
 }
 a {
-	color: #e25e1c;
+	color: #004a4a;
 	transition: color ease-in .2s;
 }
 a:hover {

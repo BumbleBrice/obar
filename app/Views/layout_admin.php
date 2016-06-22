@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title><?= $this->e($title) ?></title>
-	<link href='https://fonts.googleapis.com/css?family=Droid+Serif' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Droid+Serif|Rouge+Script|Raleway|Trochut' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="<?= $this->assetUrl('css/bootstrap.css') ?>">
 	<link rel="stylesheet" href="<?= $this->assetUrl('css/simple-sidebar.css') ?>">
 	<link rel="stylesheet" href="<?= $this->assetUrl('css/style_admin.css') ?>">
