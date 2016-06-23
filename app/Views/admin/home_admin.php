@@ -34,7 +34,7 @@
 	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 	<div class="module" id="message">
 		<div class="contenu">
-			<?=$this->insert('admin/message');?>
+			<?=$this->insert('admin/message', ['message' => $message]); ?>
 		</div>
 	</div>
 

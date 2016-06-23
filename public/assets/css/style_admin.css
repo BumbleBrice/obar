@@ -31,10 +31,10 @@ h1 {
 	
 }
 h2 {
-	font-size: 2.5rem;
+	font-size: 2vw;
 }
 h3 {
-	font-size: 2rem;
+	font-size: 1.5vw;
 }
 body {
 	font-size: 1.2rem;
@@ -123,6 +123,9 @@ a:hover {
 
 #message {
   
+}
+.table-striped > tbody > tr:nth-of-type(2n+1) {
+    background-color: #FFF5F4;
 }
 
 

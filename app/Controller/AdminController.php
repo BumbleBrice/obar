@@ -5,6 +5,7 @@ namespace Controller;
 use \W\Controller\Controller;
 
 use \W\Security\AuthentificationModel as AuthModel;
+use \Controller\MessageController as MessageControl;
 
 class AdminController extends Controller
 {
@@ -14,8 +15,12 @@ class AdminController extends Controller
 	**/
 	public function home()
 	{
-		
+		$messageControl = new MessageControl();
 
-		$this->show('admin/home_admin'/*, $params*/);
+		$params = [];
+
+		$params['message'] = $messageControl->getMessage();
+
+		$this->show('admin/home_admin', $params);
 	} /* fin function home()*/
 } 

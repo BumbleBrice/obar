@@ -52,18 +52,7 @@
             </div>
             <!-- /.navbar-collapse -->
         </nav>
-		<!-- <nav id="navigation" class="navbar navbar-default" role="navigation">
-			<div class="container-fluid">
-			    <div class="pam" id="bs-example-navbar-collapse-1">
-					<div class="divButton"><a class="js-scrollTo button" href="#presentation">Présentation</a></div><br>
-					<div class="divButton"><a class="js-scrollTo button" href="#bar_list">Liste des bars</a></div><br>
-					<div class="divButton"><a class="js-scrollTo button" href="#bar_add">Ajouter un bar</a></div><br>
-					<div class="divButton"><a class="js-scrollTo button" href="#message">Messages</a></div><br>
-					<div class="divButton"><a class="js-scrollTo button" href="#users">Gestion utilisateurs</a></div><br>
-					<div class="divButton"><a class="js-scrollTo button" href="#news_letter">Envoyer une news</a></div><br>
-	            </div>
-	        </div>    	
-        </nav> -->
+		
 	</aside>
 		<section class="wrapper"><?= $this->section('main_content') ?></section>
 	</div>
