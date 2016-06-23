@@ -4,60 +4,17 @@
 
 <!-- Connexion -->
 <section class="connexion container-fluid">
-	<form method="POST">
-		<input type="hidden" name="form" value="co">
-		<label for="co_pseudo"></label>
-		<input id="co_pseudo" type="text" name="co_pseudo" placeholder="Pseudo..." required>
-
-		<label for="co_pswd"></label>
-		<input id="co_pswd" type="text" name="co_pswd" placeholder="Password..." required>
-
-		<input type="submit" value="connexion">
-	</form>
+	<?=$this->insert('default/connexion'); ?>
 </section>
 
 <!-- Présentation -->
 <section class="presentation container-fluid">
-	<h1>Présentation</h1>
-	<p>
-		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<br>
-		Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.<br>
-		Duis aute irure dolor in reprehenderit.<br>
-	</p>
-	<form method="POST">
-		<input type="hidden" name="form" value="nl">
-		<label for="email_nl">Inscription NewsLetter</label>
-		<br>
-		<input id="email_nl" type="email" name="email_nl" placeholder="Email..." required>
-		<br>
-		<br>
-		<input type="submit" value="Inscription">
-	</form>
+	<?=$this->insert('default/presentation'); ?>
 </section>
 
 <!-- Dernier bar -->
 <section class="last_bar">
-	<article class="">
-		<h2>titre</h2>
-		<p>
-			paragraphe
-		</p>
-		<img src="" alt="image" />
-	</article>
-	<article class="">
-		<h2>titre</h2>
-		<p>
-			paragraphe
-		</p>
-		<img src="" alt="image" />
-	</article>
-	<article class="">
-		<h2>titre</h2>
-		<p>
-			paragraphe
-		</p>
-		<img src="" alt="image" />
-	</article>
+	<?=$this->insert('default/lastBar'); ?>
 </section>
 
 <!-- Carte -->
