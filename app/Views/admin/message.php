@@ -30,14 +30,14 @@
                                             <td><?= $mes['id'] ?></td>
                                             <td><?= $mes['firstname'] ?></td>
                                             <td><?= $mes['lastname'] ?></td>
-                                            <td><?= $mes['id'] ?></td>
-                                            <td><?= $mes['id'] ?></td>
-                                            <td><?= $mes['id'] ?></td>
-                                            <td><?= $mes['id'] ?></td>
+                                            <td><?= $mes['email'] ?></td>
+                                            <td><?= $mes['content'] ?></td>
+                                            <td><?= $mes['date_add'] ?></td>
+                                            <td><?= $mes['message_state'] ?></td>
                                             <td class="text-center">
-												<a type="button" class="btn btn-info" href="?id_message=<?=$message['id'];?>">Voir</a>
-												<a type="button" class="btn btn-primary" href="?id_message=<?=$message['id'];?>&action=rep">Répondre</a>
-												<a type="button" class="btn btn-danger" href="?id_message=<?=$message['id'];?>&action=delete">Supprimer</a>
+												<a type="button" class="btn btn-info" href="?id_message=<?=$mes['id'];?>">Voir</a>
+												<a type="button" class="btn btn-primary" href="?id_message=<?=$mes['id'];?>&action=rep">Répondre</a>
+												<a type="button" class="btn btn-danger" href="?id_message=<?=$mes['id'];?>&action=delete">Supprimer</a>
 											</td>
                                         </tr>
                                         <?php endforeach; ?>
