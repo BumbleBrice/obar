@@ -14,21 +14,21 @@
 	<!-- Navigation -->
         <nav class="navbar navbar-inverse navbar-fixed-top " role="navigation">
             <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
+            <div class="navbar-header nav_top">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand " href="index.html">Retour au site</a>
+                <a class="navbar-brand" href="index.html">Retour au site</a>
             </div>
             <!-- Top Menu Items -->
           
                 
              
             <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
-            <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <div class="collapse navbar-collapse navbar-ex1-collapse nav_top">
                 <ul class="nav navbar-nav side-nav navigation">
                     <li class="">
                         <a class="js-scrollTo button" href="#presentation">Présentation</a>

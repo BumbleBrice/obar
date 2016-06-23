@@ -50,6 +50,19 @@ a:hover {
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 /*                            NAVBAR                           */
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+.navbar-toggle {
+	background-color: #D82142;
+}
+.navbar-brand:focus:hover {
+	color: #D82142 !important;
+}
+.navbar-brand:hover {
+	color: #D82142 !important;
+}
+.nav_top {
+	background: #fff;
+	font-family: 'Times New Roman', sans-serif;
+}
 
 .navigation {
 	border-radius: 0 0 120% 0;
