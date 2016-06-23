@@ -16,7 +16,7 @@ class AdminController extends Controller
 	{
 		/*$this->allowTo(['admin']);*/
 
-		$adminModel = new adminModel();
+		/*$adminModel = new adminModel();
 
 		// tableau params vide ou l'on peut rajouter des clés pour chaque section
 		$params = [];
@@ -223,6 +223,6 @@ class AdminController extends Controller
 		$params['errors'] = $errors;
 		$params['success'] = $success;
 
-		$this->show('admin/home_admin', $params);
+		$this->show('admin/home_admin', $params);*/
 	} /* fin function home()*/
 } 
