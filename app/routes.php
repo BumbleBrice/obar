@@ -1,6 +1,7 @@
 <?php
 
 	$w_routes = array(
+		// Partie client
 		['GET|POST', '/', 'Default#home', 'default_home'],
 
 
