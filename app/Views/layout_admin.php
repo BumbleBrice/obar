@@ -61,5 +61,8 @@
 
 	<script src="<?= $this->assetUrl('js/script.js') ?>"></script>
 	<script src="<?= $this->assetUrl('js/jquery.easing.1.3.js') ?>"></script>
+    
+    <script src="<?= $this->assetUrl('js/bootstrap-filestyle.min.js') ?>"></script>
+
 </body>
 </html>

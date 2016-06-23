@@ -116,6 +116,47 @@ a:hover {
 
 }
 
+.carte {
+	background: red;
+}
+
+.map {
+	background: blue;
+	width: 100%;
+	height: 80%;
+	margin-top: 10%;
+	margin-bottom: 10%;
+}
+
+.champTxtAddBar {
+	background: #FFEBD8;
+	color: darkblue;
+	border: 2px solid #E1B66B;
+}
+
+.input-group .form-control:first-child, 
+.input-group-addon:first-child, 
+.input-group-btn:first-child > .btn, 
+.input-group-btn:first-child > .btn-group > .btn, 
+.input-group-btn:first-child > .dropdown-toggle, 
+.input-group-btn:last-child > .btn:not(:last-child):not(.dropdown-toggle), 
+.input-group-btn:last-child > .btn-group:not(:last-child) > .btn {
+	background: #FFEBD8;
+	color: darkblue;
+	border: 2px solid #E1B66B;
+}
+
+.input-group-btn:last-child > .btn, 
+.input-group-btn:last-child > .btn-group {
+	background: #FFEBD8;
+	color: darkblue;
+}
+
+.input-group-btn:last-child > .btn:hover, 
+.input-group-btn:last-child > .btn-group:hover {
+	background: darkblue;
+	color: #FFEBD8;
+}
 
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 /*                      CONTACT / MESSAGE                      */
