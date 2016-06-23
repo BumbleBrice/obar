@@ -35,3 +35,5 @@
 		</fieldset>
 	</form>
 <?php endif; ?>
+
+<div class="row"><div class="col-lg-12 text-center"><h1>Ajouter un bar</h1></div></div>

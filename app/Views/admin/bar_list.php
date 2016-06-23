@@ -84,3 +84,5 @@
 		</div>
 
 	<?php endif; ?>
+
+<div class="row"><div class="col-lg-12 text-center"><h1>Liste des bars</h1></div></div>
