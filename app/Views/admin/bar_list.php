@@ -27,6 +27,73 @@
 
 
 
+<div class="col-lg-12">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            Bordered Table
+        </div>
+        <!-- /.panel-heading -->
+        <div class="panel-body">
+            <div class="table-responsive table-bordered">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Name</th>
+                            <th>Picture</th>
+                            <th>Description</th>
+                            <th>Phone</th>
+                            <th>Adress</th>
+                            <th>Open</th>
+                            <th>Close</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Mark</td>
+                            <td>( picture )</td>
+                            <td>Le meilleur bar</td>
+                            <td>0123456789</td>
+                            <td>1 route du chemin</td>
+                            <td>10h</td>
+                            <td>22h</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Mark</td>
+                            <td>( picture )</td>
+                            <td>Le meilleur bar</td>
+                            <td>0123456789</td>
+                            <td>1 route du chemin</td>
+                            <td>10h</td>
+                            <td>22h</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Mark</td>
+                            <td>( picture )</td>
+                            <td>Le meilleur bar</td>
+                            <td>0123456789</td>
+                            <td>1 route du chemin</td>
+                            <td>10h</td>
+                            <td>22h</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- /.table-responsive -->
+        </div>
+        <!-- /.panel-body -->
+    </div>
+    <!-- /.panel -->
+</div>
+<!-- /.col-lg-6 -->
+
+
+
+
+
 <h1>Modifier le bar</h1>
 
 <!-- Modifier le bar -->
