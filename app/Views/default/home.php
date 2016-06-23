@@ -74,18 +74,6 @@
 		<label for="isc_pseudo">Pseudo</label>
 		<br>
 		<input id="isc_pseudo" type="text" name="isc_pseudo" placeholder="Pseudo..." required>
-		<!-- <br>
-		<label for="isc_firstname">Nom</label>
-		<br>
-		<input id="isc_firstname" type="text" name="isc_firstname" placeholder="Nom..." required>
-		<br>
-		<label for="isc_lastname">Prenom</label>
-		<br>
-		<input id="isc_lastname" type="text" name="isc_lastname" placeholder="Prenom..." required>
-		<br>
-		<label for="isc_age">âge</label>
-		<br>
-		<input id="isc_age" type="date" name="isc_age" placeholder="Age..." required> -->
 		<br>
 		<label for="isc_email">Email</label>
 		<br>
