@@ -1,4 +1,4 @@
-<form class="" action="index.html" method="post">
+<form method="POST">
     <input type="hidden" name="form" value="ct">
     <label for="ct_firstname">Nom</label>
     <br>

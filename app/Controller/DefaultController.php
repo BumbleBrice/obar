@@ -13,6 +13,8 @@ class DefaultController extends Controller
 	 */
 	public function home()
 	{
+		$messageController = new \Controller\MessageController();
+
 		$errors = [];
 
 		if(!empty($_POST)){
@@ -71,9 +73,36 @@ class DefaultController extends Controller
 				if($post['form'] == 'isc'){//si le champ form vaux 'isc'
 					// ici le traitement pour le formulaire d'inscription
 				}
-				
+
 				if($post['form'] == 'ct'){//si le champ form vaux 'ct'
 					// ici le traitement pour le formulaire de contact
+					if(isset($post['ct_firstname'])){
+						if(preg_match('#^.{1,}$#', $post['ct_firstname']) == 0){
+							$errors[] = 'erreur contact firstname';
+						}
+					}
+
+					if(isset($post['ct_lastname'])){
+						if(preg_match('#^.{1,}$#', $post['ct_lastname']) == 0){
+							$errors[] = 'erreur contact lastname';
+						}
+					}
+
+					if(isset($post['ct_email'])){
+						if(preg_match('#^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$#', $post['ct_email']) == 0){
+							$errors[] = 'erreur contact email';
+						}
+					}
+
+					if(isset($post['ct_msg'])){
+						if(preg_match('#^.{1,}$#', $post['ct_msg']) == 0){
+							$errors[] = 'erreur contact msg';
+						}
+					}
+
+					if(count($errors) == 0){
+						$messageController->addMessage($post['ct_firstname'], $post['ct_lastname'], $post['ct_email'], $post['ct_msg']);
+					}
 				}
 			}
 		}
