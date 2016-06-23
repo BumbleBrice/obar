@@ -23,7 +23,7 @@ h1 {
 	margin-top: 2%;
  	color: #D82142; 
  	font-family: Georgia,"Times New Roman",Times,serif;
- 	font-weight: 700;
+ 	font-size: 3vw;
  	font-weight: normal; 
  	line-height: 48px; 
  	text-shadow: 1px 1px 2px #082b34;
@@ -164,7 +164,7 @@ a:hover {
 	padding:10px;
 	position:relative;
 	font-family: 'Times New Roman', sans-serif;
-	font-size: 1.8rem;
+	font-size: 1.5rem;
 	text-decoration:none;
 	color:#fff;
 	background-image: linear-gradient(bottom, darkred 0%, #D82142 100%);
