@@ -6,6 +6,7 @@
     <div class="box">
         <div class="col-lg-12">
             <hr>
+            <h2 class="brand-name text-center">Déscription de 
                 <strong>Ôbar</strong>
             </h2>
             <hr>
