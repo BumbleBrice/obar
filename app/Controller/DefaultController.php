@@ -8,7 +8,6 @@ use \W\Security\AuthentificationModel as AuthModel; //Permet d'importer la class
 
 class DefaultController extends Controller
 {
-
 	/**
 	 * Page d'accueil par défaut
 	 */
@@ -43,7 +42,7 @@ class DefaultController extends Controller
 						// La méthode isValidLoginInfo() retourne un utilisateur si celui-ci existe et que le couple identifiant /mdp existe
 						//$idUser contient l'id  de mon utilisateur
 						$idUser = $authModel->isValidLoginInfo($post['co_pseudo'], $post['co_pswd']);
-						
+
 						if($idUser){
 							//On apelle la méthode find() qui permet de retourner les résultats en fonction d'un ID
 							$user = $usersModel->find($idUser);
@@ -53,6 +52,7 @@ class DefaultController extends Controller
 							//$myUser = $authModel->getLoggedUser(); //Permet de récupérer les infos de sessions
 						}
 					}
+				}
 
 				if($post['form'] == 'nl'){//si le champ form vaut 'nl'
 					// ici le traitement pour le formulaire de newsletter
@@ -67,9 +67,11 @@ class DefaultController extends Controller
 						echo 'nl';
 					}
 				}
+
 				if($post['form'] == 'isc'){//si le champ form vaux 'isc'
 					// ici le traitement pour le formulaire d'inscription
 				}
+				
 				if($post['form'] == 'ct'){//si le champ form vaux 'ct'
 					// ici le traitement pour le formulaire de contact
 				}
@@ -78,5 +80,5 @@ class DefaultController extends Controller
 
 		$this->show('default/home');
 	}
-
 }
+?>
