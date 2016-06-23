@@ -1,5 +1,5 @@
 $(function() {
-                $('ul.pam a').bind('click',function(event){
+                $('.pam a').bind('click',function(event){
                     var $anchor = $(this);
                     /*
                     if you want to use one of the easing effects:
