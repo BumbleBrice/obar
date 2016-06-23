@@ -1,1 +1,1 @@
-<h1>Gestion des utilisateurs</h1>
+<div class="row"><div class="col-lg-12 text-center"><h1>Gestion des utilisateurs</h1></div></div>
