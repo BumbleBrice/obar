@@ -3,7 +3,7 @@
 <?php $this->start('main_content') ?>
 
 <!-- Connexion -->
-<section id="connexion container-fluid">
+<section class="connexion container-fluid">
 	<form method="POST">
 		<input type="hidden" name="form" value="co">
 		<label for="co_pseudo"></label>
@@ -17,7 +17,7 @@
 </section>
 
 <!-- Présentation -->
-<section id="presentation container-fluid">
+<section class="presentation container-fluid">
 	<h1>Présentation</h1>
 	<p>
 		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<br>
@@ -36,7 +36,7 @@
 </section>
 
 <!-- Dernier bar -->
-<section id="last_bar">
+<section class="last_bar">
 	<article class="">
 		<h2>titre</h2>
 		<p>
@@ -61,7 +61,7 @@
 </section>
 
 <!-- Carte -->
-<section id="map container-fluid">
+<section class="map container-fluid">
 	<section class="carte">
 
 	</section>
