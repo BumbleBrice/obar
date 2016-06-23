@@ -1,4 +1,5 @@
-<h1>Ajouter un bar</h1>
+<div class="row"><div class="col-lg-12 text-center"><h1>Ajouter un bar</h1></div></div>
+
 
 <?php if(!empty($errors)): ?>
 	<div class="alert alert-danger">
@@ -35,5 +36,3 @@
 		</fieldset>
 	</form>
 <?php endif; ?>
-
-<div class="row"><div class="col-lg-12 text-center"><h1>Ajouter un bar</h1></div></div>
