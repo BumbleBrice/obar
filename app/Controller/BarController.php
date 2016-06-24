@@ -34,7 +34,6 @@ class BarController extends Controller
 			// On limite l'accé à la page aux utilisateurs authentifiés et à ceux dont le rôle est admin
 			$this->allowTo(['admin']);
 
-			$post = [];
 			$errors = [];
 			$success = false;
 
@@ -44,7 +43,7 @@ class BarController extends Controller
 			if (!empty($_FILES)) {
 
 				if(isset($_FILES['image']) && $_FILES['image']['error'] == UPLOAD_ERR_OK && $_FILES['image']['size'] < $maxSize) {
-	
+
 					$fileName = $_FILES['image']['name']; // Nom de mon image
 					$fileTemp = $_FILES['image']['tmp_name']; // Image temporaire
 
@@ -56,9 +55,9 @@ class BarController extends Controller
 					if (in_array($mimeType, $mimeTypeAllowed)) {
 						/*
 						 * explode() permet de séparer une chaine de caractère en un tableau
-						 * Ici, on aura donc : 
+						 * Ici, on aura donc :
 						 * 		$newFileName = array(
-						 			0 => 'nom-de-mon-fichier', 
+						 			0 => 'nom-de-mon-fichier',
 						 			1 => 'jpg'
 								);
 						 */
@@ -89,31 +88,57 @@ class BarController extends Controller
 
 			}
 
-			if (!empty($_POST)) {
+			if(!empty($_POST)){
+				$post = array_map('trim', array_map('strip_tags', $_POST));
 
-				foreach ($_POST as $key => $value) {
-					$post[$key] = trim(strip_tags($value));
+				if(isset($post['name'])){
+					if(preg_match('#^.{1,}$#', $post['name']) == 0){
+						$errors[] = 'error name';
+					}
 				}
 
-				if (strlen($post['name']) < 2 ) {
-					$errors[] = 'Le nom du bar doit comporter plus de 2 caractères';
+				if(isset($post['picture'])){
+					if(preg_match('#^.{1,}$#', $post['picture']) == 0){
+						$errors[] = 'error picture';
+					}
 				}
 
-				if (strlen($post['content']) < 10 ) {
-					$errors[] = 'Le contenu du bar doit comporter plus de 10 caractères';
+				if(isset($post['content'])){
+					if(preg_match('#^.{1,}$#', $post['content']) == 0){
+						$errors[] = 'error content';
+					}
 				}
 
-				if (strlen($_POST['phone']) == 10) {
-					$errors[] = 'Le téléphone doit être composé de 10 chiffres';
+				if(isset($post['phone'])){
+					if(preg_match('#^.{1,}$#', $post['phone']) == 0){
+						$errors[] = 'error phone';
+					}
 				}
 
-				if (strlen($post['address']) < 2 ) {
-					$errors[] = 'L\'adress du bar doit comporter plus de 2 caractères';
+				if(isset($post['address'])){
+					if(preg_match('#^.{1,}$#', $post['address']) == 0){
+						$errors[] = 'error address';
+					}
 				}
 
-				if (strlen($post['schedule']) < 20 ) {
-					$errors[] = 'Les horaires du bar sont incorrectes';
+				if(isset($post['schedule'])){
+					if(preg_match('#^.{1,}$#', $post['schedule']) == 0){
+						$errors[] = 'error schedule';
+					}
 				}
+
+				if(isset($post['x'])){
+					if(preg_match('#^[0-9]{1,}$#', $post['x']) == 0){
+						$errors[] = 'error x';
+					}
+				}
+
+				if(isset($post['y'])){
+					if(preg_match('#^[0-9]{1,}$#', $post['y']) == 0){
+						$errors[] = 'error y';
+					}
+				}
+
 
 				if (count($errors) == 0) {
 					// Ici il n'y a aucune erreurs, on peut donc enregistrer en base de donnée
@@ -130,6 +155,8 @@ class BarController extends Controller
 						'phone' => $post['phone'],
 						'address' => $post['address'],
 						'schedule' => $post['schedule'],
+						'x' => $post['x'],
+						'y' => $post['y']
 					];
 
 					// On passe le tableau $data à la méthode insert() pur enregistrer nos données en bdd
@@ -165,7 +192,7 @@ class BarController extends Controller
 			if (!empty($_FILES)) {
 
 				if(isset($_FILES['image']) && $_FILES['image']['error'] == UPLOAD_ERR_OK && $_FILES['image']['size'] < $maxSize) {
-	
+
 					$fileName = $_FILES['image']['name']; // Nom de mon image
 					$fileTemp = $_FILES['image']['tmp_name']; // Image temporaire
 
@@ -177,9 +204,9 @@ class BarController extends Controller
 					if (in_array($mimeType, $mimeTypeAllowed)) {
 						/*
 						 * explode() permet de séparer une chaine de caractère en un tableau
-						 * Ici, on aura donc : 
+						 * Ici, on aura donc :
 						 * 		$newFileName = array(
-						 			0 => 'nom-de-mon-fichier', 
+						 			0 => 'nom-de-mon-fichier',
 						 			1 => 'jpg'
 								);
 						 */
