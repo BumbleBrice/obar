@@ -19,7 +19,7 @@ class AdminController extends Controller
 
 		$params = [];
 
-		$params['message'] = $messageControl->getMessage();
+		$params['pres'] = $messageControl->getMessage();
 
 		$this->show('adminHome/home_admin', $params);
 	} /* fin function home()*/

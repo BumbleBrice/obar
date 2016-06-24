@@ -22,7 +22,7 @@ class PresentationController extends Controller
 		$params = ['pres' -> $pres];
 		var_dump($pres);
 		// $this->show('dossier/fichier') est la méthode permettant d'avoir un rendu visuel
-		$this->show('admin/presentation', $params);
+		$this->show('adminHome/home_admin', $params);
 	}
 	
 	public function addPresentation() 
