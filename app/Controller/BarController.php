@@ -32,7 +32,7 @@ class BarController extends Controller
 	public function bar_add()
 	{
 			// On limite l'accé à la page aux utilisateurs authentifiés et à ceux dont le rôle est admin
-			$this->allowTo(['admin']);
+			// $this->allowTo(['admin']);
 
 			$errors = [];
 			$success = false;
