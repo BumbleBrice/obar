@@ -79,16 +79,11 @@
 
                     <div class="col-lg-5 carte">
 
-                    	<div class="map">
-
-                    		<!-- Carte -->
-                    		
-                    	</div>
 
                     </div>
 
                     <div class="col-lg-1"></div>
-                               
+
                 </div>
                 <!-- /.row (nested) -->
             </div>
