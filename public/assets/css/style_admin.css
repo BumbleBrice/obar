@@ -75,19 +75,14 @@ a:hover {
 }
 
 .wrapper {
-   display: flex;
-   width: 600%;
-   height: 880px;
+	display: flex;
+	width: 1900px;
+	height: 880px;
 	background-color: #fff;
 }
-
-.module {
-    width: 16.66%;
-    height: 100%;
-}
-
 .contenu {
 	margin-left: 10%;
+	width: 90%;
 }
 
 
