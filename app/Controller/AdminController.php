@@ -51,7 +51,7 @@ class AdminController extends Controller
 					'desc' 	=> $post['desc'],
 				];
 
-				if($AdminModel->update($data, $id)){
+				if($AdminModel->update($data, 1)){
 					$success = true;
 				}
 

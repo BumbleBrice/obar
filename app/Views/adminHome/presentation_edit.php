@@ -29,7 +29,7 @@
 
 							<br><br>
 							<div class="col-lg-offset-5 col-lg-2 col-lg-offset-5">
-							<a type="submit" class="btn btn-secondary btn-lg active boutonModifPresentationBar" href="">Modifier la présentation de Ôbar</a>
+							<input type="submit" class="btn btn-secondary btn-lg active boutonModifPresentationBar" value="Modifier la présentation de Ôbar">
 							</div>
 						</div>
 					</form>
