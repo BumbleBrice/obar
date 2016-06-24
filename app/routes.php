@@ -24,7 +24,7 @@
 		['GET|POST', '/admin_user_edit', 'Users#user_edit', 'admin_user_edit'],
 		['GET|POST', '/admin_user_delete', 'Users#user_delete', 'admin_user_delete'],
 
-		['GET|POST', '/admin_newsletter', 'adminNews#newsletter', 'admin_newsletter'],
+		['GET|POST', '/admin_newsletter', 'News#newsletter', 'admin_newsletter'],
 
 
 

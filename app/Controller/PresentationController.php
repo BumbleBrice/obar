@@ -3,40 +3,24 @@
 namespace Controller;
 
 use \W\Controller\Controller;
-use \Model\PresentationModel;
-
-
-
-
+/*use \Model\PresentationModel;*/
+use \W\Security\AuthentificationModel as AuthModel;
+use \Controller\PresentationController as PresentationControl;
 
 class PresentationController extends Controller
 {
 
-	public function getPresentation() 
+	public function presentation_edit() 
 	{
-		$presentation = new PresentationModel();
+		$presentationControl = new PresentationControl();
+
+		$params = [];
+
+		$params['pres'] = $presentationControl->getPresentation();
+
+		$this->show('adminHome/admin_presentation_edit', $params);
+	}
 		
-		$pres = $presentation->find('id');
 
-		// $params est un tableau permettant de transmettre des variables à la vue, les clé de ce tableau deviendront les variables (dans la vue)
-		$params = ['pres' -> $pres];
-		var_dump($pres);
-		// $this->show('dossier/fichier') est la méthode permettant d'avoir un rendu visuel
-		$this->show('adminHome/home_admin', $params);
-	}
-	
-	public function addPresentation() 
-	{
-		
-	}
-
-	public function readPresentation()
-	{
-
-	}
-	public function answerPresentation()
-	{
-
-	}
-			
+				
 }

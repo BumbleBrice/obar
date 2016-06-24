@@ -1,6 +1,8 @@
 <?php
 
 namespace Model;
+use \W\Model\ConnectionModel;
+
 
 class adminModel extends \W\model\Model
 {
@@ -13,7 +15,7 @@ class adminModel extends \W\model\Model
 	public function __construct() {
 	    $app = getApp();
 	    // Définit la table en fonction de la config
-	    $this->setTable($app->getConfig('bar_table'));
+	    $this->setTable($app->getConfig('presentation_table'));
 	    $this->dbh = ConnectionModel::getDbh();
 	}
 

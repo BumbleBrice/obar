@@ -10,19 +10,18 @@
 	    <div class="box">
 	        <div class="col-lg-12">
 	            <hr>
-	            <h2 class="brand-name text-center">Description de <strong>Ôbar</strong>
+	            <h2 class="brand-name text-center">Déscription actuel de <strong>Ôbar</strong>
 	            </h2>
 	            <hr>
-	            <?php if(empty($pres)): ?>
-	            <p class="text-center"><?= $pres['desc']; ?></p>
-	        
+	            <?php if(!empty($pres)): ?>
+	            <p class="text-center lead grey"><?= $pres['desc']; ?></p>
 	            <?php endif; ?>
 	        </div>
 	    </div>
 	</div>
 	<div class="row ">
 		<div class="col-lg-offset-5 col-lg-2 col-lg-offset-5">
-	           	<a type="button" class="btn btn-secondary btn-lg active boutonModifPresentationBar" href="">Modifier la présentation de Ôbar</a>
+	           	<a type="button" class="btn btn-secondary btn-lg active boutonModifPresentationBar" href="<?=$this->url('admin_presentation_edit', array('id' => $pres['id']));?>">Modifier la présentation de Ôbar</a>
 		</div>
 	</div>
 

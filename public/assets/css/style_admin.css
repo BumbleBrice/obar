@@ -31,7 +31,7 @@ h1 {
 
 }
 h2 {
-	font-size: 2vw;
+	font-size: 1.5vw;
 	color: #D82142;
 }
 h3 {
@@ -89,7 +89,10 @@ a:hover {
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 /*                         PRESENTATION                        */
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+.grey {
+	color: grey;
 
+}
 #presentation {
 
 }

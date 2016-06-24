@@ -33,7 +33,7 @@
             <div class="collapse navbar-collapse navbar-ex1-collapse nav_top">
                 <ul class="nav navbar-nav side-nav navigation">
                     <li>
-                        <a class="button" href="">Accueil admin</a>
+                        <a class="button" href="<?=$this->url('admin_home'); ?>">Accueil admin</a>
                     </li>
                     <li>
                        <a class="button" href="<?=$this->url('admin_bar_list'); ?>">Liste des bars</a>
