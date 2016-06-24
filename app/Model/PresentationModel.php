@@ -1,5 +1,6 @@
 <?php /* app/Model/BarModel.php */
 namespace Model;
+use \W\Model\ConnectionModel;
 
 class PresentationModel extends \W\Model\Model 
 {

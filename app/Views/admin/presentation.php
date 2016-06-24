@@ -6,11 +6,13 @@
     <div class="box">
         <div class="col-lg-12">
             <hr>
-            <h2 class="brand-name text-center">Description de 
-                <strong>Ôbar</strong>
+            <h2 class="brand-name text-center">Description de <strong>Ôbar</strong>
             </h2>
             <hr>
-           
+            <?php if(empty($pres)): ?>
+            <p class="text-center"><?php echo $pres['desc']; ?></p>
+         
+            <?php endif; ?>
         </div>
     </div>
 </div>

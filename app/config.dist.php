@@ -21,6 +21,7 @@ $w_config = [
 	'Newsletter_table' => 'news_letter',
 	'bar_table' => 'bars',
 	'message_table' => 'contact'
+	'presentation_table' => 'obar_desc', 
 	
 ];
 

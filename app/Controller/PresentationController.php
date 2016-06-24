@@ -18,7 +18,10 @@ class PresentationController extends Controller
 		
 		$pres = $presentation->find('id');
 
-		return $pres;
+		// $params est un tableau permettant de transmettre des variables à la vue, les clé de ce tableau deviendront les variables (dans la vue)
+		$params = ['pres' -> $pres];
+		// $this->show('dossier/fichier') est la méthode permettant d'avoir un rendu visuel
+		$this->show('admin/presentation', $params);
 	}
 	
 	public function addPresentation() 
@@ -28,11 +31,11 @@ class PresentationController extends Controller
 
 	public function readPresentation()
 	{
-
+		
 	}
 	public function answerPresentation()
 	{
-
+		
 	}
 			
 }
