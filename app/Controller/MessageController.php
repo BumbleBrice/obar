@@ -34,9 +34,14 @@ class MessageController extends Controller
 		]);
 	}
 
-	public function readMessage()
+	public function readMessage($id)
 	{
+		$message = new MessageModel();
+		$data = [
+			'message_state' => 'read'
+		];
 
+		$message->update($data, $id);
 	}
 	public function answerMessage()
 	{
