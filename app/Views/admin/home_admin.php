@@ -2,58 +2,33 @@
 
 <?php $this->start('main_content') ?>
 
-	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
-	<!--                         PRESENTATION                        -->
-	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
-	<div class="module" id="presentation">
-		<div class="contenu">
-			<?=$this->insert('admin/presentation');?>
+	<div class="row"><div class="col-lg-12 text-center"><h1 class="page-header">Présentation</h1></div></div>
+
+
+
+	<div class="row">
+	    <div class="box">
+	        <div class="col-lg-12">
+	            <hr>
+	            <h2 class="brand-name text-center">Description de <strong>Ôbar</strong>
+	            </h2>
+	            <hr>
+	            <?php if(empty($pres)): ?>
+	            <p class="text-center"><?= $pres['desc']; ?></p>
+	        
+	            <?php endif; ?>
+	        </div>
+	    </div>
+	</div>
+	<div class="row ">
+		<div class="col-lg-offset-5 col-lg-2 col-lg-offset-5">
+	           	<a type="button" class="btn btn-secondary btn-lg active boutonModifPresentationBar" href="">Modifier la présentation de Ôbar</a>
 		</div>
 	</div>
 
-	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
-	<!--                        LISTE DES BARS                       -->
-	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
-	<div class="module" id="bar_list">
-		<div class="contenu">
-			<?=$this->insert('admin/bar_list');?>
-		</div>
-	</div>
 
-	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
-	<!--                       AJOUTER DES BARS                      -->
-	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
-	<div class="module" id="bar_add">
-		<div class="contenu">
-			<?=$this->insert('admin/bar_add');?>
-		</div>
-	</div>
 
-	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
-	<!--                       CONTACT / MESSAGE                     -->
-	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
-	<div class="module" id="message">
-		<div class="contenu">
-			<?=$this->insert('admin/message', ['message' => $message]); ?>
-		</div>
-	</div>
+	
 
-	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
-	<!--                         UTILISATEURS                        -->
-	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
-	<div class="module" id="users">
-		<div class="contenu">
-			<?=$this->insert('admin/users');?>
-		</div>
-	</div>
-
-	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
-	<!--                         NEWS LETTER                         -->
-	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
-	<div class="module" id="news_letter">
-		<div class="contenu">
-			<?=$this->insert('admin/news_letter');?>
-		</div>
-	</div>
 
 <?php $this->stop('main_content') ?>

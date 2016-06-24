@@ -1,3 +1,6 @@
+<?php $this->layout('layout_admin', ['title' => 'Accueil']) ?>
+
+<?php $this->start('main_content') ?>
 <div class="row">
 	<div class="col-lg-12 text-center">
 		<h1>Ajouter un bar</h1>
@@ -92,3 +95,5 @@
     <!-- /.col-lg-12 -->
 </div>
 <!-- /.row -->
+
+<?php $this->stop('main_content') ?>

@@ -1,3 +1,6 @@
+<?php $this->layout('layout_admin', ['title' => 'Accueil']) ?>
+
+<?php $this->start('main_content') ?>
 <!-- Afficher les erreurs -->
 
 <?php if(!empty($errors)): ?>
@@ -180,3 +183,6 @@ foreach pour afficher les bar : a mettre dans le tableau
 
 		<?php endif; ?>
 </div>
+
+
+<?php $this->stop('main_content') ?>
