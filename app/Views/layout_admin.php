@@ -11,7 +11,7 @@
 	<link rel="stylesheet" href="<?= $this->assetUrl('css/style_admin.css') ?>">
 </head>
 <body>
-	<div>
+	<div class="wrapper">
 	<aside role="banner" >
 	<!-- Navigation -->
         <nav class="navbar navbar-inverse navbar-fixed-top " role="navigation">
@@ -33,7 +33,7 @@
             <div class="collapse navbar-collapse navbar-ex1-collapse nav_top">
                 <ul class="nav navbar-nav side-nav navigation">
                     <li>
-                        <a class="button" href="<?=$this->url('admin_home'); ?>">Accueil admin</a>
+                        <a class="button" href="<?=$this->url('home_admin'); ?>">Accueil admin</a>
                     </li>
                     <li>
                        <a class="button" href="<?=$this->url('admin_bar_list'); ?>">Liste des bars</a>
@@ -56,7 +56,7 @@
         </nav>
 		
 	</aside>
-		<section class="wrapper"><?= $this->section('main_content') ?></section>
+		<section class="contenu"><?= $this->section('main_content') ?></section>
 	</div>
 	<script src="<?= $this->assetUrl('js/jquery.js') ?>"></script>
 	<script src="<?= $this->assetUrl('js/bootstrap.js') ?>"></script>
