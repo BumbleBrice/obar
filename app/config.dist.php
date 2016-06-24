@@ -18,6 +18,10 @@ $w_config = [
 
 	'security_login_route_name' => 'login',			//nom de la route affichant le formulaire de connexion
 
+	// configuration globale
+	'site_name'	=> '', 								// contiendra le nom du site
+
+
 	'Newsletter_table' => 'news_letter',
 	'bar_table' => 'bars',
 	'message_table' => 'contact',
