@@ -40,7 +40,7 @@ class AdminController extends Controller
 				$post[$key] = trim(strip_tags($value));
 			}
 
-			if(strlen($post['desc']) < 5){
+			if(strlen($post['description']) < 5){
 				$errors[] = 'La description doit comporter au moins 5 caractères';
 			}
 			
@@ -48,10 +48,10 @@ class AdminController extends Controller
 			if(count($errors) === 0){
 
 				$data = [
-					'desc' 	=> $post['desc'],
+					'description' 	=> $post['description'],
 				];
 
-				if($AdminModel->update($data, 1)){
+				if($adminModel->update($data, 1)){
 					$success = true;
 				}
 

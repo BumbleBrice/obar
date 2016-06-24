@@ -14,7 +14,7 @@
 	            </h2>
 	            <hr>
 	            <?php if(!empty($pres)): ?>
-	            <p class="text-center lead grey"><?= $pres['desc']; ?></p>
+	            <p class="text-center lead grey"><?= $pres['description']; ?></p>
 	            <?php endif; ?>
 	        </div>
 	    </div>

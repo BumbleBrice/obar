@@ -17,15 +17,15 @@
 
 <?php elseif(!empty($pres)): // On s'assure qu'une presentation est existant?>
 
-	<div class="row"><div class="col-lg-12 text-center"><h2>Vous souhaitez edité la présentation du site</h2></div></div>
+	<div class="row"><div class="col-lg-12 text-center"><h2>Vous souhaitez editer la présentation du site</h2></div></div>
 	<div class="row">
     	<div class="col-lg-12">
         	<div class="panel panel-default">
            		<div class="panel-body">
                     <form method="POST" role="form">
                         <div class="form-group">
-							<label for="desc">Modifier la déscription</label>
-							<textarea type="text" class="form-control champTxtAddBar" name="desc" id="desc"><?=$pres['desc'];?></textarea>
+							<label for="description">Modifier la déscription</label>
+							<textarea type="text" class="form-control champTxtAddBar" name="description" id="desc"><?=$pres['description'];?></textarea>
 
 							<br><br>
 							<div class="col-lg-offset-5 col-lg-2 col-lg-offset-5">
