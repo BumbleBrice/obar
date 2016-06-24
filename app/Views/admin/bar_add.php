@@ -61,8 +61,8 @@
                                 <input type="int" name="schedule" id="schedule" class="form-control champTxtAddBar">
                             </div>
 
-                            <button type="reset" class="btn btn-default">Recommencer</button>
-                            <button type="submit" class="btn btn-default">Ajouter le bar</button>
+                            <button type="reset" class="btn btn-default boutonBarAdd">Recommencer</button>
+                            <button type="submit" class="btn btn-default boutonBarAdd">Ajouter le bar</button>
 
                         </form>
 

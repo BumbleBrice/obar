@@ -131,7 +131,7 @@ a:hover {
 
 .champTxtAddBar {
 	background: #FFEBD8;
-	color: darkblue;
+	color: #004a4a;
 	border: 2px solid #E1B66B;
 }
 
@@ -143,19 +143,19 @@ a:hover {
 .input-group-btn:last-child > .btn:not(:last-child):not(.dropdown-toggle), 
 .input-group-btn:last-child > .btn-group:not(:last-child) > .btn {
 	background: #FFEBD8;
-	color: darkblue;
+	color: #004a4a;
 	border: 2px solid #E1B66B;
 }
 
 .input-group-btn:last-child > .btn, 
 .input-group-btn:last-child > .btn-group {
 	background: #FFEBD8;
-	color: darkblue;
+	color: #004a4a;
 }
 
 .input-group-btn:last-child > .btn:hover, 
 .input-group-btn:last-child > .btn-group:hover {
-	background: darkblue;
+	background: #004a4a;
 	color: #FFEBD8;
 }
 
@@ -295,7 +295,20 @@ a:hover {
 	border: 1px solid #004a4a !important;
 	box-shadow: 1px 5px 10px;
 }
-.boutonRetourSite {
+
+.boutonBarAdd {
+	background: #FFEBD8;
+	color: #004a4a;
+	border: 1px solid #004a4a;
+	margin-right: 10px;
+}
+
+.boutonBarAdd:hover {
+	background: #004a4a;
+	color: #FFEBD8;
+	border: 1px solid #004a4a;
+	box-shadow: 3px 3px 1px;
+}.boutonRetourSite {
     background: white !important;
     color: #A22121 !important;
     padding: 10px 20px 10px 20px;
