@@ -7,7 +7,7 @@
 
 
 		// Partie admin
-		['GET|POST', '/admin_home', 'adminHome#home', 'home_admin'],
+		['GET|POST', '/admin_home', 'Admin#home', 'admin_home'],
 		['GET|POST', '/admin_presentation_edit', 'adminHome#presentation_edit', 'admin_presentation_edit'],
 		['GET|POST', '/admin_slide_edit', 'adminHome#slide_edit', 'admin_slide_edit'],
 		['GET|POST', '/admin_slide_delete', 'adminHome#slide_delete', 'admin_slide_delete'],
