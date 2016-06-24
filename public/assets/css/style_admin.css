@@ -21,14 +21,14 @@ h1, h2, h3 {
 h1 {
 	text-transform: uppercase;
 	margin-top: 2%;
- 	color: #D82142; 
+ 	color: #D82142;
  	font-family: Georgia,"Times New Roman",Times,serif;
  	font-size: 3vw;
- 	font-weight: normal; 
- 	line-height: 48px; 
+ 	font-weight: normal;
+ 	line-height: 48px;
  	text-shadow: 1px 1px 2px #082b34;
  	text-align: center;
-	
+
 }
 h2 {
 	font-size: 2vw;
@@ -91,7 +91,7 @@ a:hover {
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
 #presentation {
-   
+
 }
 
 
@@ -130,25 +130,25 @@ a:hover {
 	border: 2px solid #E1B66B;
 }
 
-.input-group .form-control:first-child, 
-.input-group-addon:first-child, 
-.input-group-btn:first-child > .btn, 
-.input-group-btn:first-child > .btn-group > .btn, 
-.input-group-btn:first-child > .dropdown-toggle, 
-.input-group-btn:last-child > .btn:not(:last-child):not(.dropdown-toggle), 
+.input-group .form-control:first-child,
+.input-group-addon:first-child,
+.input-group-btn:first-child > .btn,
+.input-group-btn:first-child > .btn-group > .btn,
+.input-group-btn:first-child > .dropdown-toggle,
+.input-group-btn:last-child > .btn:not(:last-child):not(.dropdown-toggle),
 .input-group-btn:last-child > .btn-group:not(:last-child) > .btn {
 	background: #FFEBD8;
 	color: #004a4a;
 	border: 2px solid #E1B66B;
 }
 
-.input-group-btn:last-child > .btn, 
+.input-group-btn:last-child > .btn,
 .input-group-btn:last-child > .btn-group {
 	background: #FFEBD8;
 	color: #004a4a;
 }
 
-.input-group-btn:last-child > .btn:hover, 
+.input-group-btn:last-child > .btn:hover,
 .input-group-btn:last-child > .btn-group:hover {
 	background: #004a4a;
 	color: #FFEBD8;
@@ -159,7 +159,7 @@ a:hover {
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
 #message {
-  
+
 }
 .table-striped > tbody > tr:nth-of-type(2n+1) {
     background-color: #FFF5F4;
@@ -195,7 +195,7 @@ a:hover {
 }
 .divButton a {
 	text-decoration: none;
-	
+
 }
 
 .button {
@@ -325,4 +325,19 @@ a:hover {
 .boutonModifPresentationBar:hover {
 	border: 1px solid #004a4a !important;
 	box-shadow: 1px 5px 10px;
+}
+.carte {
+	width: 500px;
+	height: 500px;
+	background: red;
+	position: relative;
+	overflow: hidden;
+}
+
+.bar {
+	background: ;
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	background: green;
 }
