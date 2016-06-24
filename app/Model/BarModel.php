@@ -1,17 +1,12 @@
-<?php /* app/Model/BarModel.php */
+<?php
+
 namespace Model;
 
-class BarModel extends \W\Model\Model 
+class barModel extends \W\model\Model
 {
-	/* Le framework W déduit automatiquement le nom de la table de données en fonction di nom du modèle.
-	Par exemple :
-	- BarModel => bar
+	/*
+		Le framework W déduit automatiquement le nom de la table de données en fonction du nom du modèle; Par exemple :
+			- barModel => bar
+			- Adminbar => admin_bar
 	*/
-
-		public function __construct() {
-	    $app = getApp();
-	    // Définit la table en fonction de la config
-	    $this->setTable($app->getConfig('bar_table'));
-	    $this->dbh = ConnectionModel::getDbh();
-	}
 }

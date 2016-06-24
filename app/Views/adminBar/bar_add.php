@@ -1,12 +1,14 @@
 <?php $this->layout('layout_admin', ['title' => 'Accueil']) ?>
 
 <?php $this->start('main_content') ?>
+
 <div class="row">
 	<div class="col-lg-12 text-center">
 		<h1>Ajouter un bar</h1>
 	</div>
 </div>
 
+<br><br>
 
 <?php if(!empty($errors)): ?>
 	<div class="alert alert-danger">
@@ -51,7 +53,7 @@
 
                             <div class="form-group">
                                 <label for="phone">Téléphone</label>
-                                <input type="int" name="phone" id="phone" class="form-control champTxtAddBar">
+                                <input type="tel" name="phone" id="phone" class="form-control champTxtAddBar">
                             </div>
 
                             <div class="form-group">
@@ -65,6 +67,8 @@
                             </div>
 
                             <button type="reset" class="btn btn-default boutonBarAdd">Recommencer</button>
+                            <button type="reset" class="btn btn-default boutonBarAdd btn-resetBar">Replacer le bar</button>
+
                             <button type="submit" class="btn btn-default boutonBarAdd">Ajouter le bar</button>
 
                         </form>

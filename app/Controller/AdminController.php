@@ -23,4 +23,4 @@ class AdminController extends Controller
 
 		$this->show('adminHome/home_admin', $params);
 	} /* fin function home()*/
-} 
+}
