@@ -20,9 +20,12 @@ $w_config = [
 
 	'Newsletter_table' => 'news_letter',
 	'bar_table' => 'bars',
-	'message_table' => 'contact'
-	'presentation_table' => 'obar_desc', 
-	
+	'message_table' => 'contact',
+	'presentation_table' => 'obar_desc',
+
+	'user_mailer' 	=> '',
+	'pswd_mailer'	=> ''
+
 ];
 
 require('routes.php');
