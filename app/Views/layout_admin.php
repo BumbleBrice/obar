@@ -32,23 +32,23 @@
             <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
             <div class="collapse navbar-collapse navbar-ex1-collapse nav_top">
                 <ul class="nav navbar-nav side-nav navigation">
-                    <li class="">
-                        <a class="js-scrollTo button" href="#presentation">Présentation</a>
+                    <li>
+                        <a class="button" href="<?=$this->url('admin_home'); ?>">Accueil admin</a>
                     </li>
                     <li>
-                       <a class="js-scrollTo button" href="#bar_list">Liste des bars</a>
+                       <a class="button" href="<?=$this->url('admin_bar_list'); ?>">Liste des bars</a>
                     </li>
                     <li>
-                       <a class="js-scrollTo button" href="#bar_add">Ajouter un bar</a>
+                       <a class="button" href="<?=$this->url('admin_bar_add'); ?>">Ajouter un bar</a>
                     </li>
                     <li>
-                        <a class="js-scrollTo button" href="#message">Messages</a>
+                        <a class="button" href="<?=$this->url('admin_message'); ?>">Messagerie</a>
                     </li>
                     <li>
-                       <a class="js-scrollTo button" href="#users">Gestion utilisateurs</a>
+                       <a class="button" href="<?=$this->url('admin_users'); ?>">Gestion utilisateur</a>
                     </li>
                     <li>
-                        <a class="js-scrollTo button" href="#news_letter">Ajouter une news</a>
+                        <a class="button" href="<?=$this->url('admin_newsletter'); ?>">Newsletter</a>
                     </li>
                 </ul>
             </div>
