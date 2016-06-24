@@ -22,7 +22,7 @@
     	<div class="col-lg-12">
         	<div class="panel panel-default">
            		<div class="panel-body">
-                    <form role="form">
+                    <form method="POST" role="form">
                         <div class="form-group">
 							<label for="desc">Modifier la déscription</label>
 							<textarea type="text" class="form-control champTxtAddBar" name="desc" id="desc"><?=$pres['desc'];?></textarea>
@@ -38,7 +38,7 @@
 					<div class="alert alert-danger">Aucun article correspondant</div>
 					<?php endif; ?>
 				</div>
-			</div>		
+			</div>
 		</div>
-	</div>	
+	</div>
 <?php $this->stop('main_content') ?>
