@@ -1,21 +1,46 @@
-<form method="POST">
-    <input type="hidden" name="form" value="isc">
-    <label for="isc_pseudo">Pseudo</label>
-    <br>
-    <input id="isc_pseudo" type="text" name="isc_pseudo" placeholder="Pseudo..." required>
-    <br>
-    <label for="isc_email">Email</label>
-    <br>
-    <input id="isc_email" type="email" name="isc_email" placeholder="Email..." required>
-    <br>
-    <label for="isc_pswd">Password</label>
-    <br>
-    <input id="isc_pswd" type="password" name="isc_pswd" placeholder="Password..." required>
-    <br>
-    <label for="isc_pswd_confirm">Verif Password</label>
-    <br>
-    <input id="isc_pswd_confirm" type="password" name="isc_pswd_confirm" placeholder="Password..." required>
-    <br>
-    <br>
-    <input type="submit" value="Inscription">
-</form>
+<!-- Inscription -->
+
+<div class="container-fluid">
+    <div class="row text-center">
+        <div class="col-lg-10 col-lg-offset-1">
+            <h2>Devenir membre</h2>
+            <p>En devenant membre, vous aurez la possibilité de vous créer un réseau d'amis afin de partager vos expériences</p>
+
+            <form class="form-horizontal">
+                <div class="form-group">
+                    <label for="nickname" class="hidden-xs col-sm-2 control-label">Pseudo</label>
+                    <div class="col-sm-10">
+                    <input type="text" class="form-control" id="nickname" placeholder="Pseudo">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email" class="hidden-xs col-sm-2 control-label">Email</label>
+                    <div class="col-sm-10">
+                    <input type="email" class="form-control" id="email" placeholder="Email">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="password" class="hidden-xs col-sm-2 control-label">Mot de passe</label>
+                    <div class="col-sm-10">
+                    <input type="password" class="form-control" id="password" placeholder="Mot de passe">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="passwordOk" class="hidden-xs col-sm-2 control-label">Confirmation</label>
+                    <div class="col-sm-10">
+                    <input type="passwordOk" class="form-control" id="passwordOk" placeholder="Confirmation mot de passe">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" class="btn btn-primary">S'inscrire</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>       
+</div>

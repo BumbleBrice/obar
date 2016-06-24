@@ -1,3 +1,4 @@
+
 <form method="POST">
     <input type="hidden" name="form" value="co">
     <label for="co_pseudo"></label>
@@ -8,3 +9,5 @@
 
     <input type="submit" value="connexion">
 </form>
+
+<?php $this->stop('main_content') ?>

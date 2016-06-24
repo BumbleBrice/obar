@@ -1,35 +1,35 @@
-<?php $this->layout('layout', ['title' => 'Ôbar']) ?>
+<?php $this->layout('layout', ['title' => 'Ô Bar | Bordeaux']) ?>
 
 <?php $this->start('main_content') ?>
 
-<!-- Connexion -->
+<!-- Connexion  -->
 <section class="connexion container-fluid">
-	<?=$this->insert('default/connexion'); ?>
+	<!--?$this->insert('default/connexion'); ?-->
 </section>
 
 <!-- Présentation -->
-<section class="presentation container-fluid">
+<header id="top" class="header">
 	<?=$this->insert('default/presentation'); ?>
-</section>
+</header>
 
-<!-- Dernier bar -->
-<section class="last_bar">
+<!--Slice mise à jour-->
+<section id="about" class="about">
 	<?=$this->insert('default/lastBars'); ?>
 </section>
 
 <!-- Carte -->
-<section class="map container-fluid">
+<section id="services" class="services bg-primary">
 	<?=$this->insert('default/map'); ?>
 </section>
 
 <!-- Inscription -->
-<section id="subscribe container-fluid">
+<section id="subs" class="subs">
 	<?=$this->insert('default/inscription'); ?>
 </section>
 
 <!-- Contact -->
-<section id="contact container-fluid">
-	<?=$this->insert('default/contact'); ?>
+<section id="contact" class="contact">
+    <?=$this->insert('default/contact'); ?>
 </section>
 
 <?php $this->stop('main_content') ?>
