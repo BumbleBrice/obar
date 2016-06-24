@@ -271,3 +271,27 @@ a:hover {
 .button:active::before {
 	top:-2px;
 }
+
+.boutonRetourSite {
+    background: white !important;
+    color: #A22121 !important;
+    padding: 10px 20px 10px 20px;
+    margin: 5px 0px 5px 20px;
+    border-radius: 20px 20px 0px 0px;
+    border: 2px solid #A22121;
+}
+
+.boutonRetourSite:hover {
+	background: #A22121 !important;
+    color: white !important;
+    border: 2px solid white;
+}
+
+.boutonModifPresentationBar {
+	border: 1px solid transparent;
+}
+
+.boutonModifPresentationBar:hover {
+	border: 1px solid #004a4a !important;
+	box-shadow: 1px 5px 10px;
+}

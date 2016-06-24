@@ -21,7 +21,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="<?=$this->url('default_home');?>">Retour au site</a>
+                <a class="navbar-brand boutonRetourSite" href="<?=$this->url('default_home');?>">Retour au site</a>
             </div>
             <!-- Top Menu Items -->
           

@@ -16,7 +16,7 @@
 </div>
 <div class="row ">
 	<div class="col-lg-offset-5 col-lg-2 col-lg-offset-5">
-           	<a type="button" class="btn btn-secondary btn-lg active" href="">Modifier la présentation de Ôbar</a>
+           	<a type="button" class="btn btn-secondary btn-lg active boutonModifPresentationBar" href="">Modifier la présentation de Ôbar</a>
 	</div>
 </div>
 
