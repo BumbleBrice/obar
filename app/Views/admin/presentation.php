@@ -6,11 +6,11 @@
     <div class="box">
         <div class="col-lg-12">
             <hr>
-            <h2 class="brand-name text-center">Déscription de 
+            <h2 class="brand-name text-center">Description de 
                 <strong>Ôbar</strong>
             </h2>
             <hr>
-            <p class="text-center">Use as many boxes as you like, and put anything you want in them! They are great for just about anything, the sky's the limit!</p>
+           
         </div>
     </div>
 </div>

@@ -1,1 +1,1 @@
-<div class="row"><div class="col-lg-12 text-center"><h1>Ajouter une news</h1></div></div>
+<div class="row"><div class="col-lg-12 text-center"><h1>News Letter</h1></div></div>

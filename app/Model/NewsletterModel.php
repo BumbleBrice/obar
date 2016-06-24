@@ -7,7 +7,6 @@
             $app = getApp();
             // Définit la table en fonction de la config
             $this->setTable($app->getConfig('Newsletter_table'));
-
             $this->dbh = ConnectionModel::getDbh();
         }
     }

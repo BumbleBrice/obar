@@ -1,7 +1,7 @@
 <?php /* app/Model/BarModel.php */
 namespace Model;
 
-class BarModel extends \W\Model\Model 
+class PresentationModel extends \W\Model\Model 
 {
 	/* Le framework W déduit automatiquement le nom de la table de données en fonction di nom du modèle.
 	Par exemple :
@@ -11,7 +11,7 @@ class BarModel extends \W\Model\Model
 		public function __construct() {
 	    $app = getApp();
 	    // Définit la table en fonction de la config
-	    $this->setTable($app->getConfig('bar_table'));
+	    $this->setTable($app->getConfig('presentation_table'));
 	    $this->dbh = ConnectionModel::getDbh();
 	}
 }
