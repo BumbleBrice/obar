@@ -3,8 +3,7 @@
 namespace Controller;
 
 use \W\Controller\Controller;
-use \Model\barModel as bar; //Permet d'importer la classe BarModel que l'on pourra instancier via new Bar();
-use \W\Model\barModel as barModel; //Permet d'importer la classe UsersModel que l'on pourra instancier via new UsersModel();
+use \Model\barModel; //Permet d'importer la classe BarModel que l'on pourra instancier via new Bar();
 use \W\Security\AuthentificationModel as AuthModel; //Permet d'importer la classe AuthentificationModel pour hacher le password
 use \finfo;
 
