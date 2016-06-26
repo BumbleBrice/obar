@@ -13,8 +13,13 @@
 <?php if(!empty($bar)): // si l'article n'est pas vide ?>
 
 <form method="GET">
-	<a href="<?=$this->url('adminBar/bar_delete', ['id' => $bar['id']]); ?>">Non</a>
-	<input type="submit" name="delBar" value="Oui">
+	<div class="row">
+		<div class="col-lg-12 text-left">
+			<h4>Etes-vous sûr de vouloir supprimer ce bar ?</h4>
+		</div>
+	</div>
+	<a class="btnDeleteBar"> href="<?=$this->url('adminBar/bar_delete', ['id' => $bar['id']]); ?>">Non</a>
+	<input class="btnDeleteBar" type="submit" name="delBar" value="Oui">
 </form>
 
 <?php else: ?>

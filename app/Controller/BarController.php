@@ -16,7 +16,7 @@ class BarController extends Controller
 	public function bar_list()
 	{
 		// On limite l'accé à la page aux utilisateurs authentifiés et à ceux dont le rôle est admin
-		$this->allowTo(['admin']);
+		/*$this->allowTo(['admin']);*/
 
 		$barModel = new barModel();
 
@@ -179,7 +179,7 @@ class BarController extends Controller
 	public function bar_edit()
 	{
 		// On limite l'accé à la page aux utilisateurs authentifiés et à ceux dont le rôle est admin ou éditor
-			$this->allowTo(['admin', 'editor']);
+			/*$this->allowTo(['admin']);*/
 
 			$post = [];
 			$errors = [];
@@ -249,24 +249,52 @@ class BarController extends Controller
 					$post[$key] = trim(strip_tags($value));
 				}
 
-				if (strlen($post['name']) < 2 ) {
-					$errors[] = 'Le nom du bar doit comporter plus de 2 caractères';
+				if(isset($post['name'])){
+					if(preg_match('#^.{1,}$#', $post['name']) == 0){
+						$errors[] = 'error name';
+					}
 				}
 
-				if (strlen($post['content']) < 10 ) {
-					$errors[] = 'Le contenu du bar doit comporter plus de 10 caractères';
+				if(isset($post['picture'])){
+					if(preg_match('#^.{1,}$#', $post['picture']) == 0){
+						$errors[] = 'error picture';
+					}
 				}
 
-				if (strlen($_POST['phone']) == 10) {
-					$errors[] = 'Le téléphone doit être composé de 10 chiffres';
+				if(isset($post['content'])){
+					if(preg_match('#^.{1,}$#', $post['content']) == 0){
+						$errors[] = 'error content';
+					}
 				}
 
-				if (strlen($post['address']) < 2 ) {
-					$errors[] = 'L\'adress du bar doit comporter plus de 2 caractères';
+				if(isset($post['phone'])){
+					if(preg_match('#^.{1,}$#', $post['phone']) == 0){
+						$errors[] = 'error phone';
+					}
 				}
 
-				if (strlen($post['schedule']) < 20 ) {
-					$errors[] = 'Les horaires du bar sont incorrectes';
+				if(isset($post['address'])){
+					if(preg_match('#^.{1,}$#', $post['address']) == 0){
+						$errors[] = 'error address';
+					}
+				}
+
+				if(isset($post['schedule'])){
+					if(preg_match('#^.{1,}$#', $post['schedule']) == 0){
+						$errors[] = 'error schedule';
+					}
+				}
+
+				if(isset($post['x'])){
+					if(preg_match('#^[0-9]{1,}$#', $post['x']) == 0){
+						$errors[] = 'error x';
+					}
+				}
+
+				if(isset($post['y'])){
+					if(preg_match('#^[0-9]{1,}$#', $post['y']) == 0){
+						$errors[] = 'error y';
+					}
 				}
 
 				if (count($errors) == 0) {
@@ -284,6 +312,8 @@ class BarController extends Controller
 						'phone' => $post['phone'],
 						'address' => $post['address'],
 						'schedule' => $post['schedule'],
+						'x' => $post['x'],
+						'y' => $post['y']
 					];
 
 					// On passe le tableau $data à la méthode update() pour mofifier nos données en bdd
@@ -308,7 +338,7 @@ class BarController extends Controller
 	public function bar_delete()
 	{
 		// On limite l'accé à la page aux utilisateurs authentifiés et à ceux dont le rôle est admin ou éditor
-			$this->allowTo(['admin']);
+			/*$this->allowTo(['admin']);*/
 			$barModel = new barModel();
 			$bar = $barModel->find($id);
 
