@@ -345,7 +345,7 @@ class BarController extends Controller
 	/**
 	 * Page delete des bars
 	**/
-	public function bar_delete()
+	public function bar_delete($id)
 	{
 		// On limite l'accé à la page aux utilisateurs authentifiés et à ceux dont le rôle est admin ou éditor
 			/*$this->allowTo(['admin']);*/
