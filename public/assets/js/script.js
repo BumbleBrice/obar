@@ -18,25 +18,23 @@ $(function() {
 // Input page addBar
 $(":file").filestyle({badge: false});
 
-<script>
-    $(function(){
-        $('.carte').on('click', function(e){
-            x = ((e.clientX - this.offsetLeft - 25) * 100) / this.offsetWidth;
-            y = ((e.clientY - this.offsetTop - 25) * 100) / this.offsetHeight;
+$(function(){
+    $('.carte').on('click', function(e){
+        x = ((e.clientX - this.offsetLeft - 25) * 100) / this.offsetWidth;
+        y = ((e.clientY - this.offsetTop - 25) * 100) / this.offsetHeight;
 
-            var carte = $(this);
+        var carte = $(this);
 
-            var data = {'x': x, 'y': y};
+        var data = {'x': x, 'y': y};
 
-            $.post('index.php', data)
-                .done(function(data, text, jqxhr){
-                    var point = $('<div><i class=""></i></div>').text('test').addClass('bar').css({'left': x + '%', 'top': y + '%'});
-                    carte.append(point);
-                    $('body').append(data);
-                })
-                .fail(function(jqxhr){
-                    console.log('erreur requete');
-                });
-        });
+        $.post('index.php', data)
+            .done(function(data, text, jqxhr){
+                var point = $('<div><i class=""></i></div>').text('test').addClass('bar').css({'left': x + '%', 'top': y + '%'});
+                carte.append(point);
+                $('body').append(data);
+            })
+            .fail(function(jqxhr){
+                console.log('erreur requete');
+            });
     });
-</script>
+});
