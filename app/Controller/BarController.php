@@ -201,8 +201,6 @@ class BarController extends Controller
 			$bar_x = $bar['x'];
 			$bar_y = $bar['y'];
 
-			var_dump($_FILES);
-
 			if(!empty($_FILES)){
 				if(isset($_FILES['picture']) && $_FILES['picture']['error'] == UPLOAD_ERR_OK && $_FILES['picture']['size'] < $maxSize) {
 					$fileName = $_FILES['picture']['name']; // Nom de mon image
