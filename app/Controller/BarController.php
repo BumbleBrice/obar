@@ -33,21 +33,24 @@ class BarController extends Controller
 			// On limite l'accé à la page aux utilisateurs authentifiés et à ceux dont le rôle est admin
 			// $this->allowTo(['admin']);
 
+			// On instancie la classe barModel qui étend la classe Model
+			$barModel = new barModel();
+
 			$errors = [];
 			$success = false;
 
-			$maxSize = 50000; // En octet
+			$maxSize = 500000; // En octet (500Ko)
 			$folder = 'assets/img/';
+			$imageFinale = 'assets/img/image_defaut.png';
 
 			if (!empty($_FILES)) {
+				if(isset($_FILES['picture']) && $_FILES['picture']['error'] == UPLOAD_ERR_OK && $_FILES['picture']['size'] < $maxSize) {
 
-				if(isset($_FILES['image']) && $_FILES['image']['error'] == UPLOAD_ERR_OK && $_FILES['image']['size'] < $maxSize) {
-
-					$fileName = $_FILES['image']['name']; // Nom de mon image
-					$fileTemp = $_FILES['image']['tmp_name']; // Image temporaire
+					$fileName = $_FILES['picture']['name']; // Nom de mon picture
+					$fileTemp = $_FILES['picture']['tmp_name']; // Image temporaire
 
 					$file = new finfo(); // Classe FileInfo
-					$mimeType = $file->file($_FILES['image']['tmp_name'], FILEINFO_MIME_TYPE); // Retourne le VRAI mimeType
+					$mimeType = $file->file($_FILES['picture']['tmp_name'], FILEINFO_MIME_TYPE); // Retourne le VRAI mimeType
 					$mimeTypeAllowed = ['image/jpg', 'image/jpeg', 'image/png', 'image/gif']; // Les mime types autorisés
 
 					// Permet de vérifier que le mime type est bien autorisé
@@ -70,21 +73,17 @@ class BarController extends Controller
 							// Ici je suis sur que mon image est au bon endroit
 							$imageFinale = $folder.$finalFileName;
 						}
-
 						else {
 							$imageFinale = 'assets/img/image_defaut.png'; // Permet d'avoir une image par défaut si l'upload ne s'est pas bien déroulé
 						}
 					}
-
 					else {
 						$errors[] = 'Le mime type est interdit';
 					}
 				}
-
 				else {
 					$errors[] = 'Erreur image';
 				}
-
 			}
 
 			if(!empty($_POST)){
@@ -126,36 +125,37 @@ class BarController extends Controller
 					}
 				}
 
-				if(isset($post['x'])){
-					if(preg_match('#^[0-9]{1,}$#', $post['x']) == 0){
-						$errors[] = 'error x';
-					}
-				}
-
-				if(isset($post['y'])){
-					if(preg_match('#^[0-9]{1,}$#', $post['y']) == 0){
-						$errors[] = 'error y';
-					}
-				}
+				// if(isset($post['x'])){
+				// 	if(preg_match('#^[0-9]{1,}$#', $post['x']) == 0){
+				// 		$errors[] = 'error x';
+				// 	}
+				// }
+				//
+				// if(isset($post['y'])){
+				// 	if(preg_match('#^[0-9]{1,}$#', $post['y']) == 0){
+				// 		$errors[] = 'error y';
+				// 	}
+				// }
+				//
+				// if(!isset($post['x']) || !isset($post['y'])){
+				// 	$errors[] = 'vous n\'avez pas placer de point pour votre bar';
+				// }
 
 
 				if (count($errors) == 0) {
 					// Ici il n'y a aucune erreurs, on peut donc enregistrer en base de donnée
 
-					// On instancie la classe barModel qui étend la classe Model
-					$barModel = new barModel();
-
 					// On utilise la méthode insert() qui permet d'insérer des données en base de donnée
 					$data = [
 						// La clé du tableau correspond au nom de la colonne SQL
 						'name' => $post['name'],
-						'image' => $imageFinale,
-						'content' => $post['content'],
+						'picture' => $imageFinale,
+						'description' => $post['content'],
 						'phone' => $post['phone'],
-						'address' => $post['address'],
+						'adress' => $post['address'],
 						'schedule' => $post['schedule'],
-						'x' => $post['x'],
-						'y' => $post['y']
+						// 'x' => $post['x'],
+						// 'y' => $post['y']
 					];
 
 					// On passe le tableau $data à la méthode insert() pur enregistrer nos données en bdd
@@ -168,7 +168,7 @@ class BarController extends Controller
 			}
 
 			// On envoie les erreurs en paramètre à l'aide d'un tableau (array)
-			$params = ['errors' => $errors, 'success' => $success];
+			$params = ['errors' => $errors, 'success' => $success , 'maxSize' => $maxSize];
 
 		$this->show('adminBar/bar_add', $params);
 	}
