@@ -18,7 +18,7 @@
 			<h4>Etes-vous sûr de vouloir supprimer ce bar ?</h4>
 		</div>
 	</div>
-	<a class="btnDeleteBar"> href="<?=$this->url('adminBar/bar_delete', ['id' => $bar['id']]); ?>">Non</a>
+	<a class="btnDeleteBar" href="<?=$this->url('admin_bar_delete', ['id' => $bar['id']]); ?>">Non</a>
 	<input class="btnDeleteBar" type="submit" name="delBar" value="Oui">
 </form>
 
