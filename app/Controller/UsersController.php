@@ -9,6 +9,12 @@ use \Model\UsersModel;
 class UsersController extends Controller
 {
 	public function users(){
-		$this->show('adminUsers/users');
+		$usersModel = new UsersModel();
+
+		$params = [];
+
+		$params['users'] = $usersModel->findAll('id', 'ASC');
+
+		$this->show('adminUsers/users', $params);
 	}
 }
