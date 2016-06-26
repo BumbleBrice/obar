@@ -26,6 +26,8 @@
 
 <?php endif; ?>
 
+<?php var_dump($errors);?>
+
 <div class="row">
     <div class="col-lg-12">
         <div class="panel panel-default">
@@ -33,7 +35,7 @@
                 <div class="row">
                     <div class="col-lg-5">
 
-                        <form role="form">
+                        <form method="POST" role="form">
 
                             <div class="form-group">
                                 <label for="name">Name</label>
@@ -48,7 +50,7 @@
 
                             <div class="form-group">
                                 <label for="content">Description</label>
-                                <textarea name="content" id="content" class="form-control champTxtAddBar" rows="3"><?=$bar['content'] ?></textarea>
+                                <textarea name="content" id="content" class="form-control champTxtAddBar" rows="3"><?=$bar['description'] ?></textarea>
                             </div>
 
                             <div class="form-group">
@@ -58,12 +60,12 @@
 
                             <div class="form-group">
                                 <label for="address">Adresse</label>
-                                <input type="text" name="address" id="address" class="form-control champTxtAddBar" value="<?=$bar['address'] ?>">
+                                <input type="text" name="address" id="address" class="form-control champTxtAddBar" value="<?=$bar['adress'] ?>">
                             </div>
 
                             <div class="form-group">
                                 <label for="schedule">Horaire</label>
-                                <input type="int" name="schedule" id="schedule" class="form-control champTxtAddBar" value="<?=$bar['schedule'] ?>">
+                                <input type="int" name="schedule" id="schedule" class="form-control champTxtAddBar" value="<?=$bar['schedule']?>">
                             </div>
 
                             <button type="reset" class="btn btn-default boutonBarAdd">Recommencer</button>
@@ -82,13 +84,13 @@
                     	<div class="map">
 
                     		<!-- Carte -->
-                    		
+
                     	</div>
 
                     </div>
 
                     <div class="col-lg-1"></div>
-                               
+
                 </div>
                 <!-- /.row (nested) -->
             </div>
