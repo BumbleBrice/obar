@@ -20,7 +20,7 @@ class BarController extends Controller
 
 		$barModel = new barModel();
 
-		$params = ['bar' => $barModel->findAll('id', 'ASC')];
+		$params = ['bars' => $barModel->findAll('id', 'ASC')];
 
 		$this->show('adminBar/bar_list', $params);
 	}
