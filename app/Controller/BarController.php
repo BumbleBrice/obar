@@ -358,7 +358,7 @@ class BarController extends Controller
 
 				if ($barModel->delete($id)) {
 					// Ici on a supprimer l'article
-					$this->redirectToRoute('adminBar/bar_list');
+					$this->redirectToRoute('admin_bar_list');
 				}
 
 			}
