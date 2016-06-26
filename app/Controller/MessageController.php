@@ -8,6 +8,9 @@ use \Model\MessageModel;
 
 class MessageController extends Controller
 {
+	public function message(){
+		$this->show('adminMessage/message', ['message' => $this->getMessage()]);
+	}
 
 	public function getMessage()
 	{
