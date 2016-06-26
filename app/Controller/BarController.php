@@ -176,7 +176,7 @@ class BarController extends Controller
 	/**
 	 * Page edit des bars
 	**/
-	public function bar_edit()
+	public function bar_edit($id)
 	{
 		// On limite l'accé à la page aux utilisateurs authentifiés et à ceux dont le rôle est admin ou éditor
 			/*$this->allowTo(['admin']);*/
@@ -234,13 +234,6 @@ class BarController extends Controller
 					$errors[] = 'L\'image est trop lourde';
 				}
 
-			}
-
-			if (isset($_POST['id']) && !empty($_POST['id'])) {
-				$idBar = $_POST['id'];
-				if(!is_numeric($idBar)) {
-					$idBar = 1;
-				}
 			}
 
 			if (!empty($_POST)) {
