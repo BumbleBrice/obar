@@ -33,7 +33,7 @@
                 <div class="row">
                     <div class="col-lg-5">
 
-                        <form method="POST" role="form">
+                        <form method="POST" role="form" enctype="multipart/form-data">
 
                             <div class="form-group">
                                 <label for="name">Name</label>
