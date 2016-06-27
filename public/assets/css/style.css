@@ -303,7 +303,7 @@ footer{
       position: relative;
       z-index: 1;
     }
-    .diagonal:before, .test:after {
+    .diagonal:before, .diagonal:after {
     background: inherit;
     content: '';
     display: block;

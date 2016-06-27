@@ -1,8 +1,4 @@
 <!-- Carte -->
-
-<!-- Profil membre
-The circle icons use Font Awesome's stacked icon classes. For more information, visit http://fontawesome.io/examples/-->
-
 <div class="container">
     <div class="row text-center">
         <div class="col-lg-10 col-lg-offset-1">

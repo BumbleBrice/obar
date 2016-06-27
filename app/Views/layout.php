@@ -84,7 +84,7 @@
     
     <!-- Footer -->
     <footer>
-        <div class="container-fluid">
+        <div class="container-fluid diagonal">
             <div class="row">
                 <div class="col-lg-10 col-lg-offset-1 text-center">
                     <h4><strong>Ô Bar</strong>

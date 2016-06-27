@@ -8,32 +8,32 @@
 </section>
 
 <!-- Présentation -->
-<header id="top" class="header">
+<header id="top" class="header diagonal">
 	<?=$this->insert('default/presentation'); ?>
 </header>
 
 <!--Profil user-->
-<section id="users_profil" class="users_profil">
+<section id="users_profil" class="users_profil diagonal">
 	<?=$this->insert('default/profilUsers'); ?>
 </section>
 
 <!--Slice mise à jour-->
-<section id="about" class="about">
+<section id="about" class="about diagonal">
 	<?=$this->insert('default/lastBars'); ?>
 </section>
 
 <!-- Carte -->
-<section id="services" class="services bg-primary">
+<section id="services" class="services bg-primary diagonal">
 	<?=$this->insert('default/map'); ?>
 </section>
 
 <!-- Inscription -->
-<section id="subs" class="subs">
+<section id="subs" class="subs diagonal">
 	<?=$this->insert('default/inscription'); ?>
 </section>
 
 <!-- Contact -->
-<section id="contact" class="contact">
+<section id="contact" class="contact diagonal">
     <?=$this->insert('default/contact'); ?>
 </section>
 
