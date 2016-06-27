@@ -119,7 +119,7 @@ h3{
     color: #f8f8f8;
     white-space: nowrap;
     background-color:#025d70;
-    font-family: 'Comfortaa', cursive; 
+    font-family: 'Comfortaa', cursive;
 }
 
 /*******************************
@@ -133,7 +133,7 @@ h3{
 
 /****************************************
 *************SECTION PROFIL USER*********
-****************************************/   
+****************************************/
 .users_profil{
     padding: 100px 0;
     min-height: 70%;
@@ -153,7 +153,7 @@ h3{
 .subs {
     padding: 100px 0;
     min-height: 70%;
-    background-color: #B2EBE5;  
+    background-color: #B2EBE5;
 }
 
 /*********************
@@ -295,4 +295,36 @@ footer{
   transform: rotateX(-0.5729577951308232deg) rotateY(0.5729577951308232deg) rotateZ(-20.626480624709636deg)   skewX(-20deg);
   }
 
-  /*test*/
+    /*****************************
+    * Diagonal pour les section
+    *****************************/
+    
+    .diagonal {
+      position: relative;
+      z-index: 1;
+    }
+    .diagonal:before, .test:after {
+    background: inherit;
+    content: '';
+    display: block;
+    height: 50%;
+    left: 0;
+    position: absolute;
+    right: 0;
+    z-index: -1;
+    -webkit-backface-visibility: hidden;
+    }
+    .diagonal:before {
+    top: -50%;
+    -webkit-transform: skewY(2deg);
+            transform: skewY(2deg);
+    -webkit-transform-origin: 0 0;
+            transform-origin: 0 0;
+    }
+    .diagonal:after {
+    bottom: 0;
+    -webkit-transform: skewY(2deg);
+            transform: skewY(2deg);
+    -webkit-transform-origin: 0 0;
+            transform-origin: 0 0;
+    }
