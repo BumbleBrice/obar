@@ -6,13 +6,13 @@ $(function(){
     });
 
     $('.carte').on('click', function(e){
-
         $('.bar').remove();
 
-        x = ((e.clientX - this.offsetLeft - 25) * 100) / this.offsetWidth;
-        y = ((e.clientY - this.offsetTop - 25) * 100) / this.offsetHeight;
-
         var carte = $(this);
+        positionCarte = this.getBoundingClientRect();
+
+        x = ((e.clientX - positionCarte.left - 25) * 100) / this.offsetWidth;
+        y = ((e.clientY - positionCarte.top - 25) * 100) / this.offsetHeight;
 
         var data = {'x': x, 'y': y};
 
