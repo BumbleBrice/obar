@@ -12,6 +12,11 @@
 	<?=$this->insert('default/presentation'); ?>
 </header>
 
+<!--Profil user-->
+<section id="users_profil" class="users_profil">
+	<?=$this->insert('default/profilUsers'); ?>
+</section>
+
 <!--Slice mise à jour-->
 <section id="about" class="about">
 	<?=$this->insert('default/lastBars'); ?>

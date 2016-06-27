@@ -7,7 +7,6 @@ The circle icons use Font Awesome's stacked icon classes. For more information, 
     <div class="row text-center">
         <div class="col-lg-10 col-lg-offset-1">
             <h2>Our Services</h2>
-            <hr class="small">
             <div class="row">
                 <div class="col-md-3 col-sm-6">
                     <div class="service-item">

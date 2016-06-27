@@ -4,6 +4,7 @@
     <div class="row text-center">
         <div class="col-lg-10 col-lg-offset-1">
             <h2>Devenir membre</h2>
+            <br>
             <p>En devenant membre, vous aurez la possibilité de vous créer un réseau d'amis afin de partager vos expériences</p>
 
             <form class="form-horizontal">
