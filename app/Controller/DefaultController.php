@@ -13,10 +13,20 @@ class DefaultController extends Controller
 	 */
 	public function home()
 	{
+		//Instancie les classes
+		$usersModel = new UsersModel();
+		$authModel = new AuthModel();
+
 		$messageController = new \Controller\MessageController();
 
 		$errors = [];
+		if(!empty($_GET)){
+			$get = array_map('trim', array_map('strip_tags', $_GET));
+			if(isset($get['deconnect']) && $get['deconnect'] == '1'){
+				$authModel->logUserOut(); //Permet de déconnecter l'utilisateur 
 
+			}
+		}
 		if(!empty($_POST)){
 			$post = array_map('trim', array_map('strip_tags', $_POST));
 
@@ -37,9 +47,6 @@ class DefaultController extends Controller
 
 					if(count($errors) == 0){
 						// connexion
-						//On instancie les classes UsersModel et AuthModel
-						$usersModel = new UsersModel();
-						$authModel = new AuthModel();
 
 						// La méthode isValidLoginInfo() retourne un utilisateur si celui-ci existe et que le couple identifiant /mdp existe
 						//$idUser contient l'id  de mon utilisateur
