@@ -63,7 +63,11 @@
 
                             <div class="form-group">
                                 <label for="schedule">Horaire</label>
-                                <input type="int" name="schedule" id="schedule" class="form-control champTxtAddBar">
+
+                                <input type="time" name="time_1" class="form-control champTxtAddBar">
+                                <input type="time" name="time_2" class="form-control champTxtAddBar">
+                                <input type="time" name="time_3" class="form-control champTxtAddBar">
+                                <input type="time" name="time_4" class="form-control champTxtAddBar">
                             </div>
 
                             <button type="reset" class="btn btn-default boutonBarAdd">Recommencer</button>
