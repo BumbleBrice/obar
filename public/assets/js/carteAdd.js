@@ -15,8 +15,8 @@ $(function(){
 
         var data = {'x': x, 'y': y};
 
-        $('input[name=x]').attr('value' , 'x');
-        $('input[name=y]').attr('value' , 'y');
+        $('input[name=x]').attr('value' , x);
+        $('input[name=y]').attr('value' , y);
 
         var point = $('<div><i class=""></i></div>').text('test').addClass('point').css({'left': x + '%', 'top': y + '%'});
         carte.append(point);
