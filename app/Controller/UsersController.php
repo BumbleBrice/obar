@@ -3,7 +3,10 @@
 namespace Controller;
 
 use \W\Controller\Controller;
-use \Model\UsersModel;
+use \Model\UsersModel as UsersModel;
+
+use \W\Security\AuthentificationModel as AuthModel;
+use \Controller\PresentationController as PresentationControl;
 
 
 class UsersController extends Controller

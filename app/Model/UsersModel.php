@@ -14,7 +14,7 @@ class UsersModel extends \W\model\Model
 	public function __construct() {
 	    $app = getApp();
 	    // Définit la table en fonction de la config
-	    $this->setTable($app->getConfig('users_table'));
+	    $this->setTable($app->getConfig('security_user_table'));
 	    $this->dbh = ConnectionModel::getDbh();
 	}
 
