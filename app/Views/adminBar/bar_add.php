@@ -1,6 +1,6 @@
 <?php $this->layout('layout_admin', ['title' => 'Accueil']) ?>
 
-<?php $this->start('main_content') ?>
+<?php $this->start('main_content'); ?>
 
 <div class="row">
 	<div class="col-lg-12 text-center">
@@ -83,7 +83,6 @@
 
                     <div class="col-lg-5 carte">
 
-
                     </div>
 
                     <div class="col-lg-1"></div>
@@ -99,9 +98,9 @@
 </div>
 <!-- /.row -->
 
-<?php $this->stop('main_content') ?>
+<?php $this->stop('main_content'); ?>
 
-<?php $this->start('js') ?>
-	<script src="<?=assetUrl('js/carteAdd.js');?>">
+<?php $this->start('js'); ?>
+	<script src="<?=$this->assetUrl('js/carteAdd.js');?>">
 	</script>
-<?php $this->stop('js') ?>
+<?php $this->stop('js'); ?>
