@@ -26,17 +26,16 @@
 
 <?php endif; ?>
 
-<div class="row">
+<div class="row divFormAddBar">
     <div class="col-lg-12">
         <div class="panel panel-default">
             <div class="panel-body">
                 <div class="row">
-                    <div class="col-lg-5 divFormAddBar">
+                    <div class="col-lg-5">
 
                         <form method="POST" role="form" enctype="multipart/form-data">
 
 							<input type="hidden" name="x" value="">
-
 							<input type="hidden" name="y" value="">
 
                             <div class="form-group">

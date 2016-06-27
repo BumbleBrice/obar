@@ -10,7 +10,7 @@
 html {
 	font: 62.5% arial, sans-serif;
 	color: #323232;
-	/*background: #ddd;*/
+	background: #FFF;
 
 }
 img {
@@ -208,9 +208,23 @@ a:hover {
 }
 
 .champTxtAddBar {
-	background: #FFEBD8;
+	background: white;
 	color: #004a4a;
-	border: 2px solid #E1B66B;
+	border: 1px solid #D82142;
+}
+
+.divFormAddBar {
+	border: 3px solid #D82142;
+	border-radius: 40px;
+	margin: 50px;
+	padding: 30px;
+}
+
+.divFormEditBar {
+	border: 3px solid #D82142;
+	border-radius: 40px;
+	margin: 50px;
+	padding: 30px;
 }
 
 .input-group .form-control:first-child,
@@ -220,21 +234,21 @@ a:hover {
 .input-group-btn:first-child > .dropdown-toggle,
 .input-group-btn:last-child > .btn:not(:last-child):not(.dropdown-toggle),
 .input-group-btn:last-child > .btn-group:not(:last-child) > .btn {
-	background: #FFEBD8;
+	background: white;
 	color: #004a4a;
-	border: 2px solid #E1B66B;
+	border: 1px solid #D82142;
 }
 
 .input-group-btn:last-child > .btn,
 .input-group-btn:last-child > .btn-group {
-	background: #FFEBD8;
+	background: white;
 	color: #004a4a;
 }
 
 .input-group-btn:last-child > .btn:hover,
 .input-group-btn:last-child > .btn-group:hover {
 	background: #004a4a;
-	color: #FFEBD8;
+	color: white;
 }
 
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
@@ -365,17 +379,16 @@ a:hover {
 }
 
 .boutonBarAdd {
-	background: #FFEBD8;
-	color: #004a4a;
-	border: 1px solid #004a4a;
+	background: white;
+	color: #D82142;
+	border: 1px solid #D82142;
 	margin-right: 10px;
 }
 
 .boutonBarAdd:hover {
-	background: #004a4a;
-	color: #FFEBD8;
-	border: 1px solid #004a4a;
-	box-shadow: 3px 3px 1px;
+	background: #D82142;
+	color: white;
+	border: 1px solid white;
 }.boutonRetourSite {
     background: white !important;
     color: #A22121 !important;
