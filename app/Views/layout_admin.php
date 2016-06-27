@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title><?= $this->e($title) ?></title>
+    <title><?php $this->e($title) ?></title>
     <link href='https://fonts.googleapis.com/css?family=Droid+Serif|Rouge+Script|Raleway|Trochut' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="<?= $this->assetUrl('css/bootstrap.css') ?>">
     <link rel="stylesheet" href="<?= $this->assetUrl('css/simple-sidebar.css') ?>">
@@ -98,16 +98,16 @@
         </nav>
 
     </aside>
-        <section class="contenu"><?= $this->section('main_content') ?></section>
+        <section class="contenu"><?php $this->section('main_content'); ?></section>
     </div>
 
-    <script src="<?= $this->assetUrl('js/jquery.js') ?>"></script>
-    <script src="<?= $this->assetUrl('js/jquery.easing.1.3.js') ?>"></script>
+    <script src="<?= $this->assetUrl('js/jquery.js'); ?>"></script>
+    <script src="<?= $this->assetUrl('js/jquery.easing.1.3.js'); ?>"></script>
 
-    <script src="<?= $this->assetUrl('js/bootstrap.js') ?>"></script>
-    <script src="<?= $this->assetUrl('js/bootstrap-filestyle.min.js') ?>"></script>
+    <script src="<?= $this->assetUrl('js/bootstrap.js'); ?>"></script>
+    <script src="<?= $this->assetUrl('js/bootstrap-filestyle.min.js'); ?>"></script>
 
-    <script src="<?= $this->assetUrl('js/script.js') ?>"></script>
+    <script src="<?= $this->assetUrl('js/script.js'); ?>"></script>
     <?php $this->section('js'); ?>
 
 </body>
