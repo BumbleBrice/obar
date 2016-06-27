@@ -447,3 +447,7 @@ a:hover {
 	}
 
 }
+.side-nav li a:hover, .side-nav li a:focus {
+    background-color: transparent !important;
+  
+}
