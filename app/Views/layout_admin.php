@@ -26,9 +26,9 @@
                 <a class="navbar-brand boutonRetourSite" href="<?=$this->url('default_home');?>">Retour au site</a>
             </div>
             <!-- Top Menu Items -->
-          
-                
-             
+
+
+
             <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
             <div class="collapse navbar-collapse navbar-ex1-collapse nav_top">
                 <ul class="nav navbar-nav side-nav navigation">
@@ -40,7 +40,7 @@
                               <div class="inside-text">Accueil&nbspadmin</div>
                             </div>
                           </div>
-                        </a>   
+                        </a>
                     </li>
                     <li>
                         <a href="<?=$this->url('admin_bar_add'); ?>">
@@ -96,17 +96,18 @@
             </div>
             <!-- /.navbar-collapse -->
         </nav>
-        
+
     </aside>
         <section class="contenu"><?= $this->section('main_content') ?></section>
     </div>
+
     <script src="<?= $this->assetUrl('js/jquery.js') ?>"></script>
     <script src="<?= $this->assetUrl('js/bootstrap.js') ?>"></script>
 
     <script src="<?= $this->assetUrl('js/script.js') ?>"></script>
     <script src="<?= $this->assetUrl('js/jquery.easing.1.3.js') ?>"></script>
-    
-    <script src="<?= $this->assetUrl('js/bootstrap-filestyle.min.js') ?>"></script>
 
+    <script src="<?= $this->assetUrl('js/bootstrap-filestyle.min.js') ?>"></script>
+    <?php $this->section('js'); ?>
 </body>
 </html>

@@ -100,3 +100,8 @@
 <!-- /.row -->
 
 <?php $this->stop('main_content') ?>
+
+<?php $this->start('js') ?>
+	<script src="<?=assetUrl('js/carteAdd.js');?>">
+	</script>
+<?php $this->stop('js') ?>
