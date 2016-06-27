@@ -10,7 +10,7 @@
 html {
 	font: 62.5% arial, sans-serif;
 	color: #323232;
-	background: #FFF;
+	background: #FFF !important;
 
 }
 img {
@@ -190,8 +190,10 @@ a:hover {
 	background: #D82142;
 	color: white;
 	border: 1px solid transparent;
-	padding: 3px 30px 3px 30px !important;
-
+	padding: 3px 60px 3px 60px !important;
+	border-radius: 60px;
+	/*margin-top: 100px !important;
+	margin-right: 100px;*/
 }
 
 .btnDeleteBar:hover {
@@ -235,7 +237,6 @@ a:hover {
 .divFormEditBar {
 	border: 3px solid #D82142;
 	border-radius: 40px;
-	margin: 50px;
 	padding: 30px;
 }
 

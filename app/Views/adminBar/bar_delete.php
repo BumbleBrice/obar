@@ -10,17 +10,23 @@
 
 <br><br>
 
-<div class="divFormBarDelete">
+<div class="col-lg-3"></div>
+
+<div class="col-lg-6 divFormBarDelete">
 
 	<?php if(!empty($bar)): // si l'article n'est pas vide ?>
 
-		<div class="row">
-			<div class="col-lg-12 text-left">
+		<div class="row text-center">
+			<div class="col-lg-12 text-center">
 				<h4>Etes-vous sûr de vouloir supprimer ce bar ?</h4>
 			</div>
 		</div>
-		<a class="btnDeleteBar" href="<?=$this->url('admin_bar_delete', ['id' => $bar['id']]); ?>">Non</a>
-		<a class="btnDeleteBar" href="<?=$this->url('admin_bar_delete', ['id' => $bar['id'], 'delBar' => 'Oui']); ?>">oui</a>
+
+		<div class="text-center toto">
+			<a class="btnDeleteBar" href="<?=$this->url('admin_bar_list', ['id' => $bar['id']]); ?>">Non</a>
+			<a class="btnDeleteBar" href="<?=$this->url('admin_bar_delete', ['id' => $bar['id'], 'delBar' => 'Oui']); ?>">Oui</a>
+		</div>
+		
 
 	
 	<?php else: ?>
@@ -28,6 +34,8 @@
 	<?php endif ?>
 
 </div>
+
+<div class="col-lg-3"></div>
 
 
 <?php $this->stop('main_content') ?>
