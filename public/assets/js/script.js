@@ -1,3 +1,10 @@
+// Anim buton navbar
+ $(".button-fill").hover(function() {
+   $(this).children(".button-inside").addClass('full');
+ }, function() {
+   $(this).children(".button-inside").removeClass('full');
+ });
+
 // Smooth scroll
 $(function() {
     $('.nav a').bind('click',function(event){
