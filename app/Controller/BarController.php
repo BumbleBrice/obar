@@ -293,23 +293,23 @@ class BarController extends Controller
 					}
 				}
 
-				// if(isset($post['x'])){
-				// 	if(preg_match('#^[0-9]{1,}$#', $post['x']) == 0){
-				// 		$errors[] = 'error x';
-				// 	}
-				// 	else{
-				// 		$bar_x = $post['x'];
-				// 	}
-				// }
+				if(isset($post['x'])){
+					if(preg_match('#^[0-9]{1,}$#', $post['x']) == 0){
+						$errors[] = 'error x';
+					}
+					else{
+						$bar_x = $post['x'];
+					}
+				}
 
-				// if(isset($post['y'])){
-				// 	if(preg_match('#^[0-9]{1,}$#', $post['y']) == 0){
-				// 		$errors[] = 'error y';
-				// 	}
-				// 	else{
-				// 		$bar_y = $post['y'];
-				// 	}
-				// }
+				if(isset($post['y'])){
+					if(preg_match('#^[0-9]{1,}$#', $post['y']) == 0){
+						$errors[] = 'error y';
+					}
+					else{
+						$bar_y = $post['y'];
+					}
+				}
 
 				if (count($errors) == 0) {
 					// Ici il n'y a aucune erreurs, on peut donc enregistrer en base de donnée
@@ -323,8 +323,8 @@ class BarController extends Controller
 						'phone' => $bar_phone,
 						'adress' => $bar_adress,
 						'schedule' => $bar_schedule,
-						// 'x' => $bar_x,
-						// 'y' => $bar_y
+						'x' => $bar_x,
+						'y' => $bar_y
 					];
 
 					// On passe le tableau $data à la méthode update() pour mofifier nos données en bdd
