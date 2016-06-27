@@ -7,24 +7,21 @@
 
 
 	<div class="row">
-	    <div class="box">
-	        <div class="col-lg-12">
-	            <hr>
-	            <h2 class="brand-name text-center">Déscription actuel de <strong>Ôbar</strong>
-	            </h2>
-	            <hr>
-	            <?php if(!empty($pres)): ?>
-	            <p class="text-center lead grey"><?= $pres['description']; ?></p>
-	            <?php endif; ?>
-	        </div>
-	    </div>
+		<div class="col-lg-12 text-center">
+			<div class="header">
+	            <p class="titlePres">Ô Bar</p >
+				<?php if(!empty($pres)): ?>
+	            	<p class="presentation"><?= $pres['description']; ?></p>
+			     <?php endif; ?>
+	            <br>
+			</div>
+		</div>
 	</div>
 	<div class="row ">
 		<div class="col-lg-offset-5 col-lg-2 col-lg-offset-5">
 	           	<a type="button" class="btn btn-secondary btn-lg active boutonModifPresentationBar" href="<?=$this->url('admin_presentation_edit', array('id' => $pres['id']));?>">Modifier la présentation de Ôbar</a>
 		</div>
 	</div>
-
 
 
 	

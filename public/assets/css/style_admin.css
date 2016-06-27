@@ -91,17 +91,25 @@ a:hover {
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 .titlePres {
 	text-align: center;
-	font-family: 'inherit';
-    font-size: 4rem;
-    color:#F92672;
-    margin-top: 18%;
-    text-transform: uppercase;
+	font-family: "Comfortaa",cursive;
+    font-size: 5rem;
+    color:#f8f8f8;
+    margin-top: 15%;
+ 
+
+    border: 12px solid rgba(255, 255, 255, 0.6);
+
+    
+
+
+    padding: 20px 0;
 }
 
 .header {
 	margin: 0 auto;
     display: table;
     height: 600px;
+    width: 100%;
     background: url(../img/bordeaux-2.jpg) no-repeat center center scroll;
     -webkit-background-size: cover;
     -moz-background-size: cover;
