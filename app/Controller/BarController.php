@@ -125,21 +125,21 @@ class BarController extends Controller
 					}
 				}
 
-				// if(isset($post['x'])){
-				// 	if(preg_match('#^[0-9]{1,}$#', $post['x']) == 0){
-				// 		$errors[] = 'error x';
-				// 	}
-				// }
-				//
-				// if(isset($post['y'])){
-				// 	if(preg_match('#^[0-9]{1,}$#', $post['y']) == 0){
-				// 		$errors[] = 'error y';
-				// 	}
-				// }
-				//
-				// if(!isset($post['x']) || !isset($post['y'])){
-				// 	$errors[] = 'vous n\'avez pas placer de point pour votre bar';
-				// }
+				if(isset($post['x'])){
+					if(preg_match('#^[0-9]{1,}$#', $post['x']) == 0){
+						$errors[] = 'error x';
+					}
+				}
+
+				if(isset($post['y'])){
+					if(preg_match('#^[0-9]{1,}$#', $post['y']) == 0){
+						$errors[] = 'error y';
+					}
+				}
+
+				if(!isset($post['x']) || !isset($post['y'])){
+					$errors[] = 'vous n\'avez pas placer de point pour votre bar';
+				}
 
 
 				if (count($errors) == 0) {
@@ -154,8 +154,8 @@ class BarController extends Controller
 						'phone' => $post['phone'],
 						'adress' => $post['address'],
 						'schedule' => $post['schedule'],
-						// 'x' => $post['x'],
-						// 'y' => $post['y']
+						'x' => $post['x'],
+						'y' => $post['y']
 					];
 
 					// On passe le tableau $data à la méthode insert() pur enregistrer nos données en bdd
