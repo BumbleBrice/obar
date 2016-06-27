@@ -43,10 +43,9 @@ class BarController extends Controller
 			$folder = 'assets/img/';
 			$imageFinale = 'assets/img/image_defaut.png';
 
-			if (!empty($_FILES)) {
+			if(!empty($_FILES)){
 				if(isset($_FILES['picture']) && $_FILES['picture']['error'] == UPLOAD_ERR_OK && $_FILES['picture']['size'] < $maxSize) {
-
-					$fileName = $_FILES['picture']['name']; // Nom de mon picture
+					$fileName = $_FILES['picture']['name']; // Nom de mon image
 					$fileTemp = $_FILES['picture']['tmp_name']; // Image temporaire
 
 					$file = new finfo(); // Classe FileInfo
@@ -69,20 +68,20 @@ class BarController extends Controller
 						$finalFileName = 'bar-'.time().$fileExtension; // Le nom du fichier sera donc : user-1463058435.jpg (time() retourne un timestamp à la seconde). Cela permet de sécuriser l'upload de fichier
 
 
-						if (move_uploaded_file($fileTemp, $folder.$finalFileName)) {
+						if(move_uploaded_file($fileTemp, $folder.$finalFileName)) {
 							// Ici je suis sur que mon image est au bon endroit
 							$imageFinale = $folder.$finalFileName;
 						}
-						else {
+						else{
 							$imageFinale = 'assets/img/image_defaut.png'; // Permet d'avoir une image par défaut si l'upload ne s'est pas bien déroulé
 						}
 					}
-					else {
+					else{
 						$errors[] = 'Le mime type est interdit';
 					}
 				}
-				else {
-					$errors[] = 'Erreur image';
+				else{
+					$errors[] = 'L\'image est trop lourde';
 				}
 			}
 
@@ -347,7 +346,6 @@ class BarController extends Controller
 	**/
 	public function bar_delete($id, $delBar)
 	{
-		var_dump($_GET);
 		// On limite l'accé à la page aux utilisateurs authentifiés et à ceux dont le rôle est admin ou éditor
 			/*$this->allowTo(['admin']);*/
 			$barModel = new barModel();
