@@ -35,6 +35,10 @@
 
                         <form method="POST" role="form" enctype="multipart/form-data">
 
+							<input type="hidden" name="x" value="">
+
+							<input type="hidden" name="y" value="">
+
                             <div class="form-group">
                                 <label for="name">Name</label>
                                 <input type="text" name="name" id="name" class="form-control champTxtAddBar">
