@@ -26,7 +26,7 @@
 						<br><br>
 						<div class="row">
 							<div class="col-lg-6">
-								<img class="imgListBar" src="<?=$bar['picture']; ?>">
+								<img class="imgListBar" src="<?=$bar['picture']; ?>" alt="photo de '.<?=$bar['name']; ?>.'">
 							</div>
 
 							<div class="col-lg-6">
