@@ -34,7 +34,7 @@
 							</div>				
 						</div>
 
-						<br>
+						<br><br>
 						<div class="col-lg-12 text-center">
 							<a class="btnListBar" href="<?= $this->url('admin_bar_edit', ['id' => $bar['id']]) ?>">Modifier le bar</a>
 							<a class="btnListBar" href="<?= $this->url('admin_bar_delete', ['id' => $bar['id']]) ?>">Supprimer le bar</a>

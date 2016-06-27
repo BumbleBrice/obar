@@ -145,6 +145,7 @@ a:hover {
 	border-radius: 40px;
 	margin-left: 20px;
 	margin-right: 20px;
+	margin-bottom: 40px;
 }
 
 .nameListBar {
@@ -160,6 +161,8 @@ a:hover {
 }
 
 .imgListBar {
+	max-width: 230px;
+	max-height: 150px;
 	width: 92%;
 	height: 92%;
 	margin: 4%;
