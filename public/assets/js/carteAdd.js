@@ -7,7 +7,7 @@ $(function(){
 
     $('.carte').on('click', function(e){
 
-        $('.point').remove();
+        $('.bar').remove();
 
         x = ((e.clientX - this.offsetLeft - 25) * 100) / this.offsetWidth;
         y = ((e.clientY - this.offsetTop - 25) * 100) / this.offsetHeight;
