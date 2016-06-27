@@ -2,11 +2,8 @@
 
 <?php $this->start('main_content') ?>
 <div class="row"><div class="col-lg-12 text-center"><h1>Messagerie</h1></div></div>
-
-
-
             <div class="row">
-                <div class="col-lg-11">
+                <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             Liste des messages
