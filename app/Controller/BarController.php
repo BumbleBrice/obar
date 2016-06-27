@@ -345,8 +345,9 @@ class BarController extends Controller
 	/**
 	 * Page delete des bars
 	**/
-	public function bar_delete($id)
+	public function bar_delete($id, $delBar)
 	{
+		var_dump($_GET);
 		// On limite l'accé à la page aux utilisateurs authentifiés et à ceux dont le rôle est admin ou éditor
 			/*$this->allowTo(['admin']);*/
 			$barModel = new barModel();
@@ -354,7 +355,7 @@ class BarController extends Controller
 
 			// On vérifie que le paramètre GET soit ok et que la valeur soit bien Oui
 			// Si tout est bon, l'utilisateur a donc comfirmer la suppression
-			if (!empty($_GET) && isset($_GET['delBar']) && $_GET['delBar'] == 'Oui') {
+			if (isset($delBar) && $delBar == 'Oui') {
 
 				if ($barModel->delete($id)) {
 					// Ici on a supprimer l'article

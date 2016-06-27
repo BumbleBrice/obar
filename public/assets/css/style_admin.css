@@ -186,6 +186,22 @@ a:hover {
 	text-decoration: none;
 }
 
+.btnDeleteBar {
+	background: #D82142;
+	color: white;
+	border: 1px solid transparent;
+	padding: 3px 30px 3px 30px !important;
+
+}
+
+.btnDeleteBar:hover {
+	background: white;
+	color: #D82142;
+	border: 1px solid transparent;
+	text-decoration: none;
+	border-radius: 15px;
+}
+
 
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 /*                       AJOUTER DES BARS                      */
@@ -193,10 +209,6 @@ a:hover {
 
 #bar_add {
 
-}
-
-.carte {
-	background: red;
 }
 
 .map {
@@ -221,6 +233,13 @@ a:hover {
 }
 
 .divFormEditBar {
+	border: 3px solid #D82142;
+	border-radius: 40px;
+	margin: 50px;
+	padding: 30px;
+}
+
+.divFormBarDelete {
 	border: 3px solid #D82142;
 	border-radius: 40px;
 	margin: 50px;

@@ -10,21 +10,24 @@
 
 <br><br>
 
-<?php if(!empty($bar)): // si l'article n'est pas vide ?>
+<div class="divFormBarDelete">
 
-<form method="GET">
-	<div class="row">
-		<div class="col-lg-12 text-left">
-			<h4>Etes-vous sûr de vouloir supprimer ce bar ?</h4>
+	<?php if(!empty($bar)): // si l'article n'est pas vide ?>
+
+		<div class="row">
+			<div class="col-lg-12 text-left">
+				<h4>Etes-vous sûr de vouloir supprimer ce bar ?</h4>
+			</div>
 		</div>
-	</div>
-	<a class="btnDeleteBar" href="<?=$this->url('admin_bar_delete', ['id' => $bar['id']]); ?>">Non</a>
-	<input class="btnDeleteBar" type="submit" name="delBar" value="Oui">
-</form>
+		<a class="btnDeleteBar" href="<?=$this->url('admin_bar_delete', ['id' => $bar['id']]); ?>">Non</a>
+		<a class="btnDeleteBar" href="<?=$this->url('admin_bar_delete', ['id' => $bar['id'], 'delBar' => 'Oui']); ?>">oui</a>
 
-<?php else: ?>
-	<p>Le bar n'existe pas</p>
-<?php endif ?>
+	
+	<?php else: ?>
+		<p>Le bar n'existe pas</p>
+	<?php endif ?>
+
+</div>
 
 
 <?php $this->stop('main_content') ?>
