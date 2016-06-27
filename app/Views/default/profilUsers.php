@@ -1,59 +1,50 @@
-<!-- Carte -->
-
-<!-- Profil membre
-The circle icons use Font Awesome's stacked icon classes. For more information, visit http://fontawesome.io/examples/-->
 
 <div class="container-fluid">
-    <div class="row text-center">
-        <div class="col-lg-10 col-lg-offset-1">
-            <div class="row">
-                <div class="col-xs-6 col-md-4">
-                    <img class="img-circle img-responsive profil" src="<?=$this->assetUrl('img/3.jpg');?>">
-                </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <a class="btn btn-default" href="#formulaire">Editer le profil</a>
             </div>
-            <h4>Bonjour, NOM</h4>
-            <div class="row">
-                <div class="col-md-3 col-sm-6">
-                    <div class="service-item">
-                        <a href="#">
-                            <img class="img-responsive img-circle centree" src="<?=$this->assetUrl('img/1.jpg');?>">
-                            <span><strong>Pseudo</strong></span>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="col-md-3 col-sm-6">
-                    <div class="service-item">
-                        <a href="#">
-                            <img class="img-responsive img-circle centree" src="<?=$this->assetUrl('img/1.jpg');?>">
-                            <span><strong>Pseudo</strong></span>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="col-md-3 col-sm-6">
-                    <div class="service-item">
-                        <a href="#">
-                            <img class="img-responsive img-circle centree" src="<?=$this->assetUrl('img/1.jpg');?>">
-                            <span><strong>Pseudo</strong></span>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="col-md-3 col-sm-6">
-                    <div class="service-item">
-                        <a href="#">
-                            <img class="img-responsive img-circle centree" src="<?=$this->assetUrl('img/1.jpg');?>">
-                            <span><strong>Pseudo</strong></span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <!--/.row (nested) -->
         </div>
-        <!-- /.col-lg-10 -->
-    </div>
-    <!-- /.row -->
-</div>
-<!-- /.container -->
+        <div class="row">
+            <div class="col-lg-12">
+                <img class="img-circle img-responsive centree" src="<?=$this->assetUrl('img/3.jpg');?>" alt="">
+            </div> 
+        </div>  
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="text-center">
+                        <h4>Bumble</h4>
+                        <p class="subheading ">Et ses ami(e)s !</p>
+                    <div class="timeline-body">
+                        <p class="text-muted"></p>
+                    </div>
+                </div>
+             </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-4 col-sm-3 col-md-2">
+                    <div class="userStyle">
+                        <img src="<?=$this->assetUrl('img/1.jpg');?>" class="img-responsive img-circle centree" alt="">
+                        <p class="text-center">Kay Garland</p>
+                    </div>
+                </div>
+                <div class="col-xs-4 col-sm-3 col-md-2">
+                    <div class="userStyle">
+                        <img src="<?=$this->assetUrl('img/1.jpg');?>" class="img-responsive img-circle centree" alt="">
+                        <p class="text-center">Kay Garland</p>
+                    </div>
+                </div>
+                <div class="col-xs-4 col-sm-3 col-md-2">
+                    <div class="userStyle">
+                        <img src="<?=$this->assetUrl('img/1.jpg');?>" class="img-responsive img-circle centree" alt="">
+                        <p class="text-center">Kay Garland</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>   
+</div> <!-- /.container -->
 

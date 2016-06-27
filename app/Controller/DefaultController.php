@@ -20,27 +20,29 @@ class DefaultController extends Controller
 		$messageController = new \Controller\MessageController();
 
 		$errors = [];
+		$success = false; 
+		
 		if(!empty($_GET)){
 			$get = array_map('trim', array_map('strip_tags', $_GET));
 			if(isset($get['deconnect']) && $get['deconnect'] == '1'){
 				$authModel->logUserOut(); //Permet de déconnecter l'utilisateur 
-
 			}
 		}
+
 		if(!empty($_POST)){
 			$post = array_map('trim', array_map('strip_tags', $_POST));
 
 			if(isset($post['form'])){// si le champ form exist
+
 				if($post['form'] == 'co'){//si le champ form vaut 'co'
 					// ici le traitement pour le formulaire de connexion
 					if(isset($post['co_pseudo'])){
 						if(preg_match('#^[A-Z]{1}[A-Za-z0-9.-_]{2,15}$#', $post['co_pseudo']) == 0){
-							$errors[] = 'Erreur pseudo co';
+							$errors[] = 'Votre pseudo doit commencer par une majuscule';
 						}
 					}
 					if(isset($post['co_pswd'])){
-						var_dump(preg_match('#([A-Z]{1}||[a-z]{1}||[0-9]{1}){8,20}#', $post['co_pswd']));//majuscule et chiffre
-						if(preg_match('#([A-Z]{1}&[a-z]{1}&[0-9]{1}){8,}#', $post['co_pswd']) == 0){
+						if(preg_match('#.*^(?=.{8,20})(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).*$#', $post['co_pswd']) == 0){
 							$errors[] = 'Votre mot de passe doit contenir au moins une majuscule et un chiffre.';
 						}
 					}
@@ -77,44 +79,85 @@ class DefaultController extends Controller
 					}
 				}
 
-				if($post['form'] == 'isc'){//si le champ form vaux 'isc'
+				if($post['form'] == 'register'){//si le champ form vaut 'register'
 					// ici le traitement pour le formulaire d'inscription
+					if(isset($post['nickname'])){
+						if(preg_match('#^.{1,}$#', $post['nickname']) == 0){
+							$errors[] = 'erreur nickname';
+						}
+					}
+
+					if(isset($post['email'])){
+						if(preg_match('#^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$#', $post['email']) == 0){
+							$errors[] = 'erreur contact email';
+						}
+					}
+
+					if(isset($post['password'])){
+                        if(preg_match('#.*^(?=.{8,20})(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).*$#', $post['password']) == 0){
+                            $errors[] = 'Votre mot de passe doit être au minimun de 8 caractères et inclure un chiffre et une majuscule';
+                        }
+                    }
+
+                    if($post['password'] != $post['passwordOk']){
+                    	$errors[] = 'Les mots de passe ne correspondent pas';
+                    }
+
+					if(count($errors) == 0){
+						$data = [
+							'nickname' 	=> $post['nickname'],
+							'email'		=> $post['email'],
+							'password'	=> $authModel->hashPassword($post['password']),
+							'role'		=> 'user',
+						];
+						//On passe le tableau $data à la méthode insert() pour enregistrer nos données en base
+						if($usersModel->insert($data)){
+							//Insertion en base de données effectuée
+							$success = true;
+						}
+						else{
+
+						}
+					}
 				}
 
-				if($post['form'] == 'ct'){//si le champ form vaux 'ct'
+				if($post['form'] == 'contact'){//si le champ form vaut 'ct'
 					// ici le traitement pour le formulaire de contact
 					if(isset($post['ct_firstname'])){
-						if(preg_match('#^.{1,}$#', $post['ct_firstname']) == 0){
-							$errors[] = 'erreur contact firstname';
+						if(preg_match('#^[A-Z]{1}[A-Za-z0-9.-_]{3,20}$#', $post['ct_firstname']) == 0){
+							$errors[] = 'Votre nom doit commencer par une majuscule et comporter minimum 3 caractères';
 						}
 					}
 
 					if(isset($post['ct_lastname'])){
-						if(preg_match('#^.{1,}$#', $post['ct_lastname']) == 0){
-							$errors[] = 'erreur contact lastname';
+						if(preg_match('#^[A-Z]{1}[A-Za-z0-9.-_]{3,20}$#', $post['ct_lastname']) == 0){
+							$errors[] = 'Votre prénom doit commencer par une majuscule et comporter minimum 3 caractères';
 						}
 					}
 
 					if(isset($post['ct_email'])){
 						if(preg_match('#^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$#', $post['ct_email']) == 0){
-							$errors[] = 'erreur contact email';
+							$errors[] = 'Votre email n\'est pas valide';
 						}
 					}
 
 					if(isset($post['ct_msg'])){
 						if(preg_match('#^.{1,}$#', $post['ct_msg']) == 0){
-							$errors[] = 'erreur contact msg';
+							$errors[] = 'Votre message ne doit pas être vide';
 						}
 					}
 
 					if(count($errors) == 0){
 						$messageController->addMessage($post['ct_firstname'], $post['ct_lastname'], $post['ct_email'], $post['ct_msg']);
+						$success = true;
 					}
 				}
-			}
-		}
+			} //end if(isset($post['form']
+		} //end $_POST
 
-		$this->show('default/home');
+		// On envoi les erreurs en paramètre à l'aide d'un tableau (array)
+		$params = ['errors' => $errors, 'success' => $success];
+		$this->show('default/home', $params);
 	}
 }
 ?>

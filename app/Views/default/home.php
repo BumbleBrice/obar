@@ -8,7 +8,7 @@
 </section>
 
 <!-- Présentation -->
-<header id="top" class="header diagonal">
+<header id="top" class="header">
 	<?=$this->insert('default/presentation'); ?>
 </header>
 
@@ -34,7 +34,7 @@
 
 <!-- Contact -->
 <section id="contact" class="contact diagonal">
-    <?=$this->insert('default/contact'); ?>
+    <?=$this->insert('default/contact', ['errors' => $errors, 'success' => $success]); ?>
 </section>
 
 <?php $this->stop('main_content') ?>
