@@ -125,13 +125,13 @@ class BarController extends Controller
 				}
 
 				if(isset($post['x'])){
-					if(preg_match('#^[0-9]{1,}$#', $post['x']) == 0){
+					if(preg_match('#^[0-9.]{1,}$#', $post['x']) == 0){
 						$errors[] = 'error x';
 					}
 				}
 
 				if(isset($post['y'])){
-					if(preg_match('#^[0-9]{1,}$#', $post['y']) == 0){
+					if(preg_match('#^[0-9.]{1,}$#', $post['y']) == 0){
 						$errors[] = 'error y';
 					}
 				}

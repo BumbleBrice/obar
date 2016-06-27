@@ -6,6 +6,7 @@ $(function(){
     });
 
     $('.carte').on('click', function(e){
+
         $('.point').remove();
 
         x = ((e.clientX - this.offsetLeft - 25) * 100) / this.offsetWidth;
@@ -19,7 +20,8 @@ $(function(){
         $('input[name=y]').attr('value' , y);
 
         var point = $('<div><i class=""></i></div>').addClass('bar').css({'left': x + '%', 'top': y + '%'});
-        carte.append(point);
 
+        carte.css({'position' : 'relative'});
+        carte.append(point);
     });
 });
