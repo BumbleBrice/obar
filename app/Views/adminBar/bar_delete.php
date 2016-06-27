@@ -22,7 +22,7 @@
 			</div>
 		</div>
 
-		<div class="text-center toto">
+		<div class="text-center">
 			<a class="btnDeleteBar" href="<?=$this->url('admin_bar_list', ['id' => $bar['id']]); ?>">Non</a>
 			<a class="btnDeleteBar" href="<?=$this->url('admin_bar_delete', ['id' => $bar['id'], 'delBar' => 'Oui']); ?>">Oui</a>
 		</div>

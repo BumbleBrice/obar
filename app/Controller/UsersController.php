@@ -164,7 +164,7 @@ class UsersController extends Controller
 		$this->show('adminUser/user_edit', $params);
 	}
 
-	public function user_delete($id)
+	public function user_delete($id, $delUser)
 	{
 		// On limite l'accé à la page aux utilisateurs authentifiés et à ceux dont le rôle est admin ou éditor
 			/*$this->allowTo(['admin']);*/
@@ -173,7 +173,7 @@ class UsersController extends Controller
 
 			// On vérifie que le paramètre GET soit ok et que la valeur soit bien Oui
 			// Si tout est bon, l'utilisateur a donc comfirmer la suppression
-			if (!empty($_GET) && isset($_GET['delUser']) && $_GET['delUser'] == 'Oui') {
+			if (isset($delUser) && $delUser == 'Oui') {
 
 				if ($userModel->delete($id)) {
 					// Ici on a supprimer l'article

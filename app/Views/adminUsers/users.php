@@ -36,7 +36,7 @@
                                             <td class="">
                                                 <div class="btn-group" role="group" aria-label="...">
                                                   <a type="button" class="btn btn-default" href="<?= $this->url('admin_user_edit', ['id' => $users['id']]) ?>">Modérer</a>
-                                                  <a type="button" class="btn btn-danger" href="<?= $this->url('admin_user_delete', ['id' => $users['id']]) ?>">Supprimer</a>
+                                                  <a type="button" class="btn btn-danger" href="<?= $this->url('admin_user_delete', ['id' => $users['id'], $delUser = 'Oui']) ?>">Supprimer</a>
                                                 </div>
 												<!-- <a type="button" class="btn btn-info btnUsersBar" href="?id_message=<?=$mes['id'];?>">Voir</a>
 												<a type="button" class="btn btn-primary btnUsersBar" href="?id_message=<?=$mes['id'];?>&action=rep">Répondre</a>
