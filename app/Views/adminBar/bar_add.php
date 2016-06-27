@@ -84,8 +84,8 @@
 
                     <div class="col-lg-1"></div>
 
-                    <div class="col-lg-5 carte">
-
+                    <div class="carte">
+						
                     </div>
 
                     <div class="col-lg-1"></div>
