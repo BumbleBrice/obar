@@ -5,6 +5,7 @@ namespace Controller;
 use \W\Controller\Controller;
 use \W\Model\UsersModel as UsersModel; //Permet d'importer la classe UsersModel que l'on pourra instancier via new UsersModel();
 use \W\Security\AuthentificationModel as AuthModel; //Permet d'importer la classe AuthentificationModel pour hacher le password
+use \Model\BarModel as Bar;
 
 class DefaultController extends Controller
 {
@@ -16,6 +17,7 @@ class DefaultController extends Controller
 		//Instancie les classes
 		$usersModel = new UsersModel();
 		$authModel = new AuthModel();
+		$bar = new Bar();
 
 		$messageController = new \Controller\MessageController();
 
@@ -152,11 +154,12 @@ class DefaultController extends Controller
 						$success = true;
 					}
 				}
-			} //end if(isset($post['form']
+			} //end if(isset($post['form']	
 		} //end $_POST
 
+
 		// On envoi les erreurs en paramètre à l'aide d'un tableau (array)
-		$params = ['errors' => $errors, 'success' => $success];
+		$params = ['errors' => $errors, 'success' => $success, 'bars' => $bar-findall('date', 'DESC')];
 		$this->show('default/home', $params);
 	}
 }
