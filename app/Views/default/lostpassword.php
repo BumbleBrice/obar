@@ -1,6 +1,14 @@
 <?php $this->layout('layout', ['title' => 'Reset Password']) ?>
 
 <?php $this->start('main_content') ?>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
 	<?php if(!isset($reset_pswd)): ?>
 		<?php if(!empty($errors)): //On affiche les erreurs si le tableau est vide ?>
 			<div class="alert alert-danger fade in">
