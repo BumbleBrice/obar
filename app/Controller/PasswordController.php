@@ -38,10 +38,13 @@ class PasswordController extends Controller
 							$params['errors'][] = 'Les mots de passe ne correspondent pas.';
 						}
 					}
-					if($user = $lostPasswordModel->tokenOk($token)){
+					if($tokenGet = $lostPasswordModel->tokenOk($token)){
 						if(count($params['errors']) == 0){
-							if($lostPasswordModel->changePassword($user['email'], $auth->hashPassword($post['password']))){
-								$params['success'] = true;
+							if($lostPasswordModel->changePassword($tokenGet['email'], $auth->hashPassword($post['password']))){
+								// supression du token
+								if($lostPasswordModel->delete($tokenGet['id'])){
+									$params['success'] = true;
+								}
 							}
 						}
 					}
@@ -87,6 +90,7 @@ class PasswordController extends Controller
 								'token' => 'azerty'
 							];
 							if($lostPasswordModel->insert($data)){
+								// envoie du token par email
 								$params['success'] = true;
 							}
 							else{
