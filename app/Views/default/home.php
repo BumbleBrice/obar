@@ -13,7 +13,7 @@
 </header>
 
 <!--Profil user-->
-<section id="users_profil" class="users_profil diagonal">
+<section id="users_profil" class="users_profil">
 	<?=$this->insert('default/profilUsers'); ?>
 </section>
 
@@ -23,17 +23,17 @@
 </section>
 
 <!-- Carte -->
-<section id="services" class="services bg-primary diagonal">
+<section id="services" class="services bg-primary">
 	<?=$this->insert('default/map'); ?>
 </section>
 
 <!-- Inscription -->
-<section id="subs" class="subs diagonal">
+<section id="subs" class="subs">
 	<?=$this->insert('default/inscription'); ?>
 </section>
 
 <!-- Contact -->
-<section id="contact" class="contact diagonal">
+<section id="contact" class="contact">
     <?=$this->insert('default/contact', ['errors' => $errors, 'success' => $success]); ?>
 </section>
 

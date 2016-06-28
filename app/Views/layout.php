@@ -70,7 +70,7 @@
                         <a class="page-scroll" href="#connect">Connexion</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="<?=$this->url('default_home', ['deconnect'=>'1']);?>">
+                        <a class="page-scroll" href="<?=$this->url('default_home', ['deconnect'=>'1']);?>"></a>
                     </li>
                 </ul>
             </div>
