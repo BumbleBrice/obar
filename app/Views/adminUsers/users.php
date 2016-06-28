@@ -7,7 +7,8 @@
  <div class="row ">
                 <div class="col-lg-12">
                         <div class="panel-heading wrapperList">
-                            Liste des utilisateurs
+                            <p>Liste des utilisateurs<p><br>
+                            <a type="button" class="btn btn-default" href="<?= $this->url('admin_user_add') ?>">Ajouter un utilisateur</a>
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body lustUsers">
@@ -25,22 +26,22 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                    <?php foreach($users as $users): ?>                             
+                                    <?php foreach($users as $user): ?>                             
                                         <tr>
-                                            <td><?= $users['nickname'] ?></td>
-                                            <td><?= $users['firstname'] ?></td>
-                                            <td><?= $users['lastname'] ?></td>
-                                            <td><?= $users['picture'] ?></td>
-                                            <td><?= $users['email'] ?></td>
-                                            <td><?= $users['role'] ?></td>
+                                            <td><?= $user['nickname'] ?></td>
+                                            <td><?= $user['firstname'] ?></td>
+                                            <td><?= $user['lastname'] ?></td>
+                                            <td><?= $user['picture'] ?></td>
+                                            <td><?= $user['email'] ?></td>
+                                            <td><?= $user['role'] ?></td>
                                             <td class="">
                                                 <div class="btn-group" role="group" aria-label="...">
-                                                  <a type="button" class="btn btn-default" href="<?= $this->url('admin_user_edit', ['id' => $users['id']]) ?>">Modérer</a>
-                                                  <a type="button" class="btn btn-danger" href="<?= $this->url('admin_user_delete', ['id' => $users['id'], $delUser => 'Oui']) ?>">Supprimer</a>
+                                                  <a type="button" class="btn btn-default" href="<?= $this->url('admin_user_edit', ['id' => $user['id']]) ?>">Modérer</a>
+                                                  <a type="button" class="btn btn-danger" href="<?= $this->url('admin_user_delete', ['id' => $user['id'], 'delUser' => 'Oui']) ?>">Supprimer</a>
                                                 </div>
-												<!-- <a type="button" class="btn btn-info btnUsersBar" href="?id_message=<?=$mes['id'];?>">Voir</a>
+												<!--<?php /* <a type="button" class="btn btn-info btnUsersBar" href="?id_message=<?=$mes['id'];?>">Voir</a>
 												<a type="button" class="btn btn-primary btnUsersBar" href="?id_message=<?=$mes['id'];?>&action=rep">Répondre</a>
-												<a type="button" class="btn btn-danger btnUsersBar" href="?id_message=<?=$mes['id'];?>&action=delete">Supprimer</a> -->
+												<a type="button" class="btn btn-danger btnUsersBar" href="?id_message=<?=$mes['id'];?>&action=delete">Supprimer</a> */ ?>-->
 											</td>
                                         </tr>
                                         <?php endforeach; ?>

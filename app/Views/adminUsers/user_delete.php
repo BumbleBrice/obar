@@ -23,11 +23,9 @@
 		</div>
 
 		<div class="text-center">
-			<a class="btnDeleteBar" href="<?=$this->url('admin_user_list', ['id' => $user['id']]); ?>">Non</a>
+			<a class="btnDeleteBar" href="<?=$this->url('admin_users'); ?>">Non</a>
 			<a class="btnDeleteBar" href="<?=$this->url('admin_user_delete', ['id' => $user['id'], 'delUser' => 'Oui']); ?>">Oui</a>
 		</div>
-		
-
 	
 	<?php else: ?>
 		<p>L'utilisateur n'existe pas</p>
