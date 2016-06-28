@@ -73,11 +73,17 @@ a:hover {
     height: 100%;
     position: fixed;
     background: #6D071A;
+    min-width: 225px;
 }
 
 .wrapper {
-	background-color: background: #ECECEC;;
+	background-color: background: #ECECEC;
 }
+
+@media (max-width: 600px) {
+	.wrapper margin-left: 225px;
+}
+
 .contenu {
 	margin-left: 10%;
 	width: 80%;
