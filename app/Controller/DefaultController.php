@@ -17,7 +17,7 @@ class DefaultController extends Controller
 		//Instancie les classes
 		$usersModel = new UsersModel();
 		$authModel = new AuthModel();
-		$bar = new Bar();
+		$barModel = new Bar();
 
 		$messageController = new \Controller\MessageController();
 
@@ -48,6 +48,7 @@ class DefaultController extends Controller
 							$errors[] = 'Votre mot de passe doit contenir au moins une majuscule et un chiffre.';
 						}
 					}
+
 
 					if(count($errors) == 0){
 						// connexion
@@ -121,6 +122,18 @@ class DefaultController extends Controller
 
 						}
 					}
+					else {
+						/* Va recréer le tableau $errors sous forme de : 
+
+							$errors = [
+								'register' => [
+									// pseudo ko
+									// email
+								]
+							];
+						*/
+						$errors['register'] = $errors; 
+					}
 				}
 
 				if($post['form'] == 'contact'){//si le champ form vaut 'ct'
@@ -159,7 +172,8 @@ class DefaultController extends Controller
 
 
 		// On envoi les erreurs en paramètre à l'aide d'un tableau (array)
-		$params = ['errors' => $errors, 'success' => $success, 'bars' => $bar-findall('date', 'DESC')];
+
+		$params = ['errors' => $errors, 'success' => $success, 'bars' => $barModel->findAll()];
 		$this->show('default/home', $params);
 	}
 }

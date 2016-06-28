@@ -69,11 +69,11 @@
                     <li>
                         <a class="page-scroll" href="#connect">Connexion</a>
                     </li>
-                    <li>
+                    <!-- <li>
                         <a class="page-scroll" href="<?=$this->url('default_home', ['deconnect'=>'1']);?>"></a>
 
                         <a class="page-scroll" href="<?=$this->url('default_home', ['deconnect'=>'1']);?>">Déconnexion</a>
-                    </li>
+                    </li> -->
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -81,8 +81,7 @@
         <!-- /.container -->
     </nav>
 
-    <?= $this->section('main_content') ?>
-
+    <?= $this->section('main_content'); ?>
 
     <!-- Footer -->
     <footer>

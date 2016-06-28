@@ -27,7 +27,7 @@ h2{
 	font-size: 28px;
 	color:#2b8c9d;
 	text-align: center;
-    padding-bottom: 50px;
+    padding-bottom: 20px;
 }
 h3{
 	font-family: 'Nunito', sans-serif;
@@ -137,6 +137,13 @@ h3{
 }
 
 /****************************************
+*******SECTION NEWS BARS*********
+****************************************/
+.service-item{
+    display: inline-block !important;
+}
+
+/****************************************
 *************SECTION PROFIL USER*********
 ****************************************/
 .users_profil{
@@ -144,6 +151,17 @@ h3{
     min-height: 70%;
 }
 
+/****************************************
+*************SECTION MAP*************
+****************************************/
+.map{
+    padding: 50px 0;
+    min-height: 80%;
+}
+
+img#svg{
+    width: 25em;
+}
 
 /****************************************
 *************SECTION CONTACT*************
