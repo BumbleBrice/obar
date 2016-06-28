@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Lun 27 Juin 2016 à 11:34
+-- Généré le :  Mar 28 Juin 2016 à 10:12
 -- Version du serveur :  10.1.13-MariaDB
 -- Version de PHP :  5.6.21
 
@@ -34,8 +34,8 @@ CREATE TABLE `bar` (
   `phone` varchar(255) NOT NULL,
   `adress` varchar(255) NOT NULL,
   `schedule` varchar(255) NOT NULL,
-  `x` int(11) NOT NULL,
-  `y` int(11) NOT NULL,
+  `x` varchar(255) NOT NULL,
+  `y` varchar(255) NOT NULL,
   `google_url` varchar(255) NOT NULL,
   `date` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -45,9 +45,8 @@ CREATE TABLE `bar` (
 --
 
 INSERT INTO `bar` (`id`, `name`, `picture`, `description`, `phone`, `adress`, `schedule`, `x`, `y`, `google_url`, `date`) VALUES
-(1, 'bar1.1', 'assets/img/bar-1467019276jpg', 'ceci est un test', '0123456789', '1 route du chemin', '12h', 0, 0, '', '0000-00-00 00:00:00'),
-(2, 'bar2', 'assets/img/bar-1467013790jpg', 'ceci est un test2', '0123456789', '2 route du chemin', '14h', 0, 0, '', '0000-00-00 00:00:00'),
-(3, 'bar3.1', 'assets/img/bar-1467014268jpg', 'ceci est un test3', '0123456789', '3 route du chemin', '16h', 0, 0, '', '0000-00-00 00:00:00');
+(2, 'bar2', 'assets/img/bar-1467013790jpg', 'ceci est un test2', '0123456789', '2 route du chemin', '14h', '0', '0', '', '0000-00-00 00:00:00'),
+(3, 'bar3.1', 'assets/img/bar-1467014268jpg', 'ceci est un test3', '0123456789', '3 route du chemin', '16h', '0', '0', '', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -91,6 +90,34 @@ CREATE TABLE `obar_desc` (
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `token_confirm`
+--
+
+CREATE TABLE `token_confirm` (
+  `id` int(11) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `date` datetime NOT NULL,
+  `date_exp` datetime NOT NULL,
+  `token` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `token_pswd`
+--
+
+CREATE TABLE `token_pswd` (
+  `id` int(11) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `date` datetime NOT NULL,
+  `date_exp` datetime NOT NULL,
+  `token` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `users`
 --
 
@@ -104,6 +131,13 @@ CREATE TABLE `users` (
   `picture` varchar(255) NOT NULL,
   `role` enum('user','owner','admin') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Contenu de la table `users`
+--
+
+INSERT INTO `users` (`id`, `nickname`, `firstname`, `lastname`, `email`, `password`, `picture`, `role`) VALUES
+(8, 'admin', 'admin', 'admin', 'admin@admin.fr', '$2y$10$qZaYM2tXFfdOxYWiLkVK3eL5FDC5L46vzRLI7YEP1kVrRf9hRJPie', '', 'admin');
 
 --
 -- Index pour les tables exportées
@@ -131,6 +165,18 @@ ALTER TABLE `news_letter`
 -- Index pour la table `obar_desc`
 --
 ALTER TABLE `obar_desc`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Index pour la table `token_confirm`
+--
+ALTER TABLE `token_confirm`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Index pour la table `token_pswd`
+--
+ALTER TABLE `token_pswd`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -164,10 +210,20 @@ ALTER TABLE `news_letter`
 ALTER TABLE `obar_desc`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
+-- AUTO_INCREMENT pour la table `token_confirm`
+--
+ALTER TABLE `token_confirm`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT pour la table `token_pswd`
+--
+ALTER TABLE `token_pswd`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
 -- AUTO_INCREMENT pour la table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
