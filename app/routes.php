@@ -25,6 +25,7 @@
 		['GET|POST', '/admin_user_delete', 'Users#user_delete', 'admin_user_delete'],
 
 		['GET|POST', '/admin_newsletter', 'Newsletter#newsletter', 'admin_newsletter'],
+		['GET|POST', '/lostpassword/[:token]', 'LostPassword#lostPassword', 'LostPassword_lostPassword']
 
 
 
