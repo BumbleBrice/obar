@@ -14,22 +14,26 @@
 			<strong>Félicitations!</strong> Votre mot de passe a bien été modifié.
 		</div>
 	<?php endif; ?>
-	<form method="POST">
-		<input>
-		<label for="email">Email</label><br>
-		<input id="email" type="email" name="email">
-		<br>
-		<br>
-		<input type="submit" value="Envoyer">
-	</form>
-	<form method="POST">
-		<label for="password">Password</label><br>
-		<input id="password" type="password" name="password">
-		<br>
-		<label for="password_confirm">Password</label><br>
-		<input id="password_confirm" type="password_confirm" name="password_confirm">
-		<br>
-		<br>
-		<input type="submit" value="Envoyer">
-	</form>
+	<?php if(!isset($reset_pswd)): ?>
+		<form method="POST">
+			<input type="hidden" name="form" value="lost">
+			<label for="email">Email</label><br>
+			<input id="email" type="email" name="email">
+			<br>
+			<br>
+			<input type="submit" value="Envoyer">
+		</form>
+	<?php else: ?>
+		<form method="POST">
+			<input type="hidden" name="form" value="reset">
+			<label for="password">Password</label><br>
+			<input id="password" type="password" name="password">
+			<br>
+			<label for="password_confirm">Password</label><br>
+			<input id="password_confirm" type="password_confirm" name="password_confirm">
+			<br>
+			<br>
+			<input type="submit" value="Envoyer">
+		</form>
+	<?php endif; ?>
 <?php $this->stop('main_content') ?>
