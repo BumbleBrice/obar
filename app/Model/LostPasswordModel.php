@@ -2,6 +2,7 @@
 
 namespace Model;
 use \W\Model\ConnectionModel;
+use \W\Security\AuthentificationModel as Auth;
 
 class LostPasswordModel extends \W\model\Model
 {
@@ -13,14 +14,14 @@ class LostPasswordModel extends \W\model\Model
 	}
 
 	public function tokenOk($token){
-		$bdd = self::dbh;
+		$bdd = $this->dbh;
 
-		$res = $bdd->prepare('SELECT * FROM token_pswd where token = :token AND date_exp < now()');
+		$res = $bdd->prepare('SELECT * FROM token_pswd where token = :token AND date_exp > now()');
 		$res->bindValue(':token', $token);
 
 		if($res->execute()){
 			if($res->rowCount()){
-				return true;
+				return $res->fetch();
 			}
 			else{
 				return false;
@@ -32,16 +33,19 @@ class LostPasswordModel extends \W\model\Model
 	}
 
 	public function changePassword($email, $password){
-		$bdd = self::dbh;
+		$auth = new Auth();
+		$bdd = $this->dbh;
+
 
 		$res = $bdd->prepare('UPDATE users SET (password) VALUES (:password) WHERE email = :email');
 		$res->bindValue(':email', $email);
-		$res->bindValue(':password', $password);
+		$res->bindValue(':password', 'teste');
 
 		if($res->execute()){
 			return true;
 		}
 		else{
+			var_dump($bdd->errorInfo());
 			return false;
 		}
 	}
