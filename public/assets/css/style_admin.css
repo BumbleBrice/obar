@@ -10,7 +10,7 @@
 html {
 	font: 62.5% arial, sans-serif;
 	color: #323232;
-	background: #FFF !important;
+	background: #ECECEC;
 
 }
 img {
@@ -22,7 +22,7 @@ h1, h2, h3 {
 h1 {
 	text-transform: uppercase;
 	margin-top: 2%;
- 	color: #D82142;
+ 	color: #6D071A;
  	font-family: Georgia,"Times New Roman",Times,serif;
  	font-size: 3vw;
  	font-weight: normal;
@@ -33,13 +33,14 @@ h1 {
 }
 h2 {
 	font-size: 1.5rem;
-	color: #D82142;
+	color: #6D071A;
 }
 h3 {
 	font-size: 1.5rem;
 }
 body {
 	font-size: 1.2rem;
+	background: #ECECEC;
 }
 a {
 	color: #004a4a;
@@ -53,33 +54,36 @@ a:hover {
 /*                            NAVBAR                           */
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 .navbar-toggle {
-	background-color: #D82142;
+	background-color: #6D071A;
 }
 .navbar-brand:focus:hover {
-	color: #D82142 !important;
+	color: #6D071A !important;
 }
 .navbar-brand:hover {
-	color: #D82142 !important;
+	color: #6D071A !important;
 }
 .nav_top {
-	background: #fff;
+	background: #6D071A;
 	font-family: 'Times New Roman', sans-serif;
 }
 
 .navigation {
-	border-radius: 0 0 120% 0;
-	border:3px solid white;
+	margin-top: 5px;
 	width: 10%;
     height: 100%;
     position: fixed;
-    background: #FB444D;
+    background: #6D071A;
+    min-width: 225px;
 }
 
 .wrapper {
-
-/*	height: 880px;*/
-	background-color: #fff;
+	background-color: background: #ECECEC;
 }
+
+@media (max-width: 600px) {
+	.wrapper margin-left: 225px;
+}
+
 .contenu {
 	margin-left: 10%;
 	width: 80%;
@@ -95,13 +99,7 @@ a:hover {
     font-size: 5rem;
     color:#f8f8f8;
     margin-top: 15%;
- 
-
     border: 12px solid rgba(255, 255, 255, 0.6);
-
-    
-
-
     padding: 20px 0;
 }
 
@@ -122,9 +120,7 @@ a:hover {
 	font-weight: 300;
 	font-size: 2.3rem;
 	color:#f8f8f8;
-
 }
-
 
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 /*                        LISTE DES BARS                       */
@@ -141,7 +137,7 @@ a:hover {
 }
 
 .divListBar {
-	border: 3px solid #D82142;
+	border: 3px solid #6D071A;
 	border-radius: 40px;
 	margin-left: 20px;
 	margin-right: 20px;
@@ -149,7 +145,7 @@ a:hover {
 }
 
 .nameListBar {
-	background: radial-gradient(circle, #D82142, white, white);
+	background: radial-gradient(circle, #6D071A, white, white);
 	color: white;
 	font-size: 2rem;
 }
@@ -166,14 +162,14 @@ a:hover {
 	width: 92%;
 	height: 92%;
 	margin: 4%;
-	border: 2px solid #D82142;
+	border: 2px solid #6D071A;
 	border-radius: 20px;
 }
 
 .btnListBar {
 	margin: 10px;
 	padding: 4px 25px 2px 25px;
-	background: #D82142;
+	background: #6D071A;
 	color: white;
 	border-radius: 100px 100px 0px 0px;
 	cursor: pointer;
@@ -182,12 +178,12 @@ a:hover {
 
 .btnListBar:hover {
 	background: white;
-	color: #D82142;
+	color: #6D071A;
 	text-decoration: none;
 }
 
 .btnDeleteBar {
-	background: #D82142;
+	background: #6D071A;
 	color: white;
 	border: 1px solid transparent;
 	padding: 3px 60px 3px 60px !important;
@@ -198,7 +194,7 @@ a:hover {
 
 .btnDeleteBar:hover {
 	background: white;
-	color: #D82142;
+	color: #6D071A;
 	border: 1px solid transparent;
 	text-decoration: none;
 	border-radius: 15px;
@@ -224,24 +220,31 @@ a:hover {
 .champTxtAddBar {
 	background: white;
 	color: #004a4a;
-	border: 1px solid #D82142;
+	border: 1px solid #6D071A;
+}
+
+.champTxtAddBarHoraire {
+	background: white;
+	color: #004a4a;
+	border: 1px solid #6D071A;
+	/*width: 25%;*/
 }
 
 .divFormAddBar {
-	border: 3px solid #D82142;
+	border: 3px solid #6D071A;
 	border-radius: 40px;
 	margin: 50px;
 	padding: 30px;
 }
 
 .divFormEditBar {
-	border: 3px solid #D82142;
+	border: 3px solid #6D071A;
 	border-radius: 40px;
 	padding: 30px;
 }
 
 .divFormBarDelete {
-	border: 3px solid #D82142;
+	border: 3px solid #6D071A;
 	border-radius: 40px;
 	margin: 50px;
 	padding: 30px;
@@ -256,7 +259,7 @@ a:hover {
 .input-group-btn:last-child > .btn-group:not(:last-child) > .btn {
 	background: white;
 	color: #004a4a;
-	border: 1px solid #D82142;
+	border: 1px solid #6D071A;
 }
 
 .input-group-btn:last-child > .btn,
@@ -290,7 +293,7 @@ a:hover {
 .wrapperList {
 	width: 11%;
 	margin: 5px;
-	border: 3px solid #D82142;
+	border: 3px solid #6D071A;
 	border-radius: 40px;
 	margin-left: 20px;
 	margin-right: 20px;
@@ -300,7 +303,7 @@ a:hover {
 .lustUsers {
 	width: 100%;
 	margin: 5px;
-	border: 3px solid #D82142;
+	border: 3px solid #6D071A;
 	border-radius: 40px;
 	margin-left: 20px;
 	margin-right: 20px;
@@ -308,7 +311,7 @@ a:hover {
 }
 
 .nameUsersBar {
-	background: radial-gradient(circle, #D82142, white, white);
+	background: radial-gradient(circle, #6D071A, white, white);
 	color: white;
 	font-size: 2rem;
 }
@@ -325,14 +328,14 @@ a:hover {
 	width: 92%;
 	height: 92%;
 	margin: 4%;
-	border: 2px solid #D82142;
+	border: 2px solid #6D071A;
 	border-radius: 20px;
 }
 
 .btnUsersBar {
 	
 	padding: 4px 25px 2px 25px;
-	background: #D82142;
+	background: #6D071A;
 	color: white;
 	border-radius: 100px 100px 0px 0px;
 	cursor: pointer;
@@ -341,7 +344,7 @@ a:hover {
 
 .btnUsersBar:hover {
 	background: white;
-	color: #D82142;
+	color: #6D071A;
 	text-decoration: none;
 }
 
@@ -376,15 +379,14 @@ a:hover {
 
 .boutonRetourSite {
     background: white !important;
-    color: #A22121 !important;
+    color: #6D071A !important;
     padding: 10px 20px 10px 20px;
     margin: 5px 0px 5px 20px;
-    border-radius: 20px 20px 0px 0px;
     border: 2px solid #A22121;
 }
 
 .boutonRetourSite:hover {
-	background: #A22121 !important;
+	background: #6D071A !important;
     color: white !important;
     border: 2px solid white;
 }
@@ -400,30 +402,16 @@ a:hover {
 
 .boutonBarAdd {
 	background: white;
-	color: #D82142;
-	border: 1px solid #D82142;
+	color: #6D071A;
+	border: 1px solid #6D071A;
 	margin-right: 10px;
 }
 
 .boutonBarAdd:hover {
-	background: #D82142;
+	background: #6D071A;
 	color: white;
 	border: 1px solid white;
-}.boutonRetourSite {
-    background: white !important;
-    color: #A22121 !important;
-    padding: 10px 20px 10px 20px;
-    margin: 5px 0px 5px 20px;
-    border-radius: 20px 20px 0px 0px;
-    border: 2px solid #A22121;
 }
-
-.boutonRetourSite:hover {
-	background: #A22121 !important;
-    color: white !important;
-    border: 2px solid white;
-}
-
 
 /*****Bouton modif presentation*****/
 .boutonModifPresentationBar {
@@ -456,15 +444,15 @@ a:hover {
 
 .button-fill {
 	width: 150px;
-  text-align: center;
-  background: #ccc;
-  display: inline-block;
-  position: relative;
-  text-transform: uppercase;
- /* margin: 25px;*/
+  	text-align: center;
+  	background: #ccc;
+  	display: inline-block;
+  	position: relative;
+  	text-transform: uppercase;
+ 	/* margin: 25px;*/
 }
 .button-fill.grey {
-  background: #D82142;
+  background: #6D071A;
   color: white;
 }
 .button-text {

@@ -65,17 +65,44 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="schedule">Horaire</label>
+                                <label for="schedule">Jour d'ouverture</label><br><br>
 
-                                <input type="time" name="time_1" class="form-control champTxtAddBar">
-                                <input type="time" name="time_2" class="form-control champTxtAddBar">
-                                <input type="time" name="time_3" class="form-control champTxtAddBar">
-                                <input type="time" name="time_4" class="form-control champTxtAddBar">
+                                <label class="checkbox-inline">
+                                    <input type="checkbox" id="inlineCheckbox1" value="lundi"> Lundi
+                                </label>
+                                <label class="checkbox-inline">
+                                    <input type="checkbox" id="inlineCheckbox2" value="mardi"> Mardi
+                                </label>
+                                <label class="checkbox-inline">
+                                    <input type="checkbox" id="inlineCheckbox3" value="mercredi"> Mercredi
+                                </label>
+                                <label class="checkbox-inline">
+                                    <input type="checkbox" id="inlineCheckbox4" value="jeudi"> Jeudi
+                                </label>
+                                <label class="checkbox-inline">
+                                    <input type="checkbox" id="inlineCheckbox5" value="vendredi"> Vendredi
+                                </label>
+                                <label class="checkbox-inline">
+                                    <input type="checkbox" id="inlineCheckbox6" value="samedi"> Samedi
+                                </label>
+                                <label class="checkbox-inline">
+                                    <input type="checkbox" id="inlineCheckbox7" value="dimanche"> Dimanche
+                                </label>
                             </div>
 
+                            <div class="form-group">
+                                <br>
+                                <label for="schedule">Horaire d'ouverture</label>
+                                <input type="time" name="time_1" class="form-control champTxtAddBarHoraire">
+
+                                <br><br>
+                                <label for="schedule">Horaire de fermeture</label>
+                                <input type="time" name="time_2" class="form-control champTxtAddBarHoraire">
+                            </div>
+
+                            <br><br>
                             <button type="reset" class="btn btn-default boutonBarAdd">Recommencer</button>
                             <button type="reset" class="btn btn-default boutonBarAdd btn-resetBar">Replacer le bar</button>
-
                             <button type="submit" class="btn btn-default boutonBarAdd">Ajouter le bar</button>
 
                         </form>

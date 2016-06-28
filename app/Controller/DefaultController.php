@@ -20,12 +20,12 @@ class DefaultController extends Controller
 		$messageController = new \Controller\MessageController();
 
 		$errors = [];
-		$success = false; 
-		
+		$success = false;
+
 		if(!empty($_GET)){
 			$get = array_map('trim', array_map('strip_tags', $_GET));
 			if(isset($get['deconnect']) && $get['deconnect'] == '1'){
-				$authModel->logUserOut(); //Permet de déconnecter l'utilisateur 
+				$authModel->logUserOut(); //Permet de déconnecter l'utilisateur
 			}
 		}
 
