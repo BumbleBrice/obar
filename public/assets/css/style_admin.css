@@ -227,6 +227,13 @@ a:hover {
 	border: 1px solid #D82142;
 }
 
+.champTxtAddBarHoraire {
+	background: white;
+	color: #004a4a;
+	border: 1px solid #D82142;
+	/*width: 25%;*/
+}
+
 .divFormAddBar {
 	border: 3px solid #D82142;
 	border-radius: 40px;
