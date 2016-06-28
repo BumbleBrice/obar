@@ -6,9 +6,10 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+
 }
 html {
-	font: 62.5% arial, sans-serif;
+	font: 62.5% 'Merriweather', sans-serif;
 	color: #323232;
 	background: #ECECEC;
 
@@ -23,7 +24,7 @@ h1 {
 	text-transform: uppercase;
 	margin-top: 2%;
  	color: #6D071A;
- 	font-family: Georgia,"Times New Roman",Times,serif;
+ 	font-family: 'Merriweather' , sans-serif;
  	font-size: 3vw;
  	font-weight: normal;
  	line-height: 4.8rem;
@@ -50,6 +51,17 @@ a:hover {
 	color: #e04823;
 }
 
+label {
+	color: #6D071A;
+}
+
+@media screen and (min-width: 760px) {
+    body {
+        background: #ECECEC;
+        margin-left: 14%;
+    }
+}
+
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 /*                            NAVBAR                           */
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
@@ -64,7 +76,7 @@ a:hover {
 }
 .nav_top {
 	background: #6D071A;
-	font-family: 'Times New Roman', sans-serif;
+	font-family: 'Merriweather', sans-serif;
 }
 
 .navigation {
@@ -80,12 +92,9 @@ a:hover {
 	background-color: background: #ECECEC;
 }
 
-@media (max-width: 600px) {
-	.wrapper margin-left: 225px;
-}
-
 .contenu {
 	margin-left: 10%;
+	margin-right: 10%;
 	width: 80%;
 }
 
@@ -145,7 +154,7 @@ a:hover {
 }
 
 .nameListBar {
-	background: radial-gradient(circle, #6D071A, white, white);
+	background: radial-gradient(circle, #6D071A, #ECECEC);
 	color: white;
 	font-size: 2rem;
 }
@@ -219,13 +228,13 @@ a:hover {
 
 .champTxtAddBar {
 	background: white;
-	color: #004a4a;
+	color: #6D071A;
 	border: 1px solid #6D071A;
 }
 
 .champTxtAddBarHoraire {
 	background: white;
-	color: #004a4a;
+	color: #6D071A;
 	border: 1px solid #6D071A;
 	/*width: 25%;*/
 }
@@ -258,19 +267,19 @@ a:hover {
 .input-group-btn:last-child > .btn:not(:last-child):not(.dropdown-toggle),
 .input-group-btn:last-child > .btn-group:not(:last-child) > .btn {
 	background: white;
-	color: #004a4a;
+	color: #6D071A;
 	border: 1px solid #6D071A;
 }
 
 .input-group-btn:last-child > .btn,
 .input-group-btn:last-child > .btn-group {
 	background: white;
-	color: #004a4a;
+	color: #6D071A;
 }
 
 .input-group-btn:last-child > .btn:hover,
 .input-group-btn:last-child > .btn-group:hover {
-	background: #004a4a;
+	background: #6D071A;
 	color: white;
 }
 
