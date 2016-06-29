@@ -29,6 +29,7 @@ class UsersController extends Controller
 			/*$this->allowTo(['admin']);*/
 			// On instancie la classe UsersModel qui étend la classe Model
 			$usersModel = new UsersModel();
+			$auth = new AuthModel();
 
 			$post = [];
 			$errors = [];
@@ -135,7 +136,7 @@ class UsersController extends Controller
 						$errors[] = 'error password';
 					}
 					else{
-						$user_password = $post['password'];
+						$user_password = $auth->hashPassword($post['password']);
 					}
 				}
 
