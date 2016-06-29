@@ -19,7 +19,10 @@
 
     <!-- Custom Fonts -->
     <link href='https://fonts.googleapis.com/css?family=Nunito:400,700,300|Comfortaa:400,700,300|Roboto:400,300italic' rel='stylesheet' type='text/css'>
-
+    
+    <!-- Font axesome -->
+    <link rel="stylesheet" href="<?= $this->assetUrl('font-awesome/css/font-awesome.min.css') ?>">
+   
     <!-- CSS personnalisé -->
     <link href="<?= $this->assetUrl('css/style.css') ?>" rel="stylesheet">
 </head>
@@ -36,8 +39,8 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand page-scroll" href="#page-top">
-                <img alt="Brand" src="..."></a>
+                <a class="navbar-brand page-scroll" href="#top">
+                <img alt="Brand" src="<?= $this->assetUrl('img/logo') ?>"></a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -48,7 +51,7 @@
                         <a class="page-scroll" href="#page-top"></a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#about">Carte</a>
+                        <a class="page-scroll" href="#map">Carte</a>
                     </li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Les quartiers <span class="caret"></span></a>
@@ -69,11 +72,6 @@
                     <li>
                         <a class="page-scroll" href="#connect">Connexion</a>
                     </li>
-                    <!-- <li>
-                        <a class="page-scroll" href="<?=$this->url('default_home', ['deconnect'=>'1']);?>"></a>
-
-                        <a class="page-scroll" href="<?=$this->url('default_home', ['deconnect'=>'1']);?>">Déconnexion</a>
-                    </li> -->
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -83,33 +81,7 @@
 
     <?= $this->section('main_content'); ?>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container-fluid diagonal">
-            <div class="row">
-                <div class="col-lg-10 col-lg-offset-1 text-center">
-                    <h4><strong>Ô Bar</strong>
-                    </h4>
-                    <ul class="list-unstyled">
-                        <li><i class="fa fa-phone fa-fw"></i>numéro</li>
-                        <li><i class="fa fa-envelope-o fa-fw"></i>  <a href="mailto:name@example.com">contact@obar.com</a>
-                        </li>
-                    </ul>
-                    <br>
-                    <ul class="list-inline">
-                        <li>
-                            <a href="#"><i class="fa fa-facebook fa-fw fa-3x"></i></a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-twitter fa-fw fa-3x"></i></a>
-                        </li>
-                    </ul>
-                    <hr class="small">
-                    <p class="text-muted">Copyright &copy; Wf3 | 2016</p>
-                </div>
-            </div>
-        </div>
-    </footer>
+    
 
     <!-- jQuery -->
 

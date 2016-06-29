@@ -2,16 +2,11 @@
 
 <?php $this->start('main_content') ?>
 
-<!-- Connexion  -->
-<section class="connexion container-fluid">
-	<!--?$this->insert('default/connexion'); ?-->
-</section>
-
 <!-- Présentation -->
 <header id="top" class="header">
 	<div class="text-vertical-center">
 	    <h1>Ô Bar</h1>
-	    <h3>Description du site</h3>
+	    <h3><?php echo $this->e($infos['desc']); ?></h3>
 
 	    <!-- Begin MailChimp Signup Form -->
 	    <link href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" rel="stylesheet" type="text/css">
@@ -19,6 +14,7 @@
 	    <div id="mc_embed_signup">
 	        <form action="//twitter.us13.list-manage.com/subscribe/post?u=7145e347cec5f3e12eec87b37&amp;id=ea200e434f" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
 	            <div id="mc_embed_signup_scroll">
+	                <p>Newsletter</p>
 	                <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="adresse email" required>
 	                <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
 	                <div style="position: absolute; left: -5000px;" aria-hidden="true">
@@ -33,11 +29,6 @@
 	    <!--End mc_embed_signup-->
 	</div>
 </header>
-
-<!--Profil user
-<section id="users_profil" class="users_profil">
-	<?=$this->insert('default/profilUsers'); ?>
-</section> -->
 
 <!--Slice mise à jour-->
 <section id="services" class="services bg-primary">
@@ -62,11 +53,11 @@
 
 <!-- Carte -->
 <section id="map" class="map">
-	<div class="container">
+	<div class="container-fluid">
         <div class="row">
             <div class="col-lg-12 text-center">
                 <h2>Choisissez votre quartier</h2>
-                <img id="svg" src="<?=$this->assetUrl('img/Quartier-saint_pierre.svg'); ?>">
+                <img class="img-responsive" src="<?=$this->assetUrl('img/Quartier-saint_pierre.svg'); ?>" alt="Carte Quartier Saint Pierre">
             </div>
         </div>
         <!-- /.row -->
@@ -83,19 +74,20 @@
 	            <br>
 	            <p>En devenant membre, vous aurez la possibilité de vous créer un réseau d'amis afin de partager vos expériences</p>
 
-            <?php if(isset($errors['register']) && !empty($errors['register'])): //On affiche les erreurs si le tableau est vide ?>
-                <div class="alert alert-danger fade in">
-                     <a href="#" class="close" data-dismiss="alert">&times;</a>
-                     <strong>Erreur ! </strong><?=implode('<br>', $errors['register']); ?>
-                </div>
-            <?php endif; ?>
+		            <?php if(isset($errors['register']) && !empty($errors['register'])): //On affiche les erreurs si le tableau est vide ?>
+		                <div class="alert alert-danger fade in">
+		                     <a href="#" class="close" data-dismiss="alert">&times;</a>
+		                     <strong>Erreur ! </strong><?=implode('<br>', $errors['register']); ?>
+		                </div>
+		            <?php endif; ?>
 
-            <?php if(isset($success['register']) && $success['register'] === true): ?>
-                <div class="alert alert-success fade in">
-                    <a href="#" class="close" data-dismiss="alert">&times;</a>
-                    <strong>Félicitations!</strong> Votre message a bien été envoyé.
-                </div>
-            <?php endif; ?>
+		            <?php if(isset($success['register']) && $success['register'] === true): ?>
+		                <div class="alert alert-success fade in">
+		                    <a href="#" class="close" data-dismiss="alert">&times;</a>
+		                    <strong>Félicitations!</strong> Votre message a bien été envoyé.
+		                </div>
+		            <?php endif; ?>
+
 	            <form class="form-horizontal" method="POST">
 	                <input type="hidden" name="form" value="register">
 	                <div class="form-group">
@@ -201,5 +193,34 @@
 
 <?php endif; ?>
 </section>
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 col-lg-offset-1 text-center">
+                <h4><strong><?php echo $this->e($infos['name']); ?></strong></h4>
+                <ul class="list-unstyled">
+                    <li><i class="fa fa-map-marker" aria-hidden="true"></i><?=$infos['address']; ?></li>
+                    <li><i class="fa fa-phone-square" aria-hidden="true""></i><?=$infos['phone']; ?></li>
+                    <li><i class="fa fa-envelope-square" aria-hidden="true"></i><a href="mailto:name@example.com"><?=$infos['email']; ?></a>
+                    </li>
+                </ul>
+                <ul class="list-inline">
+                    <li>
+                        <a href="https://fr-fr.facebook.com"><i class="fa fa-facebook fa-fw fa-2x" aria-hidden="true"></i></a>
+                    </li>
+                    <li>
+                        <a href="https://twitter.com"><i class="fa fa-twitter fa-fw fa-2x" aria-hidden="true"></i></a>
+                    </li>
+                    <li>
+                        <a href="https://twitter.com"><i class="fa fa-instagram fa-fw fa-2x" aria-hidden="true"></i></a>
+                    </li>
+                </ul>
+                <p>Copyright &copy; Ô Bar | Wf3 | 2016</p>
+            </div>
+        </div>
+    </div>
+</footer>
 
 <?php $this->stop('main_content') ?>
