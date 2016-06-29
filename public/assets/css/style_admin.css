@@ -117,9 +117,10 @@ label {
 	font-family: "Comfortaa",cursive;
     font-size: 5rem;
     color:#f8f8f8;
-    margin-top: 15%;
+    margin: 15% 15%;
     border: 12px solid rgba(255, 255, 255, 0.6);
     padding: 20px 0;
+
 }
 
 .header {
