@@ -6,6 +6,7 @@ use \W\Controller\Controller;
 use \W\Model\UsersModel as UsersModel; //Permet d'importer la classe UsersModel que l'on pourra instancier via new UsersModel();
 use \W\Security\AuthentificationModel as AuthModel; //Permet d'importer la classe AuthentificationModel pour hacher le password
 use \Model\BarModel as Bar;
+use \Model\ConfirmationModel as Confirmation;
 use \Model\PresentationModel as Presentation; //Permet d'importer la calsse PresentationModel pour la présentation du site
 
 class DefaultController extends Controller
@@ -16,6 +17,7 @@ class DefaultController extends Controller
 	public function home()
 	{
 		//Instancie les classes
+		$confirmation = new Confirmation();
 		$usersModel = new UsersModel();
 		$authModel = new AuthModel();
 		$barModel = new Bar();
@@ -23,8 +25,13 @@ class DefaultController extends Controller
 
 		$messageController = new \Controller\MessageController();
 
-		$errors = [];
-		$success = false;
+		$errors = [];// tableau de tablau d'erreurs
+		$errors['connexion'] = [];// tableau d'erreurs pour le formulaire de connexion
+		$errors['register'] = [];// tableau d'erreurs pour le formulaire d'inscription
+		$errors['contact'] = [];// tableau d'erreurs pour le formulaire de contact
+		$success = [];// tableu de success
+		$success['inscription'] = false; // initialise le success inscription a false
+		$success['contact'] = false; // initialise le success contact a false
 
 		if(!empty($_GET)){
 			$get = array_map('trim', array_map('strip_tags', $_GET));
@@ -42,12 +49,12 @@ class DefaultController extends Controller
 					// ici le traitement pour le formulaire de connexion
 					if(isset($post['co_pseudo'])){
 						if(preg_match('#^[A-Z]{1}[A-Za-z0-9.-_]{2,15}$#', $post['co_pseudo']) == 0){
-							$errors[] = 'Votre pseudo doit commencer par une majuscule';
+							$errors['connexion'][] = 'Votre pseudo doit commencer par une majuscule';
 						}
 					}
 					if(isset($post['co_pswd'])){
 						if(preg_match('#.*^(?=.{8,20})(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).*$#', $post['co_pswd']) == 0){
-							$errors[] = 'Votre mot de passe doit contenir au moins une majuscule et un chiffre.';
+							$errors['connexion'][] = 'Votre mot de passe doit contenir au moins une majuscule et un chiffre.';
 						}
 					}
 
@@ -69,72 +76,74 @@ class DefaultController extends Controller
 						}
 					}
 				}
-
-				if($post['form'] == 'nl'){//si le champ form vaut 'nl'
-					// ici le traitement pour le formulaire de newsletter
-					if(isset($post['nl_email'])){
-						if(preg_match('#^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$#', $post['nl_email']) == 0){
-							$errors[] = 'Erreur email nl';
-						}
-					}
-
-					if(count($errors) == 0){
-						// Newsletter
-						echo 'nl';
-					}
-				}
-
 				if($post['form'] == 'register'){//si le champ form vaut 'register'
 					// ici le traitement pour le formulaire d'inscription
 					if(isset($post['nickname'])){
 						if(preg_match('#^.{3,}$#', $post['nickname']) == 0){
-							$errors[] = 'Votre pseudo doit comporter 3 caractères minimun';
+							$errors['register'][] = 'Votre pseudo doit comporter 3 caractères minimun';
 						}
 					}
 
 					if(isset($post['email'])){
 						if(preg_match('#^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$#', $post['email']) == 0){
-							$errors[] = 'Votre email est incorrect';
+							$errors['register'][] = 'Votre email est incorrect';
 						}
 					}
 
 					if(isset($post['password'])){
                         if(preg_match('#.*^(?=.{8,20})(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).*$#', $post['password']) == 0){
-                            $errors[] = 'Le mot de passe doit avoir un chiffre et une majuscule et minimum 8 caractères';
+                            $errors['register'][] = 'Le mot de passe doit avoir un chiffre et une majuscule et minimum 8 caractères';
                         }
                     }
 
                     if($post['password'] != $post['passwordOk']){
-                    	$errors[] = 'Les mots de passe ne correspondent pas';
+                    	$errors['register'][] = 'Les mots de passe ne correspondent pas';
                     }
 
 					if(count($errors) == 0){
-						$data = [
-							'nickname' 	=> $post['nickname'],
-							'email'		=> $post['email'],
-							'password'	=> $authModel->hashPassword($post['password']),
-							'role'		=> 'user',
-						];
-						//On passe le tableau $data à la méthode insert() pour enregistrer nos données en base
-						if($usersModel->insert($data)){
-							//Insertion en base de données effectuée
-							$success = true;
-						}
-						else{
+						if($usersModel->emailExists($post['email'])){
+							$token = md5(uniqid()); // On créer le token
 
-						}
-					}
-					else {
-						/* Va recréer le tableau $errors sous forme de : 
-
-							$errors = [
-								'register' => [
-									// pseudo ko
-									// email
-								]
+							$data = [
+								'email' => $post['email'],
+								'date' => date('Y-m-d H:i:s'),
+								'date_exp' => date('Y-m-d H:i:s', strtotime('+ 5 min')),
+								'token' => $token
 							];
-						*/
-						$errors['register'] = $errors; 
+							if($confirmation->insert($data)){
+								// envoie du token par email
+								$app = getapp();
+								$mail = new \PHPMailer();
+
+								$reponse = $this->generateUrl('default_inscriptionConfirm', ['token' => $token], true);
+
+								$mail->isSMTP();                                     	// Set mailer to use SMTP
+								$mail->Host = $app->getConfig('host_mailer'); ;  		// Specify main and backup SMTP servers
+								$mail->SMTPAuth = true;                               	// Enable SMTP authentication
+								$mail->Username = $app->getConfig('user_mailer');       // SMTP username
+								$mail->Password = $app->getConfig('pswd_mailer');       // SMTP password
+								$mail->SMTPSecure = 'tls';                           	// Enable TLS encryption, `ssl` also accepted
+								$mail->Port = 465;                                    	// TCP port to connect to
+
+								$mail->setFrom('confirmation@obar.fr');
+								$mail->addAddress($post['email']);     					// Add a recipient
+
+								$mail->isHTML(true);                                  	// Set email format to HTML
+
+								$mail->Subject = 'Here is the subject';
+								$mail->Body    = '<a href="'.$reponse.'">Confirmation</a>';
+								$mail->AltBody = 'changer d\'ébergeur d\'email';
+
+								if($mail->send()) {
+									$success['inscription'] = true;
+								} else {
+									$errors['register'][] = 'Erreur lors de l\'envoie du token.';
+								}
+							}
+							else{
+								$errors['register'][] = 'Erreur lors de la creation du token.';
+							}
+						}
 					}
 				}
 
@@ -142,34 +151,34 @@ class DefaultController extends Controller
 					// ici le traitement pour le formulaire de contact
 					if(isset($post['ct_firstname'])){
 						if(preg_match('#^[A-Z]{1}[A-Za-z0-9.-_]{3,20}$#', $post['ct_firstname']) == 0){
-							$errors[] = 'Votre nom doit commencer par une majuscule et comporter minimum 3 caractères';
+							$errors['contact'][] = 'Votre nom doit commencer par une majuscule et comporter minimum 3 caractères';
 						}
 					}
 
 					if(isset($post['ct_lastname'])){
 						if(preg_match('#^[A-Z]{1}[A-Za-z0-9.-_]{3,20}$#', $post['ct_lastname']) == 0){
-							$errors[] = 'Votre prénom doit commencer par une majuscule et comporter minimum 3 caractères';
+							$errors['contact'][] = 'Votre prénom doit commencer par une majuscule et comporter minimum 3 caractères';
 						}
 					}
 
 					if(isset($post['ct_email'])){
 						if(preg_match('#^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$#', $post['ct_email']) == 0){
-							$errors[] = 'Votre email n\'est pas valide';
+							$errors['contact'][] = 'Votre email n\'est pas valide';
 						}
 					}
 
 					if(isset($post['ct_msg'])){
 						if(preg_match('#^.{1,}$#', $post['ct_msg']) == 0){
-							$errors[] = 'Votre message ne doit pas être vide';
+							$errors['contact'][] = 'Votre message ne doit pas être vide';
 						}
 					}
 
 					if(count($errors) == 0){
 						$messageController->addMessage($post['ct_firstname'], $post['ct_lastname'], $post['ct_email'], $post['ct_msg']);
-						$success = true;
+						$success['contact'] = true;
 					}
 				}
-			} //end if(isset($post['form']	
+			} //end if(isset($post['form']
 		} //end $_POST
 
 
@@ -182,6 +191,32 @@ class DefaultController extends Controller
 	public function home_connect()
 	{
 		$this->show('default/home_connect');
+	}
+
+	/*
+	* Method de la page de confirmation d'inscription
+	*/
+	public function inscriptionConfirm($token){
+		$authModel = new AuthModel();
+
+
+		// resulta d'inscription
+		// $data = [
+		// 	'nickname' 	=> $post['nickname'],
+		// 	'email'		=> $post['email'],
+		// 	'password'	=> $authModel->hashPassword($post['password']),
+		// 	'role'		=> 'user',
+		// ];
+		// //On passe le tableau $data à la méthode insert() pour enregistrer nos données en base
+		// if($usersModel->insert($data)){
+		// 	//Insertion en base de données effectuée
+		// 	$success = true;
+		// }
+		// else{
+		//
+		// }
+
+		$this->show('');
 	}
 }
 ?>

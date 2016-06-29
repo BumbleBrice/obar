@@ -37,8 +37,8 @@ class PasswordController extends Controller
 							$params['errors'][] = 'Les mots de passe ne correspondent pas.';
 						}
 					}
-					if($tokenGet = $lostPasswordModel->tokenOk($token)){
-						if(count($params['errors']) == 0){
+					if(count($params['errors']) == 0){
+						if($tokenGet = $lostPasswordModel->tokenOk($token)){
 							if($lostPasswordModel->changePassword($tokenGet['email'], $auth->hashPassword($post['password']))){
 								// supression du token
 								if($lostPasswordModel->delete($tokenGet['id'])){
@@ -116,10 +116,7 @@ class PasswordController extends Controller
 								$mail->AltBody = 'changer d\'ébergeur d\'email';
 
 								if($mail->send()) {
-									echo 'ok';
 									$params['success'] = true;
-									sleep(5);
-									$this->redirectToRoute('default_home');
 								} else {
 									$params['errors'][] = 'Erreur lors de l\'envoie du token.';
 								}

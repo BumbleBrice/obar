@@ -28,6 +28,7 @@ $w_config = [
 	'presentation_table' => 'obar_desc',
 
 	'token_pswd_table' => 'token_pswd',
+	'token_confirm_table' => 'token_confirm',
 
 	'host_mailer' 	=> 'mailtrap.io',
 	'user_mailer' 	=> '4bfa7bfbada3f6',
