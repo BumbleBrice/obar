@@ -27,8 +27,11 @@ $w_config = [
 	'message_table' => 'contact',
 	'presentation_table' => 'obar_desc',
 
-	'user_mailer' 	=> '',
-	'pswd_mailer'	=> ''
+	'token_pswd_table' => 'token_pswd',
+
+	'host_mailer' 	=> 'mailtrap.io',
+	'user_mailer' 	=> '4bfa7bfbada3f6',
+	'pswd_mailer'	=> '41077df70e70b0'
 
 ];
 

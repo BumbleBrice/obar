@@ -132,7 +132,10 @@ class UsersController extends Controller
 				}
 
 				if(isset($post['password'])){
-					if(preg_match('#^.{1,}$#', $post['password']) == 0){
+					if(empty($post['password'])){
+					}
+					elseif(preg_match('#^.{1,}$#', $post['password']) == 0){
+						var_dump($post['password']);
 						$errors[] = 'error password';
 					}
 					else{
