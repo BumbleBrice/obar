@@ -39,11 +39,13 @@ class UsersController extends Controller
 
 			$user = $usersModel->find($id);
 
-			$user_name = $user['nickname'];
-			$user_picture = $user['firstname'];
-			$user_description = $user['lastname'];
-			$user_phone = $user['email'];
-			$user_adress = $user['password'];
+			$user_nickname = $user['nickname'];
+			$user_firstname = $user['firstname'];
+			$user_lastname = $user['lastname'];
+			$user_email = $user['email'];
+			$user_password = $user['password'];
+			$user_role = $user['role'];
+			$user_password = $user['password'];
 
 			if(!empty($_FILES)){
 				if(isset($_FILES['picture']) && $_FILES['picture']['error'] == UPLOAD_ERR_OK && $_FILES['picture']['size'] < $maxSize) {
@@ -97,7 +99,7 @@ class UsersController extends Controller
 						$errors[] = 'error nickname';
 					}
 					else{
-						$user_name = $post['nickname'];
+						$user_nickname = $post['nickname'];
 					}
 				}
 
@@ -106,7 +108,7 @@ class UsersController extends Controller
 						$errors[] = 'error firstname';
 					}
 					else{
-						$user_description = $post['firstname'];
+						$user_firstname = $post['firstname'];
 					}
 				}
 
@@ -115,7 +117,7 @@ class UsersController extends Controller
 						$errors[] = 'error lastname';
 					}
 					else{
-						$user_phone = $post['lastname'];
+						$user_lastname = $post['lastname'];
 					}
 				}
 
@@ -124,7 +126,7 @@ class UsersController extends Controller
 						$errors[] = 'error email';
 					}
 					else{
-						$user_adress = $post['email'];
+						$user_email = $post['email'];
 					}
 				}
 
@@ -133,7 +135,25 @@ class UsersController extends Controller
 						$errors[] = 'error password';
 					}
 					else{
-						$user_adress = $post['password'];
+						$user_password = $post['password'];
+					}
+				}
+
+				if(isset($post['picture'])){
+					if(preg_match('#^.{1,}$#', $post['picture']) == 0){
+						$errors[] = 'error picture';
+					}
+					else{
+						$user_picture = $post['picture'];
+					}
+				}
+
+				if(isset($post['role'])){
+					if(preg_match('#^.{1,}$#', $post['role']) == 0){
+						$errors[] = 'error role';
+					}
+					else{
+						$user_role = $post['role'];
 					}
 				}
 
@@ -148,11 +168,13 @@ class UsersController extends Controller
 						'lastname' => $user_lastname,
 						'email' => $user_email,
 						'password' => $user_password,
+						'role' => $user_role,
+						'picture' => $user_picture
 
 					];
 
 					// On passe le tableau $data à la méthode update() pour mofifier nos données en bdd
-					if ($userModel->update($data, $id)) {
+					if ($usersModel->update($data, $id)) {
 
 						// Ici l'insertion en base est effectuée
 						$success = true;
@@ -162,7 +184,6 @@ class UsersController extends Controller
 
 			// On envoie les erreurs en paramètre à l'aide d'un tableau (array)
 			$params = ['errors' => $errors, 'success' => $success, 'user' => $usersModel->find($id), 'maxSize' => $maxSize];
-
 
 		$this->show('adminUsers/user_edit', $params);
 	}

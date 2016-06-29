@@ -77,7 +77,7 @@
 
                             <br><br>
                             <button type="reset" class="btn btn-default boutonBarAdd">Recommencer</button>
-                            <button type="submit" class="btn btn-default boutonBarAdd">Ajouter l'utilisateur'</button>
+                            <button type="submit" class="btn btn-default boutonBarAdd">Ajouter l'utilisateur</button>
 
                         </form>
 
