@@ -52,18 +52,18 @@ class MessageController extends Controller
 		$mail = new PHPMailer();
 
 
-		$mail->isSMTP();                                      // Set mailer to use SMTP
-		$mail->Host = 'smtp.mailgun.org';  // Specify main and backup SMTP servers
-		$mail->SMTPAuth = true;                               // Enable SMTP authentication
-		$mail->Username = $app->getConfig('user_mailer');                 // SMTP username
-		$mail->Password = $app->getConfig('pswd_mailer');                           // SMTP password
-		$mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
-		$mail->Port = 587;                                    // TCP port to connect to
+		$mail->isSMTP();                                      	// Set mailer to use SMTP
+		$mail->Host = 'smtp.mailgun.org';  					  	// Specify main and backup SMTP servers
+		$mail->SMTPAuth = true;                               	// Enable SMTP authentication
+		$mail->Username = $app->getConfig('user_mailer');     	// SMTP username
+		$mail->Password = $app->getConfig('pswd_mailer');     	// SMTP password
+		$mail->SMTPSecure = 'tls';                            	// Enable TLS encryption, `ssl` also accepted
+		$mail->Port = 587;                                    	// TCP port to connect to
 
 		$mail->setFrom('reponse@obar.fr');
-		$mail->addAddress($email);     // Add a recipient
+		$mail->addAddress($email);     						  	// Add a recipient
 
-		$mail->isHTML(true);                                  // Set email format to HTML
+		$mail->isHTML(true);                                  	// Set email format to HTML
 
 		$mail->Subject = 'Here is the subject';
 		$mail->Body    = $reponse;

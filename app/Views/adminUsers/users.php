@@ -8,12 +8,16 @@
                 <div class="col-lg-12">
                         <div class="panel-heading wrapperList">
                             <p>Liste des utilisateurs<p><br>
-                            <a type="button" class="btn btn-default" href="<?= $this->url('admin_user_add') ?>">Ajouter un utilisateur</a>
                         </div>
                         <!-- /.panel-heading -->
-                        <div class="panel-body lustUsers">
+                        <div class="panel-body listUsers">
                             <div class="table-responsive">
                                 <table class="table table-striped">
+                                    
+                                    <br>
+                                    <a type="button" class="btn btn-default btnAddUser" href="<?= $this->url('admin_user_add') ?>">Ajouter un utilisateur</a>
+                                    
+                                    <br><br>
                                     <thead>
                                         <tr>
                                             <th>Pseudo</th>

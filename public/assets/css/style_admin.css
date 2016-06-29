@@ -246,7 +246,6 @@ label {
 	background: white;
 	color: #6D071A;
 	border: 1px solid #6D071A;
-	/*width: 25%;*/
 }
 
 .divFormAddBar {
@@ -310,16 +309,41 @@ label {
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
 .wrapperList {
-	width: 11%;
+	text-align: center;
+	width: 20%;
+	height: 40px;
 	margin: 5px;
 	border: 3px solid #6D071A;
 	border-radius: 40px;
 	margin-left: 20px;
 	margin-right: 20px;
-	margin-bottom: 40px;
+	margin-bottom: 15px;
+	margin-top: 100px;
 }
 
-.lustUsers {
+@media(max-width:768px) {
+	.wrapperList {
+		height: 70px;
+		width: 100px;
+	}
+}
+
+.btnAddUser {
+	background: #6D071A;
+	color: white;
+	border: 1px solid white;
+	border-radius: 12px;
+	animation: 0;
+}
+
+.btnAddUser:hover {
+	background: white;
+	color: #6D071A;
+	border: 1px solid #6D071A;
+	box-shadow: 2px 2px 5px;
+}
+
+.listUsers {
 	width: 100%;
 	margin: 5px;
 	border: 3px solid #6D071A;
