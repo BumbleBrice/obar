@@ -202,7 +202,7 @@ label {
 }
 
 .btnListBar:hover {
-	background: #ECECEC;
+	background: white;
 	color: #6D071A;
 	text-decoration: none;
 }
@@ -332,7 +332,17 @@ label {
 	padding: 30px;
 }
 
-
+#cookies-banner{ 
+	background:white;
+	color: red;
+	position:fixed; top:0; left:0; 
+	z-index:9999; 
+	width:100%; 
+	border-radius:0; 
+	padding:5px 10px; 
+	vertical-align:middle; 
+	margin:0; 
+}
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 /*                         UTILISATEURS                        */
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */

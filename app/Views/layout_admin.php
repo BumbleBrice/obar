@@ -102,6 +102,7 @@
     </div>
 
     <script src="<?= $this->assetUrl('js/jquery.js'); ?>"></script>
+    <script src="<?= $this->assetUrl('js/script_cookies.js'); ?>"></script>
     <script src="<?= $this->assetUrl('js/jquery.easing.1.3.js'); ?>"></script>
 
     <script src="<?= $this->assetUrl('js/bootstrap.js'); ?>"></script>
