@@ -65,6 +65,11 @@ label {
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 /*                            NAVBAR                           */
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+.navbar-inverse {
+    background-color: #6d071a !important;
+    border-color: #6d071a;
+    min-height: 50px;
+}
 .navbar-toggle {
 	background-color: #6D071A;
 }
@@ -85,7 +90,12 @@ label {
     height: 100%;
     position: fixed;
     background: #6D071A;
-    min-width: 225px;
+    min-width: 175px;
+}
+@media(max-width:768px) {
+	.navigation {
+		background: transparent;
+	}
 }
 
 .wrapper {
@@ -387,12 +397,23 @@ label {
 /*****Bouton retour site*****/
 
 .boutonRetourSite {
+	position: absolute;
+	top: 0;
+	right: 1%;
     background: white !important;
     color: #6D071A !important;
     padding: 10px 20px 10px 20px;
-    margin: 5px 0px 5px 20px;
+ 
     border: 2px solid #A22121;
 }
+@media(max-width:768px) {
+	.boutonRetourSite {
+		right: 15%;
+		
+	}
+
+
+	}
 
 .boutonRetourSite:hover {
 	background: #6D071A !important;
@@ -458,7 +479,7 @@ label {
   	display: inline-block;
   	position: relative;
   	text-transform: uppercase;
- 	/* margin: 25px;*/
+
 }
 .button-fill.grey {
   background: #6D071A;
@@ -469,14 +490,10 @@ label {
   line-height: 56px;
   letter-spacing: .1em;
 }
-/*@media(min-width: 768px){
-	.button-fill {
-		width: 750px;
-	}
-}*/
+
 @media(max-width:768px) {
 	.button-fill {
-		width: 80vw;
+		width: 95vw;
 		text-align: left;
 	}
 	.button-text {
