@@ -35,7 +35,7 @@
                                             <td><?= $user['nickname'] ?></td>
                                             <td><?= $user['firstname'] ?></td>
                                             <td><?= $user['lastname'] ?></td>
-                                            <td><?= $user['picture'] ?></td>
+                                            <td><img class="imgListBar" src="<?=$user['picture']; ?>" alt="photo de '.<?=$user['nickname']; ?>.'"></td>
                                             <td><?= $user['email'] ?></td>
                                             <td><?= $user['role'] ?></td>
                                             <td class="">
