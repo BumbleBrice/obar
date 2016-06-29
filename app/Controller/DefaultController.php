@@ -33,8 +33,10 @@ class DefaultController extends Controller
 		$success['inscription'] = false; // initialise le success inscription a false
 		$success['contact'] = false; // initialise le success contact a false
 
+
 		if(!empty($_GET)){
 			$get = array_map('trim', array_map('strip_tags', $_GET));
+
 			if(isset($get['deconnect']) && $get['deconnect'] == '1'){
 				$authModel->logUserOut(); //Permet de déconnecter l'utilisateur
 			}
@@ -68,8 +70,8 @@ class DefaultController extends Controller
                     	$errors['register'][] = 'Les mots de passe ne correspondent pas';
                     }
 
-					if(count($errors) == 0){
-						if($usersModel->emailExists($post['email'])){
+					if(count($errors['register']) == 0){
+						if(!$usersModel->emailExists($post['email'])){
 							$data = [
 								'nickname' 	=> $post['nickname'],
 								'email'		=> $post['email'],
@@ -77,7 +79,7 @@ class DefaultController extends Controller
 								'role'		=> 'user',
 								'confirm' => '0'
 							];
-							
+
 							//On passe le tableau $data à la méthode insert() pour enregistrer nos données en base
 							if($usersModel->insert($data)){
 								$token = md5(uniqid()); // On créer le token
@@ -178,37 +180,39 @@ class DefaultController extends Controller
 		$usersModel = new UsersModel();
 		$authModel = new AuthModel();
 		$barModel = new Bar();
+		$presentationModel = new Presentation();
 
 		$params = [];
 		$params['bars'] = $barModel->findAll();
+		$params['infos'] = $presentationModel->find(1);
+		$params['errors'] = [];
+		$params['errors']['connexion'] = [];
 
-		if(!empty($_POST)){//si le champ form vaut 'co'
-			// ici le traitement pour le formulaire de connexion
+
+		if(!empty($_POST)){
+			$post = array_map('trim', array_map('strip_tags', $_POST));
+
 			if(isset($post['co_pseudo'])){
-				if(preg_match('#^[A-Z]{1}[A-Za-z0-9.-_]{2,15}$#', $post['co_pseudo']) == 0){
-					$errors['connexion'][] = 'Votre pseudo doit commencer par une majuscule';
+				if(preg_match('#^([A-Z]{1}[A-Za-z0-9.-_]{2,15})||([a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3})$#', $post['co_pseudo']) == 0){
+					$params['errors']['connexion'][] = 'Votre pseudo doit commencer par une majuscule';
 				}
 			}
 			if(isset($post['co_pswd'])){
 				if(preg_match('#.*^(?=.{8,20})(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).*$#', $post['co_pswd']) == 0){
-					$errors['connexion'][] = 'Votre mot de passe doit contenir au moins une majuscule et un chiffre.';
+					$params['errors']['connexion'][] = 'Votre mot de passe doit contenir au moins une majuscule et un chiffre.';
 				}
 			}
 
-			if(count($errors) == 0){
-				// connexion
-
-				// La méthode isValidLoginInfo() retourne un utilisateur si celui-ci existe et que le couple identifiant /mdp existe
-				//$idUser contient l'id  de mon utilisateur
+			if(count($params['errors']['connexion']) == 0){
 				$idUser = $authModel->isValidLoginInfo($post['co_pseudo'], $post['co_pswd']);
 
 				if($idUser){
-					//On apelle la méthode find() qui permet de retourner les résultats en fonction d'un ID
 					$user = $usersModel->find($idUser);
 					if($user['confirm'] == 1){
-						//La méthode logUserIn() permet de connecter un utilisateur
 						$authModel->logUserIn($user);
-						//$myUser = $authModel->getLoggedUser(); //Permet de récupérer les infos de sessions
+					}
+					else{
+						$params['errors']['connexion'][] = 'Votre compte n\'a pas était validé.';
 					}
 				}
 			}

@@ -19,10 +19,10 @@
 
     <!-- Custom Fonts -->
     <link href='https://fonts.googleapis.com/css?family=Nunito:400,700,300|Comfortaa:400,700,300|Roboto:400,300italic' rel='stylesheet' type='text/css'>
-    
+
     <!-- Font axesome -->
     <link rel="stylesheet" href="<?= $this->assetUrl('font-awesome/css/font-awesome.min.css') ?>">
-   
+
     <!-- CSS personnalisé -->
     <link href="<?= $this->assetUrl('css/style.css') ?>" rel="stylesheet">
 </head>
@@ -69,7 +69,7 @@
                     <li>
                         <a class="page-scroll" href="<?=$this->url('default_home', ['deconnect'=>'1']);?>"></a>
 
-                        <a class="page-scroll" href="<?=$this->url('default_home', ['deconnect'=>'1']);?>">Déconnexion</a>
+                        <a class="page-scroll" href="<?=$this->url('default_home');?>?deconnect=1">Déconnexion</a>
                     </li>
                 </ul>
             </div>
@@ -80,7 +80,7 @@
 
     <?= $this->section('main_content'); ?>
 
-    
+
 
     <!-- jQuery -->
 

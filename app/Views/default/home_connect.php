@@ -2,18 +2,26 @@
 
 <?php $this->start('main_content') ?>
 
-
-<?php if(!isset($w_user)): ?>
-
+<?php if(!$w_user): ?>
+    <br>
+    <br>
+    <br>
+    <?php if(!empty($errors['connexion'])): ?>
+        <div class="alert alert-danger fade in">
+        	 <a href="#" class="close" data-dismiss="alert">&times;</a>
+        	 <strong>Erreur ! </strong><?=implode('<br>', $errors['connexion']); ?>
+        </div>
+        <a href="<?$this->url('LostPassword_lostPassword')?>">Mot de passe oublier ?</a>
+<?php endif; ?>
 <!-- Connexion A FAIRE -->
 <form method="POST">
     <input type="hidden" name="form" value="co">
     <label for="co_pseudo"></label>
     <input id="co_pseudo" type="text" name="co_pseudo" placeholder="Pseudo..." required>
-    
+
     <label for="co_pswd"></label>
     <input id="co_pswd" type="text" name="co_pswd" placeholder="Password..." required>
-    
+
     <input type="submit" value="connexion">
 </form>
 
@@ -30,8 +38,8 @@
         <div class="row">
             <div class="col-lg-12">
                 <img class="img-circle img-responsive centree" src="<?=$this->assetUrl('img/3.jpg');?>" alt="">
-            </div> 
-        </div>  
+            </div>
+        </div>
         <div class="row">
             <div class="col-lg-12">
                 <div class="text-center">
@@ -66,7 +74,7 @@
                 </div>
             </div>
         </div>
-    </div>   
+    </div>
 </div> <!-- /.container -->
 </section> -->
 
@@ -82,7 +90,7 @@
 						<?=$bar['adress']; ?>
 						<br>
 						<?=$bar['phone']; ?>
-						<br>	
+						<br>
 						<?=$bar['description']; ?>
 					</p>
 				<?php endforeach; ?>
@@ -180,9 +188,19 @@
             <div class="col-lg-10 col-lg-offset-1 text-center">
                 <h4><strong><?php echo $this->e($infos['name']); ?></strong></h4>
                 <ul class="list-unstyled">
-                    <li><i class="fa fa-map-marker" aria-hidden="true"></i><?=$infos['address']; ?></li>
-                    <li><i class="fa fa-phone-square" aria-hidden="true""></i><?=$infos['phone']; ?></li>
-                    <li><i class="fa fa-envelope-square" aria-hidden="true"></i><a href="mailto:name@example.com"><?=$infos['email']; ?></a>
+                    <li>
+                        <i class="fa fa-map-marker" aria-hidden="true"></i>
+                        <?=$infos['address']; ?>
+                    </li>
+                    <li>
+                        <i class="fa fa-phone-square" aria-hidden="true""></i>
+                        <?=$infos['phone']; ?>
+                    </li>
+                    <li>
+                        <i class="fa fa-envelope-square" aria-hidden="true"></i>
+                        <a href="mailto:name@example.com">
+                            <?=$infos['email']; ?>
+                        </a>
                     </li>
                 </ul>
                 <ul class="list-inline">

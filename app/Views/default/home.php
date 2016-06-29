@@ -10,7 +10,7 @@
 
 	    <!-- Begin MailChimp Signup Form -->
 	    <link href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" rel="stylesheet" type="text/css">
-	    
+
 	    <div id="mc_embed_signup">
 	        <form action="//twitter.us13.list-manage.com/subscribe/post?u=7145e347cec5f3e12eec87b37&amp;id=ea200e434f" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
 	            <div id="mc_embed_signup_scroll">
@@ -42,7 +42,7 @@
 						<?=$bar['adress']; ?>
 						<br>
 						<?=$bar['phone']; ?>
-						<br>	
+						<br>
 						<?=$bar['description']; ?>
 					</p>
 				<?php endforeach; ?>
@@ -127,7 +127,7 @@
 	                </div>
 	            </form>
 	        </div>
-	    </div>       
+	    </div>
 	</div>
 </section>
 
