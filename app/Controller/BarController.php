@@ -140,6 +140,48 @@ class BarController extends Controller
 					$errors[] = 'vous n\'avez pas placer de point pour votre bar';
 				}
 
+				if(isset($post['scheduleOpen'])){
+					if(preg_match('#^[0-9:]{1,}$#', $post['scheduleOpen']) == 0){
+						$errors[] = 'error open';
+					}
+				}
+
+				if(isset($post['scheduleClose'])){
+					if(preg_match('#^[0-9:]{1,}$#', $post['scheduleClose']) == 0){
+						$errors[] = 'error close';
+					}
+				}
+
+				$schedule = '';
+
+				if(isset($post['dayLundi']) && $post['dayLundi'] == 'lundi'){
+					$schedule .= 'Lundi, ';
+				}
+				if(isset($post['dayMardi']) && $post['dayLundi'] == 'lundi'){
+					$schedule .= 'Mardi, ';
+				}
+				if(isset($post['dayMercredi']) && $post['dayLundi'] == 'lundi'){
+					$schedule .= 'Mercredi, ';
+				}
+				if(isset($post['dayJeudi']) && $post['dayLundi'] == 'lundi'){
+					$schedule .= 'Jeudi, ';
+				}
+				if(isset($post['dayVendredi']) && $post['dayLundi'] == 'lundi'){
+					$schedule .= 'Vendredi, ';
+				}
+				if(isset($post['daySamedi']) && $post['dayLundi'] == 'lundi'){
+					$schedule .= 'Samedi, ';
+				}
+				if(isset($post['dayDimanche']) && $post['dayLundi'] == 'lundi'){
+					$schedule .= 'Dimanche, ';
+				}
+
+				if(empty($schedule)){
+					$errors[] = 'error schedule';
+				}
+				else{
+					$schedule = substr($schedule, 0, -2);
+				}
 
 				if (count($errors) == 0) {
 					// Ici il n'y a aucune erreurs, on peut donc enregistrer en base de donnée
@@ -152,9 +194,13 @@ class BarController extends Controller
 						'description' => $post['content'],
 						'phone' => $post['phone'],
 						'adress' => $post['address'],
-						'schedule' => $post['schedule'],
+						'schedule' => $schedule,
+						'open' => $post['scheduleOpen'] . ':00',
+						'close' => $post['scheduleClose'] . ':00',
 						'x' => $post['x'],
-						'y' => $post['y']
+						'y' => $post['y'],
+						'google_url' => 'https://www.google.fr/maps/place/'.$post['address'].'/',
+						'date' => date('Y-m-d H:i:s')
 					];
 
 					// On passe le tableau $data à la méthode insert() pur enregistrer nos données en bdd
