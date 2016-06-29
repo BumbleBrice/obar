@@ -102,47 +102,63 @@ class DefaultController extends Controller
 
 					if(count($errors) == 0){
 						if($usersModel->emailExists($post['email'])){
-							$token = md5(uniqid()); // On créer le token
-
 							$data = [
-								'email' => $post['email'],
-								'date' => date('Y-m-d H:i:s'),
-								'date_exp' => date('Y-m-d H:i:s', strtotime('+ 5 min')),
-								'token' => $token
+								'nickname' 	=> $post['nickname'],
+								'email'		=> $post['email'],
+								'password'	=> $authModel->hashPassword($post['password']),
+								'role'		=> 'user',
+								'confirm' => '0'
 							];
-							if($confirmation->insert($data)){
-								// envoie du token par email
-								$app = getapp();
-								$mail = new \PHPMailer();
+							//On passe le tableau $data à la méthode insert() pour enregistrer nos données en base
+							if($usersModel->insert($data)){
+								$token = md5(uniqid()); // On créer le token
 
-								$reponse = $this->generateUrl('default_inscriptionConfirm', ['token' => $token], true);
+								$data = [
+									'email' => $post['email'],
+									'date' => date('Y-m-d H:i:s'),
+									'date_exp' => date('Y-m-d H:i:s', strtotime('+ 5 min')),
+									'token' => $token,
+									'idUser' => $usersModel->lastInsertId()
+								];
+								if($confirmation->insert($data)){// ajout du token en bdd
+									//Insertion en base de données effectuée
 
-								$mail->isSMTP();                                     	// Set mailer to use SMTP
-								$mail->Host = $app->getConfig('host_mailer'); ;  		// Specify main and backup SMTP servers
-								$mail->SMTPAuth = true;                               	// Enable SMTP authentication
-								$mail->Username = $app->getConfig('user_mailer');       // SMTP username
-								$mail->Password = $app->getConfig('pswd_mailer');       // SMTP password
-								$mail->SMTPSecure = 'tls';                           	// Enable TLS encryption, `ssl` also accepted
-								$mail->Port = 465;                                    	// TCP port to connect to
+									// envoie du token par email
+									$app = getapp();
+									$mail = new \PHPMailer();
 
-								$mail->setFrom('confirmation@obar.fr');
-								$mail->addAddress($post['email']);     					// Add a recipient
+									$reponse = $this->generateUrl('default_inscriptionConfirm', ['token' => $token], true);
 
-								$mail->isHTML(true);                                  	// Set email format to HTML
+									$mail->isSMTP();                                     	// Set mailer to use SMTP
+									$mail->Host = $app->getConfig('host_mailer'); ;  		// Specify main and backup SMTP servers
+									$mail->SMTPAuth = true;                               	// Enable SMTP authentication
+									$mail->Username = $app->getConfig('user_mailer');       // SMTP username
+									$mail->Password = $app->getConfig('pswd_mailer');       // SMTP password
+									$mail->SMTPSecure = 'tls';                           	// Enable TLS encryption, `ssl` also accepted
+									$mail->Port = 465;                                    	// TCP port to connect to
 
-								$mail->Subject = 'Here is the subject';
-								$mail->Body    = '<a href="'.$reponse.'">Confirmation</a>';
-								$mail->AltBody = 'changer d\'ébergeur d\'email';
+									$mail->setFrom('confirmation@obar.fr');
+									$mail->addAddress($post['email']);     					// Add a recipient
 
-								if($mail->send()) {
-									$success['inscription'] = true;
-								} else {
-									$errors['register'][] = 'Erreur lors de l\'envoie du token.';
+									$mail->isHTML(true);                                  	// Set email format to HTML
+
+									$mail->Subject = 'Here is the subject';
+									$mail->Body    = '<a href="'.$reponse.'">Confirmation</a>';
+									$mail->AltBody = 'changer d\'ébergeur d\'email';
+
+									if($mail->send()) {
+										$success['inscription'] = true;
+									} else {
+										$errors['register'][] = 'Erreur lors de l\'envoie du token.';
+									}
+								}
+								else{
+									$errors['register'][] = 'Erreur lors de la creation du token.';
 								}
 							}
-							else{
-								$errors['register'][] = 'Erreur lors de la creation du token.';
-							}
+						}
+						else{
+							$errors['register'][] = 'L\'email existe déja.';
 						}
 					}
 				}
@@ -183,7 +199,6 @@ class DefaultController extends Controller
 
 
 		// On envoi les erreurs en paramètre à l'aide d'un tableau (array)
-
 		$params = ['errors' => $errors, 'success' => $success, 'bars' => $barModel->findAll(), 'infos' => $presentationModel->find(1)];
 		$this->show('default/home', $params);
 	}
@@ -198,25 +213,28 @@ class DefaultController extends Controller
 	*/
 	public function inscriptionConfirm($token){
 		$authModel = new AuthModel();
+		$confirmation = new Confirmation();
+		$usersModel = new UsersModel();
 
+		$params = [];
+
+		if($tokenGet = $confirmation->tokenOk($token)){
+			// supression du token
+			$data = [
+				'confirm' => '1'
+			];
+			if($usersModel->update($data, $tokenGet['idUser'])){
+				if($confirmation->delete($tokenGet['id'])){
+					$params['success'] = true;
+				}
+			}
+		}
+		else{
+			$params['errors'][] = 'Votre confirmation d\'inscription a expiré ou n\'éxiste pas.';
+		}
 
 		// resulta d'inscription
-		// $data = [
-		// 	'nickname' 	=> $post['nickname'],
-		// 	'email'		=> $post['email'],
-		// 	'password'	=> $authModel->hashPassword($post['password']),
-		// 	'role'		=> 'user',
-		// ];
-		// //On passe le tableau $data à la méthode insert() pour enregistrer nos données en base
-		// if($usersModel->insert($data)){
-		// 	//Insertion en base de données effectuée
-		// 	$success = true;
-		// }
-		// else{
-		//
-		// }
-
-		$this->show('');
+		$this->show('default/confirm', $params);
 	}
 }
 ?>

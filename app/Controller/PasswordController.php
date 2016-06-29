@@ -46,10 +46,11 @@ class PasswordController extends Controller
 								}
 							}
 						}
+						else{
+							$params['errors'][] = 'Votre demande de réinitialisation a expiré ou n\'éxiste pas.';
+						}
 					}
-					else{
-						$params['errors'][] = 'Votre demande de réinitialisation a expiré ou n\'éxiste pas.';
-					}
+
 				}
 			}
 		}
