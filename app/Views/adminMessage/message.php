@@ -13,7 +13,7 @@
             <p>Liste des messages<p><br>
         </div><!-- /.panel-heading -->
 
-        <div class="row divFormAddBar">
+        <div class="row divListMessage">
 
             <div class="panel panel-default">
                 <div class="panel-body">
