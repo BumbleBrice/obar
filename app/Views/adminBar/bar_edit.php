@@ -1,4 +1,4 @@
-<?php $this->layout('layout_admin', ['title' => 'Modifier le bar']) ?>
+<?php $this->layout('layout_admin', ['title' => 'Accueil']) ?>
 
 <?php $this->start('main_content') ?>
 
