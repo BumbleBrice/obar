@@ -17,7 +17,7 @@
 		['GET|POST', '/admin_bar_edit/[i:id]', 'Bar#bar_edit', 'admin_bar_edit'],
 		['GET|POST', '/admin_bar_delete/[i:id][:delBar]', 'Bar#bar_delete', 'admin_bar_delete'],
 
-		['GET|POST', '/admin_message_list', 'Message#message_list', 'admin_message_list'],
+		['GET|POST', '/admin_message', 'Message#message', 'admin_message'],
 		['GET|POST', '/admin_message_read', 'Message#message_read', 'admin_message_read'],
 		['GET|POST', '/admin_message_delete', 'Message#message_delete', 'admin_message_delete'],
 

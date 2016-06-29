@@ -1,4 +1,4 @@
-<?php $this->layout('layout_admin', ['title' => 'Accueil']) ?>
+<?php $this->layout('layout_admin', ['title' => 'Supprimer l\'utilisateur']) ?>
 
 <?php $this->start('main_content') ?>
 

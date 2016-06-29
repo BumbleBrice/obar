@@ -1,4 +1,4 @@
-<?php $this->layout('layout_admin', ['title' => 'Accueil']) ?>
+<?php $this->layout('layout_admin', ['title' => 'Modifier la présentation']) ?>
 
 <?php $this->start('main_content') ?>
 
@@ -24,7 +24,7 @@
            		<div class="panel-body">
                     <form method="POST" role="form">
                         <div class="form-group">
-							<label for="description">Modifier la déscription</label>
+							<label for="description">Modifier la description</label>
 							<textarea type="text" class="form-control champTxtAddBar" name="description" id="desc"><?=$pres['description'];?></textarea>
 
 							<br><br>
