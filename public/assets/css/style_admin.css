@@ -303,6 +303,26 @@ label {
     background-color: #FFF5F4;
 }
 
+.listMessage {
+	text-align: center;
+	width: 20%;
+	height: 40px;
+	margin: 5px;
+	border: 3px solid #6D071A;
+	border-radius: 40px;
+	margin-left: 60px;
+	margin-right: 20px;
+	margin-bottom: 15px;
+	margin-top: 100px;
+}
+
+@media(max-width:768px) {
+	.listMessage {
+		height: 70px;
+		width: 100px;
+	}
+}
+
 
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 /*                         UTILISATEURS                        */
