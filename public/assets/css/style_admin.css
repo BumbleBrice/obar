@@ -202,7 +202,7 @@ label {
 }
 
 .btnListBar:hover {
-	background: white;
+	background: #ECECEC;
 	color: #6D071A;
 	text-decoration: none;
 }
