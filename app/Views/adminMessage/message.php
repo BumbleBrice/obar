@@ -42,9 +42,8 @@
                                     <td><?= $mes['date_add'] ?></td>
                                     <td><?= $mes['message_state'] ?></td>
                                     <td class="text-center">
-    									<a type="button" class="btn btn-info" href="?id_message=<?=$mes['id']; ?>">Voir</a>
-    									<a type="button" class="btn btn-primary" href="?id_message=<?=$mes['id']; ?>&action=rep">Répondre</a>
-    									<a type="button" class="btn btn-danger" href="?id_message=<?=$mes['id']; ?>&action=delete">Supprimer</a>
+                                        <a type="button" class="btn btn-primary" href="<?= $this->url('admin_message_read', ['id' => $mes['id']]) ?>">Répondre</a>
+                                        <a type="button" class="btn btn-danger" href="<?= $this->url('admin_message_delete', ['id' => $mes['id']]) ?>">Supprimer</a>
     								</td>
                                 </tr>
                                 <?php endforeach; ?>

@@ -18,8 +18,8 @@
 		['GET|POST', '/admin_bar_delete/[i:id][:delBar]', 'Bar#bar_delete', 'admin_bar_delete'],
 
 		['GET|POST', '/admin_message', 'Message#message', 'admin_message'],
-		['GET|POST', '/admin_message_read', 'Message#message_read', 'admin_message_read'],
-		['GET|POST', '/admin_message_delete', 'Message#message_delete', 'admin_message_delete'],
+		['GET|POST', '/admin_message_read/[i:id]', 'Message#message_read', 'admin_message_read'],
+		['GET|POST', '/admin_message_delete/[i:id][:delMessage]', 'Message#message_delete', 'admin_message_delete'],
 
 		['GET|POST', '/admin_users', 'Users#users', 'admin_users'],
 		['GET|POST', '/admin_user_add', 'Users#user_add', 'admin_user_add'],
