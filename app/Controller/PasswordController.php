@@ -83,14 +83,45 @@ class PasswordController extends Controller
 
 					if(count($params['errors']) == 0){
 						if($usersModel->emailExists($post['email'])){
+							$token = md5(uniqid()); // On créer le token
+
 							$data = [
 								'email' => $post['email'],
 								'date' => date('Y-m-d H:i:s'),
 								'date_exp' => date('Y-m-d H:i:s', strtotime('+ 5 min')),
-								'token' => 'azerty'
+								'token' => $token
 							];
 							if($lostPasswordModel->insert($data)){
 								// envoie du token par email
+								$app = getapp();
+								$mail = new PHPMailer();
+
+								$reponse = generateUrl('/lostpassword/', ['token' => $token], true);
+								var_dump($reponse);
+
+								$mail->isSMTP();                                      // Set mailer to use SMTP
+								$mail->Host = 'smtp.mailgun.org';  // Specify main and backup SMTP servers
+								$mail->SMTPAuth = true;                               // Enable SMTP authentication
+								$mail->Username = $app->getConfig('user_mailer');                 // SMTP username
+								$mail->Password = $app->getConfig('pswd_mailer');                           // SMTP password
+								$mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
+								$mail->Port = 587;                                    // TCP port to connect to
+
+								$mail->setFrom('resetpassword@obar.fr');
+								$mail->addAddress($post['email']);     // Add a recipient
+
+								$mail->isHTML(true);                                  // Set email format to HTML
+
+								$mail->Subject = 'Here is the subject';
+								$mail->Body    = $reponse;
+								$mail->AltBody = 'changer d\'ébergeur d\'email';
+
+								if($mail->send()) {
+									return true;
+								} else {
+									return false;
+								}
+
 								$params['success'] = true;
 							}
 							else{
