@@ -65,41 +65,39 @@
                                 <label for="schedule">Jour d'ouverture</label><br><br>
 
                                 <label class="checkbox-inline">
-                                    <input type="checkbox" id="inlineCheckbox1" value="lundi"> Lundi
+                                    <input type="checkbox" name="dayLundi" id="inlineCheckbox1" value="lundi"> Lundi
                                 </label>
                                 <label class="checkbox-inline">
-                                    <input type="checkbox" id="inlineCheckbox2" value="mardi"> Mardi
+                                    <input type="checkbox" name="dayMardi" id="inlineCheckbox2" value="mardi"> Mardi
                                 </label>
                                 <label class="checkbox-inline">
-                                    <input type="checkbox" id="inlineCheckbox3" value="mercredi"> Mercredi
+                                    <input type="checkbox" name="dayMercredi" id="inlineCheckbox3" value="mercredi"> Mercredi
                                 </label>
                                 <label class="checkbox-inline">
-                                    <input type="checkbox" id="inlineCheckbox4" value="jeudi"> Jeudi
+                                    <input type="checkbox" name="dayJeudi" id="inlineCheckbox4" value="jeudi"> Jeudi
                                 </label>
                                 <label class="checkbox-inline">
-                                    <input type="checkbox" id="inlineCheckbox5" value="vendredi"> Vendredi
+                                    <input type="checkbox" name="dayVendredi" id="inlineCheckbox5" value="vendredi"> Vendredi
                                 </label>
                                 <label class="checkbox-inline">
-                                    <input type="checkbox" id="inlineCheckbox6" value="samedi"> Samedi
+                                    <input type="checkbox" name="daySamedi" id="inlineCheckbox6" value="samedi"> Samedi
                                 </label>
                                 <label class="checkbox-inline">
-                                    <input type="checkbox" id="inlineCheckbox7" value="dimanche"> Dimanche
+                                    <input type="checkbox" name="dayDimanche" id="inlineCheckbox7" value="dimanche"> Dimanche
                                 </label>
                             </div>
 
                             <div class="form-group">
                                 <br>
-                                <label for="schedule">Horaire d'ouverture</label>
-                                <input type="time" name="time_1" class="form-control champTxtAddBarHoraire" value="<?=$bar['time_1'] ?>">
+                                <label for="scheduleOpen">Horaire d'ouverture</label>
+                                <input type="time" name="scheduleOpen" class="form-control champTxtAddBarHoraire" value="<?=$bar['scheduleOpen'] ?>">
 
                                 <br><br>
-                                <label for="schedule">Horaire de fermeture</label>
-                                <input type="time" name="time_2" class="form-control champTxtAddBarHoraire" value="<?=$bar['time_2'] ?>">
+                                <label for="scheduleClose">Horaire de fermeture</label>
+                                <input type="time" name="scheduleClose" class="form-control champTxtAddBarHoraire" value="<?=$bar['scheduleClose'] ?>">
                             </div>
 
                             <button type="reset" class="btn btn-default boutonBarAdd">Recommencer</button>
-                            <button type="reset" class="btn btn-default boutonBarAdd btn-resetBar">Replacer le bar</button>
-
                             <button type="submit" class="btn btn-default boutonBarAdd">Ajouter le bar</button>
 
                         </form>
