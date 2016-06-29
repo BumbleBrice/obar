@@ -3,10 +3,7 @@
 	$w_routes = array(
 		// Partie client
 		['GET|POST', '/', 'Default#home', 'default_home'],
-		['GET|POST', '/confirm/[:token]', 'Default#inscriptionConfirm', 'default_inscriptionConfirm'],
 		['GET|POST', '/home_connect', 'Default#home_connect', 'default_home_connect'],
-
-
 
 		// Partie admin
 		['GET|POST', '/admin_home', 'Admin#home', 'admin_home'],
@@ -30,6 +27,8 @@
 
 		['GET|POST', '/admin_newsletter', 'Newsletter#newsletter', 'admin_newsletter'],
 
+		// partie confimation token 
+		['GET|POST', '/confirm/[:token]', 'Default#inscriptionConfirm', 'default_inscriptionConfirm'],
 		['GET|POST', '/lostpassword/[:token]', 'Password#resetPassword', 'LostPassword_resetPassword'],
 		['GET|POST', '/lostpassword', 'Password#lostPassword', 'LostPassword_lostPassword']
 
