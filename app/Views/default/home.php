@@ -55,9 +55,11 @@
 <section id="map" class="map">
 	<div class="container-fluid">
         <div class="row">
-            <div class="col-lg-12 text-center">
-                <h2>Choisissez votre quartier</h2>
-                <img class="img-responsive" src="<?=$this->assetUrl('img/Quartier-saint_pierre.svg'); ?>" alt="Carte Quartier Saint Pierre">
+            <div class="col-lg-4 col-lg-offset-4 col-md-12">
+            	<div class="text-center">
+	                <h2>Choisissez votre quartier</h2>
+	                <img src="<?=$this->assetUrl('img/Quartier-saint_pierre.svg'); ?>" alt="Carte Quartier Saint Pierre" class="img-responsive">
+              	</div>
             </div>
         </div>
         <!-- /.row -->

@@ -23,8 +23,6 @@ body{
 
 h2{
 	font-family: 'Nunito', sans-serif;
-	font-weight: 700;
-	font-size: 28px;
 	color:#2b8c9d;
 	text-align: center;
     padding-bottom: 20px;
@@ -53,6 +51,23 @@ h3{
     float: right;
 }
 
+.btn-primary:hover{
+    background-color: #c14e5f;
+    border-color: #025d70;
+    color: white;
+    transition: all 0.23s ease-in-out 0s;
+}
+
+#mc_embed_signup .button{
+    color: #333 !important;
+    background-color: #fff !important;
+    border-color: #ccc !important;
+}
+#mc_embed_signup .button:hover{
+    background-color: #c14e5f !important;
+    border-color: #025d70 !important;
+    color: white !important;
+}
 /***************************************
 *************NAVIGATION*****************
 ****************************************/
@@ -60,6 +75,25 @@ h3{
     CSS
 }
 
+.navbar-default .navbar-collapse, .navbar-default .navbar-form{
+    background-color:  #025d70;
+    opacity: 0.9;
+    -webkit-transition: background .5s ease-in-out, opacity .5s ease;
+    -moz-transition: background .5s ease-in-out, opacity .5s ease;
+    transition: background .5s ease-in-out, opacity .5s ease;
+}
+
+ul .nav .navbar-nav .navbar-right>a{
+    text-align: right;
+}
+.navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover{
+    background-color: #c14e5f;
+}
+.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover{
+    background-color: #c14e5f;
+    color: white;
+
+}
 #custom-nav {
     background-color: rgba(0,0,0,0);
     border: 0;
@@ -75,7 +109,6 @@ h3{
 #custom-nav .dropdown-menu {
     border-radius: 0;
     border: none;
-    border-top: 5px solid transparent;
     background-color: transparent;
     -webkit-box-shadow: none;
     box-shadow: none;
@@ -111,11 +144,13 @@ h3{
 .navbar-default .navbar-nav>li>a {
     color:#f5f5f5;
     font-family: 'Comfortaa', cursive;
-    font-size: 15px;
+    font-size: 17px;
 }
 
 .navbar-default .navbar-nav>li>a:hover{
-	color: #b2ebe5;
+	color: #c14e5f;
+    font-weight: 700;
+    font-size: 17px;
 }
 .dropdown-menu>li>a {
     display: block;
@@ -151,8 +186,7 @@ h3{
 }
 
 .services{
-    padding: 100px 0;
-    min-height: 70%;
+    padding: 50px 0;
     background-color: #7fbac4;
 }
 
@@ -161,8 +195,8 @@ h3{
 *************SECTION PROFIL USER*********
 ****************************************/
 .users_profil{
-    padding: 100px 0;
-    min-height: 70%;
+    padding: 50px 0;
+
 }
 
 /****************************************
@@ -170,26 +204,22 @@ h3{
 ****************************************/
 .map{
     padding: 50px 0;
-    min-height: 80%;
+    height: auto !important;
+    /*min-height: 80%;*/
 }
 
-img#svg{
-    width: 25em;
-}
 
 /****************************************
 *************SECTION CONTACT*************
 ****************************************/
 .contact{
-    padding: 100px 0;
-    min-height: 70%;
+    padding: 50px 0;
 }
 /****************************************
 *********SECTION INSCRIPTION*************
 ****************************************/
 .subs {
-    padding: 100px 0;
-    min-height: 70%;
+    padding: 50px 0;
     background-color: #7fbac4;
 }
 .subs h2{
