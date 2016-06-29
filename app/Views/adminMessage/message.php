@@ -27,7 +27,7 @@
                                     <th>Email</th>
                                     <th>Message</th>
                                     <th>Date de réçeption</th>
-                                    <th>Statue</th>
+                                    <th>Statut</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>

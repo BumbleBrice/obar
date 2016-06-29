@@ -307,13 +307,9 @@ label {
 	text-align: center;
 	width: 20%;
 	height: 40px;
-	margin: 50px 0px 20px -20px !important;
 	border: 3px solid #6D071A;
 	border-radius: 40px;
-	margin-left: 60px;
-	margin-right: 20px;
-	margin-bottom: 15px;
-	margin-top: 100px;
+	margin: 50px 0 20px -20px !important;
 }
 
 @media(max-width:768px) {
