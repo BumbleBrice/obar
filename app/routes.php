@@ -3,6 +3,7 @@
 	$w_routes = array(
 		// Partie client
 		['GET|POST', '/', 'Default#home', 'default_home'],
+		['GET|POST', '/confirm/[:token]', 'Default#inscriptionConfirm', 'default_inscriptionConfirm'],
 		['GET|POST', '/home_connect', 'Default#home_connect', 'default_home_connect'],
 
 
