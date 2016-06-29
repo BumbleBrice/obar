@@ -62,8 +62,39 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="schedule">Horaire</label>
-                                <input type="int" name="schedule" id="schedule" class="form-control champTxtAddBar" value="<?=$bar['schedule']?>">
+                                <label for="schedule">Jour d'ouverture</label><br><br>
+
+                                <label class="checkbox-inline">
+                                    <input type="checkbox" id="inlineCheckbox1" value="lundi"> Lundi
+                                </label>
+                                <label class="checkbox-inline">
+                                    <input type="checkbox" id="inlineCheckbox2" value="mardi"> Mardi
+                                </label>
+                                <label class="checkbox-inline">
+                                    <input type="checkbox" id="inlineCheckbox3" value="mercredi"> Mercredi
+                                </label>
+                                <label class="checkbox-inline">
+                                    <input type="checkbox" id="inlineCheckbox4" value="jeudi"> Jeudi
+                                </label>
+                                <label class="checkbox-inline">
+                                    <input type="checkbox" id="inlineCheckbox5" value="vendredi"> Vendredi
+                                </label>
+                                <label class="checkbox-inline">
+                                    <input type="checkbox" id="inlineCheckbox6" value="samedi"> Samedi
+                                </label>
+                                <label class="checkbox-inline">
+                                    <input type="checkbox" id="inlineCheckbox7" value="dimanche"> Dimanche
+                                </label>
+                            </div>
+
+                            <div class="form-group">
+                                <br>
+                                <label for="schedule">Horaire d'ouverture</label>
+                                <input type="time" name="time_1" class="form-control champTxtAddBarHoraire" value="<?=$bar['time_1'] ?>">
+
+                                <br><br>
+                                <label for="schedule">Horaire de fermeture</label>
+                                <input type="time" name="time_2" class="form-control champTxtAddBarHoraire" value="<?=$bar['time_2'] ?>">
                             </div>
 
                             <button type="reset" class="btn btn-default boutonBarAdd">Recommencer</button>

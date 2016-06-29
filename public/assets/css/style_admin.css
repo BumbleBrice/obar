@@ -149,6 +149,11 @@ label {
 
 }
 
+.typeListBar {
+	font-weight: bold;
+	color: #6D071A;
+}
+
 .divGlobalListBar {
 	width: 100%;
 	height: 50%;
