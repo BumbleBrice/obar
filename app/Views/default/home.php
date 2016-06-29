@@ -116,7 +116,7 @@
 	                <div class="form-group">
 	                    <label for="passwordOk" class="hidden-xs col-sm-2 control-label">Confirmation</label>
 	                    <div class="col-sm-10">
-	                    <input type="passwordOk" class="form-control" id="passwordOk" name="passwordOk" placeholder="Confirmation mot de passe">
+	                    <input type="password" class="form-control" id="passwordOk" name="passwordOk" placeholder="Confirmation mot de passe">
 	                    </div>
 	                </div>
 

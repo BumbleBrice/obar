@@ -87,20 +87,20 @@ class DefaultController extends Controller
 				if($post['form'] == 'register'){//si le champ form vaut 'register'
 					// ici le traitement pour le formulaire d'inscription
 					if(isset($post['nickname'])){
-						if(preg_match('#^.{1,}$#', $post['nickname']) == 0){
-							$errors[] = 'erreur nickname';
+						if(preg_match('#^.{3,}$#', $post['nickname']) == 0){
+							$errors[] = 'Votre pseudo doit comporter 3 caractères minimun';
 						}
 					}
 
 					if(isset($post['email'])){
 						if(preg_match('#^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$#', $post['email']) == 0){
-							$errors[] = 'erreur contact email';
+							$errors[] = 'Votre email est incorrect';
 						}
 					}
 
 					if(isset($post['password'])){
                         if(preg_match('#.*^(?=.{8,20})(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).*$#', $post['password']) == 0){
-                            $errors[] = 'Votre mot de passe doit être au minimun de 8 caractères et inclure un chiffre et une majuscule';
+                            $errors[] = 'Le mot de passe doit avoir un chiffre et une majuscule et minimum 8 caractères';
                         }
                     }
 
@@ -177,6 +177,11 @@ class DefaultController extends Controller
 
 		$params = ['errors' => $errors, 'success' => $success, 'bars' => $barModel->findAll(), 'infos' => $presentationModel->find(1)];
 		$this->show('default/home', $params);
+	}
+
+	public function home_connect()
+	{
+		$this->show('default/home_connect');
 	}
 }
 ?>

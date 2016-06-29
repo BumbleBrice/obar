@@ -75,7 +75,7 @@ h3{
     CSS
 }
 
-.navbar-default .navbar-collapse, .navbar-default .navbar-form{
+.navbar-default .navbar-collapse .navbar-default .navbar-form::before{
     background-color:  #025d70;
     opacity: 0.9;
     -webkit-transition: background .5s ease-in-out, opacity .5s ease;

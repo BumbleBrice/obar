@@ -70,7 +70,7 @@
                         <a class="page-scroll" href="#contact">Contact</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#connect">Connexion</a>
+                        <a class="page-scroll" href="<?= $this->url('default_home_connect')?>">Connexion</a>
                     </li>
                 </ul>
             </div>
