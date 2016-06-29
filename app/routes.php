@@ -2,7 +2,7 @@
 
 	$w_routes = array(
 		// Partie client
-		['GET|POST', '/home', 'Default#home', 'default_home'],
+		['GET|POST', '/', 'Default#home', 'default_home'],
 		['GET|POST', '/home_connect', 'Default#home_connect', 'default_home_connect'],
 
 
