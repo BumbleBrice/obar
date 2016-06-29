@@ -49,7 +49,7 @@ class MessageController extends Controller
 	public function answerMessage($email, $reponse)
 	{
 		$app = getapp();
-		$mail = new PHPMailer;
+		$mail = new PHPMailer();
 
 
 		$mail->isSMTP();                                      // Set mailer to use SMTP
