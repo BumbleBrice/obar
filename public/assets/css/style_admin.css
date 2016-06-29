@@ -339,10 +339,15 @@ label {
 
 
 .imgListUser {
-	max-width: 150px;
-	max-height: 150px;
+	max-width: 34px;
+	max-height: 34px;
 	border: 1px solid #6D071A;
 	border-radius: 10px;
+}
+.imgListUser:hover{
+	position: absolute;
+	max-width: 250px;
+	max-height: 250px;
 }
 
 .wrapperList {
