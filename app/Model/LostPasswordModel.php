@@ -34,18 +34,17 @@ class LostPasswordModel extends \W\model\Model
 
 	public function changePassword($email, $password){
 		$auth = new Auth();
-		$bdd = $this->dbh;
+		$bdd = new \PDO('mysql:host=localhost;dbname=obar;charset=utf8', 'root', '');
 
-
-		$res = $bdd->prepare('UPDATE users SET (password) VALUES (:password) WHERE email = :email');
+		$res = $bdd->prepare('UPDATE users SET password = :password WHERE email = :email');
 		$res->bindValue(':email', $email);
-		$res->bindValue(':password', 'teste');
+		$res->bindValue(':password', $auth->hashPassword($password));
 
 		if($res->execute()){
 			return true;
 		}
 		else{
-			var_dump($bdd->errorInfo());
+			var_dump($res->errorInfo());
 			return false;
 		}
 	}

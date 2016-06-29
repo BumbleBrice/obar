@@ -1,5 +1,4 @@
 <?php
-
 namespace Controller;
 
 use \W\Controller\Controller;
@@ -62,6 +61,7 @@ class PasswordController extends Controller
 	 * page lostpassword
 	**/
 	public function lostPassword(){
+
 		$lostPasswordModel = new LostPasswordModel();
 		$usersModel = new UsersModel();
 
@@ -94,35 +94,35 @@ class PasswordController extends Controller
 							if($lostPasswordModel->insert($data)){
 								// envoie du token par email
 								$app = getapp();
-								$mail = new PHPMailer();
+								$mail = new \PHPMailer();
 
-								$reponse = generateUrl('/lostpassword/', ['token' => $token], true);
-								var_dump($reponse);
+								$reponse = $this->generateUrl('LostPassword_resetPassword', ['token' => $token], true);
 
-								$mail->isSMTP();                                      // Set mailer to use SMTP
-								$mail->Host = 'smtp.mailgun.org';  // Specify main and backup SMTP servers
-								$mail->SMTPAuth = true;                               // Enable SMTP authentication
-								$mail->Username = $app->getConfig('user_mailer');                 // SMTP username
-								$mail->Password = $app->getConfig('pswd_mailer');                           // SMTP password
-								$mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
-								$mail->Port = 587;                                    // TCP port to connect to
+								$mail->isSMTP();                                     	// Set mailer to use SMTP
+								$mail->Host = $app->getConfig('host_mailer'); ;  							// Specify main and backup SMTP servers
+								$mail->SMTPAuth = true;                               	// Enable SMTP authentication
+								$mail->Username = $app->getConfig('user_mailer');       // SMTP username
+								$mail->Password = $app->getConfig('pswd_mailer');       // SMTP password
+								$mail->SMTPSecure = 'tls';                           	// Enable TLS encryption, `ssl` also accepted
+								$mail->Port = 465;                                    	// TCP port to connect to
 
 								$mail->setFrom('resetpassword@obar.fr');
-								$mail->addAddress($post['email']);     // Add a recipient
+								$mail->addAddress($post['email']);     					// Add a recipient
 
-								$mail->isHTML(true);                                  // Set email format to HTML
+								$mail->isHTML(true);                                  	// Set email format to HTML
 
 								$mail->Subject = 'Here is the subject';
-								$mail->Body    = $reponse;
+								$mail->Body    = '<a href="'.$reponse.'">Reset password</a>';
 								$mail->AltBody = 'changer d\'ébergeur d\'email';
 
 								if($mail->send()) {
-									return true;
+									echo 'ok';
+									$params['success'] = true;
+									sleep(5);
+									$this->redirectToRoute('default_home');
 								} else {
-									return false;
+									$params['errors'][] = 'Erreur lors de l\'envoie du token.';
 								}
-
-								$params['success'] = true;
 							}
 							else{
 								$params['errors'][] = 'Erreur lors de la creation du token.';
