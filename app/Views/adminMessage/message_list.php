@@ -61,5 +61,4 @@
     <!-- /.col-lg-6 -->
 </div>
 
-
 <?php $this->stop('main_content') ?>
