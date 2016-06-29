@@ -44,38 +44,6 @@ class DefaultController extends Controller
 			$post = array_map('trim', array_map('strip_tags', $_POST));
 
 			if(isset($post['form'])){// si le champ form exist
-
-				if($post['form'] == 'co'){//si le champ form vaut 'co'
-					// ici le traitement pour le formulaire de connexion
-					if(isset($post['co_pseudo'])){
-						if(preg_match('#^[A-Z]{1}[A-Za-z0-9.-_]{2,15}$#', $post['co_pseudo']) == 0){
-							$errors['connexion'][] = 'Votre pseudo doit commencer par une majuscule';
-						}
-					}
-					if(isset($post['co_pswd'])){
-						if(preg_match('#.*^(?=.{8,20})(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).*$#', $post['co_pswd']) == 0){
-							$errors['connexion'][] = 'Votre mot de passe doit contenir au moins une majuscule et un chiffre.';
-						}
-					}
-
-
-					if(count($errors) == 0){
-						// connexion
-
-						// La méthode isValidLoginInfo() retourne un utilisateur si celui-ci existe et que le couple identifiant /mdp existe
-						//$idUser contient l'id  de mon utilisateur
-						$idUser = $authModel->isValidLoginInfo($post['co_pseudo'], $post['co_pswd']);
-
-						if($idUser){
-							//On apelle la méthode find() qui permet de retourner les résultats en fonction d'un ID
-							$user = $usersModel->find($idUser);
-
-							//La méthode logUserIn() permet de connecter un utilisateur
-							$authModel->logUserIn($user);
-							//$myUser = $authModel->getLoggedUser(); //Permet de récupérer les infos de sessions
-						}
-					}
-				}
 				if($post['form'] == 'register'){//si le champ form vaut 'register'
 					// ici le traitement pour le formulaire d'inscription
 					if(isset($post['nickname'])){
@@ -109,6 +77,7 @@ class DefaultController extends Controller
 								'role'		=> 'user',
 								'confirm' => '0'
 							];
+							
 							//On passe le tableau $data à la méthode insert() pour enregistrer nos données en base
 							if($usersModel->insert($data)){
 								$token = md5(uniqid()); // On créer le token
@@ -120,6 +89,7 @@ class DefaultController extends Controller
 									'token' => $token,
 									'idUser' => $usersModel->lastInsertId()
 								];
+
 								if($confirmation->insert($data)){// ajout du token en bdd
 									//Insertion en base de données effectuée
 
@@ -205,7 +175,46 @@ class DefaultController extends Controller
 
 	public function home_connect()
 	{
-		$this->show('default/home_connect');
+		$usersModel = new UsersModel();
+		$authModel = new AuthModel();
+		$barModel = new Bar();
+
+		$params = [];
+		$params['bars'] = $barModel->findAll();
+
+		if(!empty($_POST)){//si le champ form vaut 'co'
+			// ici le traitement pour le formulaire de connexion
+			if(isset($post['co_pseudo'])){
+				if(preg_match('#^[A-Z]{1}[A-Za-z0-9.-_]{2,15}$#', $post['co_pseudo']) == 0){
+					$errors['connexion'][] = 'Votre pseudo doit commencer par une majuscule';
+				}
+			}
+			if(isset($post['co_pswd'])){
+				if(preg_match('#.*^(?=.{8,20})(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).*$#', $post['co_pswd']) == 0){
+					$errors['connexion'][] = 'Votre mot de passe doit contenir au moins une majuscule et un chiffre.';
+				}
+			}
+
+			if(count($errors) == 0){
+				// connexion
+
+				// La méthode isValidLoginInfo() retourne un utilisateur si celui-ci existe et que le couple identifiant /mdp existe
+				//$idUser contient l'id  de mon utilisateur
+				$idUser = $authModel->isValidLoginInfo($post['co_pseudo'], $post['co_pswd']);
+
+				if($idUser){
+					//On apelle la méthode find() qui permet de retourner les résultats en fonction d'un ID
+					$user = $usersModel->find($idUser);
+					if($user['confirm'] == 1){
+						//La méthode logUserIn() permet de connecter un utilisateur
+						$authModel->logUserIn($user);
+						//$myUser = $authModel->getLoggedUser(); //Permet de récupérer les infos de sessions
+					}
+				}
+			}
+		}
+
+		$this->show('default/home_connect', $params);
 	}
 
 	/*
