@@ -337,6 +337,14 @@ label {
 /*                         UTILISATEURS                        */
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
+
+.imgListUser {
+	max-width: 150px;
+	max-height: 150px;
+	border: 1px solid #6D071A;
+	border-radius: 10px;
+}
+
 .wrapperList {
 	text-align: center;
 	width: 20%;
