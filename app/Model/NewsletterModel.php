@@ -6,7 +6,7 @@
         public function __construct(){
             $app = getApp();
             // Définit la table en fonction de la config
-            $this->setTable($app->getConfig('Newsletter_table'));
+            $this->setTable($app->getConfig('news_table'));
             $this->dbh = ConnectionModel::getDbh();
         }
     }

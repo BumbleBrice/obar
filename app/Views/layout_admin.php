@@ -74,11 +74,11 @@
                         </a>
                     </li>
                     <li>
-                        <a href="<?=$this->url('admin_newsletter'); ?>">
+                        <a href="<?=$this->url('admin_news'); ?>">
                           <div class="button-fill grey">
-                            <div class="button-text">Newsletter</div>
+                            <div class="button-text">News</div>
                             <div class="button-inside">
-                              <div class="inside-text">Newsletter</div>
+                              <div class="inside-text">News</div>
                             </div>
                           </div>
                         </a>

@@ -25,7 +25,7 @@
 		['GET|POST', '/admin_user_edit/[i:id]', 'Users#user_edit', 'admin_user_edit'],
 		['GET|POST', '/admin_user_delete/[i:id][:delUser]', 'Users#user_delete', 'admin_user_delete'],
 
-		['GET|POST', '/admin_newsletter', 'Newsletter#newsletter', 'admin_newsletter'],
+		['GET|POST', '/admin_news', 'News#news', 'admin_news'],
 
 		// partie confimation token 
 		['GET|POST', '/confirm/[:token]', 'Default#inscriptionConfirm', 'default_inscriptionConfirm'],
