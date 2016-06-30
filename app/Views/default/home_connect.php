@@ -15,16 +15,24 @@
 <?php endif; ?>
 
 <!-- Connexion A FAIRE -->
-<form method="POST">
-    <input type="hidden" name="form" value="co">
-    <label for="co_pseudo"></label>
-    <input id="co_pseudo" type="text" name="co_pseudo" placeholder="Pseudo..." required>
+<section id="connexion" class="connexion">
+    <div class="container-fluid">
+        <div class="row text-center">
+            <div class="col-lg-10 col-lg-offset-1">
+                <form method="POST">
+                    <input type="hidden" name="form" value="co">
+                    <label for="co_pseudo"></label>
+                    <input id="co_pseudo" type="text" name="co_pseudo" placeholder="Pseudo..." required>
 
-    <label for="co_pswd"></label>
-    <input id="co_pswd" type="text" name="co_pswd" placeholder="Password..." required>
+                    <label for="co_pswd"></label>
+                    <input id="co_pswd" type="password" name="co_pswd" placeholder="Password..." required>
 
-    <input type="submit" value="connexion">
-</form>
+                    <input class="btn btn-primary" type="submit" value="connexion">
+                </form> 
+            </div>
+        </div>
+    </div>
+</section>
 
 <?php else: ?>
 
@@ -34,7 +42,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12 text-center">
-                <a class="btn btn-default" href="#formulaire">Editer le profil</a>
+                <a class="btn btn-default" href="<?=$this->url('default_profil_membre');?>">Editer le profil</a>
             </div>
         </div>
         <div class="row">
@@ -59,19 +67,37 @@
                 <div class="col-xs-4 col-sm-3 col-md-2">
                     <div class="userStyle">
                         <img src="<?=$this->assetUrl('img/1.jpg');?>" class="img-responsive img-circle centree" alt="">
+                        <p class="text-center">Paula Rie</p>
+                    </div>
+                </div>
+                <div class="col-xs-4 col-sm-3 col-md-2">
+                    <div class="userStyle">
+                        <img src="<?=$this->assetUrl('img/2.jpg');?>" class="img-responsive img-circle centree" alt="">
+                        <p class="text-center">Rom 1</p>
+                    </div>
+                </div>
+                <div class="col-xs-4 col-sm-3 col-md-2">
+                    <div class="userStyle">
+                        <img src="<?=$this->assetUrl('img/audrey.jpg');?>" class="img-responsive img-circle centree" alt="">
                         <p class="text-center">Kay Garland</p>
                     </div>
                 </div>
                 <div class="col-xs-4 col-sm-3 col-md-2">
                     <div class="userStyle">
-                        <img src="<?=$this->assetUrl('img/1.jpg');?>" class="img-responsive img-circle centree" alt="">
-                        <p class="text-center">Kay Garland</p>
+                        <img src="<?=$this->assetUrl('img/bb.jpg');?>" class="img-responsive img-circle centree" alt="">
+                        <p class="text-center">Rosa</p>
                     </div>
                 </div>
                 <div class="col-xs-4 col-sm-3 col-md-2">
                     <div class="userStyle">
-                        <img src="<?=$this->assetUrl('img/1.jpg');?>" class="img-responsive img-circle centree" alt="">
-                        <p class="text-center">Kay Garland</p>
+                        <img src="<?=$this->assetUrl('img/Indiana.jpg');?>" class="img-responsive img-circle centree" alt="">
+                        <p class="text-center">Indiana</p>
+                    </div>
+                </div>
+                <div class="col-xs-4 col-sm-3 col-md-2">
+                    <div class="userStyle">
+                        <img src="<?=$this->assetUrl('img/Anthony.jpg');?>" class="img-responsive img-circle centree" alt="">
+                        <p class="text-center">John Doe</p>
                     </div>
                 </div>
             </div>

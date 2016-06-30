@@ -48,7 +48,6 @@ h3{
     color: #333;
     background-color: #fff;
     border-color: #ccc;
-    float: right;
 }
 
 .btn-primary:hover{
@@ -235,14 +234,13 @@ ul .nav .navbar-nav .navbar-right>a{
 /****************************************
 *********SECTION INSCRIPTION*************
 ****************************************/
-.subs {
+.connexion {
     padding: 50px 0;
-    background-color: #7fbac4;
 }
-.subs h2{
+.connexion h2{
     color: white;
 }
-.subs p{
+.connexion p{
     color: white;
 }
 

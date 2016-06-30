@@ -231,7 +231,7 @@ class DefaultController extends Controller
 		$barModel = new Bar();
 		$presentationModel = new Presentation();
 		$newsModel = new News();
-		
+
 		$params = [];
 		$params['bars'] = $barModel->findAll();
 		$params['infos'] = $presentationModel->find(1);
@@ -300,5 +300,154 @@ class DefaultController extends Controller
 		// resultat d'inscription
 		$this->show('default/confirm', $params);
 	}
+
+	public function profil_membre()
+	{
+		// On limite l'accès à la page uniquement aux utilisateurs identifiés et à ceux dont le rôle est admin, soit editor
+		$this->allowTo(['user', 'admin']);
+
+		$usersModel = new UsersModel();
+		$authModel = new AuthModel();
+
+
+
+		$getUser = $this->getUser();
+
+		$post = [];
+		$errors = [];
+		$success = false;
+
+		$maxSize = 500000; // En octet (500Ko)
+		$folder = 'assets/img/';
+
+		$user = $usersModel->find($getUser['id']);
+
+		$user_nickname = $user['nickname'];
+		$user_firstname = $user['firstname'];
+		$user_lastname = $user['lastname'];
+		$user_email = $user['email'];
+		$user_password = $user['password'];
+		$user_role = $user['role'];
+		$user_password = $user['password'];
+
+		if(!empty($_FILES)){
+				if(isset($_FILES['picture']) && $_FILES['picture']['error'] == UPLOAD_ERR_OK && $_FILES['picture']['size'] < $maxSize) {
+					$fileName = $_FILES['picture']['name']; // Nom de mon image
+					$fileTemp = $_FILES['picture']['tmp_name']; // Image temporaire
+
+					$file = new finfo(); // Classe FileInfo
+					$mimeType = $file->file($_FILES['picture']['tmp_name'], FILEINFO_MIME_TYPE); // Retourne le VRAI mimeType
+					$mimeTypeAllowed = ['image/jpg', 'image/jpeg', 'image/png', 'image/gif']; // Les mime types autorisés
+
+					// Permet de vérifier que le mime type est bien autorisé
+					if (in_array($mimeType, $mimeTypeAllowed)) {
+						/*
+						 * explode() permet de séparer une chaine de caractère en un tableau
+						 * Ici, on aura donc :
+						 * 		$newFileName = array(
+						 			0 => 'nom-de-mon-fichier',
+						 			1 => 'jpg'
+								);
+						 */
+						$newFileName = explode('.', $fileName);
+						$fileExtension = end($newFileName); // Récupère l'extension du fichier
+
+						$finalFileName = 'user-'.time().$fileExtension; // Le nom du fichier sera donc : user-1463058435.jpg (time() retourne un timestamp à la seconde). Cela permet de sécuriser l'upload de fichier
+
+
+						if(move_uploaded_file($fileTemp, $folder.$finalFileName)) {
+							// Ici je suis sur que mon image est au bon endroit
+							$user_picture = $folder.$finalFileName;
+						}
+						else{
+							$user_picture = 'assets/img/avatar_defaut.png'; // Permet d'avoir une image par défaut si l'upload ne s'est pas bien déroulé
+						}
+					}
+					else{
+						$errors[] = 'Le mime type est interdit';
+					}
+				}
+				else{
+					$errors[] = 'L\'image est trop lourde';
+				}
+			}
+
+			if(!empty($_POST)){
+				foreach ($_POST as $key => $value) {
+					$post[$key] = trim(strip_tags($value));
+				}
+
+				if(isset($post['nickname'])){
+					if(preg_match('#^.{1,}$#', $post['nickname']) == 0){
+						$errors[] = 'error nickname';
+					}
+					else{
+						$user_nickname = $post['nickname'];
+					}
+				}
+
+				if(isset($post['firstname'])){
+					if(preg_match('#^.{1,}$#', $post['firstname']) == 0){
+						$errors[] = 'error firstname';
+					}
+					else{
+						$user_firstname = $post['firstname'];
+					}
+				}
+
+				if(isset($post['lastname'])){
+					if(preg_match('#^.{1,}$#', $post['lastname']) == 0){
+						$errors[] = 'error lastname';
+					}
+					else{
+						$user_lastname = $post['lastname'];
+					}
+				}
+
+				if(isset($post['email'])){
+					if(preg_match('#^.{1,}$#', $post['email']) == 0){
+						$errors[] = 'error email';
+					}
+					else{
+						$user_email = $post['email'];
+					}
+				}
+
+				if(isset($post['picture'])){
+					if(preg_match('#^.{1,}$#', $post['picture']) == 0){
+						$errors[] = 'error picture';
+					}
+					else{
+						$user_picture = $post['picture'];
+					}
+				}
+
+				if (count($errors) == 0) {
+					// Ici il n'y a aucune erreurs, on peut donc enregistrer en base de donnée
+
+					// On utilise la méthode insert() qui permet d'insérer des données en base de donnée
+					$data = [
+						// La clé du tableau correspond au nom de la colonne SQL
+						'nickname' => $user_nickname,
+						'firstname' => $user_firstname,
+						'lastname' => $user_lastname,
+						'email' => $user_email,
+						'picture' => $user_picture
+
+					];
+
+					// On passe le tableau $data à la méthode update() pour mofifier nos données en bdd
+					if ($usersModel->update($data, $id)) {
+
+						// Ici l'insertion en base est effectuée
+						$success = true;
+					}
+				}
+			}
+		# On envoi les erreurs en paramètre à l'aide d'un tableau (array)
+		$params = ['profil' => $user, 'errors' => $errors, 'success' => $success, 'user' => $user, 'maxSize' => $maxSize];
+		$this->show('default/profil_membre', $params);
+	}
+
 }
 ?>

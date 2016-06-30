@@ -49,7 +49,7 @@
 			<input id="password" type="password" name="password">
 			<br>
 			<label for="password_confirm">Password</label><br>
-			<input id="password_confirm" type="password_confirm" name="password_confirm">
+			<input id="password_confirm" type="password" name="password_confirm">
 			<br>
 			<br>
 			<input type="submit" value="Envoyer">
