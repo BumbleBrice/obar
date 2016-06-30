@@ -27,9 +27,9 @@
 		['GET|POST', '/admin_user_delete/[i:id][:delUser]', 'Users#user_delete', 'admin_user_delete'],
 
 		['GET|POST', '/admin_news', 'News#news', 'admin_news'],
-		['GET|POST', '/admin_news_add', 'News#user_add', 'admin_news_add'],
-		['GET|POST', '/admin_news_edit/[i:id]', 'News#user_edit', 'admin_news_edit'],
-		['GET|POST', '/admin_news_delete/[i:id][:delUser]', 'News#user_delete', 'admin_news_delete'],
+		['GET|POST', '/admin_news_add', 'News#news_add', 'admin_news_add'],
+		['GET|POST', '/admin_news_edit/[i:id]', 'News#news_edit', 'admin_news_edit'],
+		['GET|POST', '/admin_news_delete/[i:id][:delNews]', 'News#news_delete', 'admin_news_delete'],
 
 		// partie confimation token 
 		['GET|POST', '/confirm/[:token]', 'Default#inscriptionConfirm', 'default_inscriptionConfirm'],
