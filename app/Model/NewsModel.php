@@ -2,7 +2,7 @@
     namespace Model;
     use \W\Model\ConnectionModel;
 
-    class NewsModel extends \W\Model\Model
+    class newsModel extends \W\Model\Model
     {
             public function __construct(){
             $app = getApp();
