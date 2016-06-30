@@ -50,9 +50,6 @@
                     <li class="hidden">
                         <a class="page-scroll" href="#page-top"></a>
                     </li>
-                    <li>
-                        <a class="page-scroll" href="#about">Carte</a>
-                    </li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Les quartiers <span class="caret"></span></a>
                         <ul class="dropdown-menu">
@@ -64,11 +61,12 @@
                         </ul>
                     </li>
                     <li>
+                        <a class="page-scroll" href="#about">Carte</a>
+                    </li>
+                    <li>
                         <a class="page-scroll" href="#contact">Contact</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="<?=$this->url('default_home', ['deconnect'=>'1']);?>"></a>
-
                         <a class="page-scroll" href="<?=$this->url('default_home');?>?deconnect=1">Déconnexion</a>
                     </li>
                 </ul>
