@@ -35,8 +35,7 @@ CREATE TABLE `bar` (
   `phone` varchar(255) NOT NULL,
   `adress` varchar(255) NOT NULL,
   `schedule` varchar(255) NOT NULL,
-  `open` time NOT NULL,
-  `close` time NOT NULL,
+  `scheduleOpen` varchar(255) NOT NULL,
   `x` varchar(255) NOT NULL,
   `y` varchar(255) NOT NULL,
   `google_url` varchar(255) NOT NULL,
@@ -96,7 +95,7 @@ CREATE TABLE `news_letter` (
 CREATE TABLE `obar_desc` (
   `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
-  `desc` varchar(255) NOT NULL,
+  `description` varchar(255) NOT NULL,
   `news` varchar(255) NOT NULL,
   `phone` varchar(255) NOT NULL,
   `address` varchar(255) NOT NULL,
