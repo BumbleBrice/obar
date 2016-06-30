@@ -34,7 +34,7 @@ class DefaultController extends Controller
 		$success['inscription'] = false; // initialise le success inscription a false
 		$success['contact'] = false; // initialise le success contact a false
 
-		$quartiers = '',
+		$quartiers = '';
 
 
 
