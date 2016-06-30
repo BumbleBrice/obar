@@ -12,6 +12,11 @@ class MessageController extends Controller
 		$this->show('adminMessage/message', ['message' => $this->getMessage()]);
 	}
 
+	public function message_read($id){
+		answerMessage($email, $reponse) // récuperer l'email de la perssone qui envoyer le message 
+		$this->show('adminMessage/message_read', ['message' => $this->getMessage()]);
+	}
+
 	public function getMessage()
 	{
 		$message = new MessageModel();
