@@ -101,7 +101,7 @@
 				    <h2>Choisissez votre quartier</h2>
 				    <div id="toggle"> 
 					    <div class="container-fluid carte">
-					        <div class="btn closeToggle btn-default"><a href="#">X</a></div>
+					        <div class="btn closeToggle btn-default"><a href="#">X</a></div><br>
 					        <div class="row">
 					            <div class="col-md-12 text-center">
 					                <h2 class="section-heading">Le Wine Bar...</h2>

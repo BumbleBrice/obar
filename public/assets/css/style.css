@@ -260,8 +260,8 @@ ul .nav .navbar-nav .navbar-right>a{
 }
 .btBar a{
     text-transform: uppercase;
-    font-size: 1rem;
-    color: #6D071A;
+    font-size: 1.5rem;
+    color: orange;
     text-decoration: none;
 
 }
@@ -307,7 +307,7 @@ ul .nav .navbar-nav .navbar-right>a{
     text-decoration: none;
 }
 .barStyle img{
-    margin-top: 3%;
+    margin-top: 5%;
     border: 7px solid lightgrey;
     width: 100%;
 }
