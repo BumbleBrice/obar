@@ -315,6 +315,24 @@ class BarController extends Controller
 					}
 				}
 
+				if(isset($post['quartiers'])){
+					if(preg_match('#^.{1,}$#', $post['quartiers']) == 0 && !empty($post['quartiers'])){
+						$errors[] = 'error quartiers';
+					}
+					else{
+						$bar_name = $post['quartiers'];
+					}
+				}
+
+				if(isset($post['picture'])){
+					if(preg_match('#^.{1,}$#', $post['picture']) == 0 && !empty($post['picture'])){
+						$errors[] = 'error picture';
+					}
+					else{
+						$bar_name = $post['picture'];
+					}
+				}
+
 				if(isset($post['content'])){
 					if(preg_match('#^.{1,}$#', $post['content']) == 0 && !empty($post['content'])){
 						$errors[] = 'error content';
@@ -360,21 +378,25 @@ class BarController extends Controller
 					}
 				}
 
-				if(isset($post['scheduleOpen'])){
-					if(preg_match('#^[0-9:]{1,}$#', $post['scheduleOpen']) == 0 && !empty($post['scheduleOpen'])){
-						$errors[] = 'error open';
+				if(!isset($post['x']) || !isset($post['y'])){
+					$errors[] = 'vous n\'avez pas placer de point pour votre bar';
+				}
+
+				if(isset($post['schedule'])){
+					if(preg_match('#^[0-9:]{1,}$#', $post['schedule']) == 0 && !empty($post['schedule'])){
+						$errors[] = 'error schedule';
 					}
 					else{
-						$bar_open = $post['scheduleOpen'];
+						$bar_open = $post['schedule'];
 					}
 				}
 
-				if(isset($post['scheduleClose'])){
-					if(preg_match('#^[0-9:]{1,}$#', $post['scheduleClose']) == 0 && !empty($post['scheduleClose'])){
-						$errors[] = 'error close';
+				if(isset($post['scheduleOpen'])){
+					if(preg_match('#^[0-9:]{1,}$#', $post['scheduleOpen']) == 0 && !empty($post['scheduleOpen'])){
+						$errors[] = 'error scheduleOpen';
 					}
 					else{
-						$bar_close = $post['scheduleClose'];
+						$bar_open = $post['scheduleOpen'];
 					}
 				}
 
@@ -412,16 +434,19 @@ class BarController extends Controller
 					// On utilise la méthode insert() qui permet d'insérer des données en base de donnée
 					$data = [
 						// La clé du tableau correspond au nom de la colonne SQL
+						'quartiers' => $bar_quartiers,
 						'name' => $bar_name,
 						'picture' => $bar_picture,
 						'description' => $bar_description,
 						'phone' => $bar_phone,
 						'adress' => $bar_adress,
 						'schedule' => $bar_schedule,
+						'scheduleOpen' => $bar_scheduleOpen,
 						'x' => $bar_x,
 						'y' => $bar_y,
-						'open' => $bar_open,
-						'close' => $bar_close,
+						'google_url' => 'https://www.google.fr/maps/place/'.$post['address'].'/',
+						'url' => $post['url'],
+						'date' => date('Y-m-d H:i:s')
 
 					];
 

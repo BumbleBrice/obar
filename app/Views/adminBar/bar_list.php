@@ -29,7 +29,7 @@
 
 					<div class="col-lg-6">
 						<p class="typeListBar">Quartiers :</p><p class="contentListBar"><?=$bar['quartiers']; ?></p>
-						<p class="typeListBar">Description :</p><p class="contentListBar"><?=$bar['description']; ?></p>
+						<p class="typeListBar">Description :</p><p class="contentListBarDescription"><?=$bar['description']; ?></p>
 						<p class="typeListBar">Téléphone :</p><p class="contentListBar"><?=$bar['phone']; ?></p>
 						<p class="typeListBar">Adresse :</p><p class="contentListBar"><?=$bar['adress']; ?></p>
 						<p class="typeListBar">Jour d'ouverture :</p><p class="contentListBar"><?=$bar['schedule']; ?></p>
