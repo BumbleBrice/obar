@@ -96,6 +96,12 @@ class BarController extends Controller
 					}
 				}
 
+				if(isset($post['quartiers'])){
+					if(preg_match('#^.{1,}$#', $post['quartiers']) == 0){
+						$errors[] = 'error quartiers';
+					}
+				}
+
 				if(isset($post['picture'])){
 					if(preg_match('#^.{1,}$#', $post['picture']) == 0){
 						$errors[] = 'error picture';
@@ -136,15 +142,21 @@ class BarController extends Controller
 					$errors[] = 'vous n\'avez pas placer de point pour votre bar';
 				}
 
-				if(isset($post['scheduleOpen'])){
-					if(preg_match('#^[0-9:]{1,}$#', $post['scheduleOpen']) == 0){
-						$errors[] = 'error open';
+				if(isset($post['schedule'])){
+					if(preg_match('#^.{1,}$#', $post['address']) == 0){
+						$errors[] = 'error schedule';
 					}
 				}
 
-				if(isset($post['scheduleClose'])){
-					if(preg_match('#^[0-9:]{1,}$#', $post['scheduleClose']) == 0){
-						$errors[] = 'error close';
+				if(isset($post['scheduleOpen'])){
+					if(preg_match('#^.{1,}$#', $post['address']) == 0){
+						$errors[] = 'error scheduleOpen';
+					}
+				}
+
+				if(isset($post['url'])){
+					if(preg_match('#^.{1,}$#', $post['url']) == 0){
+						$errors[] = 'error url';
 					}
 				}
 
@@ -185,17 +197,18 @@ class BarController extends Controller
 					// On utilise la méthode insert() qui permet d'insérer des données en base de donnée
 					$data = [
 						// La clé du tableau correspond au nom de la colonne SQL
+						'quartiers' => $post['quartiers'],
 						'name' => $post['name'],
 						'picture' => $imageFinale,
 						'description' => $post['content'],
 						'phone' => $post['phone'],
 						'adress' => $post['address'],
 						'schedule' => $schedule,
-						'open' => $post['scheduleOpen'] . ':00',
-						'close' => $post['scheduleClose'] . ':00',
+						'scheduleOpen' => $post['scheduleOpen'],
 						'x' => $post['x'],
 						'y' => $post['y'],
 						'google_url' => 'https://www.google.fr/maps/place/'.$post['address'].'/',
+						'url' => $post['url'],
 						'date' => date('Y-m-d H:i:s')
 					];
 
@@ -233,16 +246,16 @@ class BarController extends Controller
 
 			$bar = $barModel->find($id);
 
+			$bar_quartiers = $bar['quartiers'];
 			$bar_name = $bar['name'];
 			$bar_picture = $bar['picture'];
 			$bar_description = $bar['description'];
 			$bar_phone = $bar['phone'];
 			$bar_adress = $bar['adress'];
 			$bar_schedule = $bar['schedule'];
+			$bar_scheduleOpen = $bar['scheduleOpen'];
 			$bar_x = $bar['x'];
 			$bar_y = $bar['y'];
-			$bar_open = $bar['open'];
-			$bar_close = $bar['close'];
 
 			if(!empty($_FILES)){
 				if(isset($_FILES['picture']) && $_FILES['picture']['error'] == UPLOAD_ERR_OK) {

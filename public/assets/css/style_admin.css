@@ -61,6 +61,10 @@ label {
     }
 }
 
+.display_block {
+	display: block;
+}
+
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 /*                            NAVBAR                           */
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
@@ -246,6 +250,16 @@ label {
 	background: white;
 	color: #6D071A;
 	border: 1px solid #6D071A;
+}
+
+.champQuartierAddBar {
+	display: inline-block;
+	background: white;
+	color: #6D071A;
+	border: 1px solid #6D071A;
+	width: 27%;
+	height: 40px;
+	margin: 5px 5px 5px 5px;
 }
 
 .champTxtAddBarHoraire {

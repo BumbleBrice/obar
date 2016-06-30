@@ -39,6 +39,20 @@
 							<input type="hidden" name="y" value="">
 
                             <div class="form-group">
+                                
+                                <label for="quartiers" class="display_block">Quartiers</label>
+
+                                <input type="button" name="quartiers" id="quartiers" class="form-control champQuartierAddBar" value="saintpierre">
+                                <input type="button" name="quartiers" id="quartiers" class="form-control champQuartierAddBar" value="saintpaul">
+                                <input type="button" name="quartiers" id="quartiers" class="form-control champQuartierAddBar" value="quinconces">
+                                <input type="button" name="quartiers" id="quartiers" class="form-control champQuartierAddBar" value="meriadeck">
+                                <input type="button" name="quartiers" id="quartiers" class="form-control champQuartierAddBar" value="gambetta">
+                                <input type="button" name="quartiers" id="quartiers" class="form-control champQuartierAddBar" value="hoteldeville">
+                                <input type="button" name="quartiers" id="quartiers" class="form-control champQuartierAddBar" value="saintmichel">
+                                
+                            </div>
+
+                            <div class="form-group">
                                 <label for="name">Name</label>
                                 <input type="text" name="name" id="name" class="form-control champTxtAddBar">
                             </div>
@@ -93,6 +107,11 @@
                             <div class="form-group">
                                 <label for="scheduleOpen">Horaire</label>
                                 <input type="text" name="scheduleOpen" id="scheduleOpen" class="form-control champTxtAddBar" placeholder="exemple : 8h30 à 12h00 et de 13h30 à 23h30">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="url">Lien vers le site du bar</label>
+                                <input type="url" name="url" id="url" class="form-control champTxtAddBar" placeholder="www.MonSite.fr">
                             </div>
 
                             <br><br>

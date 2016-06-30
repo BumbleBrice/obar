@@ -35,6 +35,23 @@
 
                         <form method="POST" role="form" enctype="multipart/form-data">
 
+                            <input type="hidden" name="x" value="<?=$bar['x'] ?>">
+                            <input type="hidden" name="y" value="<?=$bar['y'] ?>">
+
+                            <div class="form-group">
+                                
+                                <label for="quartiers" class="display_block">Quartiers</label>
+
+                                <input type="button" name="quartiers" id="quartiers" class="form-control champQuartierAddBar" value="saintpierre">
+                                <input type="button" name="quartiers" id="quartiers" class="form-control champQuartierAddBar" value="saintpaul">
+                                <input type="button" name="quartiers" id="quartiers" class="form-control champQuartierAddBar" value="quinconces">
+                                <input type="button" name="quartiers" id="quartiers" class="form-control champQuartierAddBar" value="meriadeck">
+                                <input type="button" name="quartiers" id="quartiers" class="form-control champQuartierAddBar" value="gambetta">
+                                <input type="button" name="quartiers" id="quartiers" class="form-control champQuartierAddBar" value="hoteldeville">
+                                <input type="button" name="quartiers" id="quartiers" class="form-control champQuartierAddBar" value="saintmichel">
+                                
+                            </div>
+
                             <div class="form-group">
                                 <label for="name">Name</label>
                                 <input type="text" name="name" id="name" class="form-control champTxtAddBar" value="<?=$bar['name'] ?>">
@@ -43,7 +60,7 @@
                             <div class="form-group">
                                 <label for="picture">Image du bar</label>
                                 <input type="hidden" name="MAX_FILE_SIZE" value="<?=$maxSize; ?>">
-                                <input type="file" name="picture" id="picture" class="filestyle" data-badge="false">
+                                <input type="file" name="picture" id="picture" class="filestyle" data-badge="false" value="<?=$bar['picture'] ?>">
                             </div>
 
                             <div class="form-group">
@@ -89,7 +106,12 @@
 
                             <div class="form-group">
                                 <label for="scheduleOpen">Horaire</label>
-                                <input type="text" name="scheduleOpen" id="scheduleOpen" class="form-control champTxtAddBar"  value="<?=$bar['scheduleOpen'] ?>>
+                                <input type="text" name="scheduleOpen" id="scheduleOpen" class="form-control champTxtAddBar" value="<?=$bar['scheduleOpen'] ?>">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="url">Lien vers le site du bar</label>
+                                <input type="url" name="url" id="url" class="form-control champTxtAddBar" value="<?=$bar['url'] ?>">
                             </div>
 
                             <button type="reset" class="btn btn-default boutonBarAdd">Recommencer</button>

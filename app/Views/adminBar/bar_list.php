@@ -14,7 +14,7 @@
 
 		<?php foreach($bars as $bar): ?>
 
-			<div class="col-lg-5 divListBar text-center">
+			<div class="col-lg-5 divListBar">
 				<div class="row">
 					<div class="col-lg-12 text-center">
 						<h3 class="nameListBar"><?=$bar['name']; ?></h3>
@@ -28,11 +28,13 @@
 					</div>
 
 					<div class="col-lg-6">
+						<p class="typeListBar">Quartiers :</p><p class="contentListBar"><?=$bar['quartiers']; ?></p>
 						<p class="typeListBar">Description :</p><p class="contentListBar"><?=$bar['description']; ?></p>
 						<p class="typeListBar">Téléphone :</p><p class="contentListBar"><?=$bar['phone']; ?></p>
 						<p class="typeListBar">Adresse :</p><p class="contentListBar"><?=$bar['adress']; ?></p>
 						<p class="typeListBar">Jour d'ouverture :</p><p class="contentListBar"><?=$bar['schedule']; ?></p>
-						<p class="typeListBar">Ouvert de </p><p class="contentListBar"><?=$bar['open']; ?> à <?=$bar['close']; ?></p>
+						<p class="typeListBar">Horaire d'ouverture :</p><p class="contentListBar"><?=$bar['scheduleOpen']; ?></p>
+						<p class="typeListBar">Lien vers le site :</p><p class="contentListBar"><?=$bar['url']; ?></p>
 					</div>				
 				</div>
 
