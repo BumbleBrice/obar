@@ -1,6 +1,11 @@
 <?php
-
 namespace Controller;
+
+// Enleve le max_execution_time de 30 secondes par défaut
+// A n'utiliser qu'exceptionnellement
+set_time_limit(0);
+ini_set('max_execution_time', 0);
+
 
 use \W\Controller\Controller;
 use \Model\MessageModel;
@@ -13,7 +18,7 @@ class MessageController extends Controller
 	}
 
 	public function message_read($id) {
-		
+
 		$messageModel = new MessageModel();
 
 		$message = $messageModel->find($id);

@@ -6,6 +6,7 @@ use \W\Controller\Controller;
 use \W\Model\UsersModel as UsersModel; //Permet d'importer la classe UsersModel que l'on pourra instancier via new UsersModel();
 use \W\Security\AuthentificationModel as AuthModel; //Permet d'importer la classe AuthentificationModel pour hacher le password
 use \Model\BarModel as Bar;
+use \Model\NewsModel as News;
 use \Model\ConfirmationModel as Confirmation;
 use \Model\PresentationModel as Presentation; //Permet d'importer la calsse PresentationModel pour la présentation du site
 
@@ -21,6 +22,7 @@ class DefaultController extends Controller
 		$usersModel = new UsersModel();
 		$authModel = new AuthModel();
 		$barModel = new Bar();
+		$newsModel = new News();
 		$presentationModel = new Presentation();
 
 		$messageController = new \Controller\MessageController();
@@ -218,7 +220,7 @@ class DefaultController extends Controller
 
 
 		// On envoi les erreurs en paramètre à l'aide d'un tableau (array)
-		$params = ['quartiers' => $quartiers, 'errors' => $errors, 'success' => $success, 'bars' => $barModel->findAll(), 'lastbars' => $barModel->findAll('id', 'DESC', 3), 'infos' => $presentationModel->find(1)];
+		$params = ['quartiers' => $quartiers, 'errors' => $errors, 'success' => $success, 'bars' => $barModel->findAll(), 'lastbars' => $newsModel->findAll('id', 'DESC', 3), 'infos' => $presentationModel->find(1)];
 		$this->show('default/home', $params);
 	}
 
