@@ -19,7 +19,7 @@ $(function(){
         $('input[name=x]').attr('value' , x);
         $('input[name=y]').attr('value' , y);
 
-        var point = $('<div><i class=""></i></div>').addClass('bar').css({'left': x + '%', 'top': y + '%'});
+        var point = $('<div><i class="fa fa-beer fa-2x"></i></div>').addClass('bar').css({'left': x + '%', 'top': y + '%'});
 
         carte.css({'position' : 'relative'});
         carte.append(point);

@@ -533,17 +533,18 @@ label {
 .carte {
 	width: 500px;
 	height: 500px;
-	background: red;
+	background: lightgrey;
+	border-radius: 5px;
 	position: relative;
 	overflow: hidden;
+	margin: 15% auto;
 }
 
 .bar {
 	background: ;
-	width: 50px;
-	height: 50px;
+
 	position: absolute;
-	background: green;
+	color: orange;
 }
 
 /****Bouton navbar*****/

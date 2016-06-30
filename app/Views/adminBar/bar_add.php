@@ -111,7 +111,7 @@
                     <div class="col-lg-1"></div>
 
                     <div class="carte">
-						
+						<img src="<?=$this->assetUrl('img/Quartier-saint_pierre.svg'); ?>" alt="Carte Quartier Saint Pierre" class="img-responsive">
                     </div>
 
                     <div class="col-lg-1"></div>
