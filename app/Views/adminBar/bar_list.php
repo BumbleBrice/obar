@@ -31,7 +31,8 @@
 						<p class="typeListBar">Description :</p><p class="contentListBar"><?=$bar['description']; ?></p>
 						<p class="typeListBar">Téléphone :</p><p class="contentListBar"><?=$bar['phone']; ?></p>
 						<p class="typeListBar">Adresse :</p><p class="contentListBar"><?=$bar['adress']; ?></p>
-						<p class="typeListBar">Horaire :</p><p class="contentListBar"><?=$bar['schedule']; ?></p>
+						<p class="typeListBar">Jour d'ouverture :</p><p class="contentListBar"><?=$bar['schedule']; ?></p>
+						<p class="typeListBar">Ouvert de </p><p class="contentListBar"><?=$bar['open']; ?> à <?=$bar['close']; ?></p>
 					</div>				
 				</div>
 
