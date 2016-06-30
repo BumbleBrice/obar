@@ -196,10 +196,13 @@ ul .nav .navbar-nav .navbar-right>a{
     background-color: #7fbac4;
 }
 .services.bg-primary h2{
-    color: white !important;
+    color: #c14e5f !important;
+    text-transform: uppercase;
 }
 
-
+.carousel-indicators {
+    bottom: -35px;
+}
 /****************************************
 *************SECTION PROFIL USER*********
 ****************************************/

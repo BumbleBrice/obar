@@ -13,6 +13,7 @@
         </div>
         <a href="<?$this->url('LostPassword_lostPassword')?>">Mot de passe oublier ?</a>
 <?php endif; ?>
+
 <!-- Connexion A FAIRE -->
 <form method="POST">
     <input type="hidden" name="form" value="co">
@@ -26,6 +27,7 @@
 </form>
 
 <?php else: ?>
+    
 <!-- Profil user -->
 <section id="users_profil" class="users_profil">
 	<div class="container-fluid">
