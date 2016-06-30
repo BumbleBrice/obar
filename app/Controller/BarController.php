@@ -118,12 +118,6 @@ class BarController extends Controller
 					}
 				}
 
-				if(isset($post['schedule'])){
-					if(preg_match('#^.{1,}$#', $post['schedule']) == 0){
-						$errors[] = 'error schedule';
-					}
-				}
-
 				if(isset($post['x'])){
 					if(preg_match('#^[0-9.]{1,}$#', $post['x']) == 0){
 						$errors[] = 'error x';
@@ -245,6 +239,8 @@ class BarController extends Controller
 			$bar_schedule = $bar['schedule'];
 			$bar_x = $bar['x'];
 			$bar_y = $bar['y'];
+			$bar_open = $bar['open'];
+			$bar_close = $bar['close'];
 
 			if(!empty($_FILES)){
 				if(isset($_FILES['picture']) && $_FILES['picture']['error'] == UPLOAD_ERR_OK && $_FILES['picture']['size'] < $maxSize) {
@@ -329,15 +325,6 @@ class BarController extends Controller
 					}
 				}
 
-				if(isset($post['schedule'])){
-					if(preg_match('#^.{1,}$#', $post['schedule']) == 0){
-						$errors[] = 'error schedule';
-					}
-					else{
-						$bar_schedule = $post['schedule'];
-					}
-				}
-
 				if(isset($post['x'])){
 					if(preg_match('#^[0-9]{1,}$#', $post['x']) == 0){
 						$errors[] = 'error x';
@@ -356,6 +343,49 @@ class BarController extends Controller
 					}
 				}
 
+				if(isset($post['scheduleOpen'])){
+					if(preg_match('#^[0-9:]{1,}$#', $post['scheduleOpen']) == 0){
+						$errors[] = 'error open';
+					}
+				}
+
+				if(isset($post['scheduleClose'])){
+					if(preg_match('#^[0-9:]{1,}$#', $post['scheduleClose']) == 0){
+						$errors[] = 'error close';
+					}
+				}
+
+				$schedule = '';
+
+				if(isset($post['dayLundi']) && $post['dayLundi'] == 'lundi'){
+					$schedule .= 'Lundi, ';
+				}
+				if(isset($post['dayMardi']) && $post['dayMardi'] == 'mardi'){
+					$schedule .= 'Mardi, ';
+				}
+				if(isset($post['dayMercredi']) && $post['dayMercredi'] == 'mercredi'){
+					$schedule .= 'Mercredi, ';
+				}
+				if(isset($post['dayJeudi']) && $post['dayJeudi'] == 'jeudi'){
+					$schedule .= 'Jeudi, ';
+				}
+				if(isset($post['dayVendredi']) && $post['dayVendredi'] == 'vendredi'){
+					$schedule .= 'Vendredi, ';
+				}
+				if(isset($post['daySamedi']) && $post['daySamedi'] == 'samedi'){
+					$schedule .= 'Samedi, ';
+				}
+				if(isset($post['dayDimanche']) && $post['dayDimanche'] == 'dimanche'){
+					$schedule .= 'Dimanche, ';
+				}
+
+				if(empty($schedule)){
+					$errors[] = 'error schedule';
+				}
+				else{
+					$schedule = substr($schedule, 0, -2);
+				}
+
 				if (count($errors) == 0) {
 					// Ici il n'y a aucune erreurs, on peut donc enregistrer en base de donnée
 
@@ -369,7 +399,10 @@ class BarController extends Controller
 						'adress' => $bar_adress,
 						'schedule' => $bar_schedule,
 						'x' => $bar_x,
-						'y' => $bar_y
+						'y' => $bar_y,
+						'open' => $bar_open,
+						'close' => $bar_close,
+
 					];
 
 					// On passe le tableau $data à la méthode update() pour mofifier nos données en bdd
