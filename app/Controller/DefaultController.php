@@ -48,43 +48,43 @@ class DefaultController extends Controller
 			// 'saintpierre','saintpaul','quinconces','meriadeck','gambetta','hoteldeville','saintmichel'
 			if(isset($get['quartiers'])){
 				if($get['quartiers'] == 'saintpierre'){
-					$quartiers = 'saintpierre',
+					$quartiers = 'saintpierre';
 				}
 			}
 
 			if(isset($get['quartiers'])){
 				if($get['quartiers'] == 'saintpaul'){
-					$quartiers = 'saintpaul',
+					$quartiers = 'saintpaul';
 				}
 			}
 
 			if(isset($get['quartiers'])){
 				if($get['quartiers'] == 'quinconces'){
-					$quartiers = 'quinconces',
+					$quartiers = 'quinconces';
 				}
 			}
 
 			if(isset($get['quartiers'])){
 				if($get['quartiers'] == 'meriadeck'){
-					$quartiers = 'meriadeck',
+					$quartiers = 'meriadeck';
 				}
 			}
 
 			if(isset($get['quartiers'])){
 				if($get['quartiers'] == 'gambetta'){
-					$quartiers = 'gambetta',
+					$quartiers = 'gambetta';
 				}
 			}
 
 			if(isset($get['quartiers'])){
 				if($get['quartiers'] == 'hoteldeville'){
-					$quartiers = 'hoteldeville',
+					$quartiers = 'hoteldeville';
 				}
 			}
 
 			if(isset($get['quartiers'])){
 				if($get['quartiers'] == 'saintmichel'){
-					$quartiers = 'saintmichel',
+					$quartiers = 'saintmichel';
 				}
 			}
 		}
