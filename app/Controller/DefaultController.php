@@ -171,7 +171,7 @@ class DefaultController extends Controller
 
 
 		// On envoi les erreurs en paramètre à l'aide d'un tableau (array)
-		$params = ['errors' => $errors, 'success' => $success, 'bars' => $barModel->findAll('id', 'DESC', 3), 'infos' => $presentationModel->find(1)];
+		$params = ['errors' => $errors, 'success' => $success, 'bars' => $barModel->findAll(), 'lastbars' => $barModel->findAll('id', 'DESC', 3), 'infos' => $presentationModel->find(1)];
 		$this->show('default/home', $params);
 	}
 
