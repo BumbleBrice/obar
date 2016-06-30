@@ -27,7 +27,7 @@
 </form>
 
 <?php else: ?>
-    
+
 <!-- Profil user -->
 <section id="users_profil" class="users_profil">
 	<div class="container-fluid">
@@ -78,27 +78,60 @@
         </div>
     </div>
 </div> <!-- /.container -->
-</section> -->
+</section>
 
 <!--Slice mise à jour-->
 <section id="services" class="services bg-primary">
-	<div class="container-fluid">
-		<div class="row">
-			<div class="col-xs-6 col-sm-4">
-				<?php foreach($bars as $bar): ?>
-					<h4><strong><?php echo $this->e($bar['name']); ?></strong></h4>
-					<img src="<?=$this->assetUrl($bar['picture']); ?>">
-					<p>
-						<?=$bar['adress']; ?>
-						<br>
-						<?=$bar['phone']; ?>
-						<br>
-						<?=$bar['description']; ?>
-					</p>
-				<?php endforeach; ?>
-			</div>
-		</div>
-	</div>
+    <div class="container-fluid">
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" role="listbox">
+                <div class="item active">
+                    <h2><strong><?php echo $this->e($lastbars[0]['what']); ?></strong></h2>
+                    <p>
+                        <?=$lastbars[0]['bar']; ?>
+                        <br>
+                        <?=$lastbars[0]['msg']; ?>
+                    </p>
+                </div>
+                <div class="item">
+                    <h2><strong><?php echo $this->e($lastbars[1]['what']); ?></strong></h2>
+                    <p>
+                        <?=$lastbars[1]['bar']; ?>
+                        <br>
+                        <?=$lastbars[1]['msg']; ?>
+                    </p>
+                </div>
+
+                <div class="item">
+                    <h2><strong><?php echo $this->e($lastbars[2]['what']); ?></strong></h2>
+                    <p>
+                        <?=$lastbars[2]['bar']; ?>
+                        <br>
+                        <?=$lastbars[2]['msg']; ?>
+                    </p>
+                </div>
+            </div>
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+            </ol>
+
+            <!-- Left and right controls -->
+            <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                <span class="sr-only">Précédent</span>
+            </a>
+
+            <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                <span class="sr-only">Suivant</span>
+            </a>
+        </div>
+    </div>
 </section>
 
 <!-- Carte -->

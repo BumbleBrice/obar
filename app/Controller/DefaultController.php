@@ -230,12 +230,14 @@ class DefaultController extends Controller
 		$authModel = new AuthModel();
 		$barModel = new Bar();
 		$presentationModel = new Presentation();
-
+		$newsModel = new News();
+		
 		$params = [];
 		$params['bars'] = $barModel->findAll();
 		$params['infos'] = $presentationModel->find(1);
 		$params['errors'] = [];
 		$params['errors']['connexion'] = [];
+		$params['lastbars'] = $newsModel->findAll('id', 'DESC', 3);
 
 
 		if(!empty($_POST)){

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 30, 2016 at 12:51 PM
+-- Generation Time: Jun 30, 2016 at 03:46 PM
 -- Server version: 10.1.13-MariaDB
 -- PHP Version: 5.6.21
 
@@ -78,6 +78,28 @@ CREATE TABLE `contact` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `news`
+--
+
+CREATE TABLE `news` (
+  `id` int(11) NOT NULL,
+  `what` enum('nouveau','evenement') NOT NULL,
+  `bar` varchar(255) NOT NULL,
+  `msg` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `news`
+--
+
+INSERT INTO `news` (`id`, `what`, `bar`, `msg`) VALUES
+(1, 'evenement', 'Le Petit Brun', 'Concert tous les dimanches à 19h'),
+(2, 'nouveau', 'Le Wine Bar', 'Pour les amoureux de vins en toutes sortes.'),
+(3, 'evenement', 'Le Velvet Bar', 'Ecran géant pendant l''Euro 2016 !');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `news_letter`
 --
 
@@ -96,7 +118,6 @@ CREATE TABLE `obar_desc` (
   `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
   `description` varchar(255) NOT NULL,
-  `news` varchar(255) NOT NULL,
   `phone` varchar(255) NOT NULL,
   `address` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL
@@ -106,8 +127,8 @@ CREATE TABLE `obar_desc` (
 -- Dumping data for table `obar_desc`
 --
 
-INSERT INTO `obar_desc` (`id`, `name`, `description`, `news`, `phone`, `address`, `email`) VALUES
-(1, 'Ô Bar', 'Ô Bar, vous propose une sélection de bars de Bordeaux selon votre quartier de prédilection.\r\nVenez découvrir des lieux aussi atypes que vintage !', '', '05 56 52 01 02', '88 rue Abbé de l''Epée, 33000 Bordeaux', 'contact@obar.fr');
+INSERT INTO `obar_desc` (`id`, `name`, `description`, `phone`, `address`, `email`) VALUES
+(1, 'Ô Bar', 'Ô Bar, vous propose une sélection de bars de Bordeaux selon vos quartiers de prédilection.\nVenez découvrir des lieux aussi atypes que vintage !', '05 56 52 01 02', '88 rue Abbé de l''Epée, 33000 Bordeaux', 'contact@obar.fr');
 
 -- --------------------------------------------------------
 
@@ -161,11 +182,11 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `nickname`, `firstname`, `lastname`, `email`, `password`, `picture`, `role`, `confirm`) VALUES
-(1, 'Alexis', 'Alexis', 'Meunier', 'meunier_33@live.fr', '$2y$10$hlb929Kvi1yCu0uXUJhWcuWOF.9YquKOmGsXf3aqXQsmdgfcTBfLC', '', 'admin', 1),
-(2, 'Bumble', 'Brice', 'Collilieux', 'collilieux.brice@gmail.fr', '$2y$10$hlb929Kvi1yCu0uXUJhWcuWOF.9YquKOmGsXf3aqXQsmdgfcTBfLC', '', 'admin', 1),
-(3, 'Jenjen', 'Jennifer', 'Villeroy', 'jennifer.villeroy@gmail.com', '$2y$10$hlb929Kvi1yCu0uXUJhWcuWOF.9YquKOmGsXf3aqXQsmdgfcTBfLC', '', 'admin', 1),
-(4, 'Yoan', 'Yoan', 'Garcia', 'yoan.gcia@hotmail.fr', '$2y$10$hlb929Kvi1yCu0uXUJhWcuWOF.9YquKOmGsXf3aqXQsmdgfcTBfLC', '', 'admin', 1),
-(5, 'Blablabla', 'Membre', 'Membre', 'membre.membre.hotmail.fr', '$2y$10$ZugNygRl/mOBuMkbC2qMCeSbUyyxrypUxJ0eSVqTuTh5wr8L2CS6a', '', 'user', 1);
+(11, 'Alexis', 'Alexis', 'Meunier', 'meunier_33@live.fr', '$2y$10$hlb929Kvi1yCu0uXUJhWcuWOF.9YquKOmGsXf3aqXQsmdgfcTBfLC', '', 'admin', 1),
+(12, 'Bumble', 'Brice', 'Collilieux', 'collilieux.brice@gmail.fr', '$2y$10$hlb929Kvi1yCu0uXUJhWcuWOF.9YquKOmGsXf3aqXQsmdgfcTBfLC', '', 'admin', 1),
+(13, 'Jenjen', 'Jennifer', 'Villeroy', 'jennifer.villeroy@gmail.com', '$2y$10$hlb929Kvi1yCu0uXUJhWcuWOF.9YquKOmGsXf3aqXQsmdgfcTBfLC', '', 'admin', 1),
+(14, 'Yoan', 'Yoan', 'Garcia', 'yoan.gcia@hotmail.fr', '$2y$10$hlb929Kvi1yCu0uXUJhWcuWOF.9YquKOmGsXf3aqXQsmdgfcTBfLC', '', 'admin', 1),
+(15, 'Blablabla', 'Membre', 'Membre', 'membre.membre.hotmail.fr', '$2y$10$ZugNygRl/mOBuMkbC2qMCeSbUyyxrypUxJ0eSVqTuTh5wr8L2CS6a', '', 'user', 1);
 
 --
 -- Indexes for dumped tables
@@ -181,6 +202,12 @@ ALTER TABLE `bar`
 -- Indexes for table `contact`
 --
 ALTER TABLE `contact`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `news`
+--
+ALTER TABLE `news`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -228,6 +255,11 @@ ALTER TABLE `bar`
 --
 ALTER TABLE `contact`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `news`
+--
+ALTER TABLE `news`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `news_letter`
 --

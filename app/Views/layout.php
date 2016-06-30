@@ -39,7 +39,7 @@
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse navbar-ex1-collapse nav-top">
+            <div class="collapse navbar-collapse navbar-ex1-collapse nav-top navbar-obar">
                 <ul class="nav navbar-nav navbar-right">
                     <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
                     <li class="hidden active">
@@ -48,8 +48,8 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Les quartiers <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">Vieux Bordeaux</a></li>
-                            <li><a href="#">Saint Pierre</a></li>
+                            <li><a href="#">Saint-Pierre</a></li>
+                            <li><a href="#">Saint-Paul</a></li>
                             <li><a href="#">Bastide</a></li>
                             <li><a href="#">Chartrons</a></li>
                             <li><a href="#">Victoire</a></li>

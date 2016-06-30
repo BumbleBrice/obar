@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="<?= $this->assetUrl('font-awesome/css/font-awesome.min.css') ?>">
 
     <!-- CSS personnalisé -->
-    <link href="<?= $this->assetUrl('css/style.css') ?>" rel="stylesheet">
+    <link href="<?= $this->assetUrl('css/style_connect.css') ?>" rel="stylesheet">
 </head>
 
 <body>
@@ -53,8 +53,8 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Les quartiers <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">Vieux Bordeaux</a></li>
-                            <li><a href="#">Saint Pierre</a></li>
+                            <li><a href="#">Saint-Pierre</a></li>
+                            <li><a href="#">Saint-Paul</a></li>
                             <li><a href="#">Bastide</a></li>
                             <li><a href="#">Chartrons</a></li>
                             <li><a href="#">Victoire</a></li>
