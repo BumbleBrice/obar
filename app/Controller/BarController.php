@@ -44,44 +44,46 @@ class BarController extends Controller
 			$imageFinale = 'assets/img/image_defaut.png';
 
 			if(!empty($_FILES)){
-				if(isset($_FILES['picture']) && $_FILES['picture']['error'] == UPLOAD_ERR_OK && $_FILES['picture']['size'] < $maxSize) {
-					$fileName = $_FILES['picture']['name']; // Nom de mon image
-					$fileTemp = $_FILES['picture']['tmp_name']; // Image temporaire
+				if(isset($_FILES['picture']) && $_FILES['picture']['error'] == UPLOAD_ERR_OK) {
+					if($_FILES['picture']['size'] < $maxSize){
+						$fileName = $_FILES['picture']['name']; // Nom de mon image
+						$fileTemp = $_FILES['picture']['tmp_name']; // Image temporaire
 
-					$file = new finfo(); // Classe FileInfo
-					$mimeType = $file->file($_FILES['picture']['tmp_name'], FILEINFO_MIME_TYPE); // Retourne le VRAI mimeType
-					$mimeTypeAllowed = ['image/jpg', 'image/jpeg', 'image/png', 'image/gif']; // Les mime types autorisés
+						$file = new finfo(); // Classe FileInfo
+						$mimeType = $file->file($_FILES['picture']['tmp_name'], FILEINFO_MIME_TYPE); // Retourne le VRAI mimeType
+						$mimeTypeAllowed = ['image/jpg', 'image/jpeg', 'image/png', 'image/gif']; // Les mime types autorisés
 
-					// Permet de vérifier que le mime type est bien autorisé
-					if (in_array($mimeType, $mimeTypeAllowed)) {
-						/*
-						 * explode() permet de séparer une chaine de caractère en un tableau
-						 * Ici, on aura donc :
-						 * 		$newFileName = array(
-						 			0 => 'nom-de-mon-fichier',
-						 			1 => 'jpg'
-								);
-						 */
-						$newFileName = explode('.', $fileName);
-						$fileExtension = end($newFileName); // Récupère l'extension du fichier
+						// Permet de vérifier que le mime type est bien autorisé
+						if (in_array($mimeType, $mimeTypeAllowed)) {
+							/*
+							 * explode() permet de séparer une chaine de caractère en un tableau
+							 * Ici, on aura donc :
+							 * 		$newFileName = array(
+							 			0 => 'nom-de-mon-fichier',
+							 			1 => 'jpg'
+									);
+							 */
+							$newFileName = explode('.', $fileName);
+							$fileExtension = end($newFileName); // Récupère l'extension du fichier
 
-						$finalFileName = 'bar-'.time().$fileExtension; // Le nom du fichier sera donc : user-1463058435.jpg (time() retourne un timestamp à la seconde). Cela permet de sécuriser l'upload de fichier
+							$finalFileName = 'bar-'.time().$fileExtension; // Le nom du fichier sera donc : user-1463058435.jpg (time() retourne un timestamp à la seconde). Cela permet de sécuriser l'upload de fichier
 
 
-						if(move_uploaded_file($fileTemp, $folder.$finalFileName)) {
-							// Ici je suis sur que mon image est au bon endroit
-							$imageFinale = $folder.$finalFileName;
+							if(move_uploaded_file($fileTemp, $folder.$finalFileName)) {
+								// Ici je suis sur que mon image est au bon endroit
+								$imageFinale = $folder.$finalFileName;
+							}
+							else{
+								$imageFinale = 'assets/img/image_defaut.png'; // Permet d'avoir une image par défaut si l'upload ne s'est pas bien déroulé
+							}
 						}
 						else{
-							$imageFinale = 'assets/img/image_defaut.png'; // Permet d'avoir une image par défaut si l'upload ne s'est pas bien déroulé
+							$errors[] = 'Le mime type est interdit';
 						}
 					}
 					else{
-						$errors[] = 'Le mime type est interdit';
+						$errors[] = 'L\'image est trop lourde';
 					}
-				}
-				else{
-					$errors[] = 'L\'image est trop lourde';
 				}
 			}
 
@@ -243,44 +245,46 @@ class BarController extends Controller
 			$bar_close = $bar['close'];
 
 			if(!empty($_FILES)){
-				if(isset($_FILES['picture']) && $_FILES['picture']['error'] == UPLOAD_ERR_OK && $_FILES['picture']['size'] < $maxSize) {
-					$fileName = $_FILES['picture']['name']; // Nom de mon image
-					$fileTemp = $_FILES['picture']['tmp_name']; // Image temporaire
+				if(isset($_FILES['picture']) && $_FILES['picture']['error'] == UPLOAD_ERR_OK) {
+					if($_FILES['picture']['size'] < $maxSize){
+						$fileName = $_FILES['picture']['name']; // Nom de mon image
+						$fileTemp = $_FILES['picture']['tmp_name']; // Image temporaire
 
-					$file = new finfo(); // Classe FileInfo
-					$mimeType = $file->file($_FILES['picture']['tmp_name'], FILEINFO_MIME_TYPE); // Retourne le VRAI mimeType
-					$mimeTypeAllowed = ['image/jpg', 'image/jpeg', 'image/png', 'image/gif']; // Les mime types autorisés
+						$file = new finfo(); // Classe FileInfo
+						$mimeType = $file->file($_FILES['picture']['tmp_name'], FILEINFO_MIME_TYPE); // Retourne le VRAI mimeType
+						$mimeTypeAllowed = ['image/jpg', 'image/jpeg', 'image/png', 'image/gif']; // Les mime types autorisés
 
-					// Permet de vérifier que le mime type est bien autorisé
-					if (in_array($mimeType, $mimeTypeAllowed)) {
-						/*
-						 * explode() permet de séparer une chaine de caractère en un tableau
-						 * Ici, on aura donc :
-						 * 		$newFileName = array(
-						 			0 => 'nom-de-mon-fichier',
-						 			1 => 'jpg'
-								);
-						 */
-						$newFileName = explode('.', $fileName);
-						$fileExtension = end($newFileName); // Récupère l'extension du fichier
+						// Permet de vérifier que le mime type est bien autorisé
+						if (in_array($mimeType, $mimeTypeAllowed)) {
+							/*
+							 * explode() permet de séparer une chaine de caractère en un tableau
+							 * Ici, on aura donc :
+							 * 		$newFileName = array(
+							 			0 => 'nom-de-mon-fichier',
+							 			1 => 'jpg'
+									);
+							 */
+							$newFileName = explode('.', $fileName);
+							$fileExtension = end($newFileName); // Récupère l'extension du fichier
 
-						$finalFileName = 'bar-'.time().$fileExtension; // Le nom du fichier sera donc : user-1463058435.jpg (time() retourne un timestamp à la seconde). Cela permet de sécuriser l'upload de fichier
+							$finalFileName = 'bar-'.time().$fileExtension; // Le nom du fichier sera donc : user-1463058435.jpg (time() retourne un timestamp à la seconde). Cela permet de sécuriser l'upload de fichier
 
 
-						if(move_uploaded_file($fileTemp, $folder.$finalFileName)) {
-							// Ici je suis sur que mon image est au bon endroit
-							$bar_picture = $folder.$finalFileName;
+							if(move_uploaded_file($fileTemp, $folder.$finalFileName)) {
+								// Ici je suis sur que mon image est au bon endroit
+								$bar_picture = $folder.$finalFileName;
+							}
+							else{
+								$bar_picture = 'assets/img/image_defaut.png'; // Permet d'avoir une image par défaut si l'upload ne s'est pas bien déroulé
+							}
 						}
 						else{
-							$bar_picture = 'assets/img/image_defaut.png'; // Permet d'avoir une image par défaut si l'upload ne s'est pas bien déroulé
+							$errors[] = 'Le mime type est interdit';
 						}
 					}
 					else{
-						$errors[] = 'Le mime type est interdit';
+						$errors[] = 'L\'image est trop lourde';
 					}
-				}
-				else{
-					$errors[] = 'L\'image est trop lourde';
 				}
 			}
 
@@ -290,7 +294,7 @@ class BarController extends Controller
 				}
 
 				if(isset($post['name'])){
-					if(preg_match('#^.{1,}$#', $post['name']) == 0){
+					if(preg_match('#^.{1,}$#', $post['name']) == 0 && !empty($post['name'])){
 						$errors[] = 'error name';
 					}
 					else{
@@ -299,7 +303,7 @@ class BarController extends Controller
 				}
 
 				if(isset($post['content'])){
-					if(preg_match('#^.{1,}$#', $post['content']) == 0){
+					if(preg_match('#^.{1,}$#', $post['content']) == 0 && !empty($post['content'])){
 						$errors[] = 'error content';
 					}
 					else{
@@ -308,7 +312,7 @@ class BarController extends Controller
 				}
 
 				if(isset($post['phone'])){
-					if(preg_match('#^.{1,}$#', $post['phone']) == 0){
+					if(preg_match('#^.{1,}$#', $post['phone']) == 0 && !empty($post['phone'])){
 						$errors[] = 'error phone';
 					}
 					else{
@@ -317,7 +321,7 @@ class BarController extends Controller
 				}
 
 				if(isset($post['address'])){
-					if(preg_match('#^.{1,}$#', $post['address']) == 0){
+					if(preg_match('#^.{1,}$#', $post['address']) == 0 && !empty($post['address'])){
 						$errors[] = 'error address';
 					}
 					else{
@@ -326,7 +330,7 @@ class BarController extends Controller
 				}
 
 				if(isset($post['x'])){
-					if(preg_match('#^[0-9]{1,}$#', $post['x']) == 0){
+					if(preg_match('#^[0-9]{1,}$#', $post['x']) == 0 && !empty($post['x'])){
 						$errors[] = 'error x';
 					}
 					else{
@@ -335,7 +339,7 @@ class BarController extends Controller
 				}
 
 				if(isset($post['y'])){
-					if(preg_match('#^[0-9]{1,}$#', $post['y']) == 0){
+					if(preg_match('#^[0-9]{1,}$#', $post['y']) == 0  && !empty($post['y'])){
 						$errors[] = 'error y';
 					}
 					else{
@@ -344,14 +348,20 @@ class BarController extends Controller
 				}
 
 				if(isset($post['scheduleOpen'])){
-					if(preg_match('#^[0-9:]{1,}$#', $post['scheduleOpen']) == 0){
+					if(preg_match('#^[0-9:]{1,}$#', $post['scheduleOpen']) == 0 && !empty($post['scheduleOpen'])){
 						$errors[] = 'error open';
+					}
+					else{
+						$bar_open = $post['scheduleOpen'];
 					}
 				}
 
 				if(isset($post['scheduleClose'])){
-					if(preg_match('#^[0-9:]{1,}$#', $post['scheduleClose']) == 0){
+					if(preg_match('#^[0-9:]{1,}$#', $post['scheduleClose']) == 0 && !empty($post['scheduleClose'])){
 						$errors[] = 'error close';
+					}
+					else{
+						$bar_close = $post['scheduleClose'];
 					}
 				}
 
@@ -379,11 +389,8 @@ class BarController extends Controller
 					$schedule .= 'Dimanche, ';
 				}
 
-				if(empty($schedule)){
-					$errors[] = 'error schedule';
-				}
-				else{
-					$schedule = substr($schedule, 0, -2);
+				if(!empty($schedule)){
+					$bar_schedule = substr($schedule, 0, -2);
 				}
 
 				if (count($errors) == 0) {
