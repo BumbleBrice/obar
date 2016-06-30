@@ -29,9 +29,14 @@ class DefaultController extends Controller
 		$errors['connexion'] = [];// tableau d'erreurs pour le formulaire de connexion
 		$errors['register'] = [];// tableau d'erreurs pour le formulaire d'inscription
 		$errors['contact'] = [];// tableau d'erreurs pour le formulaire de contact
+
 		$success = [];// tableu de success
 		$success['inscription'] = false; // initialise le success inscription a false
 		$success['contact'] = false; // initialise le success contact a false
+
+		$quartiers = '',
+
+
 
 
 		if(!empty($_GET)){
@@ -39,6 +44,48 @@ class DefaultController extends Controller
 
 			if(isset($get['deconnect']) && $get['deconnect'] == '1'){
 				$authModel->logUserOut(); //Permet de déconnecter l'utilisateur
+			}
+			// 'saintpierre','saintpaul','quinconces','meriadeck','gambetta','hoteldeville','saintmichel'
+			if(isset($get['quartiers'])){
+				if($get['quartiers'] == 'saintpierre'){
+					$quartiers = 'saintpierre',
+				}
+			}
+
+			if(isset($get['quartiers'])){
+				if($get['quartiers'] == 'saintpaul'){
+					$quartiers = 'saintpaul',
+				}
+			}
+
+			if(isset($get['quartiers'])){
+				if($get['quartiers'] == 'quinconces'){
+					$quartiers = 'quinconces',
+				}
+			}
+
+			if(isset($get['quartiers'])){
+				if($get['quartiers'] == 'meriadeck'){
+					$quartiers = 'meriadeck',
+				}
+			}
+
+			if(isset($get['quartiers'])){
+				if($get['quartiers'] == 'gambetta'){
+					$quartiers = 'gambetta',
+				}
+			}
+
+			if(isset($get['quartiers'])){
+				if($get['quartiers'] == 'hoteldeville'){
+					$quartiers = 'hoteldeville',
+				}
+			}
+
+			if(isset($get['quartiers'])){
+				if($get['quartiers'] == 'saintmichel'){
+					$quartiers = 'saintmichel',
+				}
 			}
 		}
 
@@ -171,7 +218,7 @@ class DefaultController extends Controller
 
 
 		// On envoi les erreurs en paramètre à l'aide d'un tableau (array)
-		$params = ['errors' => $errors, 'success' => $success, 'bars' => $barModel->findAll(), 'lastbars' => $barModel->findAll('id', 'DESC', 3), 'infos' => $presentationModel->find(1)];
+		$params = ['quartiers' => $quartiers, 'errors' => $errors, 'success' => $success, 'bars' => $barModel->findAll(), 'lastbars' => $barModel->findAll('id', 'DESC', 3), 'infos' => $presentationModel->find(1)];
 		$this->show('default/home', $params);
 	}
 
