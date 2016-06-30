@@ -270,7 +270,7 @@ ul .nav .navbar-nav .navbar-right>a{
 }
 #toggle{
     width: 100%;
-    
+    position: absolute;
     border-radius: 5px;
     height:auto; 
     background:#eee; 
@@ -279,7 +279,7 @@ ul .nav .navbar-nav .navbar-right>a{
     text-align:center
 }
 #toggle img{
-    width: 100%;
+    /*width: 100%;*/
 }
 #toggle p{
 

@@ -55,8 +55,8 @@
 
 <section id="map" class="map">
 	<div class="container-fluid">
-        <div class="row"><div class="col-md-2"></div>
-            <div class="col-xs-12 col-sm-12 col-md-8">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-8 col-md-offset-2">
             	<div class="text-center">
             	<!-- remplacer par la boucle foreach des bars -->
 				 <div style=" left: 45%; top: 25%;" class="btBar">
@@ -100,8 +100,8 @@
 
 				    <h2>Choisissez votre quartier</h2>
 				    <div id="toggle"> 
-					    <div class="container carte">
-					        <div class="btn closeToggle btn-default "><a href="#">X</a></div><br>
+					    <div class="container-fluid carte">
+					        <div class="btn closeToggle btn-default"><a href="#">X</a></div><br>
 					        <div class="row">
 					            <div class="col-md-12 text-center">
 					                <h2 class="section-heading">Le Wine Bar...</h2>
@@ -110,7 +110,7 @@
 					        </div>
 					        <div class="row">
 					            <div class="col-lg-12 barStyle">
-					                <img class="img-circle" style="width: 100%;" src="<?=$this->assetUrl('img/bar.jpg'); ?>" alt="">
+					                <img class="img-circle img-responsive" src="<?=$this->assetUrl('img/bar.jpg'); ?>" alt="">
 					            </div> 
 					        </div>  <br><br>
 					        <div class="row">
@@ -123,6 +123,7 @@
 					            </div>
 					        </div>
 					    </div>
+					    <div class="clearfix"></div>
 					</div>
 	                <img src="<?=$this->assetUrl('img/Quartier-saint_pierre.svg'); ?>" alt="Carte Quartier Saint Pierre" class="img-responsive">
               	</div>
