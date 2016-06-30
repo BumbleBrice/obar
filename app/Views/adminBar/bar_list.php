@@ -32,7 +32,7 @@
 						<p class="typeListBar">Téléphone :</p><p class="contentListBar"><?=$bar['phone']; ?></p>
 						<p class="typeListBar">Adresse :</p><p class="contentListBar"><?=$bar['adress']; ?></p>
 						<p class="typeListBar">Jour d'ouverture :</p><p class="contentListBar"><?=$bar['schedule']; ?></p>
-						<p class="typeListBar">Ouvert de </p><p class="contentListBar"><?=$bar['open']; ?> à <?=$bar['close']; ?></p>
+						<p class="typeListBar">Horaire d'ouverture :</p><p class="contentListBar"><?=$bar['scheduleOpen']; ?></p>
 					</div>				
 				</div>
 

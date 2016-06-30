@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Mer 29 Juin 2016 à 10:58
--- Version du serveur :  10.1.13-MariaDB
--- Version de PHP :  5.6.21
+-- Généré le :  Jeu 30 Juin 2016 à 13:02
+-- Version du serveur :  10.1.10-MariaDB
+-- Version de PHP :  5.6.19
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -33,6 +33,7 @@ CREATE TABLE `bar` (
   `description` text NOT NULL,
   `phone` varchar(255) NOT NULL,
   `adress` varchar(255) NOT NULL,
+  `scheduleOpen` varchar(255) NOT NULL,
   `schedule` varchar(255) NOT NULL,
   `x` varchar(255) NOT NULL,
   `y` varchar(255) NOT NULL,
@@ -44,9 +45,9 @@ CREATE TABLE `bar` (
 -- Contenu de la table `bar`
 --
 
-INSERT INTO `bar` (`id`, `name`, `picture`, `description`, `phone`, `adress`, `schedule`, `x`, `y`, `google_url`, `date`) VALUES
-(2, 'bar2', 'assets/img/bar-1467013790jpg', 'ceci est un test2', '0123456789', '2 route du chemin', '14h', '0', '0', '', '0000-00-00 00:00:00'),
-(3, 'bar3.1', 'assets/img/bar-1467014268jpg', 'ceci est un test3', '0123456789', '3 route du chemin', '16h', '0', '0', '', '0000-00-00 00:00:00');
+INSERT INTO `bar` (`id`, `name`, `picture`, `description`, `phone`, `adress`, `scheduleOpen`, `schedule`, `x`, `y`, `google_url`, `date`) VALUES
+(2, 'bar2', 'assets/img/bar-1467013790jpg', 'ceci est un test2', '0123456789', '2 route du chemin', '14h', '', '0', '0', '', '0000-00-00 00:00:00'),
+(3, 'bar3.1', 'assets/img/bar-1467014268jpg', 'ceci est un test3', '0123456789', '3 route du chemin', '16h', '', '0', '0', '', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -84,12 +85,19 @@ CREATE TABLE `news_letter` (
 CREATE TABLE `obar_desc` (
   `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
-  `desc` varchar(255) NOT NULL,
+  `description` varchar(255) NOT NULL,
   `news` varchar(255) NOT NULL,
   `phone` varchar(255) NOT NULL,
   `address` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Contenu de la table `obar_desc`
+--
+
+INSERT INTO `obar_desc` (`id`, `name`, `description`, `news`, `phone`, `address`, `email`) VALUES
+(1, 'ô Bar, presentation...  ô Bar, presentation...  ô Bar, presentation...  ô Bar, presentation...  ô Bar, presentation...  ô Bar, presentation...  ô Bar, presentation...  ô Bar, presentation...  ', 'ô Bar, presentation...  ô Bar, presentation...  ô Bar, presentation...  ô Bar, presentation...  ô Bar, presentation...  ôuiyui Bar, presentation...  ô Bar, presentation...  ô Bar, presentation...', '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -99,6 +107,7 @@ CREATE TABLE `obar_desc` (
 
 CREATE TABLE `token_confirm` (
   `id` int(11) NOT NULL,
+  `idUser` int(11) NOT NULL,
   `email` varchar(255) NOT NULL,
   `date` datetime NOT NULL,
   `date_exp` datetime NOT NULL,
@@ -133,16 +142,17 @@ CREATE TABLE `users` (
   `email` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
   `picture` varchar(255) NOT NULL,
-  `role` enum('user','owner','admin') NOT NULL
+  `role` enum('user','owner','admin') NOT NULL,
+  `confirm` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Contenu de la table `users`
 --
 
-INSERT INTO `users` (`id`, `nickname`, `firstname`, `lastname`, `email`, `password`, `picture`, `role`) VALUES
-(9, 'ADMIN', 'Admin', 'Admin', 'admin@admin.fr', '0123Admin', 'assets/img/user-1467187462jpg', 'user'),
-(10, 'BillyJean', 'Billy', 'Jean', 'billy@jean.fr', '0123User', 'assets/img/user-1467187434jpg', 'user');
+INSERT INTO `users` (`id`, `nickname`, `firstname`, `lastname`, `email`, `password`, `picture`, `role`, `confirm`) VALUES
+(9, 'ADMIN', 'Admin', 'Admin', 'admin@admin.fr', '0123Admin', 'assets/img/user-1467282923jpg', 'user', 0),
+(10, 'BillyJean', 'Billy', 'Jean', 'billy@jean.fr', '0123User', 'assets/img/user-1467187434jpg', 'user', 0);
 
 --
 -- Index pour les tables exportées
@@ -199,7 +209,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT pour la table `bar`
 --
 ALTER TABLE `bar`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT pour la table `contact`
 --
@@ -214,7 +224,7 @@ ALTER TABLE `news_letter`
 -- AUTO_INCREMENT pour la table `obar_desc`
 --
 ALTER TABLE `obar_desc`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT pour la table `token_confirm`
 --
