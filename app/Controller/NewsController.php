@@ -20,7 +20,10 @@ class NewsController extends Controller
 
 		$params = [];
 		
-		$params['news'] = $newsModel->findAll('id', 'ASC');
+		$params['news3'] = $newsModel->findAll('id', 'ASC', 3);
+		$params['news'] = $newsModel->findAll('id', 'ASC', 150, 4);
+
+
 			
 		$this->show('adminNews/news', $params);
 	} /*Fin de la fonction news*/

@@ -470,8 +470,17 @@ label {
 /*                          NEWSLETTER                         */
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
-#news_letter {
-
+.wrapperNews {
+	text-align: center;
+	width: 20%;
+	height: 40px;
+	margin: 5px;
+	border: 3px solid #6D071A;
+	border-radius: 40px;
+	margin-left: 20px;
+	margin-right: 20px;
+	margin-bottom: 15px;
+	margin-top: 10px;
 }
 
 
