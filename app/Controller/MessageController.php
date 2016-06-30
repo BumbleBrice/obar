@@ -1,11 +1,6 @@
 <?php
 namespace Controller;
 
-// Enleve le max_execution_time de 30 secondes par défaut
-// A n'utiliser qu'exceptionnellement
-set_time_limit(0);
-ini_set('max_execution_time', 0);
-
 
 use \W\Controller\Controller;
 use \Model\MessageModel;
@@ -39,10 +34,9 @@ class MessageController extends Controller
 			}
 
 			if(count($params['errors']) == 0) {
-				var_dump($this->answerMessage('azerty@qwery.fr', 'coucou'));
-				/*if($this->answerMessage($email, $post['reponse'])) {
+				if($this->answerMessage($email, $post['reponse'])) {
 					$this->redirectToRoute('admin_message');
-				}*/
+				}
 			}
 		}
 
@@ -89,7 +83,7 @@ class MessageController extends Controller
 		$mail = new \PHPMailer();
 
 		$mail->isSMTP();                                      	// Set mailer to use SMTP
-		$mail->Host = 'smtp.mailgun.org';  					  	// Specify main and backup SMTP servers
+		$mail->Host = $app->getConfig('host_mailer');  			// Specify main and backup SMTP servers
 		$mail->SMTPAuth = true;                               	// Enable SMTP authentication
 		$mail->Username = $app->getConfig('user_mailer');     	// SMTP username
 		$mail->Password = $app->getConfig('pswd_mailer');     	// SMTP password
