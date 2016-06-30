@@ -241,7 +241,95 @@ ul .nav .navbar-nav .navbar-right>a{
 .service-item {
     margin-bottom: 30px;
 }
+/********************/
+/*****PROFIL BAR*****/
+/********************/
+.btBar {
+    position: absolute;
+    left: 15%;
+    top: 35%;
+}
+.btBar:active{
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.125) inset
+}
+.btBarHover:hover{
 
+    border-radius: 5px;
+    background: lightgrey;
+    padding: 6px 12px;
+}
+.btBar a{
+    text-transform: uppercase;
+    font-size: 1rem;
+    color: #6D071A;
+    text-decoration: none;
+
+}
+.section-heading{
+    font-family: 'Playball',cursive;
+}
+#toggle{
+    width: 100%;
+    
+    border-radius: 5px;
+    height:auto; 
+    background:#eee; 
+    border:1px solid #900; 
+    margin:1em;
+    text-align:center
+}
+#toggle img{
+    width: 100%;
+}
+#toggle p{
+
+    text-align:center;
+    padding:0;
+}
+.closeToggle{
+    text-decoration: none;
+    position: absolute;
+    right: 3px;
+    top: 3px;
+    padding: 5px 10px;
+    border-radius: 50%;
+    border:1px solid #900; 
+}
+.closeToggle:hover{
+    background:lightgrey;
+     border:1px solid #900; 
+}
+.closeToggle a{
+     color: #6D071A;
+    font-weight: 700;
+    text-decoration: none;
+}
+.barStyle img{
+    border: 7px solid lightgrey;
+    width: 100%;
+}
+.centree {
+    margin: 0 auto;
+    
+}
+.centree img{
+    width: 100% !important;
+}
+
+/*****Info Bar*****/
+.titleInfBar {
+    font-size: 1.6rem;
+    line-height: 1.4;
+    font-weight: 700;
+}
+.infoBar {
+    border-radius: 5px;
+    font-style: italic;
+    font-size: 1.5rem;
+    color: #777;
+    font-weight: 400;
+    line-height: 1.7;
+}
 
 /*****Formulaire*****/
 .form-style-8{

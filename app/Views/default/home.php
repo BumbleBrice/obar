@@ -52,12 +52,78 @@
 </section>
 
 <!-- Carte -->
+
 <section id="map" class="map">
 	<div class="container-fluid">
-        <div class="row">
-            <div class="col-lg-4 col-lg-offset-4 col-md-12">
+        <div class="row"><div class="col-md-2"></div>
+            <div class="col-xs-12 col-sm-12 col-md-8">
             	<div class="text-center">
-	                <h2>Choisissez votre quartier</h2>
+            	<!-- remplacer par la boucle foreach des bars -->
+				 <div style=" left: 45%; top: 25%;" class="btBar">
+			        <a class="" href="#" id="toggler">
+			            <i class="fa fa-beer fa-2x text-center" aria-hidden="true"></i><br>
+			                <span class="btBarHover">Le Wine Bar1</span>
+			        </a>
+			    </div>
+			    <div style=" left: 35%; top: 75%;" class="btBar">
+			        <a class="" href="#" id="toggler">
+			            <i class="fa fa-beer fa-2x text-center" aria-hidden="true"></i><br>
+			                <span class="btBarHover">Le Wine Bar2</span>
+			        </a>
+			    </div>
+			    <div style=" left: 55%; top: 55%;" class="btBar">
+			        <a class="" href="#" id="toggler">
+			            <i class="fa fa-beer fa-2x text-center" aria-hidden="true"></i><br>
+			                <span class="btBarHover">Le Wine Bar3</span>
+			        </a>
+			    </div>
+			    <div style=" left: 25%; top: 85%;" class="btBar">
+			        <a class="" href="#" id="toggler">
+			            <i class="fa fa-beer fa-2x text-center" aria-hidden="true"></i><br>
+			                <span class="btBarHover">Le Wine Bar4</span>
+			        </a>
+			    </div>
+			    <div style=" left: 45%; top: 45%;" class="btBar">
+			        <a class="" href="#" id="toggler">
+			            <i class="fa fa-beer fa-2x text-center" aria-hidden="true"></i><br>
+			                <span class="btBarHover">Le Wine Bar5</span>
+			        </a>
+			    </div>
+			    <div style=" left: 65%; top: 35%;" class="btBar">
+			        <a class="" href="#" id="toggler">
+			            <i class="fa fa-beer fa-2x text-center" aria-hidden="true"></i><br>
+			                <span class="btBarHover">Le Wine Bar6</span>
+			        </a>
+			    </div>
+
+    <!-- Fin boucle bars -->
+
+				    <h2>Choisissez votre quartier</h2>
+				    <div id="toggle"> 
+					    <div class="container carte">
+					        <div class="btn closeToggle btn-default "><a href="#">X</a></div><br>
+					        <div class="row">
+					            <div class="col-md-12 text-center">
+					                <h2 class="section-heading">Le Wine Bar...</h2>
+					                <a class="btn btn-default" href="#formulaire">Editer les infos du bar</a><br><br><br>
+					            </div>
+					        </div>
+					        <div class="row">
+					            <div class="col-lg-12 barStyle">
+					                <img class="img-circle" style="width: 100%;" src="<?=$this->assetUrl('img/bar.jpg'); ?>" alt="">
+					            </div> 
+					        </div>  <br><br>
+					        <div class="row">
+					            <div class="col-lg-12">
+					                <p class="text-left"><span class="titleInfBar">Adresse : </span><span class="infoBar">66 rue abbé de l'épee</span></p>
+					                <p class="text-left"><span class="titleInfBar">Télephone : </span><span class="infoBar">06 59 43 32 16</span></p>
+					                <p class="text-left"><span class="titleInfBar">Horaire : </span><span class="infoBar"> 11h à 14h </span><span class="titleInfBar">et de </span><span class="infoBar">17h à 01h</span></p>
+					                <p class="text-left"><span class="titleInfBar">Thème : </span><span class="infoBar">Bar à vins et bar à pute</span></p>
+					                <a class="btn btn-default" href="https://goo.gl/maps/dzu5DsMRkYt">Se rendre au Le Wine Bar</a>
+					            </div>
+					        </div>
+					    </div>
+					</div>
 	                <img src="<?=$this->assetUrl('img/Quartier-saint_pierre.svg'); ?>" alt="Carte Quartier Saint Pierre" class="img-responsive">
               	</div>
             </div>
@@ -67,6 +133,11 @@
     <!-- /.container -->
 </section>
 
+
+<!-- Profil bar -->
+<section>
+
+</section>
 <!-- Inscription -->
 <section id="subs" class="subs">
 	<div class="container-fluid">

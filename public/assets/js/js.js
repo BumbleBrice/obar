@@ -11,4 +11,27 @@ $(window).scroll(function() {
 });
 
 
+/***Affichage profil bar***/
+// On attend que la page soit chargée 
+jQuery(document).ready(function(){
+   // On cache la zone de texte
+   jQuery('#toggle').hide();
+   // toggle() lorsque le lien avec l'ID #toggler est cliqué
+   jQuery('a#toggler').click(function()  {
+      jQuery('#toggle').toggle(400);
+      $('.btBar').toggle();
+      return false;
+   });
+});
+// On attend que la page soit chargée
+jQuery(document).ready(function(){
+   // On cache la zone de texte
+   jQuery('#toggle').hide();
+   // toggle() lorsque le lien avec l'ID #toggler est cliqué
+   jQuery('.closeToggle').click(function()  {
+      jQuery('#toggle').toggle(400);
+      $('.btBar').toggle();
+      return false;
+   });
+});
 
