@@ -6,4 +6,4 @@ class NewsModel extends \W\Model\Model
 {
     
 }
-?>
+

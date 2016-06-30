@@ -7,50 +7,62 @@
 		<h1>News</h1>
 	</div>
 </div>
-
-
-<br><br>
+<br>
+<br><a type="button" class="btn btn-default btnAddUser" href="<?= $this->url('admin_news_add') ?>">Ajouter une news</a>
 <div class="container divGlobalListBar">
-				   <div class="panel-body listNews">
-                            <div class="table-responsive">
-                                <table class="table table-striped">
-                                    
-                                    <br>
-                                    <a type="button" class="btn btn-default btnAddnew" href="<?= $this->url('admin_new_add') ?>">Ajouter une news</a>
-                                    
-                                    <br><br>
-                                    <thead>
-                                        <tr>
-                                            <th>What</th>
-                                            <th>Who</th>
-                                            <th>Evenement</th>
-                                            
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                    <?php foreach($News as $new): ?>                             
-                                        <tr>
-                                            <td><?= $new['what'] ?></td>
-                                            <td><?= $new['bar'] ?></td>
-                                            <td><?= $new['msg'] ?></td>
-                                            <td class="">
-                                                <div class="btn-group" role="group" aria-label="...">
-                                                  <a type="button" class="btn btn-default" href="<?= $this->url('admin_new_edit', ['id' => $new['id']]) ?>">Modifier</a>
-                                                  <a type="button" class="btn btn-danger" href="<?= $this->url('admin_new_delete', ['id' => $new['id']]) ?>">Supprimer</a>
-                                                </div>
-											</td>
-                                        </tr>
-                                        <?php endforeach; ?>
-                                    </tbody>
-                                </table>
-                            </div>
-                            <!-- /.table-responsive -->
-                        </div>
-                        <!-- /.panel-body -->
-
-		<?php endforeach; ?>
-
+	<div class="panel-heading wrapperNews">
+	    <p>News afficher actuelement<p><br>
+	</div>
+	<div class="panel-body listUsers">
+		<div class="table-responsive">
+			<table class="table table-striped"><br>
+				<thead>
+					<th>Quoi?</th>
+					<th>Qui?</th>
+					<th>Evenement</th>
+					<th>Action</th>
+				</thead>
+				<?php foreach($news3 as $new3): ?>                             
+				<tbody>
+					<td><?= $new3['what'] ?></td>
+					<td><?= $new3['bar'] ?></td>
+					<td><?= $new3['msg'] ?></td>
+					<td >
+					    <div class="btn-group" role="group" aria-label="...">
+					      <a type="button" class="btn btn-default" href="<?= $this->url('admin_news_edit', ['id' => $new['id']]) ?>">Modifier</a>
+					      <a type="button" class="btn btn-danger" href="<?= $this->url('admin_news_delete', ['id' => $new['id']]) ?>">Supprimer</a>
+					    </div>
+					</td>
+				<?php endforeach; ?>
+				</tbody>
+			</table>
+		</div>
+	<!-- /.table-responsive -->
+	</div>
+<!-- /.panel-body -->
+	<div class="panel-heading wrapperNews">
+	    <p>Les anciennes news<p><br>
+	</div>
+	<div class="panel-body listUsers">
+		<div class="table-responsive">
+			<table class="table table-striped">
+				<?php foreach($news as $new): ?>                             
+				<tbody>
+					<td><?= $new['what'] ?></td>
+					<td><?= $new['bar'] ?></td>
+					<td><?= $new['msg'] ?></td>
+					<td >
+					    <div class="btn-group" role="group" aria-label="...">
+					      <a type="button" class="btn btn-default" href="<?= $this->url('admin_news_edit', ['id' => $new['id']]) ?>">Modifier</a>
+					      <a type="button" class="btn btn-danger" href="<?= $this->url('admin_news_delete', ['id' => $new['id']]) ?>">Supprimer</a>
+					    </div>
+					</td>
+				<?php endforeach; ?>
+				</tbody>
+			</table>
+		</div>
 	</div>
 </div>
+
 <?php $this->stop('main_content') ?>
 
