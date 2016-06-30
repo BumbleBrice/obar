@@ -11,15 +11,15 @@
 <br><a type="button" class="btn btn-default btnAddUser" href="<?= $this->url('admin_news_add') ?>">Ajouter une news</a>
 <div class="container divGlobalListBar">
 	<div class="panel-heading wrapperNews">
-	    <p>News afficher actuelement<p><br>
+	    <p>News affichées actuellement<p><br>
 	</div>
 	<div class="panel-body listUsers">
 		<div class="table-responsive">
 			<table class="table table-striped"><br>
 				<thead>
-					<th>Quoi?</th>
-					<th>Qui?</th>
-					<th>Evenement</th>
+					<th>Quoi ?</th>
+					<th>Qui ?</th>
+					<th>Evènement</th>
 					<th>Action</th>
 				</thead>
 				<?php foreach($news3 as $new3): ?>                             
