@@ -6,7 +6,6 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-
 }
 html {
 	font: 62.5% 'Merriweather', sans-serif;
@@ -179,6 +178,7 @@ label {
 	width: 92%;
 	height: 92%;
 	margin: 4%;
+	word-break: break-all;
 }
 
 .imgListBar {
