@@ -6,7 +6,7 @@
 <header id="top" class="header">
 	<div class="text-vertical-center">
 	    <h1>Ô Bar</h1>
-	    <h3><?php echo $this->e($infos['desc']); ?></h3>
+	    <h3><?php echo $this->e($infos['description']); ?></h3>
 
 	    <!-- Begin MailChimp Signup Form -->
 	    <link href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" rel="stylesheet" type="text/css">
@@ -34,19 +34,20 @@
 <section id="services" class="services bg-primary">
 	<div class="container-fluid">
 		<div class="row">
-			<div class="col-xs-6 col-sm-4">
-				<?php foreach($bars as $bar): ?>
-					<h4><strong><?php echo $this->e($bar['name']); ?></strong></h4>
-					<img src="<?=$this->assetUrl($bar['picture']); ?>">
-					<p>
-						<?=$bar['adress']; ?>
-						<br>
-						<?=$bar['phone']; ?>
-						<br>
-						<?=$bar['description']; ?>
-					</p>
-				<?php endforeach; ?>
+			<h2>Quoi de nouveau !</h2>
+			<?php foreach($bars as $bar): ?>
+			<div class="col-xs-12 col-sm-4">
+				<h4><strong><?php echo $this->e($bar['name']); ?></strong></h4>
+				<img src="<?=$this->assetUrl($bar['picture']); ?>">
+				<p>
+					<?=$bar['adress']; ?>
+					<br>
+					<?=$bar['phone']; ?>
+					<br>
+					<?=$bar['description']; ?>
+				</p>
 			</div>
+			<?php endforeach; ?>
 		</div>
 	</div>
 </section>

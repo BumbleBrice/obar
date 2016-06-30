@@ -75,6 +75,12 @@ h3{
     CSS
 }
 
+@media screen and (max-width: 760px) {
+  #logo {
+    display: none;
+  }
+}
+
 .navbar-default .navbar-collapse .navbar-default .navbar-form::before{
     background-color:  #025d70;
     opacity: 0.9;
@@ -189,6 +195,9 @@ ul .nav .navbar-nav .navbar-right>a{
     padding: 50px 0;
     background-color: #7fbac4;
 }
+.services.bg-primary h2{
+    color: white !important;
+}
 
 
 /****************************************
@@ -223,6 +232,9 @@ ul .nav .navbar-nav .navbar-right>a{
     background-color: #7fbac4;
 }
 .subs h2{
+    color: white;
+}
+.subs p{
     color: white;
 }
 
