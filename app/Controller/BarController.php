@@ -157,22 +157,22 @@ class BarController extends Controller
 				if(isset($post['dayLundi']) && $post['dayLundi'] == 'lundi'){
 					$schedule .= 'Lundi, ';
 				}
-				if(isset($post['dayMardi']) && $post['dayLundi'] == 'lundi'){
+				if(isset($post['dayMardi']) && $post['dayMardi'] == 'mardi'){
 					$schedule .= 'Mardi, ';
 				}
-				if(isset($post['dayMercredi']) && $post['dayLundi'] == 'lundi'){
+				if(isset($post['dayMercredi']) && $post['dayMercredi'] == 'mercredi'){
 					$schedule .= 'Mercredi, ';
 				}
-				if(isset($post['dayJeudi']) && $post['dayLundi'] == 'lundi'){
+				if(isset($post['dayJeudi']) && $post['dayJeudi'] == 'jeudi'){
 					$schedule .= 'Jeudi, ';
 				}
-				if(isset($post['dayVendredi']) && $post['dayLundi'] == 'lundi'){
+				if(isset($post['dayVendredi']) && $post['dayVendredi'] == 'vendredi'){
 					$schedule .= 'Vendredi, ';
 				}
-				if(isset($post['daySamedi']) && $post['dayLundi'] == 'lundi'){
+				if(isset($post['daySamedi']) && $post['daySamedi'] == 'samedi'){
 					$schedule .= 'Samedi, ';
 				}
-				if(isset($post['dayDimanche']) && $post['dayLundi'] == 'lundi'){
+				if(isset($post['dayDimanche']) && $post['dayDimanche'] == 'dimanche'){
 					$schedule .= 'Dimanche, ';
 				}
 
