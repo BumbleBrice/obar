@@ -101,18 +101,18 @@
 				    <h2>Choisissez votre quartier</h2>
 				    <div id="toggle"> 
 					    <div class="container-fluid carte">
-					        <div class="btn closeToggle btn-default"><a href="#">X</a></div><br>
+					        <div class="btn closeToggle btn-default"><a href="#">X</a></div>
 					        <div class="row">
 					            <div class="col-md-12 text-center">
 					                <h2 class="section-heading">Le Wine Bar...</h2>
-					                <a class="btn btn-default" href="#formulaire">Editer les infos du bar</a><br><br><br>
+					                <a class="btn btn-default" href="#formulaire">Editer les infos du bar</a><br>
 					            </div>
 					        </div>
 					        <div class="row">
 					            <div class="col-lg-12 barStyle">
 					                <img class="img-circle img-responsive" src="<?=$this->assetUrl('img/bar.jpg'); ?>" alt="">
 					            </div> 
-					        </div>  <br><br>
+					        </div>
 					        <div class="row">
 					            <div class="col-lg-12">
 					                <p class="text-left"><span class="titleInfBar">Adresse : </span><span class="infoBar">66 rue abbé de l'épee</span></p>
