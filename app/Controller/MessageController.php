@@ -67,7 +67,7 @@ class MessageController extends Controller
 
 		$mail->Subject = 'Here is the subject';
 		$mail->Body    = $reponse;
-		$mail->AltBody = 'changer d\'bergeur d\'email';
+		$mail->AltBody = $reponse;
 
 		if($mail->send()) {
 		    return true;
