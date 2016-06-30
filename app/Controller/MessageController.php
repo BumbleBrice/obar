@@ -12,9 +12,36 @@ class MessageController extends Controller
 		$this->show('adminMessage/message', ['message' => $this->getMessage()]);
 	}
 
-	public function message_read($id){
-		answerMessage($email, $reponse); // récuperer l'email de la perssone qui envoyer le message 
-		$this->show('adminMessage/message_read', ['message' => $this->getMessage()]);
+	public function message_read($id) {
+		
+		$messageModel = new MessageModel();
+
+		$message = $messageModel->find($id);
+
+		$email = $message['email'];
+
+		$params = [];
+		$params['errors'] = [];
+		$params['message'] = $message;
+
+		if(!empty($_POST)){
+			$post = array_map('trim', array_map('strip_tags', $_POST));
+
+			if(isset($post['reponse'])){
+				if(preg_match('#^.{1,}$#', $post['reponse']) == 0){
+					$params['errors'][] = 'error reponse';
+				}
+			}
+
+			if(count($params['errors']) == 0) {
+				var_dump($this->answerMessage('azerty@qwery.fr', 'coucou'));
+				/*if($this->answerMessage($email, $post['reponse'])) {
+					$this->redirectToRoute('admin_message');
+				}*/
+			}
+		}
+
+		$this->show('adminMessage/message_read', $params);
 	}
 
 	public function getMessage()
@@ -54,8 +81,7 @@ class MessageController extends Controller
 	public function answerMessage($email, $reponse)
 	{
 		$app = getapp();
-		$mail = new PHPMailer();
-
+		$mail = new \PHPMailer();
 
 		$mail->isSMTP();                                      	// Set mailer to use SMTP
 		$mail->Host = 'smtp.mailgun.org';  					  	// Specify main and backup SMTP servers
@@ -63,7 +89,7 @@ class MessageController extends Controller
 		$mail->Username = $app->getConfig('user_mailer');     	// SMTP username
 		$mail->Password = $app->getConfig('pswd_mailer');     	// SMTP password
 		$mail->SMTPSecure = 'tls';                            	// Enable TLS encryption, `ssl` also accepted
-		$mail->Port = 587;                                    	// TCP port to connect to
+		$mail->Port = 465;                                    	// TCP port to connect to
 
 		$mail->setFrom('reponse@obar.fr');
 		$mail->addAddress($email);     						  	// Add a recipient
@@ -84,19 +110,19 @@ class MessageController extends Controller
 	public function message_delete($id, $delMessage)
 	{
 		// On limite l'accé à la page aux utilisateurs authentifiés et à ceux dont le rôle est admin ou éditor
-			/*$this->allowTo(['admin']);*/
-			$MessageModel = new MessageModel();
-			$Message = $MessageModel->find($id);
+		/*$this->allowTo(['admin']);*/
+		$MessageModel = new MessageModel();
+		$Message = $MessageModel->find($id);
 
-			// On vérifie que le paramètre GET soit ok et que la valeur soit bien Oui
-			// Si tout est bon, l'utilisateur a donc comfirmer la suppression
-			if (isset($delMessage) && $delMessage == 'Oui') {
+		// On vérifie que le paramètre GET soit ok et que la valeur soit bien Oui
+		// Si tout est bon, l'utilisateur a donc comfirmer la suppression
+		if (isset($delMessage) && $delMessage == 'Oui') {
 
-				if ($MessageModel->delete($id)) {
-					// Ici on a supprimer l'article
-					$this->redirectToRoute('admin_message');
-				}
+			if ($MessageModel->delete($id)) {
+				// Ici on a supprimer l'article
+				$this->redirectToRoute('admin_message');
 			}
+		}
 
 		$this->show('adminMessage/message_delete', ['message' => $Message]);
 	}
