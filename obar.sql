@@ -47,17 +47,17 @@ CREATE TABLE `bar` (
 -- Dumping data for table `bar`
 --
 
-INSERT INTO `bar` (`id`, `quartiers`, `name`, `picture`, `description`, `phone`, `adress`, `schedule`, `open`, `close`, `x`, `y`, `google_url`, `date`, `url`) VALUES
-(4, 'saintpierre', 'Le Wine Bar', '', 'Le Win Bar, vous accueille au coeur du vieux Bordeaux, dans le quartier historique de Saint Pierre.\r\nIci, le vin et les spécialités Italiennes sont à l''honneur ! ', '06 76 00 50 54', '19, Rue des Bahutiers', '', '00:00:00', '00:00:00', '', '', '', '0000-00-00 00:00:00', 'http://www.lewinebar-bordeaux.com/'),
-(5, 'saintpierre', 'La Contesse', '', 'Un lieu atypique où vous trouverez des mojitos au goût délicieux !', '05 56 51 03 07', '25 rue Parlement Saint-Pierre\r\n33000 Bordeaux', '', '00:00:00', '00:00:00', '', '', '', '0000-00-00 00:00:00', 'https://fr-fr.facebook.com/La-Comtesse-164106890312521/'),
-(6, 'saintpierre', 'L''Alchismiste', '', 'Bar à cocktails dans un endroit cozy et authentique !', '05 56 48 11 82', '16 rue Parlement Saint-Pierre\r\n33000 Bordeaux', '', '00:00:00', '00:00:00', '', '', '', '0000-00-00 00:00:00', 'http://www.lachimistebordeaux.com/'),
-(7, 'saintpierre', 'Cafécito', '', 'Le Café Cito, bar à bière ou à vin, cocktails et tapas situé dans les rues piétonnes, Place Saint Pierre, vous réserve un accueil des plus chaleureux.', '05 56 44 43 89', '7 Rue Parlement Saint-Pierre\r\n33000 Bordeaux', '', '00:00:00', '00:00:00', '', '', '', '0000-00-00 00:00:00', 'http://www.cafecito-bar-vins-bieres-bordeaux.fr/'),
-(8, 'saintpierre', 'The Black Velvet Bar', '', 'Irish Pub\r\nVous pourrez y apprécier une bonne pint bien fraîche de Guinness en écoutant de la bonne musique ou en regardant un match sur grand écran.', '09 51 34 28 73', '9 Rue du Chai des Farines, 33000 Bordeaux', '', '00:00:00', '00:00:00', '', '', '', '0000-00-00 00:00:00', 'http://www.blackvelvetbar.fr/'),
-(9, 'saintpaul', 'Vintage Bar', '', 'Bar à bières et rhums !\r\nHAPPY HOURS proposés tous le jours de 16h à 20h.\r\nLe VINTAGE BAR est l''endroit idéal pour passer des soirées conviviales et animées sur des airs de reggae, rock, soul, funk tout en dégustant d''excellents breuvages.', '', '45 Rue Saint-James, 33000 Bordeaux', '', '00:00:00', '00:00:00', '', '', '', '0000-00-00 00:00:00', 'http://www.vintage-bar.fr/'),
-(10, 'saintpaul', 'Wine more time', '', 'Bar à vins et cave décoré dans un style contemporain propose des vins au verre différents chaque semaine.', '05 56 52 85 61', '8 Rue Saint-James, 33000 Bordeaux', '', '00:00:00', '00:00:00', '', '', '', '0000-00-00 00:00:00', 'http://winemoretime.blogspot.fr/'),
-(11, 'saintpaul', 'Ô plafond, bar éphémère', '', 'Association culturelle proposant des apéros chaleureux et convivaux.', '06 68 09 80 38', '14 Rue Saint-Vincent-de-Paul, 33800 Bordeaux', '', '00:00:00', '00:00:00', '', '', '', '0000-00-00 00:00:00', 'http://o.bar.le.plafond.free.fr/'),
-(12, 'saintpaul', 'Le Chabi', '', 'Bar tabac proposant une terrasse ensoleillée pour partager un verre entre amis.', '', '24 Rue Sainte-Colombe, 33000 Bordeaux', '', '00:00:00', '00:00:00', '', '', '', '0000-00-00 00:00:00', ''),
-(13, '', 'Purple Wine ', '', 'Bar à vins, bar lounge & restaurant\r\nNiché dans une bâtisse du XVe siècle, ce restaurant français au cadre design sert une cuisine du marché.', '05 56 43 17 49', '23 Rue Neuve, 33000 Bordeaux', '', '00:00:00', '00:00:00', '', '', '', '0000-00-00 00:00:00', '');
+INSERT INTO `bar` (`id`, `quartiers`, `name`, `picture`, `description`, `phone`, `adress`, `schedule`, `scheduleOpen`, `x`, `y`, `google_url`, `date`, `url`) VALUES
+(4, 'saintpierre', 'Le Wine Bar', '', 'Le Win Bar, vous accueille au coeur du vieux Bordeaux, dans le quartier historique de Saint Pierre.\r\nIci, le vin et les spécialités Italiennes sont à l''honneur ! ', '06 76 00 50 54', '19, Rue des Bahutiers', '', '', '', '', '', '0000-00-00 00:00:00', 'http://www.lewinebar-bordeaux.com/'),
+(5, 'saintpierre', 'La Contesse', '', 'Un lieu atypique où vous trouverez des mojitos au goût délicieux !', '05 56 51 03 07', '25 rue Parlement Saint-Pierre\r\n33000 Bordeaux', '', '', '', '', '', '0000-00-00 00:00:00', 'https://fr-fr.facebook.com/La-Comtesse-164106890312521/'),
+(6, 'saintpierre', 'L''Alchismiste', '', 'Bar à cocktails dans un endroit cozy et authentique !', '05 56 48 11 82', '16 rue Parlement Saint-Pierre\r\n33000 Bordeaux', '', '', '', '', '', '0000-00-00 00:00:00', 'http://www.lachimistebordeaux.com/'),
+(7, 'saintpierre', 'Cafécito', '', 'Le Café Cito, bar à bière ou à vin, cocktails et tapas situé dans les rues piétonnes, Place Saint Pierre, vous réserve un accueil des plus chaleureux.', '05 56 44 43 89', '7 Rue Parlement Saint-Pierre\r\n33000 Bordeaux', '', '', '', '', '', '0000-00-00 00:00:00', 'http://www.cafecito-bar-vins-bieres-bordeaux.fr/'),
+(8, 'saintpierre', 'The Black Velvet Bar', '', 'Irish Pub\r\nVous pourrez y apprécier une bonne pint bien fraîche de Guinness en écoutant de la bonne musique ou en regardant un match sur grand écran.', '09 51 34 28 73', '9 Rue du Chai des Farines, 33000 Bordeaux', '', '', '', '', '', '0000-00-00 00:00:00', 'http://www.blackvelvetbar.fr/'),
+(9, 'saintpaul', 'Vintage Bar', '', 'Bar à bières et rhums !\r\nHAPPY HOURS proposés tous le jours de 16h à 20h.\r\nLe VINTAGE BAR est l''endroit idéal pour passer des soirées conviviales et animées sur des airs de reggae, rock, soul, funk tout en dégustant d''excellents breuvages.', '', '45 Rue Saint-James, 33000 Bordeaux', '', '', '', '', '', '0000-00-00 00:00:00', 'http://www.vintage-bar.fr/'),
+(10, 'saintpaul', 'Wine more time', '', 'Bar à vins et cave décoré dans un style contemporain propose des vins au verre différents chaque semaine.', '05 56 52 85 61', '8 Rue Saint-James, 33000 Bordeaux', '', '', '', '', '', '0000-00-00 00:00:00', 'http://winemoretime.blogspot.fr/'),
+(11, 'saintpaul', 'Ô plafond, bar éphémère', '', 'Association culturelle proposant des apéros chaleureux et convivaux.', '06 68 09 80 38', '14 Rue Saint-Vincent-de-Paul, 33800 Bordeaux', '', '', '', '', '', '0000-00-00 00:00:00', 'http://o.bar.le.plafond.free.fr/'),
+(12, 'saintpaul', 'Le Chabi', '', 'Bar tabac proposant une terrasse ensoleillée pour partager un verre entre amis.', '', '24 Rue Sainte-Colombe, 33000 Bordeaux', '', '', '', '', '', '0000-00-00 00:00:00', ''),
+(13, '', 'Purple Wine ', '', 'Bar à vins, bar lounge & restaurant\r\nNiché dans une bâtisse du XVe siècle, ce restaurant français au cadre design sert une cuisine du marché.', '05 56 43 17 49', '23 Rue Neuve, 33000 Bordeaux', '', '', '', '', '', '0000-00-00 00:00:00', '');
 
 -- --------------------------------------------------------
 
@@ -106,7 +106,7 @@ CREATE TABLE `obar_desc` (
 -- Dumping data for table `obar_desc`
 --
 
-INSERT INTO `obar_desc` (`id`, `name`, `desc`, `news`, `phone`, `address`, `email`) VALUES
+INSERT INTO `obar_desc` (`id`, `name`, `description`, `news`, `phone`, `address`, `email`) VALUES
 (1, 'Ô Bar', 'Ô Bar, vous propose une sélection de bars de Bordeaux selon votre quartier de prédilection.\r\nVenez découvrir des lieux aussi atypes que vintage !', '', '05 56 52 01 02', '88 rue Abbé de l''Epée, 33000 Bordeaux', 'contact@obar.fr');
 
 -- --------------------------------------------------------

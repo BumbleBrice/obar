@@ -88,17 +88,12 @@
                             </div>
 
                             <div class="form-group">
-                                <br>
-                                <label for="scheduleOpen">Horaire d'ouverture</label>
-                                <input type="time" name="scheduleOpen" class="form-control champTxtAddBarHoraire" value="<?=$bar['scheduleOpen'] ?>">
-
-                                <br><br>
-                                <label for="scheduleClose">Horaire de fermeture</label>
-                                <input type="time" name="scheduleClose" class="form-control champTxtAddBarHoraire" value="<?=$bar['scheduleClose'] ?>">
+                                <label for="scheduleOpen">Horaire</label>
+                                <input type="text" name="scheduleOpen" id="scheduleOpen" class="form-control champTxtAddBar"  value="<?=$bar['scheduleOpen'] ?>>
                             </div>
 
                             <button type="reset" class="btn btn-default boutonBarAdd">Recommencer</button>
-                            <button type="submit" class="btn btn-default boutonBarAdd">Ajouter le bar</button>
+                            <button type="submit" class="btn btn-default boutonBarAdd">Modifier le bar</button>
 
                         </form>
 

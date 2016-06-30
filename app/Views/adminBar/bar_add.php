@@ -91,13 +91,8 @@
                             </div>
 
                             <div class="form-group">
-                                <br>
-                                <label for="scheduleOpen">Horaire d'ouverture</label>
-                                <input type="time" name="scheduleOpen" class="form-control champTxtAddBarHoraire">
-
-                                <br><br>
-                                <label for="scheduleClose">Horaire de fermeture</label>
-                                <input type="time" name="scheduleClose" class="form-control champTxtAddBarHoraire">
+                                <label for="scheduleOpen">Horaire</label>
+                                <input type="text" name="scheduleOpen" id="scheduleOpen" class="form-control champTxtAddBar" placeholder="exemple : 8h30 à 12h00 et de 13h30 à 23h30">
                             </div>
 
                             <br><br>
