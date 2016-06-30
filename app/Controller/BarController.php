@@ -137,16 +137,16 @@ class BarController extends Controller
 				}
 
 				if(isset($post['scheduleOpen'])){
-					if(preg_match('#^.{1,}$#', $post['scheduleOpen']) == 0){
+					if(preg_match('#^[0-9:]{1,}$#', $post['scheduleOpen']) == 0){
 						$errors[] = 'error open';
 					}
 				}
 
-			/*	if(isset($post['scheduleClose'])){
+				if(isset($post['scheduleClose'])){
 					if(preg_match('#^[0-9:]{1,}$#', $post['scheduleClose']) == 0){
 						$errors[] = 'error close';
 					}
-				}*/
+				}
 
 				$schedule = '';
 
@@ -191,8 +191,8 @@ class BarController extends Controller
 						'phone' => $post['phone'],
 						'adress' => $post['address'],
 						'schedule' => $schedule,
-						'scheduleOpen' => $post['scheduleOpen'] . ':00',
-						/*'close' => $post['scheduleClose'] . ':00',*/
+						'open' => $post['scheduleOpen'] . ':00',
+						'close' => $post['scheduleClose'] . ':00',
 						'x' => $post['x'],
 						'y' => $post['y'],
 						'google_url' => 'https://www.google.fr/maps/place/'.$post['address'].'/',

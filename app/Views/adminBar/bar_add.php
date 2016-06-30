@@ -95,9 +95,9 @@
                                 <label for="scheduleOpen">Horaire d'ouverture</label>
                                 <input type="time" name="scheduleOpen" class="form-control champTxtAddBarHoraire">
 
-                                <!-- <br><br>
+                                <br><br>
                                 <label for="scheduleClose">Horaire de fermeture</label>
-                                <input type="time" name="scheduleClose" class="form-control champTxtAddBarHoraire"> -->
+                                <input type="time" name="scheduleClose" class="form-control champTxtAddBarHoraire">
                             </div>
 
                             <br><br>
