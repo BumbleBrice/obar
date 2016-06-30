@@ -99,7 +99,7 @@
     <!-- Fin boucle bars -->
 
 				    <h2>Choisissez votre quartier</h2>
-				    <div id="toggle"> 
+				    <div id="toggle">
 					    <div class="container-fluid carte">
 					        <div class="btn closeToggle btn-default"><a href="#">X</a></div><br>
 					        <div class="row">
@@ -111,7 +111,7 @@
 					        <div class="row">
 					            <div class="col-lg-12 barStyle">
 					                <img class="img-circle img-responsive" src="<?=$this->assetUrl('img/bar.jpg'); ?>" alt="">
-					            </div> 
+					            </div>
 					        </div>
 					        <div class="row">
 					            <div class="col-lg-12">
@@ -125,7 +125,7 @@
 					    </div>
 					    <div class="clearfix"></div>
 					</div>
-	                <img src="<?=$this->assetUrl('img/Quartier-saint_pierre.svg'); ?>" alt="Carte Quartier Saint Pierre" class="img-responsive">
+	                <img src="<?=$this->assetUrl('img/les_quartiers-sans-villes.svg'); ?>" alt="Les Quartier de Bordeaux" class="img-responsive">
               	</div>
             </div>
         </div>
@@ -273,10 +273,10 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-10 col-lg-offset-1 text-center">
-                <h4><strong><?php echo $this->e($infos['name']); ?></strong></h4>
+                <h4><strong><?=$this->e($infos['name']); ?></strong></h4>
                 <ul class="list-unstyled">
                     <li><i class="fa fa-map-marker" aria-hidden="true"></i><?=$infos['address']; ?></li>
-                    <li><i class="fa fa-phone-square" aria-hidden="true""></i><?=$infos['phone']; ?></li>
+                    <li><i class="fa fa-phone-square" aria-hidden="true"></i><?=$infos['phone']; ?></li>
                     <li><i class="fa fa-envelope-square" aria-hidden="true"></i><a href="mailto:name@example.com"><?=$infos['email']; ?></a>
                     </li>
                 </ul>
@@ -298,3 +298,7 @@
 </footer>
 
 <?php $this->stop('main_content') ?>
+
+<?php $this->start('js') ?>
+	<script src="<?$this->assetUrl('js/afficherpoint.js')?>"></script>
+<?php $this->stop('js') ?>
