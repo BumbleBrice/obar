@@ -65,7 +65,7 @@ class MessageController extends Controller
 			'email' 	=> $email,
 			'content' 	=> $msg,
 			'date_add' 	=> $date,
-			'message_state' => 'unread'
+			'message_state' => 'Non lu'
 		]);
 	}
 
@@ -73,7 +73,7 @@ class MessageController extends Controller
 	{
 		$message = new MessageModel();
 		$data = [
-			'message_state' => 'read'
+			'message_state' => 'Lu'
 		];
 
 		$message->update($data, $id);

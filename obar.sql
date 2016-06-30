@@ -72,7 +72,7 @@ CREATE TABLE `contact` (
   `email` varchar(255) NOT NULL,
   `content` text NOT NULL,
   `date_add` datetime NOT NULL,
-  `message_state` enum('read','unread') NOT NULL
+  `message_state` enum('Lu','Non lu') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -161,11 +161,11 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `nickname`, `firstname`, `lastname`, `email`, `password`, `picture`, `role`, `confirm`) VALUES
-(11, 'Alexis', 'Alexis', 'Meunier', 'meunier_33@live.fr', '$2y$10$hlb929Kvi1yCu0uXUJhWcuWOF.9YquKOmGsXf3aqXQsmdgfcTBfLC', '', 'admin', 1),
-(12, 'Bumble', 'Brice', 'Collilieux', 'collilieux.brice@gmail.fr', '$2y$10$hlb929Kvi1yCu0uXUJhWcuWOF.9YquKOmGsXf3aqXQsmdgfcTBfLC', '', 'admin', 1),
-(13, 'Jenjen', 'Jennifer', 'Villeroy', 'jennifer.villeroy@gmail.com', '$2y$10$hlb929Kvi1yCu0uXUJhWcuWOF.9YquKOmGsXf3aqXQsmdgfcTBfLC', '', 'admin', 1),
-(14, 'Yoan', 'Yoan', 'Garcia', 'yoan.gcia@hotmail.fr', '$2y$10$hlb929Kvi1yCu0uXUJhWcuWOF.9YquKOmGsXf3aqXQsmdgfcTBfLC', '', 'admin', 1),
-(15, 'Blablabla', 'Membre', 'Membre', 'membre.membre.hotmail.fr', '$2y$10$ZugNygRl/mOBuMkbC2qMCeSbUyyxrypUxJ0eSVqTuTh5wr8L2CS6a', '', 'user', 1);
+(1, 'Alexis', 'Alexis', 'Meunier', 'meunier_33@live.fr', '$2y$10$hlb929Kvi1yCu0uXUJhWcuWOF.9YquKOmGsXf3aqXQsmdgfcTBfLC', '', 'admin', 1),
+(2, 'Bumble', 'Brice', 'Collilieux', 'collilieux.brice@gmail.fr', '$2y$10$hlb929Kvi1yCu0uXUJhWcuWOF.9YquKOmGsXf3aqXQsmdgfcTBfLC', '', 'admin', 1),
+(3, 'Jenjen', 'Jennifer', 'Villeroy', 'jennifer.villeroy@gmail.com', '$2y$10$hlb929Kvi1yCu0uXUJhWcuWOF.9YquKOmGsXf3aqXQsmdgfcTBfLC', '', 'admin', 1),
+(4, 'Yoan', 'Yoan', 'Garcia', 'yoan.gcia@hotmail.fr', '$2y$10$hlb929Kvi1yCu0uXUJhWcuWOF.9YquKOmGsXf3aqXQsmdgfcTBfLC', '', 'admin', 1),
+(5, 'Blablabla', 'Membre', 'Membre', 'membre.membre.hotmail.fr', '$2y$10$ZugNygRl/mOBuMkbC2qMCeSbUyyxrypUxJ0eSVqTuTh5wr8L2CS6a', '', 'user', 1);
 
 --
 -- Indexes for dumped tables
