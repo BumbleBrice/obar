@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Ven 01 Juillet 2016 à 12:15
+-- Généré le :  Ven 01 Juillet 2016 à 11:59
 -- Version du serveur :  10.1.13-MariaDB
 -- Version de PHP :  5.6.21
 
@@ -185,11 +185,11 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `nickname`, `firstname`, `lastname`, `email`, `password`, `picture`, `role`, `confirm`) VALUES
-(11, 'Alexis', 'Alexis', 'Meunier', 'meunier_33@live.fr', '$2y$10$Uaj9LA.gKehNzOByHIrx2OBLK0JdRKptV0TucHnmA7KMuj0Thg9/q', 'assets/img/user-1467367823png', 'admin', 1),
-(12, 'Bumble', 'Brice', 'Collilieux', 'collilieux.brice@gmail.fr', '$2y$10$3GcwqsE51a4N3xA5Jk/X5Ov0Cfq/P3jRK8Bzb0VlRfwCHJDpieeCi', 'assets/img/user-1467367843png', 'admin', 1),
-(13, 'Jenjen', 'Jennifer', 'Villeroy', 'jennifer.villeroy@gmail.com', '$2y$10$KHaGjIcBRc8ger.JmO9tM.p1nWqhBTIZxIL4S0iBGPBiWcknxzol6', 'assets/img/user-1467367864jpg', 'admin', 1),
-(14, 'Yoan', 'Yoan', 'Garcia', 'yoan.gcia@hotmail.fr', '$2y$10$/0XS.OxWzkqEAM49EFzBX.imQVNr7S3DrfutkXZD7bdyn524oMTa6', 'assets/img/user-1467367879jpg', 'admin', 1),
-(15, 'Blablabla', 'Membre', 'Membre', 'membre@membre.fr', '$2y$10$14tMuS0WCZsP3AA.3E5QEO8LPYh5k240idmJiVhdjOwG043eHBwtK', 'assets/img/user-1467367937png', 'user', 1);
+(11, 'Alexis', 'Alexis', 'Meunier', 'meunier_33@live.fr', '$2y$10$hlb929Kvi1yCu0uXUJhWcuWOF.9YquKOmGsXf3aqXQsmdgfcTBfLC', '', 'admin', 1),
+(12, 'Bumble', 'Brice', 'Collilieux', 'collilieux.brice@gmail.fr', '$2y$10$hlb929Kvi1yCu0uXUJhWcuWOF.9YquKOmGsXf3aqXQsmdgfcTBfLC', '', 'admin', 1),
+(13, 'Jenjen', 'Jennifer', 'Villeroy', 'jennifer.villeroy@gmail.com', '$2y$10$hlb929Kvi1yCu0uXUJhWcuWOF.9YquKOmGsXf3aqXQsmdgfcTBfLC', '', 'admin', 1),
+(14, 'Yoan', 'Yoan', 'Garcia', 'yoan.gcia@hotmail.fr', '$2y$10$hlb929Kvi1yCu0uXUJhWcuWOF.9YquKOmGsXf3aqXQsmdgfcTBfLC', '', 'admin', 1),
+(15, 'Blablabla', 'Membre', 'Membre', 'membre@membre.fr', '$2y$10$ZugNygRl/mOBuMkbC2qMCeSbUyyxrypUxJ0eSVqTuTh5wr8L2CS6a', '', 'user', 1);
 
 --
 -- Index pour les tables exportées
