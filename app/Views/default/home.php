@@ -37,6 +37,7 @@
 
 			<!-- Wrapper for slides -->
 			<div class="carousel-inner" role="listbox">
+				<?php if(isset($lastbars[0])): ?>
 				<div class="item active">
 					<h2><strong><?php echo $this->e($lastbars[0]['what']); ?></strong></h2>
 					<p>
@@ -45,6 +46,8 @@
 						<?=$lastbars[0]['msg']; ?>
 					</p>
 				</div>
+				<?php endif; ?>
+				<?php if(isset($lastbars[1])): ?>
 				<div class="item">
 			    	<h2><strong><?php echo $this->e($lastbars[1]['what']); ?></strong></h2>
 					<p>
@@ -53,21 +56,29 @@
 						<?=$lastbars[1]['msg']; ?>
 					</p>
 			    </div>
-
-			    <div class="item">
-			    	<h2><strong><?php echo $this->e($lastbars[2]['what']); ?></strong></h2>
-					<p>
-						<?=$lastbars[2]['bar']; ?>
-						<br>
-						<?=$lastbars[2]['msg']; ?>
-					</p>
-			    </div>
+				<?php endif; ?>
+				<?php if(isset($lastbars[2])): ?>
+				    <div class="item">
+				    	<h2><strong><?php echo $this->e($lastbars[2]['what']); ?></strong></h2>
+						<p>
+							<?=$lastbars[2]['bar']; ?>
+							<br>
+							<?=$lastbars[2]['msg']; ?>
+						</p>
+				    </div>
+				<?php endif; ?>
 			</div>
 			<!-- Indicators -->
 			<ol class="carousel-indicators">
-				<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-				<li data-target="#myCarousel" data-slide-to="1"></li>
-				<li data-target="#myCarousel" data-slide-to="2"></li>
+				<?php if(isset($lastbars[0])): ?>
+					<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+				<?php endif; ?>
+				<?php if(isset($lastbars[1])): ?>
+					<li data-target="#myCarousel" data-slide-to="1"></li>
+				<?php endif; ?>
+				<?php if(isset($lastbars[2])): ?>
+					<li data-target="#myCarousel" data-slide-to="2"></li>
+				<?php endif; ?>
 			</ol>
 
 			<!-- Left and right controls -->
