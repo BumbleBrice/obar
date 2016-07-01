@@ -100,7 +100,13 @@
 	<div class="container-fluid">
 		<!-- <div class="row">
 		<div class="col-xs-12 col-sm-12 col-md-8 col-md-offset-2"> -->
-		<h2>Choisissez votre quartier</h2>
+		<?php if($quartiers == 'aucain'): ?>
+			<h2>Choisissez votre quartier</h2>
+		<?php elseif($quartiers == 'saintpierre'): ?>
+			<h2>Saint Pierre</h2>
+		<?php elseif($quartiers == 'saintpaul'): ?>
+			<h2>Saint Paul</h2>
+		<?php endif; ?>
 		<section class="carte" style="position: relative;width: 55%;height: 55%;margin-left: 22.5%">
 			<?php foreach($bars as $bar): ?>
 				<?php if($bar['quartiers'] == $quartiers): ?>
@@ -125,7 +131,7 @@
 			<?php elseif($quartiers == 'saintpierre'): ?>
 				<img src="<?=$this->assetUrl('img/Quartier-saint_pierre.svg'); ?>" alt="Le Quartier Saint Pierre" class="img-responsive">
 			<?php elseif($quartiers == 'saintpaul'): ?>
-				<img src="<?=$this->assetUrl('img/Quartier-saint_paul.svg'); ?>" alt="Le Quartier Saint Paul" class="img-responsive">
+				<img src="<?=$this->assetUrl('img/Quartier-saint_pierre.svg'); ?>" alt="Le Quartier Saint Paul" class="img-responsive">
 			<?php endif; ?>
 				<div id="toggle" style="position: absolute;top: 0px;left: 0px">
 					<div class="container-fluid">

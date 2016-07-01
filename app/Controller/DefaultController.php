@@ -57,36 +57,6 @@ class DefaultController extends Controller
 					$quartiers = 'saintpaul';
 				}
 			}
-
-			if(isset($get['quartiers'])){
-				if($get['quartiers'] == 'quinconces'){
-					$quartiers = 'quinconces';
-				}
-			}
-
-			if(isset($get['quartiers'])){
-				if($get['quartiers'] == 'meriadeck'){
-					$quartiers = 'meriadeck';
-				}
-			}
-
-			if(isset($get['quartiers'])){
-				if($get['quartiers'] == 'gambetta'){
-					$quartiers = 'gambetta';
-				}
-			}
-
-			if(isset($get['quartiers'])){
-				if($get['quartiers'] == 'hoteldeville'){
-					$quartiers = 'hoteldeville';
-				}
-			}
-
-			if(isset($get['quartiers'])){
-				if($get['quartiers'] == 'saintmichel'){
-					$quartiers = 'saintmichel';
-				}
-			}
 		}
 
 		if(!empty($_POST)){
@@ -495,7 +465,7 @@ class DefaultController extends Controller
 	              </div>
 	              <div class="row">
 	                <div class="col-lg-12 barStyle">
-	                  <img class="img-circle img-responsive" src="'.$bar['picture'].'" alt="">
+	                  <img class="img-rounded img-responsive" src="'.$bar['picture'].'" alt="">
 	                </div>
 	              </div>
 	              <div class="row">
@@ -504,8 +474,8 @@ class DefaultController extends Controller
 	                  <p class="text-left"><span class="titleInfBar">Télephone : </span><span class="infoBar">'.$bar['phone'].'</span></p>
 	                  <p class="text-left"><span class="titleInfBar">Horaire : </span><span class="infoBar">'.$bar['scheduleOpen'].'</span></p>
 	                  <p class="text-left"><span class="titleInfBar">Thème : </span><span class="infoBar">aze</span></p>
-	                  <a class="btn btn-default" href="'.$bar['google_url'].'">Se rendre au '.$bar['name'].'</a>
-	                  <a class="btn btn-default" href="'.$bar['url'].'">Se rendre sur le site du bar '.$bar['name'].'</a>
+					  <a class="btn btn-default" href="'.$bar['google_url'].'">Google map</a>
+					  <a class="btn btn-default" href="'.$bar['url'].'">Site du bar</a>
 	                </div>
 	              </div>
 				  <div class="clearfix"></div>
