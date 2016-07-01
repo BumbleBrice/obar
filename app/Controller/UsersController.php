@@ -229,6 +229,7 @@ class UsersController extends Controller
 
 		// On instancie la classe barModel qui étend la classe Model
 		$usersModel = new UsersModel();
+		$authModel = new AuthModel();
 
 		$errors = [];
 		$post = [];
@@ -335,7 +336,7 @@ class UsersController extends Controller
 					'firstname' => $post['firstname'],
 					'lastname' => $post['lastname'],
 					'email' => $post['email'],
-					'password' => $post['password'],
+					'password'	=> $authModel->hashPassword($post['password']),
 					'role' => $post['role'],
 					'picture' => $imageFinale
 				];
