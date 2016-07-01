@@ -166,10 +166,10 @@ class DefaultController extends Controller
 									$mail->AltBody = 'changer d\'ébergeur d\'email';
 
 									if($mail->send()) {
-										$success['inscription'] = true;
+										$success['register'] = true;
 										$email_inscription = $post['email'];
 									} else {
-										$errors['register'][] = 'Erreur lors de l\'envoie du token.';
+										$errors['register'][] = 'Erreur lors de l\'envoie du mail de confirmation.';
 									}
 								}
 								else{
