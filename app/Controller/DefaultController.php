@@ -488,12 +488,9 @@ class DefaultController extends Controller
 	        if(isset($post['id'])){
 	          if($bar = $barModel->find($post['id'])){
 	            echo '
-	            <div class="container-fluid">
-	              <div class="btn closeToggle btn-default"><a href="#">X</a></div><br>
 	              <div class="row">
 	                <div class="col-md-12 text-center">
-	                  <h2 class="section-heading">Le Wine Bar...</h2>
-	                  <a class="btn btn-default" href="#formulaire">Editer les infos du bar</a><br>
+	                  <h2 class="section-heading">'.$bar['name'].'</h2>
 	                </div>
 	              </div>
 	              <div class="row">
@@ -511,7 +508,7 @@ class DefaultController extends Controller
 	                  <a class="btn btn-default" href="'.$bar['url'].'">Se rendre sur le site du bar '.$bar['name'].'</a>
 	                </div>
 	              </div>
-	            </div>
+				  <div class="clearfix"></div>
 	            ';
 	          }
 	          else{

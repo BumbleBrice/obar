@@ -41,7 +41,7 @@ $(document).ready(function(){
    });
 
    // toggle() lorsque le lien avec l'ID #toggler est cliqué (clic fermer la div afficher le bar)
-   $('#closebar').click(function(e){
+   $('#closeToggle').click(function(e){
        e.preventDefault();
 
        $('.btBar').show();
