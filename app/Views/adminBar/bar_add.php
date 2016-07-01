@@ -42,13 +42,14 @@
                                 
                                 <label for="quartiers" class="display_block">Quartiers</label>
 
-                                <input type="button" name="quartiers" id="quartiers" class="form-control champQuartierAddBar" value="saintpierre">
-                                <input type="button" name="quartiers" id="quartiers" class="form-control champQuartierAddBar" value="saintpaul">
-                                <input type="button" name="quartiers" id="quartiers" class="form-control champQuartierAddBar" value="quinconces">
-                                <input type="button" name="quartiers" id="quartiers" class="form-control champQuartierAddBar" value="meriadeck">
-                                <input type="button" name="quartiers" id="quartiers" class="form-control champQuartierAddBar" value="gambetta">
-                                <input type="button" name="quartiers" id="quartiers" class="form-control champQuartierAddBar" value="hoteldeville">
-                                <input type="button" name="quartiers" id="quartiers" class="form-control champQuartierAddBar" value="saintmichel">
+                                <label  id="quartiers" class="radio-inline quartierAddBar"><input type="radio" name="quartiers" value="saintpierre">Saint Pierre</label>
+                                <label  id="quartiers" class="radio-inline quartierAddBar"><input type="radio" name="quartiers" value="saintpaul">Saint Paul</label>
+                                <label  id="quartiers" class="radio-inline quartierAddBar"><input type="radio" name="quartiers" value="quinconces">Quinconces</label>
+                                <label  id="quartiers" class="radio-inline quartierAddBar"><input type="radio" name="quartiers" value="meriadeck">Meriadeck</label>
+                                <label  id="quartiers" class="radio-inline quartierAddBar"><input type="radio" name="quartiers" value="quinconces">Quinconces</label>
+                                <label  id="quartiers" class="radio-inline quartierAddBar"><input type="radio" name="quartiers" value="gambetta">Gambetta</label>
+                                <label  id="quartiers" class="radio-inline quartierAddBar"><input type="radio" name="quartiers" value="hoteldeville">Hôtel de ville</label>
+                                <label  id="quartiers" class="radio-inline quartierAddBar"><input type="radio" name="quartiers" value="saintmichel">Saint Michel</label>
                                 
                             </div>
 
