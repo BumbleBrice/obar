@@ -48,10 +48,25 @@ h3{
     color: #333;
     background-color: #fff;
     border-color: #ccc;
+    float: right;
 }
 
 .btn-primary:hover{
     background-color: #c14e5f;
+    border-color: #025d70;
+    color: white;
+    transition: all 0.23s ease-in-out 0s;
+}
+
+.btn-default{
+    color: #333;
+    background-color: #fff;
+    border-color: #ccc;
+    margin-bottom: 10px;
+}
+
+.btn-default:hover{
+     background-color: #c14e5f;
     border-color: #025d70;
     color: white;
     transition: all 0.23s ease-in-out 0s;
@@ -215,6 +230,17 @@ ul .nav .navbar-nav .navbar-right>a{
 
 }
 
+.userStyle img{
+    border: 3px solid #c14e5f;
+}
+
+.centree {
+    margin: 0 auto;
+}
+
+.service-item {
+    margin-bottom: 30px;
+}
 /****************************************
 *************SECTION MAP*************
 ****************************************/
@@ -244,21 +270,6 @@ ul .nav .navbar-nav .navbar-right>a{
     color: white;
 }
 
-/*********************
-********PROFIL********
-**********************/
-
-.userStyle img{
-    border: 7px solid #cc2f42;
-}
-
-.centree {
-    margin: 0 auto;
-}
-
-.service-item {
-    margin-bottom: 30px;
-}
 /********************/
 /*****PROFIL BAR*****/
 /********************/
@@ -273,13 +284,14 @@ ul .nav .navbar-nav .navbar-right>a{
 .btBarHover:hover{
 
     border-radius: 5px;
-    background: lightgrey;
+    background: #c14e5f;
     padding: 6px 12px;
+    color : white;
 }
 .btBar a{
     text-transform: uppercase;
     font-size: 1.5rem;
-    color: orange;
+    color: #c14e5f;
     text-decoration: none;
 
 }
@@ -293,7 +305,7 @@ ul .nav .navbar-nav .navbar-right>a{
     border-radius: 5px;
     height:auto; 
     background:#eee; 
-    border:1px solid #900; 
+    border:2px solid #c14e5f; 
    
     text-align:center
 }
@@ -313,11 +325,11 @@ ul .nav .navbar-nav .navbar-right>a{
     top: 3px;
     padding: 5px 10px;
     border-radius: 50%;
-    border:1px solid #900; 
+    border:1px solid #c14e5f; 
 }
 .closeToggle:hover{
     background:lightgrey;
-     border:1px solid #900; 
+     border:1px solid #c14e5f; 
 }
 .closeToggle a{
      color: #6D071A;
