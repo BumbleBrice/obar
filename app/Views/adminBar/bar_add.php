@@ -112,7 +112,7 @@
 
                             <div class="form-group">
                                 <label for="url">Lien vers le site du bar</label>
-                                <input type="url" name="url" id="url" class="form-control champTxtAddBar" placeholder="www.MonSite.fr">
+                                <input type="url" name="url" id="url" class="form-control champTxtAddBar" placeholder="http://www.MonSite.fr">
                             </div>
 
                             <br><br>
