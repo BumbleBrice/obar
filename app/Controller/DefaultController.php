@@ -37,9 +37,7 @@ class DefaultController extends Controller
 		$success['contact'] = false; // initialise le success contact a false
 
 		$quartiers = '';
-
-
-
+		$email_inscription = '';
 
 		if(!empty($_GET)){
 			$get = array_map('trim', array_map('strip_tags', $_GET));
@@ -169,6 +167,7 @@ class DefaultController extends Controller
 
 									if($mail->send()) {
 										$success['inscription'] = true;
+										$email_inscription = $post['email'];
 									} else {
 										$errors['register'][] = 'Erreur lors de l\'envoie du token.';
 									}
@@ -223,7 +222,7 @@ class DefaultController extends Controller
 		} //end $_POST
 
 		// On envoi les erreurs en paramètre à l'aide d'un tableau (array)
-		$params = ['quartiers' => $quartiers, 'errors' => $errors, 'success' => $success, 'bars' => $barModel->findAll(), 'lastbars' => $newsModel->findAll('id', 'DESC', 3), 'infos' => $presentationModel->find(1)];
+		$params = ['email_inscription' => $email_inscription,'quartiers' => $quartiers, 'errors' => $errors, 'success' => $success, 'bars' => $barModel->findAll(), 'lastbars' => $newsModel->findAll('id', 'DESC', 3), 'infos' => $presentationModel->find(1)];
 		$this->show('default/home', $params);
 	}
 

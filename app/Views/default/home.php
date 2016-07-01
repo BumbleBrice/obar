@@ -202,7 +202,7 @@
 		            <?php if(isset($success['register']) && $success['register'] === true): ?>
 		                <div class="alert alert-success fade in">
 		                    <a href="#" class="close" data-dismiss="alert">&times;</a>
-		                    <strong>Félicitations!</strong> Votre message a bien été envoyé.
+		                    <strong>Félicitations!</strong> Vous avez reçu un email de confirmation a <?=$email_inscription?>.
 		                </div>
 		            <?php endif; ?>
 
