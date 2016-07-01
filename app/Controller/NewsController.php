@@ -59,6 +59,7 @@ class NewsController extends Controller
 			// On instancie la classe newsModel qui étend la classe Model
 			$newsModel = new newsModel();
 
+			$post = [];
 			$errors = [];
 			$success = false;
 
@@ -85,7 +86,7 @@ class NewsController extends Controller
 
 				if (count($errors) == 0) {
 					// Ici il n'y a aucune erreurs, on peut donc enregistrer en base de donnée
-
+					
 					// On utilise la méthode insert() qui permet d'insérer des données en base de donnée
 					$data = [
 						// La clé du tableau correspond au nom de la colonne SQL
@@ -104,7 +105,7 @@ class NewsController extends Controller
 			}
 
 			// On envoie les erreurs en paramètre à l'aide d'un tableau (array)
-			$params = ['errors' => $errors, 'success' => $success];
+			$params = ['errors' => $errors, 'success' => $success, 'post' => $post];
 
 		$this->show('adminNews/news_add', $params);
 	}
