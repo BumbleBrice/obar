@@ -527,11 +527,8 @@ label {
 @media(max-width:768px) {
 	.boutonRetourSite {
 		right: 15%;
-		
 	}
-
-
-	}
+}
 
 .boutonRetourSite:hover {
 	background: #6D071A !important;
