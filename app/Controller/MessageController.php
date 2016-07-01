@@ -67,14 +67,19 @@ class MessageController extends Controller
 		$date = new \DateTime('NOW');
 		$date = $date->format('Y-m-d H:i:s');
 
-		$message->insert([
+		if($message->insert([
 			'firstname'	=> $firstname,
 			'lastname' 	=> $lastname,
 			'email' 	=> $email,
 			'content' 	=> $msg,
 			'date_add' 	=> $date,
 			'message_state' => 'Non lu'
-		]);
+		])) {
+			return true;
+		}
+		else {
+			return false;
+		}
 	}
 
 	public function readMessage($id)
@@ -106,7 +111,7 @@ class MessageController extends Controller
 		$mail->setFrom('reponse@obar.fr');
 		$mail->addAddress($email);     						  	// Add a recipient
 
-		$mail->isHTML(true);                                  	// Set email format to HTML
+		$mail->isHTML(false);                                  	// Set email format to HTML
 
 		$mail->Subject = 'Here is the subject';
 		$mail->Body    = $reponse;
