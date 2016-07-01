@@ -223,8 +223,32 @@ class DefaultController extends Controller
 			} //end if(isset($post['form']
 		} //end $_POST
 
+		$pointQuartiers = [
+			[
+				'x' => '45',
+				'y' => '35',
+				'name' => '4535 bar',
+				'quartier' => 'saintpierre'
+			],
+			[
+				'x' => '25',
+				'y' => '55',
+				'name' => '2555 bar',
+				'quartier' => 'saintpaul'
+			]
+		];
+
+	$params = [
+		'email_inscription' => $email_inscription,
+		'pointQuartiers' => $pointQuartiers,
+		'quartiers' => $quartiers,
+		'errors' => $errors,
+		'success' => $success,
+		'bars' => $barModel->findAll(),
+		'lastbars' => $newsModel->findAll('id', 'DESC', 3),
+		'infos' => $presentationModel->find(1)
+    ];
 		// On envoi les erreurs en paramètre à l'aide d'un tableau (array)
-		$params = ['email_inscription' => $email_inscription,'quartiers' => $quartiers, 'errors' => $errors, 'success' => $success, 'bars' => $barModel->findAll(), 'lastbars' => $newsModel->findAll('id', 'DESC', 3), 'infos' => $presentationModel->find(1)];
 		$this->show('default/home', $params);
 	}
 
