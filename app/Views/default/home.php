@@ -102,45 +102,18 @@
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-8 col-md-offset-2">
             	<div class="text-center">
-            	<!-- remplacer par la boucle foreach des bars -->
-				 <div style=" left: 45%; top: 25%;" class="btBar">
-			        <a class="" href="#" id="toggler">
-			            <i class="fa fa-beer fa-2x text-center" aria-hidden="true"></i><br>
-			                <span class="btBarHover">Le Wine Bar1</span>
-			        </a>
-			    </div>
-			    <div style=" left: 35%; top: 75%;" class="btBar">
-			        <a class="" href="#" id="toggler">
-			            <i class="fa fa-beer fa-2x text-center" aria-hidden="true"></i><br>
-			                <span class="btBarHover">Le Wine Bar2</span>
-			        </a>
-			    </div>
-			    <div style=" left: 55%; top: 55%;" class="btBar">
-			        <a class="" href="#" id="toggler">
-			            <i class="fa fa-beer fa-2x text-center" aria-hidden="true"></i><br>
-			                <span class="btBarHover">Le Wine Bar3</span>
-			        </a>
-			    </div>
-			    <div style=" left: 25%; top: 85%;" class="btBar">
-			        <a class="" href="#" id="toggler">
-			            <i class="fa fa-beer fa-2x text-center" aria-hidden="true"></i><br>
-			                <span class="btBarHover">Le Wine Bar4</span>
-			        </a>
-			    </div>
-			    <div style=" left: 45%; top: 45%;" class="btBar">
-			        <a class="" href="#" id="toggler">
-			            <i class="fa fa-beer fa-2x text-center" aria-hidden="true"></i><br>
-			                <span class="btBarHover">Le Wine Bar5</span>
-			        </a>
-			    </div>
-			    <div style=" left: 65%; top: 35%;" class="btBar">
-			        <a class="" href="#" id="toggler">
-			            <i class="fa fa-beer fa-2x text-center" aria-hidden="true"></i><br>
-			                <span class="btBarHover">Le Wine Bar6</span>
-			        </a>
-			    </div>
-
-    <!-- Fin boucle bars -->
+					<?php foreach($bars as $bar): ?>
+			          <?php var_dump($quartiers); ?>
+			          <?php var_dump($bar['quartiers']); ?>
+			          <?php if($bar['quartiers'] == $quartiers): ?>
+			            <div style=" left: <?=$bar['x']?>%; top: <?=$bar['y']?>%;" class="btBar">
+			                  <a class="" href="#" id="toggler">
+			                      <i class="fa fa-beer fa-2x text-center" aria-hidden="true"></i><br>
+			                      <span class="btBarHover"><?=$bar['name']?></span>
+			                  </a>
+			              </div>
+			          <?php endif; ?>
+			        <?php endforeach; ?>
 
 				    <h2>Choisissez votre quartier</h2>
 				    <div id="toggle">
