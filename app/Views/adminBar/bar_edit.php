@@ -39,18 +39,11 @@
                             <input type="hidden" name="y" value="<?=$bar['y'] ?>">
 
                             <div class="form-group">
-                                
+
                                 <label for="quartiers" class="display_block">Quartiers</label>
 
-                                <label  id="quartiers" class="radio-inline quartierAddBar"><input type="radio" name="quartiers" value="saintpierre">Saint Pierre</label>
-                                <label  id="quartiers" class="radio-inline quartierAddBar"><input type="radio" name="quartiers" value="saintpaul">Saint Paul</label>
-                                <label  id="quartiers" class="radio-inline quartierAddBar"><input type="radio" name="quartiers" value="quinconces">Quinconces</label>
-                                <label  id="quartiers" class="radio-inline quartierAddBar"><input type="radio" name="quartiers" value="meriadeck">Meriadeck</label>
-                                <label  id="quartiers" class="radio-inline quartierAddBar"><input type="radio" name="quartiers" value="quinconces">Quinconces</label>
-                                <label  id="quartiers" class="radio-inline quartierAddBar"><input type="radio" name="quartiers" value="gambetta">Gambetta</label>
-                                <label  id="quartiers" class="radio-inline quartierAddBar"><input type="radio" name="quartiers" value="hoteldeville">Hôtel de ville</label>
-                                <label  id="quartiers" class="radio-inline quartierAddBar"><input type="radio" name="quartiers" value="saintmichel">Saint Michel</label>
-                                
+                                <label  id="quartiers" class="radio-inline quartierAddBar"><input type="radio" name="quartiers" value="saintpierre" <?php if($bar['quartiers'] == 'saintpierre'){echo 'checked';}?>>Saint Pierre</label>
+                                <label  id="quartiers" class="radio-inline quartierAddBar"><input type="radio" name="quartiers" value="saintpaul" <?php if($bar['quartiers'] == 'saintpaul'){echo 'checked';}?>>Saint Paul</label>
                             </div>
 
                             <div class="form-group">
@@ -82,26 +75,30 @@
                             <div class="form-group">
                                 <label for="schedule">Jour d'ouverture</label><br><br>
 
+								<?php
+								 	$jour = explode(', ',$bar['schedule']);
+								?>
+
                                 <label class="checkbox-inline">
-                                    <input type="checkbox" name="dayLundi" id="inlineCheckbox1" value="lundi"> Lundi
+                                    <input type="checkbox" name="dayLundi" id="inlineCheckbox1" value="lundi" <?php if(in_array('Lundi', $jour)){echo 'checked';}?>> Lundi
                                 </label>
                                 <label class="checkbox-inline">
-                                    <input type="checkbox" name="dayMardi" id="inlineCheckbox2" value="mardi"> Mardi
+                                    <input type="checkbox" name="dayMardi" id="inlineCheckbox2" value="mardi" <?php if(in_array('Mardi', $jour)){echo 'checked';}?>> Mardi
                                 </label>
                                 <label class="checkbox-inline">
-                                    <input type="checkbox" name="dayMercredi" id="inlineCheckbox3" value="mercredi"> Mercredi
+                                    <input type="checkbox" name="dayMercredi" id="inlineCheckbox3" value="mercredi" <?php if(in_array('Mercredi', $jour)){echo 'checked';}?>> Mercredi
                                 </label>
                                 <label class="checkbox-inline">
-                                    <input type="checkbox" name="dayJeudi" id="inlineCheckbox4" value="jeudi"> Jeudi
+                                    <input type="checkbox" name="dayJeudi" id="inlineCheckbox4" value="jeudi" <?php if(in_array('Jeudi', $jour)){echo 'checked';}?>> Jeudi
                                 </label>
                                 <label class="checkbox-inline">
-                                    <input type="checkbox" name="dayVendredi" id="inlineCheckbox5" value="vendredi"> Vendredi
+                                    <input type="checkbox" name="dayVendredi" id="inlineCheckbox5" value="vendredi" <?php if(in_array('Vendredi', $jour)){echo 'checked';}?>> Vendredi
                                 </label>
                                 <label class="checkbox-inline">
-                                    <input type="checkbox" name="daySamedi" id="inlineCheckbox6" value="samedi"> Samedi
+                                    <input type="checkbox" name="daySamedi" id="inlineCheckbox6" value="samedi" <?php if(in_array('Samedi', $jour)){echo 'checked';}?>> Samedi
                                 </label>
                                 <label class="checkbox-inline">
-                                    <input type="checkbox" name="dayDimanche" id="inlineCheckbox7" value="dimanche"> Dimanche
+                                    <input type="checkbox" name="dayDimanche" id="inlineCheckbox7" value="dimanche" <?php if(in_array('Dimanche', $jour)){echo 'checked';}?>> Dimanche
                                 </label>
                             </div>
 
