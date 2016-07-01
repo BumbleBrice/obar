@@ -33,22 +33,21 @@
                         <form method="POST" role="form" enctype="multipart/form-data">
                             <div class="form-group">
                                 <label for="what">Quoi?</label>
-                                <input name="what" id="what" class="form-control champTxtAddBar">
+                                <input name="what" id="what" class="form-control champTxtAddBar" value="<?=$news['what'] ?>">
                             </div>
 
                             <div class="form-group">
                                 <label for="bar">Qui?</label>
-                                <input type="text" name="bar" id="bar" class="form-control champTxtAddBar">
+                                <input type="text" name="bar" id="bar" class="form-control champTxtAddBar" value="<?=$news['bar'] ?>">
                             </div>
 
                             <div class="form-group">
                                 <label for="msg">Message</label>
-                                <input type="text" name="msg" id="msg" class="form-control champTxtAddBar">
+                                <input type="text" name="msg" id="msg" class="form-control champTxtAddBar" value="<?=$news['msg'] ?>">
                             </div>
 
                             <br><br>
-                            <button type="reset" class="btn btn-default boutonBarAdd">Recommencer</button>
-                            <button type="submit" class="btn btn-default boutonBarAdd">Ajouter la news</button>
+                            <button type="submit" class="btn btn-default boutonBarAdd">Modifier la news</button>
                         </form>
                 <!-- /.row (nested) -->
             </div>
