@@ -36,7 +36,7 @@ class DefaultController extends Controller
 		$success['inscription'] = false; // initialise le success inscription a false
 		$success['contact'] = false; // initialise le success contact a false
 
-		$quartiers = '';
+		$quartiers = 'aucain';
 		$email_inscription = '';
 
 		if(!empty($_GET)){
@@ -291,7 +291,7 @@ class DefaultController extends Controller
 			$data = [
 				'confirm' => '1'
 			];
-			
+
 			if($usersModel->update($data, $tokenGet['idUser'])){
 				if($confirmation->delete($tokenGet['id'])){
 					$this->redirectToRoute('default_home');
