@@ -33,7 +33,7 @@ class UsersController extends Controller
 
 			// On instancie la classe UsersModel qui étend la classe Model
 			$usersModel = new UsersModel();
-			$auth = new AuthModel();
+			/*$auth = new AuthModel();*/
 
 			$post = [];
 			$errors = [];
@@ -48,49 +48,51 @@ class UsersController extends Controller
 			$user_firstname = $user['firstname'];
 			$user_lastname = $user['lastname'];
 			$user_email = $user['email'];
-			$user_password = $user['password'];
+			$user_picture = $user['picture'];
 			$user_role = $user['role'];
 			$user_password = $user['password'];
 
 			if(!empty($_FILES)){
-				if(isset($_FILES['picture']) && $_FILES['picture']['error'] == UPLOAD_ERR_OK && $_FILES['picture']['size'] < $maxSize) {
-					$fileName = $_FILES['picture']['name']; // Nom de mon image
-					$fileTemp = $_FILES['picture']['tmp_name']; // Image temporaire
+				if(isset($_FILES['picture']) && $_FILES['picture']['error'] == UPLOAD_ERR_OK) {
+					if($_FILES['picture']['size'] < $maxSize){
+						$fileName = $_FILES['picture']['name']; // Nom de mon image
+						$fileTemp = $_FILES['picture']['tmp_name']; // Image temporaire
 
-					$file = new finfo(); // Classe FileInfo
-					$mimeType = $file->file($_FILES['picture']['tmp_name'], FILEINFO_MIME_TYPE); // Retourne le VRAI mimeType
-					$mimeTypeAllowed = ['image/jpg', 'image/jpeg', 'image/png', 'image/gif']; // Les mime types autorisés
+						$file = new finfo(); // Classe FileInfo
+						$mimeType = $file->file($_FILES['picture']['tmp_name'], FILEINFO_MIME_TYPE); // Retourne le VRAI mimeType
+						$mimeTypeAllowed = ['image/jpg', 'image/jpeg', 'image/png', 'image/gif']; // Les mime types autorisés
 
-					// Permet de vérifier que le mime type est bien autorisé
-					if (in_array($mimeType, $mimeTypeAllowed)) {
-						/*
-						 * explode() permet de séparer une chaine de caractère en un tableau
-						 * Ici, on aura donc :
-						 * 		$newFileName = array(
-						 			0 => 'nom-de-mon-fichier',
-						 			1 => 'jpg'
-								);
-						 */
-						$newFileName = explode('.', $fileName);
-						$fileExtension = end($newFileName); // Récupère l'extension du fichier
+						// Permet de vérifier que le mime type est bien autorisé
+						if (in_array($mimeType, $mimeTypeAllowed)) {
+							/*
+							 * explode() permet de séparer une chaine de caractère en un tableau
+							 * Ici, on aura donc :
+							 * 		$newFileName = array(
+							 			0 => 'nom-de-mon-fichier',
+							 			1 => 'jpg'
+									);
+							 */
+							$newFileName = explode('.', $fileName);
+							$fileExtension = end($newFileName); // Récupère l'extension du fichier
 
-						$finalFileName = 'user-'.time().$fileExtension; // Le nom du fichier sera donc : user-1463058435.jpg (time() retourne un timestamp à la seconde). Cela permet de sécuriser l'upload de fichier
+							$finalFileName = 'bar-'.time().$fileExtension; // Le nom du fichier sera donc : user-1463058435.jpg (time() retourne un timestamp à la seconde). Cela permet de sécuriser l'upload de fichier
 
 
-						if(move_uploaded_file($fileTemp, $folder.$finalFileName)) {
-							// Ici je suis sur que mon image est au bon endroit
-							$user_picture = $folder.$finalFileName;
+							if(move_uploaded_file($fileTemp, $folder.$finalFileName)) {
+								// Ici je suis sur que mon image est au bon endroit
+								$bar_picture = $folder.$finalFileName;
+							}
+							else{
+								$bar_picture = 'assets/img/image_defaut.png'; // Permet d'avoir une image par défaut si l'upload ne s'est pas bien déroulé
+							}
 						}
 						else{
-							$user_picture = 'assets/img/avatar_defaut.png'; // Permet d'avoir une image par défaut si l'upload ne s'est pas bien déroulé
+							$errors[] = 'Le mime type est interdit';
 						}
 					}
 					else{
-						$errors[] = 'Le mime type est interdit';
+						$errors[] = 'L\'image est trop lourde';
 					}
-				}
-				else{
-					$errors[] = 'L\'image est trop lourde';
 				}
 			}
 
