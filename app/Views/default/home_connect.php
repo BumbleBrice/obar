@@ -14,7 +14,7 @@
         <a href="<?$this->url('LostPassword_lostPassword')?>">Mot de passe oublier ?</a>
 <?php endif; ?>
 
-<!-- Connexion A FAIRE -->
+<!-- Connexion-->
 <section id="connexion" class="connexion">
     <div class="container-fluid">
         <div class="row text-center">
@@ -53,8 +53,8 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="text-center">
-                        <h4>Bumble</h4>
-                        <p class="subheading ">Et ses ami(e)s !</p>
+                        <h4>Bonjour <?=$w_user['nickname'];?></h4>
+                        <p class="subheading ">Vos ami(e)s !</p>
                     <div class="timeline-body">
                         <p class="text-muted"></p>
                     </div>
@@ -116,7 +116,8 @@
                 <div class="item active">
                     <h2><strong><?php echo $this->e($lastbars[0]['what']); ?></strong></h2>
                     <p>
-                        <?=$lastbars[0]['bar']; ?>
+                        <strong><?=$lastbars[0]['bar']; ?></strong>
+                        <br>
                         <br>
                         <?=$lastbars[0]['msg']; ?>
                     </p>
@@ -124,7 +125,8 @@
                 <div class="item">
                     <h2><strong><?php echo $this->e($lastbars[1]['what']); ?></strong></h2>
                     <p>
-                        <?=$lastbars[1]['bar']; ?>
+                        <strong><?=$lastbars[1]['bar']; ?></strong>
+                        <br>
                         <br>
                         <?=$lastbars[1]['msg']; ?>
                     </p>
@@ -133,7 +135,8 @@
                 <div class="item">
                     <h2><strong><?php echo $this->e($lastbars[2]['what']); ?></strong></h2>
                     <p>
-                        <?=$lastbars[2]['bar']; ?>
+                        <strong><?=$lastbars[2]['bar']; ?></strong>
+                        <br>
                         <br>
                         <?=$lastbars[2]['msg']; ?>
                     </p>
@@ -161,14 +164,81 @@
 </section>
 
 <!-- Carte -->
+
 <section id="map" class="map">
-	<div class="container-fluid">
+    <div class="container-fluid">
         <div class="row">
-            <div class="col-lg-12 text-center">
-                <h2>Choisissez votre quartier</h2>
-                <svg width="400" height="300">
-				    <image xlink:href="<?=$this->assetUrl('img/Quartier-saint_pierre.svg'); ?>" src="d<?=$this->assetUrl('img/Quartier-saint_pierre.svg'); ?>" width="400" height="300"/>
-				</svg>
+            <div class="col-xs-12 col-sm-12 col-md-8 col-md-offset-2">
+                <div class="text-center">
+                <!-- remplacer par la boucle foreach des bars -->
+                 <div style=" left: 45%; top: 25%;" class="btBar">
+                    <a class="" href="#" id="toggler">
+                        <i class="fa fa-beer fa-2x text-center" aria-hidden="true"></i><br>
+                            <span class="btBarHover">Le Wine Bar1</span>
+                    </a>
+                </div>
+                <div style=" left: 35%; top: 75%;" class="btBar">
+                    <a class="" href="#" id="toggler">
+                        <i class="fa fa-beer fa-2x text-center" aria-hidden="true"></i><br>
+                            <span class="btBarHover">Le Wine Bar2</span>
+                    </a>
+                </div>
+                <div style=" left: 55%; top: 55%;" class="btBar">
+                    <a class="" href="#" id="toggler">
+                        <i class="fa fa-beer fa-2x text-center" aria-hidden="true"></i><br>
+                            <span class="btBarHover">Le Wine Bar3</span>
+                    </a>
+                </div>
+                <div style=" left: 25%; top: 85%;" class="btBar">
+                    <a class="" href="#" id="toggler">
+                        <i class="fa fa-beer fa-2x text-center" aria-hidden="true"></i><br>
+                            <span class="btBarHover">Le Wine Bar4</span>
+                    </a>
+                </div>
+                <div style=" left: 45%; top: 45%;" class="btBar">
+                    <a class="" href="#" id="toggler">
+                        <i class="fa fa-beer fa-2x text-center" aria-hidden="true"></i><br>
+                            <span class="btBarHover">Le Wine Bar5</span>
+                    </a>
+                </div>
+                <div style=" left: 65%; top: 35%;" class="btBar">
+                    <a class="" href="#" id="toggler">
+                        <i class="fa fa-beer fa-2x text-center" aria-hidden="true"></i><br>
+                            <span class="btBarHover">Le Wine Bar6</span>
+                    </a>
+                </div>
+
+    <!-- Fin boucle bars -->
+
+                    <h2>Choisissez votre quartier</h2>
+                    <div id="toggle">
+                        <div class="container-fluid carte">
+                            <div class="btn closeToggle btn-default"><a href="#">X</a></div><br>
+                            <div class="row">
+                                <div class="col-md-12 text-center">
+                                    <h2 class="section-heading">Le Wine Bar</h2>
+                                    <a class="btn btn-default" href="#formulaire">Editer les infos du bar</a><br>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12 barStyle">
+                                    <img class="img-circle img-responsive" src="<?=$this->assetUrl('img/bar.jpg'); ?>" alt="">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <p class="text-left"><span class="titleInfBar">Adresse : </span><span class="infoBar">66 rue abbé de l'épee</span></p>
+                                    <p class="text-left"><span class="titleInfBar">Télephone : </span><span class="infoBar">06 59 43 32 16</span></p>
+                                    <p class="text-left"><span class="titleInfBar">Horaire : </span><span class="infoBar"> 11h à 14h </span><span class="titleInfBar">et de </span><span class="infoBar">17h à 01h</span></p>
+                                    <p class="text-left"><span class="titleInfBar">Thème : </span><span class="infoBar">Bar à vins et bar à pute</span></p>
+                                    <a class="btn btn-default" href="https://goo.gl/maps/dzu5DsMRkYt">Se rendre au Le Wine Bar</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <img src="<?=$this->assetUrl('img/les_quartiers-sans-villes.svg'); ?>" alt="Les Quartier de Bordeaux" class="img-responsive">
+                </div>
             </div>
         </div>
         <!-- /.row -->
@@ -178,65 +248,65 @@
 
 <!-- Contact -->
 <section id="contact" class="contact">
-	<div class="container-fluid">
-    <div class="row text-center">
-        <div class="col-lg-10 col-lg-offset-1">
-            <h2>Nous contacter</h2>
-            <?php if(isset($errors['contact']) && !empty($errors['contact'])): //On affiche les erreurs si le tableau est vide ?>
-                <div class="alert alert-danger fade in">
-                     <a href="#" class="close" data-dismiss="alert">&times;</a>
-                     <strong>Erreur ! </strong><?=implode('<br>', $errors['contact']); ?>
-                </div>
-            <?php endif; ?>
-
-            <?php if(isset($success['contact']) && $success['contact'] === true): ?>
-                <div class="alert alert-success fade in">
-                    <a href="#" class="close" data-dismiss="alert">&times;</a>
-                    <strong>Félicitations!</strong> Votre message a bien été envoyé.
-                </div>
-            <?php else: ?>
-
-            <form class="form-horizontal" method="POST">
-                <input type="hidden" name="form" value="contact">
-                <div class="form-group">
-                    <label for="ct_firstname" class="hidden-xs col-sm-2 control-label">Prénom*</label>
-                    <div class="col-sm-10">
-                    <input type="text" name="ct_firstname" class="form-control" id="ct_firstname" placeholder="Prénom">
-                    <span id="helpBlock" class="help-block">* Commencer par une majuscule.</span>
+    <div class="container-fluid">
+        <div class="row text-center">
+            <div class="col-lg-10 col-lg-offset-1">
+                <h2>Nous contacter</h2>
+                <?php if(isset($errors['contact']) && !empty($errors['contact'])): //On affiche les erreurs si le tableau est vide ?>
+                    <div class="alert alert-danger fade in">
+                         <a href="#" class="close" data-dismiss="alert">&times;</a>
+                         <strong>Erreur ! </strong><?=implode('<br>', $errors['contact']); ?>
                     </div>
-                </div>
+                <?php endif; ?>
 
-                <div class="form-group">
-                    <label for="ct_lastname" class="hidden-xs col-sm-2 control-label">Nom*</label>
-                    <div class="col-sm-10">
-                    <input type="text" class="form-control" name="ct_lastname" id="ct_lastname" placeholder="Nom">
-                    <span id="helpBlock" class="help-block">* Commencer par une majuscule.</span>
+                <?php if(isset($success['contact']) && $success['contact'] === true): ?>
+                    <div class="alert alert-success fade in">
+                        <a href="#" class="close" data-dismiss="alert">&times;</a>
+                        <strong>Félicitations!</strong> Votre message a bien été envoyé.
                     </div>
-                </div>
+                <?php else: ?>
 
-                <div class="form-group">
-                    <label for="ct_email" class="hidden-xs col-sm-2 control-label">Email</label>
-                    <div class="col-sm-10">
-                    <input type="email" name="ct_email" class="form-control" id="ct_email" placeholder="Email">
+                <form class="form-horizontal" method="POST">
+                    <input type="hidden" name="form" value="contact">
+                    <div class="form-group">
+                        <label for="ct_firstname" class="hidden-xs col-sm-2 control-label">Prénom*</label>
+                        <div class="col-sm-10">
+                        <input type="text" name="ct_firstname" class="form-control" id="ct_firstname" placeholder="Prénom">
+                        <span id="helpBlock" class="help-block">* Commencer par une majuscule.</span>
+                        </div>
                     </div>
-                </div>
 
-                <div class="form-group">
-                    <label for="ct_msg" class="hidden-xs col-sm-2 control-label">Message</label>
-                    <div class="col-sm-10">
-                    <textarea class="form-control" rows="3" name="ct_msg" placeholder="Votre message"></textarea>
+                    <div class="form-group">
+                        <label for="ct_lastname" class="hidden-xs col-sm-2 control-label">Nom*</label>
+                        <div class="col-sm-10">
+                        <input type="text" class="form-control" name="ct_lastname" id="ct_lastname" placeholder="Nom">
+                        <span id="helpBlock" class="help-block">* Commencer par une majuscule.</span>
+                        </div>
                     </div>
-                </div>
 
-                <div class="form-group">
-                    <div class="col-sm-offset-2 col-sm-10">
-                    <button type="submit" class="btn btn-primary">Envoyer</button>
+                    <div class="form-group">
+                        <label for="ct_email" class="hidden-xs col-sm-2 control-label">Email</label>
+                        <div class="col-sm-10">
+                        <input type="email" name="ct_email" class="form-control" id="ct_email" placeholder="Email">
+                        </div>
                     </div>
-                </div>
-            </form>
+
+                    <div class="form-group">
+                        <label for="ct_msg" class="hidden-xs col-sm-2 control-label">Message</label>
+                        <div class="col-sm-10">
+                        <textarea class="form-control" rows="3" name="ct_msg" placeholder="Votre message"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                        <button type="submit" class="btn btn-primary">Envoyer</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
-</div>
 
 <?php endif; ?>
 </section>
