@@ -54,7 +54,7 @@
                             <div class="form-group">
                                 <label for="picture">Image du bar</label>
                                 <input type="hidden" name="MAX_FILE_SIZE" value="<?=$maxSize; ?>">
-                                <input type="file" name="picture" id="picture" class="filestyle" data-badge="false" value="<?=$bar['picture'] ?>">
+                                <input type="file" name="picture" id="picture" class="filestyle" data-badge="false">
                             </div>
 
                             <div class="form-group">
@@ -121,14 +121,8 @@
 
                     <div class="col-lg-1"></div>
 
-                    <div class="col-lg-5 carte">
-
-                    	<div class="map">
-
-                    		<!-- Carte -->
-
-                    	</div>
-
+                	<div class="carte">
+                        <img src="<?=$this->assetUrl('img/Quartier-saint_pierre.svg'); ?>" alt="Carte Quartier Saint Pierre" class="img-responsive">
                     </div>
 
                     <div class="col-lg-1"></div>
@@ -145,3 +139,8 @@
 <!-- /.row -->
 
 <?php $this->stop('main_content') ?>
+
+<?php $this->start('js'); ?>
+    <script src="<?=$this->assetUrl('js/carteAdd.js');?>">
+    </script>
+<?php $this->stop('js'); ?>
