@@ -3,28 +3,50 @@
 <?php $this->start('main_content'); ?>
 
 <div class="row">
-	<div class="col-lg-12 text-center">
-		<h1>Ajouter une news</h1>
-	</div>
+    <div class="col-lg-12 text-center">
+        <h1>Ajouter une news</h1>
+    </div>
 </div>
 
 <br><br>
 
 <?php if(!empty($errors)): ?>
-	<div class="alert alert-danger">
-		<ul>
-		<?php foreach($errors as $er): ?>
-			<li><?=$er;?></li>
-		<?php endforeach; ?>
-		</ul>
-	</div>
+    <div class="alert alert-danger">
+        <ul>
+        <?php foreach($errors as $er): ?>
+            <li><?=$er;?></li>
+        <?php endforeach; ?>
+        </ul>
+    </div>
 <?php endif; ?>
 
 <?php if(isset($success) && $success == true): ?>
-	<div class="alert alert-success">Votre news a été ajouté</div>
+    <div class="alert alert-success">Votre news a été ajouté</div>
 <?php else: ?>
 
 <?php endif; ?>
+
+<?php 
+
+if(isset($post['what']) && !empty($post['what'])){
+    $what = $post['what'];
+}
+else {
+    $what = '';
+}
+if(isset($post['bar']) && !empty($post['bar'])){
+    $bar = $post['bar'];
+}
+else {
+    $bar = '';
+}
+if(isset($post['msg']) && !empty($post['msg'])){
+    $msg = $post['msg'];
+}
+else {
+    $msg = '';
+}
+?>
 
 <div class="row divFormAddBar">
     <div class="col-lg-12">
@@ -33,16 +55,16 @@
                         <form method="POST" role="form" enctype="multipart/form-data">
                             <div class="form-group">
                                 <label for="what">Quoi?</label>
-                                <input name="what" id="what" class="form-control champTxtAddBar" placeholder="Doit commencer par une majuscule">
+                                <input name="what" id="what" class="form-control champTxtAddBar" placeholder="Doit commencer par une majuscule" value="<?= $what ?>">
                             </div>
 
                             <div class="form-group">
                                 <label for="bar">Qui?</label>
-                                <input type="text" name="bar" id="bar" class="form-control champTxtAddBar" placeholder="Doit commencer par une majuscule">
+                                <input type="text" name="bar" id="bar" class="form-control champTxtAddBar" placeholder="Doit commencer par une majuscule" value="<?= $bar ?>">
                             </div>
                             <div class="form-group">
                                 <label for="msg">Message</label>
-                                <input type="text" name="msg" id="msg" class="form-control champTxtAddBar" placeholder="Doit commencer par une majuscule">
+                                <input type="text" name="msg" id="msg" class="form-control champTxtAddBar" placeholder="Doit commencer par une majuscule" value="<?= $msg ?>">
                             </div>
 
                             <br><br>

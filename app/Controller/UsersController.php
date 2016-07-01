@@ -229,6 +229,7 @@ class UsersController extends Controller
 		$usersModel = new UsersModel();
 
 		$errors = [];
+		$post = [];
 		$success = false;
 
 		$maxSize = 500000; // En octet (500Ko)
@@ -347,7 +348,7 @@ class UsersController extends Controller
 		}
 
 		// On envoie les erreurs en paramètre à l'aide d'un tableau (array)
-		$params = ['errors' => $errors, 'success' => $success , 'maxSize' => $maxSize];
+		$params = ['errors' => $errors, 'success' => $success , 'maxSize' => $maxSize, 'post' => $post];
 
 		$this->show('adminUsers/user_add', $params);
 	}
