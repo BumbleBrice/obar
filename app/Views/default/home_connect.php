@@ -41,11 +41,6 @@
 	<div class="container-fluid">
     <div class="container">
         <div class="row">
-            <div class="col-md-12 text-center">
-                <a class="btn btn-default" href="<?=$this->url('default_profil_membre');?>">Editer le profil</a>
-            </div>
-        </div>
-        <div class="row">
             <div class="col-lg-12">
                 <img class="img-circle img-responsive centree" src="<?=$this->assetUrl('img/3.jpg');?>" alt="">
             </div>
@@ -54,12 +49,18 @@
             <div class="col-lg-12">
                 <div class="text-center">
                         <h4>Bonjour <?=$w_user['nickname'];?></h4>
-                        <p class="subheading ">Vos ami(e)s !</p>
                     <div class="timeline-body">
                         <p class="text-muted"></p>
                     </div>
                 </div>
              </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <a class="btn btn-default" href="<?=$this->url('default_profil_membre');?>">Modififer mon profil</a>
+                <p class="subheading ">Vos ami(e)s !</p>
+            </div>
         </div>
 
         <div class="container">
@@ -217,12 +218,11 @@
                             <div class="row">
                                 <div class="col-md-12 text-center">
                                     <h2 class="section-heading">Le Wine Bar</h2>
-                                    <a class="btn btn-default" href="#formulaire">Editer les infos du bar</a><br>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-lg-12 barStyle">
-                                    <img class="img-circle img-responsive" src="<?=$this->assetUrl('img/bar.jpg'); ?>" alt="">
+                                    <img class="img-rounded img-responsive" src="<?=$this->assetUrl('img/bar.jpg'); ?>" alt="">
                                 </div>
                             </div>
                             <div class="row">
@@ -230,8 +230,9 @@
                                     <p class="text-left"><span class="titleInfBar">Adresse : </span><span class="infoBar">66 rue abbé de l'épee</span></p>
                                     <p class="text-left"><span class="titleInfBar">Télephone : </span><span class="infoBar">06 59 43 32 16</span></p>
                                     <p class="text-left"><span class="titleInfBar">Horaire : </span><span class="infoBar"> 11h à 14h </span><span class="titleInfBar">et de </span><span class="infoBar">17h à 01h</span></p>
-                                    <p class="text-left"><span class="titleInfBar">Thème : </span><span class="infoBar">Bar à vins et bar à pute</span></p>
-                                    <a class="btn btn-default" href="https://goo.gl/maps/dzu5DsMRkYt">Se rendre au Le Wine Bar</a>
+                                    <a class="btn btn-default" href="https://goo.gl/maps/dzu5DsMRkYt">Google map</a>
+                                    
+                                    <a class="btn btn-default" href="https://goo.gl/maps/dzu5DsMRkYt">Site du bar</a>
                                 </div>
                             </div>
                         </div>
@@ -312,6 +313,33 @@
 </section>
 
 <?php endif; ?>
+
+<!-- Newsletter -->
+<section id="newsletter" class="newsletter">
+    <div class="container-fluid">
+        <div class="row text-center">
+            <div class="col-lg-10 col-lg-offset-1">
+                <h2>Newsletter</h2>
+                <p>Vous n'êtes pas encore abonné à notre newsletter ?</p>
+                <div id="mc_embed_signup">
+                    <form action="//twitter.us13.list-manage.com/subscribe/post?u=7145e347cec5f3e12eec87b37&amp;id=ea200e434f" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                        <div id="mc_embed_signup_scroll">
+                            <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="adresse email" required>
+                            <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                            <div style="position: absolute; left: -5000px;" aria-hidden="true">
+                                <input type="text" name="b_7145e347cec5f3e12eec87b37_ea200e434f" tabindex="-1" value="">
+                            </div>
+                            <div class="clear">
+                                <input type="submit" value="S'abonner" name="subscribe" id="mc-embedded-subscribe" class="button">
+                            </div>
+                        </div>
+                    </form>
+                </div><!--End mc_embed_signup-->
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- Footer -->
 <footer>
     <div class="container">
@@ -324,7 +352,7 @@
                         <?=$infos['address']; ?>
                     </li>
                     <li>
-                        <i class="fa fa-phone-square" aria-hidden="true""></i>
+                        <i class="fa fa-phone-square" aria-hidden="true"></i>
                         <?=$infos['phone']; ?>
                     </li>
                     <li>

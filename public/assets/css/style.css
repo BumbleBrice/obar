@@ -71,11 +71,6 @@ h3{
 /***************************************
 *************NAVIGATION*****************
 ****************************************/
-@media screen and (min-width: 768px){
-
-
-}
-
 @media screen and (max-width: 760px) {
     #logo {
         display: none;
@@ -84,7 +79,6 @@ h3{
         display: block;
     }
 }
-
 .navbar-default .navbar-collapse .navbar-default .navbar-form::before{
     background-color:  #025d70;
     opacity: 0.9;
@@ -92,7 +86,6 @@ h3{
     -moz-transition: background .5s ease-in-out, opacity .5s ease;
     transition: background .5s ease-in-out, opacity .5s ease;
 }
-
 ul .nav .navbar-nav .navbar-right>a{
     text-align: right;
 }
@@ -102,7 +95,6 @@ ul .nav .navbar-nav .navbar-right>a{
 .navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover{
     background-color: #c14e5f;
     color: white;
-
 }
 #custom-nav {
     background-color: rgba(0,0,0,0);
@@ -115,7 +107,6 @@ ul .nav .navbar-nav .navbar-right>a{
     -moz-transition: background .5s ease-in-out, opacity .5s ease;
     transition: background .5s ease-in-out, opacity .5s ease;
 }
-
 #custom-nav .dropdown-menu {
     border-radius: 0;
     border: none;
@@ -124,13 +115,11 @@ ul .nav .navbar-nav .navbar-right>a{
     box-shadow: none;
     padding-top: 0;
 }
-
 #custom-nav .container {
     -webkit-transition: padding-top .5s ease, padding-bottom .5s ease;
     -moz-transition: padding-top .5s ease, padding-bottom .5s ease;
     transition: padding-top .5s ease, padding-top .5s ease, padding-bottom .5s ease;
 }
-
 #custom-nav.affix {
     top: 0;
     min-width: 100%;
@@ -150,13 +139,11 @@ ul .nav .navbar-nav .navbar-right>a{
         z-index: 999;
     }
 }
-
 .navbar-default .navbar-nav>li>a {
     color:#f5f5f5;
     font-family: 'Comfortaa', cursive;
     font-size: 17px;
 }
-
 .navbar-default .navbar-nav>li>a:hover{
 	color: #c14e5f;
     font-weight: 700;
@@ -174,19 +161,19 @@ ul .nav .navbar-nav .navbar-right>a{
     font-family: 'Comfortaa', cursive;
 }
 
+
 /*******************************
 *************HEADER*************
 *******************************/
-
 .header{
 	height: 70%;
     padding-top: 60px;
 }
-
 .header p{
     color: white;
     font-size: 18px;
 }
+
 
 /****************************************
 *******SECTION NEWS BARS*********
@@ -207,13 +194,15 @@ ul .nav .navbar-nav .navbar-right>a{
 .carousel-indicators {
     bottom: -35px;
 }
+
+
 /****************************************
 *************SECTION PROFIL USER*********
 ****************************************/
 .users_profil{
     padding: 50px 0;
-
 }
+
 
 /****************************************
 *************SECTION MAP*************
@@ -231,6 +220,8 @@ ul .nav .navbar-nav .navbar-right>a{
 .contact{
     padding: 50px 0;
 }
+
+
 /****************************************
 *********SECTION INSCRIPTION*************
 ****************************************/
@@ -245,10 +236,10 @@ ul .nav .navbar-nav .navbar-right>a{
     color: white;
 }
 
+
 /*********************
 ********PROFIL********
 **********************/
-
 .userStyle img{
     border: 7px solid #cc2f42;
 }
@@ -260,6 +251,8 @@ ul .nav .navbar-nav .navbar-right>a{
 .service-item {
     margin-bottom: 30px;
 }
+
+
 /********************/
 /*****PROFIL BAR*****/
 /********************/
@@ -274,18 +267,22 @@ ul .nav .navbar-nav .navbar-right>a{
 .btBarHover:hover{
 
     border-radius: 5px;
-    background: lightgrey;
+    background: #c14e5f;
     padding: 6px 12px;
+    color : white;
 }
 .btBar a{
     text-transform: uppercase;
     font-size: 1.5rem;
-    color: orange;
+    color: #c14e5f;
     text-decoration: none;
-
 }
 .section-heading{
     font-family: 'Playball',cursive;
+}
+
+h2.section-heading{
+    color: white;
 }
 #toggle{
     left: 0;
@@ -293,9 +290,9 @@ ul .nav .navbar-nav .navbar-right>a{
     position: absolute;
     border-radius: 5px;
     height:auto; 
-    background:#eee; 
-    border:1px solid #900; 
-   
+    background:#7fbac4; 
+    border:2px solid #c14e5f; 
+    color: white; 
     text-align:center
 }
 #toggle img{
@@ -314,11 +311,11 @@ ul .nav .navbar-nav .navbar-right>a{
     top: 3px;
     padding: 5px 10px;
     border-radius: 50%;
-    border:1px solid #900; 
+    border:1px solid #c14e5f; 
 }
 .closeToggle:hover{
     background:lightgrey;
-     border:1px solid #900; 
+     border:1px solid #c14e5f; 
 }
 .closeToggle a{
      color: #6D071A;
@@ -327,7 +324,8 @@ ul .nav .navbar-nav .navbar-right>a{
 }
 .barStyle img{
     margin-top: 5%;
-    border: 7px solid lightgrey;
+    margin-bottom: 5%;
+    border: 7px solid rgba(255,255,255,.15);
     width: 100%;
 }
 .centree {
@@ -348,7 +346,7 @@ ul .nav .navbar-nav .navbar-right>a{
     border-radius: 5px;
     font-style: italic;
     font-size: 1.5rem;
-    color: #777;
+    color: white;
     font-weight: 400;
     line-height: 1.7;
 }
@@ -364,7 +362,6 @@ ul .nav .navbar-nav .navbar-right>a{
     -moz-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
     -webkit-box-shadow:  0px 0px 15px rgba(0, 0, 0, 0.22);
 }
-
 .form-style-8 h2{
     background: #4D4D4D;
     text-transform: uppercase;
@@ -375,7 +372,6 @@ ul .nav .navbar-nav .navbar-right>a{
     padding: 20px;
     margin: -30px -30px 30px -30px;
 }
-
 .form-style-8 input[type="text"],
 .form-style-8 input[type="date"],
 .form-style-8 input[type="datetime"],
@@ -402,12 +398,10 @@ ul .nav .navbar-nav .navbar-right>a{
     font: 16px Arial, Helvetica, sans-serif;
     height: 45px;
 }
-
 .form-style-8 textarea{
     resize:none;
     overflow: hidden;
 }
-
 .form-style-8 input[type="button"]{
     -moz-box-shadow: inset 0px 1px 0px 0px #45D6D6;
     -webkit-box-shadow: inset 0px 1px 0px 0px #45D6D6;
@@ -430,25 +424,22 @@ ul .nav .navbar-nav .navbar-right>a{
     background-color:#34CACA;
 }
 
+
 /****************************************
 *********FOOTER*************
 ****************************************/
-
 footer{
     padding: 10px 0;
     background-color: #025d70;
     color: #ffffff;
     font-size: 14px;
 }
-
 .fa{
     padding-right: 10px;
-   }
-
+}
 footer a{
     color: white;
 }
-
 footer a:hover{
     color: #C14E5F;
 }

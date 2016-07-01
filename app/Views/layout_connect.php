@@ -39,7 +39,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand page-scroll" href="#page-top">
+                <a class="navbar-brand page-scroll" href="#top">
                 <img alt="Brand" src="..."></a>
             </div>
 
@@ -55,16 +55,16 @@
                         <ul class="dropdown-menu">
                             <li><a href="#">Saint-Pierre</a></li>
                             <li><a href="#">Saint-Paul</a></li>
-                            <li><a href="#">Bastide</a></li>
-                            <li><a href="#">Chartrons</a></li>
-                            <li><a href="#">Victoire</a></li>
                         </ul>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#about">Carte</a>
+                        <a class="page-scroll" href="#map">Carte</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="#contact">Contact</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#newsletter">Newsletter</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="<?=$this->url('default_home');?>?deconnect=1">Déconnexion</a>

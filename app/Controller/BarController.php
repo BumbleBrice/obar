@@ -36,6 +36,7 @@ class BarController extends Controller
 			// On instancie la classe barModel qui étend la classe Model
 			$barModel = new barModel();
 
+			$post = [];
 			$errors = [];
 			$success = false;
 
@@ -222,7 +223,7 @@ class BarController extends Controller
 			}
 
 			// On envoie les erreurs en paramètre à l'aide d'un tableau (array)
-			$params = ['errors' => $errors, 'success' => $success , 'maxSize' => $maxSize];
+			$params = ['errors' => $errors, 'success' => $success , 'maxSize' => $maxSize, 'post' => $post];
 
 		$this->show('adminBar/bar_add', $params);
 	}
