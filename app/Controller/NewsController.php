@@ -16,6 +16,9 @@ class NewsController extends Controller
 	**/
 	public function news()
 	{
+		// On limite l'accé à la page aux utilisateurs authentifiés et à ceux dont le rôle est admin
+		$this->allowTo(['admin']);
+
 		$newsModel = new NewsModel();
 
 		$params = [];
@@ -30,8 +33,9 @@ class NewsController extends Controller
 
 	public function news_delete($id, $delNew)
 	{
-		// On limite l'accé à la page aux utilisateurs authentifiés et à ceux dont le rôle est admin ou éditor
-			/*$this->allowTo(['admin']);*/
+		 	//On limite l'accé à la page aux utilisateurs authentifiés et à ceux dont le rôle est admin ou éditor
+			$this->allowTo(['admin']);
+
 			$newsModel = new NewsModel();
 			$new = $newsModel->find($id);
 
@@ -50,7 +54,7 @@ class NewsController extends Controller
 	public function news_add()
 	{
 			// On limite l'accé à la page aux utilisateurs authentifiés et à ceux dont le rôle est admin
-			// $this->allowTo(['admin']);
+			$this->allowTo(['admin']);
 
 			// On instancie la classe newsModel qui étend la classe Model
 			$newsModel = new newsModel();
@@ -112,7 +116,8 @@ class NewsController extends Controller
 	public function news_edit($id)
 	{
 		// On limite l'accé à la page aux utilisateurs authentifiés et à ceux dont le rôle est admin ou éditor
-			/*$this->allowTo(['admin']);*/
+			$this->allowTo(['admin']);
+			
 			// On instancie la classe UsersModel qui étend la classe Model
 			$newsModel = new newsModel();
 
