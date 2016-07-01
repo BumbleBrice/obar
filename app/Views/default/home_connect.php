@@ -58,7 +58,7 @@
 
         <div class="row">
             <div class="col-md-12 text-center">
-                <a class="btn btn-default" href="<?=$this->url('default_profil_membre');?>">Modififer mon profil</a>
+                <a class="btn btn-default" href="<?=$this->url('default_profil_membre', ['id' => $w_user['id']]);?>">Modifier mon profil</a>
                 <p class="subheading ">Vos ami(e)s !</p>
             </div>
         </div>
@@ -312,8 +312,6 @@
 <?php endif; ?>
 </section>
 
-<?php endif; ?>
-
 <!-- Newsletter -->
 <section id="newsletter" class="newsletter">
     <div class="container-fluid">
@@ -339,6 +337,8 @@
         </div>
     </div>
 </section>
+<?php endif; ?>
+
 
 <!-- Footer -->
 <footer>

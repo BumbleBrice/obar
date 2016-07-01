@@ -4,7 +4,7 @@
 		// Partie client
 		['GET|POST', '/', 'Default#home', 'default_home'],
 		['GET|POST', '/home_connect', 'Default#home_connect', 'default_home_connect'],
-		['GET|POST', '/profil_membre', 'Default#profil_membre', 'default_profil_membre'],
+		['GET|POST', '/profil_membre/[i:id]', 'Default#profil_membre', 'default_profil_membre'],
 
 		// Partie admin
 		['GET|POST', '/admin_home', 'Admin#home', 'admin_home'],

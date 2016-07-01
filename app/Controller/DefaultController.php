@@ -300,7 +300,7 @@ class DefaultController extends Controller
 		$this->show('default/confirm', $params);
 	}
 
-	public function profil_membre()
+	public function profil_membre($id)
 	{
 		// On limite l'accès à la page uniquement aux utilisateurs identifiés et à ceux dont le rôle est admin, soit editor
 		$this->allowTo(['user', 'admin']);
@@ -386,8 +386,8 @@ class DefaultController extends Controller
 				}
 
 				if(isset($post['firstname'])){
-					if(preg_match('#^.{1,}$#', $post['firstname']) == 0){
-						$errors[] = 'error firstname';
+					if(preg_match('#^[A-Z]{1}[A-Za-z0-9.-_]{3,20}$#', $post['firstname']) == 0){
+						$errors[] = 'Votre prénom est incorrect';
 					}
 					else{
 						$user_firstname = $post['firstname'];
@@ -395,8 +395,8 @@ class DefaultController extends Controller
 				}
 
 				if(isset($post['lastname'])){
-					if(preg_match('#^.{1,}$#', $post['lastname']) == 0){
-						$errors[] = 'error lastname';
+					if(preg_match('#^[A-Z]{1}[A-Za-z0-9.-_]{3,20}$#', $post['lastname']) == 0){
+						$errors[] = 'Votre nom est incorrect';
 					}
 					else{
 						$user_lastname = $post['lastname'];
@@ -405,7 +405,7 @@ class DefaultController extends Controller
 
 				if(isset($post['email'])){
 					if(preg_match('#^.{1,}$#', $post['email']) == 0){
-						$errors[] = 'error email';
+						$errors[] = 'Votre email est incorrect';
 					}
 					else{
 						$user_email = $post['email'];
@@ -414,7 +414,7 @@ class DefaultController extends Controller
 
 				if(isset($post['picture'])){
 					if(preg_match('#^.{1,}$#', $post['picture']) == 0){
-						$errors[] = 'error picture';
+						$errors[] = 'Veuillez insérer une image';
 					}
 					else{
 						$user_picture = $post['picture'];
