@@ -335,7 +335,7 @@ class BarController extends Controller
 				}
 
 				if(isset($post['content'])){
-					if(preg_match('#^.{1,}$#', $post['content']) == 0 && !empty($post['content'])){
+					if(preg_match('#^(.){1,}||(\r){1,}$#', $post['content']) == 0 && !empty($post['content'])){
 						$errors[] = 'error content';
 					}
 					else{
