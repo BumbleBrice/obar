@@ -196,15 +196,15 @@ class DefaultController extends Controller
 		$pointQuartiers = [
 			[
 				'x' => '45',
-				'y' => '35',
-				'name' => '4535 bar',
-				'quartier' => 'saintpierre'
+				'y' => '52',
+				'name' => 'Saint Pierre',
+				'quartier' => 'Saint Pierre'
 			],
 			[
-				'x' => '25',
-				'y' => '55',
-				'name' => '2555 bar',
-				'quartier' => 'saintpaul'
+				'x' => '46',
+				'y' => '59',
+				'name' => 'Saint Paul',
+				'quartier' => 'Saint Paul'
 			]
 		];
 
