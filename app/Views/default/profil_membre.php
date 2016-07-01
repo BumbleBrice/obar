@@ -2,7 +2,7 @@
 
 <?php $this->start('main_content') ?>
 
-<section id="subs" class="subs">
+<section id="profil" class="profil">
     <div class="container-fluid">
         <div class="row text-center">
             <div class="col-lg-10 col-lg-offset-1">
@@ -21,29 +21,30 @@
                         <strong>Félicitations!</strong> Vos modifications ont bien été enregistrées.
                     </div>
                 <?php else: ?>
+
                 <form class="form-horizontal" method="POST">
                     <div class="form-group">
                         <label for="nickname" class="hidden-xs col-sm-2 control-label">Pseudo</label>
                         <div class="col-sm-10">
-                        <input type="text" class="form-control" id="nickname" name="nickname" placeholder="Pseudo">
+                        <input type="text" class="form-control" id="nickname" name="nickname" placeholder="Pseudo" value="<?=$w_user['nickname'] ?>">
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="firstname" class="hidden-xs col-sm-2 control-label">Prénom</label>
                         <div class="col-sm-10">
-                        <input type="text" class="form-control" id="firstname" name="firstname" placeholder="Prénom">
+                        <input type="text" class="form-control" id="firstname" name="firstname" placeholder="Prénom" value="<?=$w_user['firstname'] ?>">
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="lastname" class="hidden-xs col-sm-2 control-label">Nom</label>
                         <div class="col-sm-10">
-                        <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Nom">
+                        <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Nom" value="<?=$w_user['lastname'] ?>">
                     </div>
 
                     <div class="form-group">
                         <label for="email" class="hidden-xs col-sm-2 control-label">Email</label>
                         <div class="col-sm-10">
-                        <input type="email" class="form-control" id="email" name="email" placeholder="Email">
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Email" value="<?=$w_user['email'] ?>">
                         </div>
                     </div>
 
