@@ -24,9 +24,9 @@
 
 		<div class="text-center">
 			<a class="btnDeleteBar" href="<?=$this->url('admin_news'); ?>">Non</a>
-			<a class="btnDeleteBar" href="<?=$this->url('admin_news_delete', ['id' => $new['id'], 'delNew' => 'Oui']); ?>">Oui</a>
+			<a class="btnDeleteBar" href="<?=$this->url('admin_news_delete', ['id' => $new['id'], 'delNews' => 'Oui']); ?>">Oui</a>
 		</div>
-	
+
 	<?php else: ?>
 		<p>La news n'existe pas</p>
 	<?php endif ?>
