@@ -454,5 +454,55 @@ class DefaultController extends Controller
 		$this->show('default/profil_membre', $params);
 	}
 
+	public function barDetail(){
+	    $barModel = new Bar();
+
+	    if(!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {
+	      if(!empty($_POST)){
+	        $post = array_map('trim', array_map('strip_tags', $_POST));
+
+	        if(isset($post['id'])){
+	          if($bar = $barModel->find($post['id'])){
+	            echo '
+	            <div class="container-fluid">
+	              <div class="btn closeToggle btn-default"><a href="#">X</a></div><br>
+	              <div class="row">
+	                <div class="col-md-12 text-center">
+	                  <h2 class="section-heading">Le Wine Bar...</h2>
+	                  <a class="btn btn-default" href="#formulaire">Editer les infos du bar</a><br>
+	                </div>
+	              </div>
+	              <div class="row">
+	                <div class="col-lg-12 barStyle">
+	                  <img class="img-circle img-responsive" src="'.$bar['picture'].'" alt="">
+	                </div>
+	              </div>
+	              <div class="row">
+	                <div class="col-lg-12">
+	                  <p class="text-left"><span class="titleInfBar">Adresse : </span><span class="infoBar">'.$bar['adress'].'</span></p>
+	                  <p class="text-left"><span class="titleInfBar">Télephone : </span><span class="infoBar">'.$bar['phone'].'</span></p>
+	                  <p class="text-left"><span class="titleInfBar">Horaire : </span><span class="infoBar">'.$bar['scheduleOpen'].'</span></p>
+	                  <p class="text-left"><span class="titleInfBar">Thème : </span><span class="infoBar">aze</span></p>
+	                  <a class="btn btn-default" href="'.$bar['google_url'].'">Se rendre au '.$bar['name'].'</a>
+	                  <a class="btn btn-default" href="'.$bar['url'].'">Se rendre sur le site du bar '.$bar['name'].'</a>
+	                </div>
+	              </div>
+	            </div>
+	            ';
+	          }
+	          else{
+	            echo 'Le Bar n\'exist pas.';
+	          }
+	        }
+	        else{
+	          echo 'Le Bar n\'exist pas.';
+	        }
+	      }
+    }
+    else{
+      $this->show('w_errors/404');
+    }
+  }
+
 }
 ?>
