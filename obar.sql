@@ -83,7 +83,7 @@ CREATE TABLE `contact` (
 
 CREATE TABLE `news` (
   `id` int(11) NOT NULL,
-  `what` enum('nouveau','evenement') NOT NULL,
+  `what` varchar(255) NOT NULL,
   `bar` varchar(255) NOT NULL,
   `msg` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
