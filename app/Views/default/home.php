@@ -116,7 +116,7 @@
           <?php if($quartiers == 'aucain'): ?>
             <?php foreach($pointQuartiers as $point): ?>
               <div style=" left: <?=$point['x']?>%; top: <?=$point['y']?>%;" class="btBar">
-                <a class="" href="<?=$this->url('default_home')?>?quartiers=<?=$point['quartier']?>" > 
+                <a class="" href="<?=$this->url('default_home')?>?quartiers=<?=$point['quartier']?>" >
                   <i class="fa fa-beer fa-2x text-center" aria-hidden="true"></i><br>
                   <span class="btBarHover"><?=$point['name']?></span>
                 </a>
@@ -127,7 +127,7 @@
             <img src="<?=$this->assetUrl('img/Quartier-saint_pierre.svg'); ?>" alt="Le Quartier Saint Pierre" class="img-responsive">
           <?php elseif($quartiers == 'saintpaul'): ?>
             <img src="<?=$this->assetUrl('img/Quartier-saint_paul.svg'); ?>" alt="Le Quartier Saint Paul" class="img-responsive">
-			<div id="toggle" style="position: relative;">
+			<div id="toggle" style="position: absolute;top: 0px;left: 0px"> 
 				<div class="container-fluid">
 					<div class="btn closeToggle btn-default"><a href="#">X</a></div><br>
 					<div class="row">
