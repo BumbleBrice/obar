@@ -210,14 +210,17 @@ class DefaultController extends Controller
 						}
 					}
 
-					if(count($errors) == 0){
-						$messageController->addMessage($post['ct_firstname'], $post['ct_lastname'], $post['ct_email'], $post['ct_msg']);
-						$success['contact'] = true;
+					if(count($errors['contact']) == 0){
+						if($messageController->addMessage($post['ct_firstname'], $post['ct_lastname'], $post['ct_email'], $post['ct_msg'])){
+							$success['contact'] = true;
+						}
+						else{
+							$errors['contact'][] = 'Erreur lors de l\'envoie du message';
+						}
 					}
 				}
 			} //end if(isset($post['form']
 		} //end $_POST
-
 
 		// On envoi les erreurs en paramètre à l'aide d'un tableau (array)
 		$params = ['quartiers' => $quartiers, 'errors' => $errors, 'success' => $success, 'bars' => $barModel->findAll(), 'lastbars' => $newsModel->findAll('id', 'DESC', 3), 'infos' => $presentationModel->find(1)];
