@@ -131,12 +131,14 @@ class DefaultController extends Controller
 							if($usersModel->insert($data)){
 								$token = md5(uniqid()); // On créer le token
 
+								$iduser = $usersModel->getUserByUsernameOrEmail($post['email'])['id'];
+
 								$data = [
 									'email' => $post['email'],
 									'date' => date('Y-m-d H:i:s'),
 									'date_exp' => date('Y-m-d H:i:s', strtotime('+ 5 min')),
 									'token' => $token,
-									'idUser' => $usersModel->lastInsertId()
+									'idUser' => $iduser
 								];
 
 								if($confirmation->insert($data)){// ajout du token en bdd
@@ -289,9 +291,10 @@ class DefaultController extends Controller
 			$data = [
 				'confirm' => '1'
 			];
+			
 			if($usersModel->update($data, $tokenGet['idUser'])){
 				if($confirmation->delete($tokenGet['id'])){
-					$params['success'] = true;
+					$this->redirectToRoute('default_home');
 				}
 			}
 		}
