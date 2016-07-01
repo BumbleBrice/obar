@@ -4,7 +4,7 @@
 		// Partie client
 		['GET|POST', '/', 'Default#home', 'default_home'],
 		['GET|POST', '/home_connect', 'Default#home_connect', 'default_home_connect'],
-		['GET|POST', '/profil_membre', 'Default#profil_membre', 'default_profil_membre'],
+		['GET|POST', '/profil_membre/[i:id]', 'Default#profil_membre', 'default_profil_membre'],
 
 		// Partie admin
 		['GET|POST', '/admin_home', 'Admin#home', 'admin_home'],
@@ -31,10 +31,13 @@
 		['GET|POST', '/admin_news_edit/[i:id]', 'News#news_edit', 'admin_news_edit'],
 		['GET|POST', '/admin_news_delete/[i:id][:delNews]', 'News#news_delete', 'admin_news_delete'],
 
-		// partie confimation token 
+		// partie confimation token
 		['GET|POST', '/confirm/[:token]', 'Default#inscriptionConfirm', 'default_inscriptionConfirm'],
 		['GET|POST', '/lostpassword/[:token]', 'Password#resetPassword', 'LostPassword_resetPassword'],
-		['GET|POST', '/lostpassword', 'Password#lostPassword', 'LostPassword_lostPassword']
+		['GET|POST', '/lostpassword', 'Password#lostPassword', 'LostPassword_lostPassword'],
+
+		// ajax
+    	['GET|POST', '/bar_detail', 'Default#barDetail', 'Default_barDetail'],
 
 
 

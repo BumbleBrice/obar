@@ -63,15 +63,15 @@
                             <div class="form-group">
                                 <label for="picture">Avatar de l'utilisateur</label>
                                 <input type="hidden" name="MAX_FILE_SIZE" value="<?=$maxSize; ?>">
-                                <input type="file" name="picture" id="picture" class="filestyle" data-badge="false">
+                                <input type="file" name="picture" id="picture" class="filestyle" data-badge="false" value="<?=$user['picture'] ?>">
                             </div>
 
                             <div class="form-group">
                                 <label for="role">Rôle</label>
                                 <select name="role" id="role">
-                                	<option value="user">User</option>
-                                	<option value="owner">Owner</option>
-                                	<option value="admin">Admin</option>
+                                	<option value="user" <?php if($user['role'] == 'user'){echo 'selected';} ?> >User</option>
+                                	<option value="owner" <?php if($user['role'] == 'owner'){echo 'selected';} ?> >Owner</option>
+                                	<option value="admin" <?php if($user['role'] == 'admin'){echo 'selected';} ?> >Admin</option>
                                 </select>
                             </div>
 

@@ -39,17 +39,11 @@
                             <input type="hidden" name="y" value="<?=$bar['y'] ?>">
 
                             <div class="form-group">
-                                
+
                                 <label for="quartiers" class="display_block">Quartiers</label>
 
-                                <input type="button" name="quartiers" id="quartiers" class="form-control champQuartierAddBar" value="saintpierre">
-                                <input type="button" name="quartiers" id="quartiers" class="form-control champQuartierAddBar" value="saintpaul">
-                                <input type="button" name="quartiers" id="quartiers" class="form-control champQuartierAddBar" value="quinconces">
-                                <input type="button" name="quartiers" id="quartiers" class="form-control champQuartierAddBar" value="meriadeck">
-                                <input type="button" name="quartiers" id="quartiers" class="form-control champQuartierAddBar" value="gambetta">
-                                <input type="button" name="quartiers" id="quartiers" class="form-control champQuartierAddBar" value="hoteldeville">
-                                <input type="button" name="quartiers" id="quartiers" class="form-control champQuartierAddBar" value="saintmichel">
-                                
+                                <label  id="quartiers" class="radio-inline quartierAddBar"><input type="radio" name="quartiers" value="saintpierre" <?php if($bar['quartiers'] == 'saintpierre'){echo 'checked';}?>>Saint Pierre</label>
+                                <label  id="quartiers" class="radio-inline quartierAddBar"><input type="radio" name="quartiers" value="saintpaul" <?php if($bar['quartiers'] == 'saintpaul'){echo 'checked';}?>>Saint Paul</label>
                             </div>
 
                             <div class="form-group">
@@ -60,7 +54,7 @@
                             <div class="form-group">
                                 <label for="picture">Image du bar</label>
                                 <input type="hidden" name="MAX_FILE_SIZE" value="<?=$maxSize; ?>">
-                                <input type="file" name="picture" id="picture" class="filestyle" data-badge="false" value="<?=$bar['picture'] ?>">
+                                <input type="file" name="picture" id="picture" class="filestyle" data-badge="false">
                             </div>
 
                             <div class="form-group">
@@ -81,26 +75,30 @@
                             <div class="form-group">
                                 <label for="schedule">Jour d'ouverture</label><br><br>
 
+								<?php
+								 	$jour = explode(', ',$bar['schedule']);
+								?>
+
                                 <label class="checkbox-inline">
-                                    <input type="checkbox" name="dayLundi" id="inlineCheckbox1" value="lundi"> Lundi
+                                    <input type="checkbox" name="dayLundi" id="inlineCheckbox1" value="lundi" <?php if(in_array('Lundi', $jour)){echo 'checked';}?>> Lundi
                                 </label>
                                 <label class="checkbox-inline">
-                                    <input type="checkbox" name="dayMardi" id="inlineCheckbox2" value="mardi"> Mardi
+                                    <input type="checkbox" name="dayMardi" id="inlineCheckbox2" value="mardi" <?php if(in_array('Mardi', $jour)){echo 'checked';}?>> Mardi
                                 </label>
                                 <label class="checkbox-inline">
-                                    <input type="checkbox" name="dayMercredi" id="inlineCheckbox3" value="mercredi"> Mercredi
+                                    <input type="checkbox" name="dayMercredi" id="inlineCheckbox3" value="mercredi" <?php if(in_array('Mercredi', $jour)){echo 'checked';}?>> Mercredi
                                 </label>
                                 <label class="checkbox-inline">
-                                    <input type="checkbox" name="dayJeudi" id="inlineCheckbox4" value="jeudi"> Jeudi
+                                    <input type="checkbox" name="dayJeudi" id="inlineCheckbox4" value="jeudi" <?php if(in_array('Jeudi', $jour)){echo 'checked';}?>> Jeudi
                                 </label>
                                 <label class="checkbox-inline">
-                                    <input type="checkbox" name="dayVendredi" id="inlineCheckbox5" value="vendredi"> Vendredi
+                                    <input type="checkbox" name="dayVendredi" id="inlineCheckbox5" value="vendredi" <?php if(in_array('Vendredi', $jour)){echo 'checked';}?>> Vendredi
                                 </label>
                                 <label class="checkbox-inline">
-                                    <input type="checkbox" name="daySamedi" id="inlineCheckbox6" value="samedi"> Samedi
+                                    <input type="checkbox" name="daySamedi" id="inlineCheckbox6" value="samedi" <?php if(in_array('Samedi', $jour)){echo 'checked';}?>> Samedi
                                 </label>
                                 <label class="checkbox-inline">
-                                    <input type="checkbox" name="dayDimanche" id="inlineCheckbox7" value="dimanche"> Dimanche
+                                    <input type="checkbox" name="dayDimanche" id="inlineCheckbox7" value="dimanche" <?php if(in_array('Dimanche', $jour)){echo 'checked';}?>> Dimanche
                                 </label>
                             </div>
 
@@ -123,14 +121,8 @@
 
                     <div class="col-lg-1"></div>
 
-                    <div class="col-lg-5 carte">
-
-                    	<div class="map">
-
-                    		<!-- Carte -->
-
-                    	</div>
-
+                	<div class="carte">
+                        <img src="<?=$this->assetUrl('img/Quartier-saint_pierre.svg'); ?>" alt="Carte Quartier Saint Pierre" class="img-responsive">
                     </div>
 
                     <div class="col-lg-1"></div>
@@ -147,3 +139,8 @@
 <!-- /.row -->
 
 <?php $this->stop('main_content') ?>
+
+<?php $this->start('js'); ?>
+    <script src="<?=$this->assetUrl('js/carteAdd.js');?>">
+    </script>
+<?php $this->stop('js'); ?>

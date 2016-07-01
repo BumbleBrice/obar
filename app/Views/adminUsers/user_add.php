@@ -3,28 +3,56 @@
 <?php $this->start('main_content'); ?>
 
 <div class="row">
-	<div class="col-lg-12 text-center">
-		<h1>Ajouter un utilisateur</h1>
-	</div>
+    <div class="col-lg-12 text-center">
+        <h1>Ajouter un utilisateur</h1>
+    </div>
 </div>
 
 <br><br>
 
 <?php if(!empty($errors)): ?>
-	<div class="alert alert-danger">
-		<ul>
-		<?php foreach($errors as $er): ?>
-			<li><?=$er;?></li>
-		<?php endforeach; ?>
-		</ul>
-	</div>
+    <div class="alert alert-danger">
+        <ul>
+        <?php foreach($errors as $er): ?>
+            <li><?=$er;?></li>
+        <?php endforeach; ?>
+        </ul>
+    </div>
 <?php endif; ?>
 
 <?php if(isset($success) && $success == true): ?>
-	<div class="alert alert-success">Votre utilisateur a été ajouté</div>
+    <div class="alert alert-success">Votre utilisateur a été ajouté</div>
 <?php else: ?>
 
 <?php endif; ?>
+
+<?php 
+
+if(isset($post['nickname']) && !empty($post['nickname'])){
+    $nickname = $post['nickname'];
+}
+else {
+    $nickname = '';
+}
+if(isset($post['firstname']) && !empty($post['firstname'])){
+    $firstname = $post['firstname'];
+}
+else {
+    $firstname = '';
+}
+if(isset($post['lastname']) && !empty($post['lastname'])){
+    $lastname = $post['lastname'];
+}
+else {
+    $lastname = '';
+}
+if(isset($post['email']) && !empty($post['email'])){
+    $email = $post['email'];
+}
+else {
+    $email = '';
+}
+?>
 
 <div class="row divFormAddBar">
     <div class="col-lg-12">
@@ -37,22 +65,22 @@
 
                             <div class="form-group">
                                 <label for="nickname">Pseudo</label>
-                                <input type="text" name="nickname" id="nickname" class="form-control champTxtAddBar">
+                                <input type="text" name="nickname" id="nickname" class="form-control champTxtAddBar" value="<?= $nickname ?>">
                             </div>
 
                             <div class="form-group">
                                 <label for="firstname">Prénom</label>
-                                <input type="text" name="firstname" id="firstname" class="form-control champTxtAddBar">
+                                <input type="text" name="firstname" id="firstname" class="form-control champTxtAddBar" value="<?= $firstname ?>">
                             </div>
 
                             <div class="form-group">
                                 <label for="lastname">Nom</label>
-                                <input type="text" name="lastname" id="lastname" class="form-control champTxtAddBar">
+                                <input type="text" name="lastname" id="lastname" class="form-control champTxtAddBar" value="<?= $lastname ?>">
                             </div>
 
                             <div class="form-group">
                                 <label for="email">Email</label>
-                                <input type="email" name="email" id="email" class="form-control champTxtAddBar">
+                                <input type="email" name="email" id="email" class="form-control champTxtAddBar" value="<?= $email ?>">
                             </div>
 
                             <div class="form-group">
@@ -69,9 +97,9 @@
                             <div class="form-group">
                                 <label for="role">Rôle</label>
                                 <select name="role" id="role">
-                                	<option value="user">User</option>
-                                	<option value="owner">Owner</option>
-                                	<option value="admin">Admin</option>
+                                    <option value="user">User</option>
+                                    <option value="owner">Owner</option>
+                                    <option value="admin">Admin</option>
                                 </select>
                             </div>
 
@@ -97,6 +125,6 @@
 <?php $this->stop('main_content'); ?>
 
 <?php $this->start('js'); ?>
-	<script src="<?=$this->assetUrl('js/carteAdd.js');?>">
-	</script>
+    <script src="<?=$this->assetUrl('js/carteAdd.js');?>">
+    </script>
 <?php $this->stop('js'); ?>

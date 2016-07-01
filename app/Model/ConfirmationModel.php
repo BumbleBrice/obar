@@ -16,7 +16,7 @@ class ConfirmationModel extends \W\model\Model
 	public function tokenOk($token){
 		$bdd = $this->dbh;
 
-		$res = $bdd->prepare('SELECT * FROM token_pswd where token = :token AND date_exp > now()');
+		$res = $bdd->prepare('SELECT * FROM token_confirm where token = :token AND date_exp > now()');
 		$res->bindValue(':token', $token);
 
 		if($res->execute()){

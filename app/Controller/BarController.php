@@ -16,7 +16,7 @@ class BarController extends Controller
 	public function bar_list()
 	{
 		// On limite l'accé à la page aux utilisateurs authentifiés et à ceux dont le rôle est admin
-		/*$this->allowTo(['admin']);*/
+		$this->allowTo(['admin']);
 
 		$barModel = new barModel();
 
@@ -31,11 +31,12 @@ class BarController extends Controller
 	public function bar_add()
 	{
 			// On limite l'accé à la page aux utilisateurs authentifiés et à ceux dont le rôle est admin
-			// $this->allowTo(['admin']);
+			$this->allowTo(['admin']);
 
 			// On instancie la classe barModel qui étend la classe Model
 			$barModel = new barModel();
 
+			$post = [];
 			$errors = [];
 			$success = false;
 
@@ -222,7 +223,7 @@ class BarController extends Controller
 			}
 
 			// On envoie les erreurs en paramètre à l'aide d'un tableau (array)
-			$params = ['errors' => $errors, 'success' => $success , 'maxSize' => $maxSize];
+			$params = ['errors' => $errors, 'success' => $success , 'maxSize' => $maxSize, 'post' => $post];
 
 		$this->show('adminBar/bar_add', $params);
 	}
@@ -232,8 +233,8 @@ class BarController extends Controller
 	**/
 	public function bar_edit($id)
 	{
-		// On limite l'accé à la page aux utilisateurs authentifiés et à ceux dont le rôle est admin ou éditor
-			/*$this->allowTo(['admin']);*/
+			// On limite l'accé à la page aux utilisateurs authentifiés et à ceux dont le rôle est admin ou éditor
+			$this->allowTo(['admin']);
 			// On instancie la classe UsersModel qui étend la classe Model
 			$barModel = new barModel();
 
@@ -306,21 +307,21 @@ class BarController extends Controller
 					$post[$key] = trim(strip_tags($value));
 				}
 
-				if(isset($post['name'])){
-					if(preg_match('#^.{1,}$#', $post['name']) == 0 && !empty($post['name'])){
-						$errors[] = 'error name';
-					}
-					else{
-						$bar_name = $post['name'];
-					}
-				}
-
 				if(isset($post['quartiers'])){
 					if(preg_match('#^.{1,}$#', $post['quartiers']) == 0 && !empty($post['quartiers'])){
 						$errors[] = 'error quartiers';
 					}
 					else{
 						$bar_name = $post['quartiers'];
+					}
+				}
+
+				if(isset($post['name'])){
+					if(preg_match('#^.{1,}$#', $post['name']) == 0 && !empty($post['name'])){
+						$errors[] = 'error name';
+					}
+					else{
+						$bar_name = $post['name'];
 					}
 				}
 
@@ -334,7 +335,7 @@ class BarController extends Controller
 				}
 
 				if(isset($post['content'])){
-					if(preg_match('#^.{1,}$#', $post['content']) == 0 && !empty($post['content'])){
+					if(preg_match('#^(.){1,}||(\r){1,}$#', $post['content']) == 0 && !empty($post['content'])){
 						$errors[] = 'error content';
 					}
 					else{
@@ -361,7 +362,7 @@ class BarController extends Controller
 				}
 
 				if(isset($post['x'])){
-					if(preg_match('#^[0-9]{1,}$#', $post['x']) == 0 && !empty($post['x'])){
+					if(preg_match('#^.{1,}$#', $post['x']) == 0 && !empty($post['x'])){
 						$errors[] = 'error x';
 					}
 					else{
@@ -370,7 +371,7 @@ class BarController extends Controller
 				}
 
 				if(isset($post['y'])){
-					if(preg_match('#^[0-9]{1,}$#', $post['y']) == 0  && !empty($post['y'])){
+					if(preg_match('#^.{1,}$#', $post['y']) == 0  && !empty($post['y'])){
 						$errors[] = 'error y';
 					}
 					else{
@@ -392,7 +393,7 @@ class BarController extends Controller
 				}
 
 				if(isset($post['scheduleOpen'])){
-					if(preg_match('#^[0-9:]{1,}$#', $post['scheduleOpen']) == 0 && !empty($post['scheduleOpen'])){
+					if(preg_match('#^.{1,}$#', $post['scheduleOpen']) == 0 && !empty($post['scheduleOpen'])){
 						$errors[] = 'error scheduleOpen';
 					}
 					else{
@@ -460,7 +461,7 @@ class BarController extends Controller
 			}
 
 			// On envoie les erreurs en paramètre à l'aide d'un tableau (array)
-			$params = ['errors' => $errors, 'success' => $success, 'bar' => $barModel->find($id), 'maxSize' => $maxSize];
+			$params = ['errors' => $errors, 'success' => $success, 'bar' => $barModel->find($id), 'maxSize' => $maxSize, 'post' => $post];
 
 		$this->show('adminBar/bar_edit', $params);
 	}
@@ -470,8 +471,8 @@ class BarController extends Controller
 	**/
 	public function bar_delete($id, $delBar)
 	{
-		// On limite l'accé à la page aux utilisateurs authentifiés et à ceux dont le rôle est admin ou éditor
-			/*$this->allowTo(['admin']);*/
+			// On limite l'accé à la page aux utilisateurs authentifiés et à ceux dont le rôle est admin ou éditor
+			$this->allowTo(['admin']);
 			$barModel = new barModel();
 			$bar = $barModel->find($id);
 

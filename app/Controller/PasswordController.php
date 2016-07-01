@@ -89,7 +89,7 @@ class PasswordController extends Controller
 							$data = [
 								'email' => $post['email'],
 								'date' => date('Y-m-d H:i:s'),
-								'date_exp' => date('Y-m-d H:i:s', strtotime('+ 5 min')),
+								'date_exp' => date('Y-m-d H:i:s', strtotime('+ 2 days')),
 								'token' => $token
 							];
 							if($lostPasswordModel->insert($data)){

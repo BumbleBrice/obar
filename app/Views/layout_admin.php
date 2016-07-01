@@ -99,7 +99,9 @@
         </nav>
 
     </aside>
-        <section class="contenu"><?= $this->section('main_content'); ?></section>
+<section class="contenu">
+        <?= $this->section('main_content'); ?>
+</section>
     </div>
 
     <script src="<?= $this->assetUrl('js/jquery.js'); ?>"></script>

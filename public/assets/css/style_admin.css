@@ -216,7 +216,7 @@ label {
 }
 
 .btnListBar:hover {
-	background: white;
+	background: #ECECEC;
 	color: #6D071A;
 	text-decoration: none;
 }
@@ -232,7 +232,7 @@ label {
 }
 
 .btnDeleteBar:hover {
-	background: white;
+	background: #ECECEC;
 	color: #6D071A;
 	border: 1px solid transparent;
 	text-decoration: none;
@@ -262,14 +262,17 @@ label {
 	border: 1px solid #6D071A;
 }
 
-.champQuartierAddBar {
-	display: inline-block;
+.quartierAddBar {
 	background: white;
 	color: #6D071A;
 	border: 1px solid #6D071A;
+	border-radius: 10px;
 	width: 27%;
 	height: 40px;
-	margin: 5px 5px 5px 5px;
+	margin-left: 10px;
+	margin-bottom: 10px;
+	padding-left: -20px;
+	text-decoration: none;
 }
 
 .champTxtAddBarHoraire {
@@ -524,11 +527,8 @@ label {
 @media(max-width:768px) {
 	.boutonRetourSite {
 		right: 15%;
-		
 	}
-
-
-	}
+}
 
 .boutonRetourSite:hover {
 	background: #6D071A !important;

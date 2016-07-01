@@ -37,37 +37,48 @@
 
 			<!-- Wrapper for slides -->
 			<div class="carousel-inner" role="listbox">
-				<div class="item active">
-					<h2><strong><?php echo $this->e($lastbars[0]['what']); ?></strong></h2>
-					<p>
-						<?=$lastbars[0]['bar']; ?>
-						<br>
-						<?=$lastbars[0]['msg']; ?>
-					</p>
-				</div>
-				<div class="item">
-			    	<h2><strong><?php echo $this->e($lastbars[1]['what']); ?></strong></h2>
-					<p>
-						<?=$lastbars[1]['bar']; ?>
-						<br>
-						<?=$lastbars[1]['msg']; ?>
-					</p>
-			    </div>
-
-			    <div class="item">
-			    	<h2><strong><?php echo $this->e($lastbars[2]['what']); ?></strong></h2>
-					<p>
-						<?=$lastbars[2]['bar']; ?>
-						<br>
-						<?=$lastbars[2]['msg']; ?>
-					</p>
-			    </div>
+				<?php if(isset($lastbars[0])): ?>
+					<div class="item active">
+						<h2><strong><?php echo $this->e($lastbars[0]['what']); ?></strong></h2>
+						<p>
+							<?=$lastbars[0]['bar']; ?>
+							<br>
+							<?=$lastbars[0]['msg']; ?>
+						</p>
+					</div>
+				<?php endif; ?>
+				<?php if(isset($lastbars[1])): ?>
+					<div class="item">
+				    	<h2><strong><?php echo $this->e($lastbars[1]['what']); ?></strong></h2>
+						<p>
+							<?=$lastbars[1]['bar']; ?>
+							<br>
+							<?=$lastbars[1]['msg']; ?>
+						</p>
+				    </div>
+				<?php endif; ?>
+				<?php if(isset($lastbars[2])): ?>
+				    <div class="item">
+				    	<h2><strong><?php echo $this->e($lastbars[2]['what']); ?></strong></h2>
+						<p>
+							<?=$lastbars[2]['bar']; ?>
+							<br>
+							<?=$lastbars[2]['msg']; ?>
+						</p>
+				    </div>
+				<?php endif; ?>
 			</div>
 			<!-- Indicators -->
 			<ol class="carousel-indicators">
-				<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-				<li data-target="#myCarousel" data-slide-to="1"></li>
-				<li data-target="#myCarousel" data-slide-to="2"></li>
+				<?php if(isset($lastbars[0])): ?>
+					<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+				<?php endif; ?>
+				<?php if(isset($lastbars[1])): ?>
+					<li data-target="#myCarousel" data-slide-to="1"></li>
+				<?php endif; ?>
+				<?php if(isset($lastbars[2])): ?>
+					<li data-target="#myCarousel" data-slide-to="2"></li>
+				<?php endif; ?>
 			</ol>
 
 			<!-- Left and right controls -->
@@ -85,93 +96,73 @@
 </section>
 
 <!-- Carte -->
-
 <section id="map" class="map">
 	<div class="container-fluid">
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-8 col-md-offset-2">
-            	<div class="text-center">
-            	<!-- remplacer par la boucle foreach des bars -->
-				 <div style=" left: 45%; top: 25%;" class="btBar">
-			        <a class="" href="#" id="toggler">
-			            <i class="fa fa-beer fa-2x text-center" aria-hidden="true"></i><br>
-			                <span class="btBarHover">Le Wine Bar1</span>
-			        </a>
-			    </div>
-			    <div style=" left: 35%; top: 75%;" class="btBar">
-			        <a class="" href="#" id="toggler">
-			            <i class="fa fa-beer fa-2x text-center" aria-hidden="true"></i><br>
-			                <span class="btBarHover">Le Wine Bar2</span>
-			        </a>
-			    </div>
-			    <div style=" left: 55%; top: 55%;" class="btBar">
-			        <a class="" href="#" id="toggler">
-			            <i class="fa fa-beer fa-2x text-center" aria-hidden="true"></i><br>
-			                <span class="btBarHover">Le Wine Bar3</span>
-			        </a>
-			    </div>
-			    <div style=" left: 25%; top: 85%;" class="btBar">
-			        <a class="" href="#" id="toggler">
-			            <i class="fa fa-beer fa-2x text-center" aria-hidden="true"></i><br>
-			                <span class="btBarHover">Le Wine Bar4</span>
-			        </a>
-			    </div>
-			    <div style=" left: 45%; top: 45%;" class="btBar">
-			        <a class="" href="#" id="toggler">
-			            <i class="fa fa-beer fa-2x text-center" aria-hidden="true"></i><br>
-			                <span class="btBarHover">Le Wine Bar5</span>
-			        </a>
-			    </div>
-			    <div style=" left: 65%; top: 35%;" class="btBar">
-			        <a class="" href="#" id="toggler">
-			            <i class="fa fa-beer fa-2x text-center" aria-hidden="true"></i><br>
-			                <span class="btBarHover">Le Wine Bar6</span>
-			        </a>
-			    </div>
-
-    <!-- Fin boucle bars -->
-
-				    <h2>Choisissez votre quartier</h2>
-				    <div id="toggle">
-					    <div class="container-fluid carte">
-					        <div class="btn closeToggle btn-default"><a href="#">X</a></div><br>
-					        <div class="row">
-					            <div class="col-md-12 text-center">
-					                <h2 class="section-heading">Le Wine Bar...</h2>
-					                <a class="btn btn-default" href="#formulaire">Editer les infos du bar</a><br>
-					            </div>
-					        </div>
-					        <div class="row">
-					            <div class="col-lg-12 barStyle">
-					                <img class="img-circle img-responsive" src="<?=$this->assetUrl('img/bar.jpg'); ?>" alt="">
-					            </div>
-					        </div>
-					        <div class="row">
-					            <div class="col-lg-12">
-					                <p class="text-left"><span class="titleInfBar">Adresse : </span><span class="infoBar">66 rue abbé de l'épee</span></p>
-					                <p class="text-left"><span class="titleInfBar">Télephone : </span><span class="infoBar">06 59 43 32 16</span></p>
-					                <p class="text-left"><span class="titleInfBar">Horaire : </span><span class="infoBar"> 11h à 14h </span><span class="titleInfBar">et de </span><span class="infoBar">17h à 01h</span></p>
-					                <p class="text-left"><span class="titleInfBar">Thème : </span><span class="infoBar">Bar à vins et bar à pute</span></p>
-					                <a class="btn btn-default" href="https://goo.gl/maps/dzu5DsMRkYt">Se rendre au Le Wine Bar</a>
-					            </div>
-					        </div>
-					    </div>
-					    <div class="clearfix"></div>
+		<!-- <div class="row">
+		<div class="col-xs-12 col-sm-12 col-md-8 col-md-offset-2"> -->
+		<?php if($quartiers == 'aucain'): ?>
+			<h2>Choisissez votre quartier</h2>
+		<?php elseif($quartiers == 'saintpierre'): ?>
+			<h2>Saint Pierre</h2>
+		<?php elseif($quartiers == 'saintpaul'): ?>
+			<h2>Saint Paul</h2>
+		<?php endif; ?>
+		<section class="carte" style="position: relative;width: 55%;height: 55%;margin-left: 22.5%">
+			<?php foreach($bars as $bar): ?>
+				<?php if($bar['quartiers'] == $quartiers): ?>
+					<div style=" left: <?=$bar['x']?>%; top: <?=$bar['y']?>%;" class="btBar">
+						<a class="" href="#" id="toggler" data-id="<?=$bar['id']?>">
+							<!-- <i class="fa fa-beer fa-2x text-center" aria-hidden="true"></i><br> -->
+							<span class="btBarHover"><?=$bar['name']?></span>
+						</a>
 					</div>
-	                <img src="<?=$this->assetUrl('img/les_quartiers-sans-villes.svg'); ?>" alt="Les Quartier de Bordeaux" class="img-responsive">
-              	</div>
-            </div>
-        </div>
-        <!-- /.row -->
-    </div>
-    <!-- /.container -->
-</section>
+				<?php endif; ?>
+			<?php endforeach; ?>
+			<?php if($quartiers == 'aucain'): ?>
+				<?php foreach($pointQuartiers as $point): ?>
+					<div style=" left: <?=$point['x']?>%; top: <?=$point['y']?>%;" class="btBar">
+						<a class="" href="<?=$this->url('default_home')?>?quartiers=<?=$point['quartier']?>" >
+							<!-- <i class="fa fa-beer fa-2x text-center" aria-hidden="true"></i><br> -->
+							<span class="btBarHover"><?=$point['name']?></span>
+						</a>
+					</div>
+				<?php endforeach; ?>
+				<img src="<?=$this->assetUrl('img/les_quartiers-sans-villes.svg'); ?>" alt="Les Quartiers de Bordeaux" class="img-responsive">
+			<?php elseif($quartiers == 'saintpierre'): ?>
+				<img src="<?=$this->assetUrl('img/Quartier-saint_pierre.svg'); ?>" alt="Le Quartier Saint Pierre" class="img-responsive">
+			<?php elseif($quartiers == 'saintpaul'): ?>
+				<img src="<?=$this->assetUrl('img/Quartier-saint_pierre.svg'); ?>" alt="Le Quartier Saint Paul" class="img-responsive">
+			<?php endif; ?>
+				<div id="toggle" style="position: absolute;top: 0px;left: 0px">
+					<div class="container-fluid">
+						<div class="btn closeToggle btn-default"><a href="#" id="closeToggle">X</a></div><br>
+						<section id="barToggle">
+							<div class="row">
+								<div class="col-md-12 text-center">
+									<h2 class="section-heading">Le Wine Bar...</h2>
+									<a class="btn btn-default" href="#formulaire">Editer les infos du bar</a><br>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-lg-12 barStyle">
+									<img class="img-circle img-responsive" src="<?=$this->assetUrl('img/bar.jpg'); ?>" alt="">
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-lg-12">
+									<p class="text-left"><span class="titleInfBar">Adresse : </span><span class="infoBar">66 rue abbé de l'épee</span></p>
+									<p class="text-left"><span class="titleInfBar">Télephone : </span><span class="infoBar">06 59 43 32 16</span></p>
+									<p class="text-left"><span class="titleInfBar">Horaire : </span><span class="infoBar"> 11h à 14h </span><span class="titleInfBar">et de </span><span class="infoBar">17h à 01h</span></p>
+									<p class="text-left"><span class="titleInfBar">Thème : </span><span class="infoBar">Bar à vins et bar à pute</span></p>
+									<a class="btn btn-default" href="https://goo.gl/maps/dzu5DsMRkYt">Se rendre au Le Wine Bar</a>
+								</div>
+							</div>
+							<div class="clearfix"></div>
+						</section>
+					</div>
+				</div>
+		</section>
 
-
-<!-- Profil bar -->
-<section>
-
-</section>
 <!-- Inscription -->
 <section id="subs" class="subs">
 	<div class="container-fluid">
@@ -191,7 +182,7 @@
 		            <?php if(isset($success['register']) && $success['register'] === true): ?>
 		                <div class="alert alert-success fade in">
 		                    <a href="#" class="close" data-dismiss="alert">&times;</a>
-		                    <strong>Félicitations!</strong> Votre message a bien été envoyé.
+		                    <strong>Félicitations!</strong> Vous avez reçu un email de confirmation a <?=$email_inscription?>.
 		                </div>
 		            <?php endif; ?>
 

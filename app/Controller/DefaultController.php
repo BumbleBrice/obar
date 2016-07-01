@@ -36,10 +36,8 @@ class DefaultController extends Controller
 		$success['inscription'] = false; // initialise le success inscription a false
 		$success['contact'] = false; // initialise le success contact a false
 
-		$quartiers = '';
-
-
-
+		$quartiers = 'aucain';
+		$email_inscription = '';
 
 		if(!empty($_GET)){
 			$get = array_map('trim', array_map('strip_tags', $_GET));
@@ -57,36 +55,6 @@ class DefaultController extends Controller
 			if(isset($get['quartiers'])){
 				if($get['quartiers'] == 'saintpaul'){
 					$quartiers = 'saintpaul';
-				}
-			}
-
-			if(isset($get['quartiers'])){
-				if($get['quartiers'] == 'quinconces'){
-					$quartiers = 'quinconces';
-				}
-			}
-
-			if(isset($get['quartiers'])){
-				if($get['quartiers'] == 'meriadeck'){
-					$quartiers = 'meriadeck';
-				}
-			}
-
-			if(isset($get['quartiers'])){
-				if($get['quartiers'] == 'gambetta'){
-					$quartiers = 'gambetta';
-				}
-			}
-
-			if(isset($get['quartiers'])){
-				if($get['quartiers'] == 'hoteldeville'){
-					$quartiers = 'hoteldeville';
-				}
-			}
-
-			if(isset($get['quartiers'])){
-				if($get['quartiers'] == 'saintmichel'){
-					$quartiers = 'saintmichel';
 				}
 			}
 		}
@@ -133,12 +101,14 @@ class DefaultController extends Controller
 							if($usersModel->insert($data)){
 								$token = md5(uniqid()); // On créer le token
 
+								$iduser = $usersModel->getUserByUsernameOrEmail($post['email'])['id'];
+
 								$data = [
 									'email' => $post['email'],
 									'date' => date('Y-m-d H:i:s'),
 									'date_exp' => date('Y-m-d H:i:s', strtotime('+ 5 min')),
 									'token' => $token,
-									'idUser' => $usersModel->lastInsertId()
+									'idUser' => $iduser
 								];
 
 								if($confirmation->insert($data)){// ajout du token en bdd
@@ -168,9 +138,10 @@ class DefaultController extends Controller
 									$mail->AltBody = 'changer d\'ébergeur d\'email';
 
 									if($mail->send()) {
-										$success['inscription'] = true;
+										$success['register'] = true;
+										$email_inscription = $post['email'];
 									} else {
-										$errors['register'][] = 'Erreur lors de l\'envoie du token.';
+										$errors['register'][] = 'Erreur lors de l\'envoie du mail de confirmation.';
 									}
 								}
 								else{
@@ -210,17 +181,44 @@ class DefaultController extends Controller
 						}
 					}
 
-					if(count($errors) == 0){
-						$messageController->addMessage($post['ct_firstname'], $post['ct_lastname'], $post['ct_email'], $post['ct_msg']);
-						$success['contact'] = true;
+					if(count($errors['contact']) == 0){
+						if($messageController->addMessage($post['ct_firstname'], $post['ct_lastname'], $post['ct_email'], $post['ct_msg'])){
+							$success['contact'] = true;
+						}
+						else{
+							$errors['contact'][] = 'Erreur lors de l\'envoie du message';
+						}
 					}
 				}
 			} //end if(isset($post['form']
 		} //end $_POST
 
+		$pointQuartiers = [
+			[
+				'x' => '45',
+				'y' => '52',
+				'name' => 'Saint Pierre',
+				'quartier' => 'Saint Pierre'
+			],
+			[
+				'x' => '46',
+				'y' => '59',
+				'name' => 'Saint Paul',
+				'quartier' => 'Saint Paul'
+			]
+		];
 
+	$params = [
+		'email_inscription' => $email_inscription,
+		'pointQuartiers' => $pointQuartiers,
+		'quartiers' => $quartiers,
+		'errors' => $errors,
+		'success' => $success,
+		'bars' => $barModel->findAll(),
+		'lastbars' => $newsModel->findAll('id', 'DESC', 3),
+		'infos' => $presentationModel->find(1)
+    ];
 		// On envoi les erreurs en paramètre à l'aide d'un tableau (array)
-		$params = ['quartiers' => $quartiers, 'errors' => $errors, 'success' => $success, 'bars' => $barModel->findAll(), 'lastbars' => $newsModel->findAll('id', 'DESC', 3), 'infos' => $presentationModel->find(1)];
 		$this->show('default/home', $params);
 	}
 
@@ -287,9 +285,10 @@ class DefaultController extends Controller
 			$data = [
 				'confirm' => '1'
 			];
+
 			if($usersModel->update($data, $tokenGet['idUser'])){
 				if($confirmation->delete($tokenGet['id'])){
-					$params['success'] = true;
+					$this->redirectToRoute('default_home');
 				}
 			}
 		}
@@ -301,7 +300,7 @@ class DefaultController extends Controller
 		$this->show('default/confirm', $params);
 	}
 
-	public function profil_membre()
+	public function profil_membre($id)
 	{
 		// On limite l'accès à la page uniquement aux utilisateurs identifiés et à ceux dont le rôle est admin, soit editor
 		$this->allowTo(['user', 'admin']);
@@ -387,8 +386,8 @@ class DefaultController extends Controller
 				}
 
 				if(isset($post['firstname'])){
-					if(preg_match('#^.{1,}$#', $post['firstname']) == 0){
-						$errors[] = 'error firstname';
+					if(preg_match('#^[A-Z]{1}[A-Za-z0-9.-_]{3,20}$#', $post['firstname']) == 0){
+						$errors[] = 'Votre prénom est incorrect';
 					}
 					else{
 						$user_firstname = $post['firstname'];
@@ -396,8 +395,8 @@ class DefaultController extends Controller
 				}
 
 				if(isset($post['lastname'])){
-					if(preg_match('#^.{1,}$#', $post['lastname']) == 0){
-						$errors[] = 'error lastname';
+					if(preg_match('#^[A-Z]{1}[A-Za-z0-9.-_]{3,20}$#', $post['lastname']) == 0){
+						$errors[] = 'Votre nom est incorrect';
 					}
 					else{
 						$user_lastname = $post['lastname'];
@@ -406,7 +405,7 @@ class DefaultController extends Controller
 
 				if(isset($post['email'])){
 					if(preg_match('#^.{1,}$#', $post['email']) == 0){
-						$errors[] = 'error email';
+						$errors[] = 'Votre email est incorrect';
 					}
 					else{
 						$user_email = $post['email'];
@@ -415,7 +414,7 @@ class DefaultController extends Controller
 
 				if(isset($post['picture'])){
 					if(preg_match('#^.{1,}$#', $post['picture']) == 0){
-						$errors[] = 'error picture';
+						$errors[] = 'Veuillez insérer une image';
 					}
 					else{
 						$user_picture = $post['picture'];
@@ -448,6 +447,53 @@ class DefaultController extends Controller
 		$params = ['profil' => $user, 'errors' => $errors, 'success' => $success, 'user' => $user, 'maxSize' => $maxSize];
 		$this->show('default/profil_membre', $params);
 	}
+
+	public function barDetail(){
+	    $barModel = new Bar();
+
+	    if(!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {
+	      if(!empty($_POST)){
+	        $post = array_map('trim', array_map('strip_tags', $_POST));
+
+	        if(isset($post['id'])){
+	          if($bar = $barModel->find($post['id'])){
+	            echo '
+	              <div class="row">
+	                <div class="col-md-12 text-center">
+	                  <h2 class="section-heading">'.$bar['name'].'</h2>
+	                </div>
+	              </div>
+	              <div class="row">
+	                <div class="col-lg-12 barStyle">
+	                  <img class="img-rounded img-responsive" src="'.$bar['picture'].'" alt="">
+	                </div>
+	              </div>
+	              <div class="row">
+	                <div class="col-lg-12">
+	                  <p class="text-left"><span class="titleInfBar">Adresse : </span><span class="infoBar">'.$bar['adress'].'</span></p>
+	                  <p class="text-left"><span class="titleInfBar">Télephone : </span><span class="infoBar">'.$bar['phone'].'</span></p>
+	                  <p class="text-left"><span class="titleInfBar">Horaire : </span><span class="infoBar">'.$bar['scheduleOpen'].'</span></p>
+	                  <p class="text-left"><span class="titleInfBar">Thème : </span><span class="infoBar">aze</span></p>
+					  <a class="btn btn-default" href="'.$bar['google_url'].'">Google map</a>
+					  <a class="btn btn-default" href="'.$bar['url'].'">Site du bar</a>
+	                </div>
+	              </div>
+				  <div class="clearfix"></div>
+	            ';
+	          }
+	          else{
+	            echo 'Le Bar n\'exist pas.';
+	          }
+	        }
+	        else{
+	          echo 'Le Bar n\'exist pas.';
+	        }
+	      }
+    }
+    else{
+      $this->show('w_errors/404');
+    }
+  }
 
 }
 ?>

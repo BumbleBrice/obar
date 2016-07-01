@@ -26,6 +26,59 @@
 
 <?php endif; ?>
 
+<?php 
+
+    if(isset($post['name']) && !empty($post['name'])){
+        $name = $post['name'];
+    }
+    else {
+        $name = '';
+    }
+    if(isset($post['picture']) && !empty($post['picture'])){
+        $picture = $post['picture'];
+    }
+    else {
+        $picture = '';
+    }
+    if(isset($post['content']) && !empty($post['content'])){
+        $content = $post['content'];
+    }
+    else {
+        $content = '';
+    }
+    if(isset($post['phone']) && !empty($post['phone'])){
+        $phone = $post['phone'];
+    }
+    else {
+        $phone = '';
+    }
+    if(isset($post['address']) && !empty($post['address'])){
+        $address = $post['address'];
+    }
+    else {
+        $address = '';
+    }
+    if(isset($post['schedule']) && !empty($post['schedule'])){
+        $schedule = $post['schedule'];
+    }
+    else {
+        $schedule = '';
+    }
+    if(isset($post['scheduleOpen']) && !empty($post['scheduleOpen'])){
+        $scheduleOpen = $post['scheduleOpen'];
+    }
+    else {
+        $scheduleOpen = '';
+    }
+    if(isset($post['url']) && !empty($post['url'])){
+        $url = $post['url'];
+    }
+    else {
+        $url = '';
+    }
+
+?>
+
 <div class="row divFormAddBar">
     <div class="col-lg-12">
         <div class="panel panel-default">
@@ -42,19 +95,20 @@
                                 
                                 <label for="quartiers" class="display_block">Quartiers</label>
 
-                                <input type="button" name="quartiers" id="quartiers" class="form-control champQuartierAddBar" value="saintpierre">
-                                <input type="button" name="quartiers" id="quartiers" class="form-control champQuartierAddBar" value="saintpaul">
-                                <input type="button" name="quartiers" id="quartiers" class="form-control champQuartierAddBar" value="quinconces">
-                                <input type="button" name="quartiers" id="quartiers" class="form-control champQuartierAddBar" value="meriadeck">
-                                <input type="button" name="quartiers" id="quartiers" class="form-control champQuartierAddBar" value="gambetta">
-                                <input type="button" name="quartiers" id="quartiers" class="form-control champQuartierAddBar" value="hoteldeville">
-                                <input type="button" name="quartiers" id="quartiers" class="form-control champQuartierAddBar" value="saintmichel">
+                                <label  id="quartiers" class="radio-inline quartierAddBar"><input type="radio" name="quartiers" value="saintpierre">Saint Pierre</label>
+                                <label  id="quartiers" class="radio-inline quartierAddBar"><input type="radio" name="quartiers" value="saintpaul">Saint Paul</label>
+                                <label  id="quartiers" class="radio-inline quartierAddBar"><input type="radio" name="quartiers" value="quinconces">Quinconces</label>
+                                <label  id="quartiers" class="radio-inline quartierAddBar"><input type="radio" name="quartiers" value="meriadeck">Meriadeck</label>
+                                <label  id="quartiers" class="radio-inline quartierAddBar"><input type="radio" name="quartiers" value="quinconces">Quinconces</label>
+                                <label  id="quartiers" class="radio-inline quartierAddBar"><input type="radio" name="quartiers" value="gambetta">Gambetta</label>
+                                <label  id="quartiers" class="radio-inline quartierAddBar"><input type="radio" name="quartiers" value="hoteldeville">Hôtel de ville</label>
+                                <label  id="quartiers" class="radio-inline quartierAddBar"><input type="radio" name="quartiers" value="saintmichel">Saint Michel</label>
                                 
                             </div>
 
                             <div class="form-group">
                                 <label for="name">Name</label>
-                                <input type="text" name="name" id="name" class="form-control champTxtAddBar">
+                                <input type="text" name="name" id="name" class="form-control champTxtAddBar" value="<?= $name ?>">
                             </div>
 
                             <div class="form-group">
@@ -65,17 +119,17 @@
 
                             <div class="form-group">
                                 <label for="content">Description</label>
-                                <textarea name="content" id="content" class="form-control champTxtAddBar" rows="3"></textarea>
+                                <textarea name="content" id="content" class="form-control champTxtAddBar" rows="3"><?= $content ?></textarea>
                             </div>
 
                             <div class="form-group">
                                 <label for="phone">Téléphone</label>
-                                <input type="tel" name="phone" id="phone" class="form-control champTxtAddBar">
+                                <input type="tel" name="phone" id="phone" class="form-control champTxtAddBar" value="<?= $phone ?>">
                             </div>
 
                             <div class="form-group">
                                 <label for="address">Adresse</label>
-                                <input type="text" name="address" id="address" class="form-control champTxtAddBar">
+                                <input type="text" name="address" id="address" class="form-control champTxtAddBar" value="<?= $address ?>">
                             </div>
 
                             <div class="form-group">
@@ -106,12 +160,12 @@
 
                             <div class="form-group">
                                 <label for="scheduleOpen">Horaire</label>
-                                <input type="text" name="scheduleOpen" id="scheduleOpen" class="form-control champTxtAddBar" placeholder="exemple : 8h30 à 12h00 et de 13h30 à 23h30">
+                                <input type="text" name="scheduleOpen" id="scheduleOpen" class="form-control champTxtAddBar" placeholder="exemple : 8h30 à 12h00 et de 13h30 à 23h30" value="<?= $scheduleOpen ?>">
                             </div>
 
                             <div class="form-group">
                                 <label for="url">Lien vers le site du bar</label>
-                                <input type="url" name="url" id="url" class="form-control champTxtAddBar" placeholder="www.MonSite.fr">
+                                <input type="url" name="url" id="url" class="form-control champTxtAddBar" placeholder="http://www.MonSite.fr" value="<?= $url ?>">
                             </div>
 
                             <br><br>
