@@ -34,7 +34,7 @@
 						<p class="typeListBar">Adresse :</p><p class="contentListBar"><?=$bar['adress']; ?></p>
 						<p class="typeListBar">Jour d'ouverture :</p><p class="contentListBar"><?=$bar['schedule']; ?></p>
 						<p class="typeListBar">Horaire d'ouverture :</p><p class="contentListBar"><?=$bar['scheduleOpen']; ?></p>
-						<p class="typeListBar">Lien vers le site :</p><p class="contentListBar"><?=$bar['url']; ?></p>
+						<p class="typeListBar">Lien vers le site :</p><a class="contentListBar" href="<?=$bar['url']; ?>"><?=$bar['url']; ?></a>
 					</div>				
 				</div>
 
