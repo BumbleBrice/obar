@@ -12,6 +12,8 @@ class PresentationController extends Controller
 
 	public function presentation_edit() 
 	{
+		$this->allowTo(['admin']);
+		
 		$presentationControl = new PresentationControl();
 
 		$params = [];
@@ -20,7 +22,5 @@ class PresentationController extends Controller
 
 		$this->show('adminHome/admin_presentation_edit', $params);
 	}
-		
-
 				
 }

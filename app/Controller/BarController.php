@@ -16,7 +16,7 @@ class BarController extends Controller
 	public function bar_list()
 	{
 		// On limite l'accé à la page aux utilisateurs authentifiés et à ceux dont le rôle est admin
-		/*$this->allowTo(['admin']);*/
+		$this->allowTo(['admin']);
 
 		$barModel = new barModel();
 
@@ -31,7 +31,7 @@ class BarController extends Controller
 	public function bar_add()
 	{
 			// On limite l'accé à la page aux utilisateurs authentifiés et à ceux dont le rôle est admin
-			// $this->allowTo(['admin']);
+			$this->allowTo(['admin']);
 
 			// On instancie la classe barModel qui étend la classe Model
 			$barModel = new barModel();
@@ -232,8 +232,8 @@ class BarController extends Controller
 	**/
 	public function bar_edit($id)
 	{
-		// On limite l'accé à la page aux utilisateurs authentifiés et à ceux dont le rôle est admin ou éditor
-			/*$this->allowTo(['admin']);*/
+			// On limite l'accé à la page aux utilisateurs authentifiés et à ceux dont le rôle est admin ou éditor
+			$this->allowTo(['admin']);
 			// On instancie la classe UsersModel qui étend la classe Model
 			$barModel = new barModel();
 
@@ -470,8 +470,8 @@ class BarController extends Controller
 	**/
 	public function bar_delete($id, $delBar)
 	{
-		// On limite l'accé à la page aux utilisateurs authentifiés et à ceux dont le rôle est admin ou éditor
-			/*$this->allowTo(['admin']);*/
+			// On limite l'accé à la page aux utilisateurs authentifiés et à ceux dont le rôle est admin ou éditor
+			$this->allowTo(['admin']);
 			$barModel = new barModel();
 			$bar = $barModel->find($id);
 

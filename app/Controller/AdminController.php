@@ -16,6 +16,8 @@ class AdminController extends Controller
 	**/
 	public function home()
 	{
+		$this->allowTo(['admin']);
+
 		$adminModel = new AdminModel();
 		
 		$params = [];
@@ -23,10 +25,12 @@ class AdminController extends Controller
 		$params['pres'] = $adminModel->find(1);
 
 		$this->show('adminHome/home_admin', $params);
-	} /* fin function home()*/
+	}
 
 	public function presentation_edit() 
 	{
+		$this->allowTo(['admin']);
+
 		// On instancie notre AdminModel() permettant d'accéder à la base de données => table "obar_desc"
 		$adminModel = new AdminModel();
 		// On récupère notre article via la méthode find() à la quelle on passe l'id de l'article
@@ -62,5 +66,3 @@ class AdminController extends Controller
 		$this->show('adminHome/presentation_edit', $params);
 	}
 }
-
-
