@@ -1,4 +1,4 @@
-<?php $this->layout('layout_admin', ['title' => 'Ajouter un bar']) ?>
+<?php $this->layout('layout_admin', ['title' => 'Ajouter une news']) ?>
 
 <?php $this->start('main_content'); ?>
 
@@ -30,12 +30,10 @@
     <div class="col-lg-12">
         <div class="panel panel-default">
             <div class="panel-body">
-              
-
                         <form method="POST" role="form" enctype="multipart/form-data">
                             <div class="form-group">
                                 <label for="what">Quoi?</label>
-                                <textarea name="what" id="what" class="form-control champTxtAddBar" rows="3"></textarea>
+                                <input name="what" id="what" class="form-control champTxtAddBar">
                             </div>
 
                             <div class="form-group">
@@ -51,9 +49,7 @@
                             <br><br>
                             <button type="reset" class="btn btn-default boutonBarAdd">Recommencer</button>
                             <button type="submit" class="btn btn-default boutonBarAdd">Ajouter la news</button>
-
                         </form>
-
                 <!-- /.row (nested) -->
             </div>
             <!-- /.panel-body -->

@@ -1,4 +1,4 @@
-<?php $this->layout('layout_admin', ['title' => 'Newsletter']) ?>
+<?php $this->layout('layout_admin', ['title' => 'News']) ?>
 
 <?php $this->start('main_content') ?>
 
@@ -22,11 +22,11 @@
 					<th>Evenement</th>
 					<th>Action</th>
 				</thead>
-				<?php foreach($news3 as $new3): ?>                             
+				<?php foreach($news3 as $new): ?>                             
 				<tbody>
-					<td><?= $new3['what'] ?></td>
-					<td><?= $new3['bar'] ?></td>
-					<td><?= $new3['msg'] ?></td>
+					<td><?= $new['what'] ?></td>
+					<td><?= $new['bar'] ?></td>
+					<td><?= $new['msg'] ?></td>
 					<td >
 					    <div class="btn-group" role="group" aria-label="...">
 					      <a type="button" class="btn btn-default" href="<?= $this->url('admin_news_edit', ['id' => $new['id']]) ?>">Modifier</a>
