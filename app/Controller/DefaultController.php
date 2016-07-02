@@ -17,6 +17,10 @@ class DefaultController extends Controller
 	 */
 	public function home()
 	{
+		if(isset($w_user)){
+			$this->redirectToRoute('default_home_connect');
+		}
+
 		//Instancie les classes
 		$confirmation = new Confirmation();
 		$usersModel = new UsersModel();
