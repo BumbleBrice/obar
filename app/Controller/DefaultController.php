@@ -24,8 +24,11 @@ class DefaultController extends Controller
 		$barModel = new Bar();
 		$newsModel = new News();
 		$presentationModel = new Presentation();
-
 		$messageController = new \Controller\MessageController();
+
+		if($authModel->getLoggedUser()){
+			$this->redirectToRoute('default_home_connect');
+		}
 
 		$errors = [];// tableau de tablau d'erreurs
 		$errors['connexion'] = [];// tableau d'erreurs pour le formulaire de connexion
