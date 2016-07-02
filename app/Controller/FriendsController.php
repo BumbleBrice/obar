@@ -10,33 +10,67 @@ class FriendsController extends Controller
         $usersModel = new \W\Model\UsersModel();
         $auth = new \W\Security\AuthentificationModel();
 
+        $auth->refreshUser(); // actualise les données de l'utilisateur
         $loggedUser = $auth->getLoggedUser();
 
-        $auth->refreshUser(); // actualise les données de l'utilisateur
-
         $params = [];
-        $params['listUsers'] = $usersModel->findall();
-        $listFriends = explode(',', $loggedUser['friends']);
-        $params['listFriends'] = $listFriends;
+        $params['listFriends'] = [];
+        $params['success'] = [];
+        $params['success']['search'] = false;
+        $params['success']['add'] = false;
+        $params['errors'] = [];
+        $params['errors']['search'] = [];
+        $params['errors']['add'] = [];
 
+        $listFriends = explode(',', $loggedUser['friends']);
 
         if(!empty($_POST)){
             $post = array_map('trim', array_map('strip_tags', $_POST));
 
-            if(isset($post['amiselect']) && is_numeric($post['amiselect']) && !in_array($post['amiselect'], $listFriends)){
-                if(!empty($loggedUser['friends'])){
-                    $friends = $loggedUser['friends'].','.$post['amiselect'];
-                }
-                else{
-                    $friends = $post['amiselect'];
+            if(isset($post['form'])){
+                if($post['form'] == 'search'){
+                    if(isset($post['search'])){
+                        $search = [
+                            'nickname' => $post['search']
+                        ];
+
+                        if($friends = $usersModel->search($search)){
+                            $params['listFriends'] = $friends;
+                            $params['success']['search'] = true;
+                        }
+                        else{
+                            $params['errors']['search'][] = 'Aucain utilisateur trouver';
+                        }
+                    }
                 }
 
-                $data = [
-                    'friends' => $friends
-                ];
+                if($post['form'] == 'add'){
+                    if(isset($post['friendadd']) && is_numeric($post['friendadd'])){
+                        if(!in_array($post['friendadd'], $listFriends)){
+                            if(!empty($loggedUser['friends'])){
+                                $friends = $loggedUser['friends'].','.$post['friendadd'];
+                            }
+                            else{
+                                $friends = $post['friendadd'];
+                            }
 
-                $usersModel->update($data, $loggedUser['id']);
-                $auth->refreshUser(); // actualise les données de l'utilisateur
+                            $data = [
+                                'friends' => $friends
+                            ];
+
+                            if($usersModel->update($data, $loggedUser['id'])){
+                                $auth->refreshUser(); // actualise les données de l'utilisateur
+                                $params['success']['add'] = true;
+
+                                $params['pseudoFriendAdd'] = $usersModel->find($post['friendadd'])['nickname'];
+
+                            }
+                        }
+                        else{
+                            $params['errors']['add'][] = 'Déja amis';
+                        }
+                    }
+                }
             }
         }
 
