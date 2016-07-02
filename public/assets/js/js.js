@@ -21,6 +21,9 @@ $(document).ready(function(){
       e.preventDefault();
 
       $('.btBar').hide();
+      $('.subs').hide();
+      $('.contact').hide();
+      $('footer').hide();
 
       var bar = $(this);
 
@@ -45,6 +48,9 @@ $(document).ready(function(){
        e.preventDefault();
 
        $('.btBar').show();
+       $('.subs').show();
+       $('.contact').show();
+       $('footer').show();
 
        $('#toggle').hide(400);
        return false;

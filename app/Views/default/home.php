@@ -97,7 +97,7 @@
 
 <!-- Carte -->
 <section id="map" class="map">
-	<div class="container-fluid">
+	<div class="container-fluid pad">
 		<!-- <div class="row">
 		<div class="col-xs-12 col-sm-12 col-md-8 col-md-offset-2"> -->
 		<?php if($quartiers == 'aucain'): ?>
@@ -107,7 +107,7 @@
 		<?php elseif($quartiers == 'saintpaul'): ?>
 			<h2>Saint Paul</h2>
 		<?php endif; ?>
-		<section class="carte" style="position: relative;width: 55%;height: 55%;margin-left: 22.5%">
+		<section class="carte" style="position: relative;">
 			<?php foreach($bars as $bar): ?>
 				<?php if($bar['quartiers'] == $quartiers): ?>
 					<div style=" left: <?=$bar['x']?>%; top: <?=$bar['y']?>%;" class="btBar">
@@ -134,7 +134,7 @@
 				<img src="<?=$this->assetUrl('img/Quartier-saint_pierre.svg'); ?>" alt="Le Quartier Saint Paul" class="img-responsive">
 			<?php endif; ?>
 				<div id="toggle" style="position: absolute;top: 0px;left: 0px">
-					<div class="container-fluid">
+					<div class="">
 						<div class="btn closeToggle btn-default"><a href="#" id="closeToggle">X</a></div><br>
 						<section id="barToggle">
 							<div class="row">

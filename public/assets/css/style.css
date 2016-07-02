@@ -193,6 +193,10 @@ ul .nav .navbar-nav .navbar-right>a{
 .carousel-indicators {
     bottom: -35px;
 }
+.pad {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
 
 
 /****************************************
