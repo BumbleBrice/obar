@@ -56,8 +56,8 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Les quartiers <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">Saint-Pierre</a></li>
-                            <li><a href="#">Saint-Paul</a></li>
+                            <li><a href="<?=$this->url('default_home_connect')?>?quartiers=saintpierre#map">Saint-Pierre</a></li>
+                            <li><a href="<?=$this->url('default_home_connect')?>?quartiers=saintpaul#map">Saint-Paul</a></li>
                         </ul>
                     </li>
                     <li>

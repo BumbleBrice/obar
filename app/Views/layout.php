@@ -23,10 +23,10 @@
     <!-- Custom Fonts -->
     <link href='https://fonts.googleapis.com/css?family=Nunito:400,700,300|Comfortaa:400,700,300|Roboto:400,300italic' rel='stylesheet' type='text/css'>
     <link href="https://fonts.googleapis.com/css?family=Playball" rel="stylesheet" type="text/css">
-    
+
     <!-- Font axesome -->
     <link rel="stylesheet" href="<?= $this->assetUrl('font-awesome/css/font-awesome.min.css') ?>">
-   
+
     <!-- CSS personnalisé -->
     <link href="<?= $this->assetUrl('css/style.css') ?>" rel="stylesheet">
 </head>
@@ -51,11 +51,8 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Les quartiers <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">Saint-Pierre</a></li>
-                            <li><a href="#">Saint-Paul</a></li>
-                            <li><a href="#">Bastide</a></li>
-                            <li><a href="#">Chartrons</a></li>
-                            <li><a href="#">Victoire</a></li>
+                            <li><a href="<?=$this->url('default_home')?>?quartiers=saintpierre#map">Saint-Pierre</a></li>
+                            <li><a href="<?=$this->url('default_home')?>?quartiers=saintpaul#map">Saint-Paul</a></li>
                         </ul>
                     </li>
                     <li>
@@ -79,7 +76,7 @@
 
     <?= $this->section('main_content'); ?>
 
-    
+
     <!-- JS personnalisé -->
     <script src="<?= $this->assetUrl('js/jquery.js') ?>"></script>
     <script src="<?= $this->assetUrl('js/script_cookies.js'); ?>"></script>
