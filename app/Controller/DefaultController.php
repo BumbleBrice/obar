@@ -201,13 +201,13 @@ class DefaultController extends Controller
 				'x' => '45',
 				'y' => '52',
 				'name' => 'Saint Pierre',
-				'quartier' => 'Saint Pierre'
+				'quartier' => 'saintpierre'
 			],
 			[
 				'x' => '46',
 				'y' => '59',
 				'name' => 'Saint Paul',
-				'quartier' => 'Saint Paul'
+				'quartier' => 'saintpaul'
 			]
 		];
 
