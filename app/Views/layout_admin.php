@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title><?= $this->e($title) ?></title>
-    <link href='https://fonts.googleapis.com/css?family=Droid+Serif|Rouge+Script|Raleway|Trochut' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="<?= $this->assetUrl('font-awesome/css/font-awesome.min.css') ?>">
-    <link rel="stylesheet" href="<?= $this->assetUrl('css/bootstrap.css') ?>">
-    <link rel="stylesheet" href="<?= $this->assetUrl('css/simple-sidebar.css') ?>">
-    <link rel="stylesheet" href="<?= $this->assetUrl('css/style_admin.css') ?>">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="language" content="fr">
+    <meta name="author" content="Jenifer, Alexis, Yoan et Brice pour projet de soutenance lors de la 2eme session WebForce3 a la Philomatique de Bordeaux.">
+    <meta name="description" content="Ô Bar vous permettra de visualiser les bars tendance des quartiers de Bordeaux.">
+    <meta name="category" content="sortie, rencontre, amusement">
+    <meta name="copyright" content="WF3, Jennifer, Alexis, Yoan, Brice">
+    
 </head>
 <body>
     <div class="wrapper">

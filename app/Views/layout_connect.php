@@ -5,11 +5,14 @@
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="author" content="Wf3 Bordeaux">
-
     <title><?= $this->e($title) ?></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="language" content="fr">
+    <meta name="author" content="Jenifer, Alexis, Yoan et Brice pour projet de soutenance lors de la 2eme session WebForce3 a la Philomatique de Bordeaux.">
     <meta name="description" content="Ô Bar vous permettra de visualiser les bars tendance des quartiers de Bordeaux.">
+    <meta name="category" content="sortie, rencontre, amusement">
+    <meta name="copyright" content="WF3, Jennifer, Alexis, Yoan, Brice">
+
 
     <!-- Bootstrap Core CSS -->
     <link href="<?= $this->assetUrl('css/bootstrap.min.css') ?>" rel="stylesheet">

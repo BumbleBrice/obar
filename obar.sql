@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Ven 01 Juillet 2016 à 15:57
+-- Généré le :  Sam 02 Juillet 2016 à 12:13
 -- Version du serveur :  10.1.13-MariaDB
--- Version de PHP :  5.6.21
+-- Version de PHP :  5.6.20
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -48,16 +48,17 @@ CREATE TABLE `bar` (
 --
 
 INSERT INTO `bar` (`id`, `quartiers`, `name`, `picture`, `description`, `phone`, `adress`, `schedule`, `scheduleOpen`, `x`, `y`, `google_url`, `date`, `url`) VALUES
-(4, 'saintpierre', 'Le Wine Bar', 'assets/img/bar-1467381233jpg', 'Le Win Bar, vous accueille au coeur du vieux Bordeaux, dans le quartier historique de Saint Pierre.\r\nIci, le vin et les spécialités Italiennes sont à l''honneur !', '06 76 00 50 54', '19, Rue des Bahutiers', 'Lundi, Samedi, Dimanche', '8h à 12h et de 13h à 23h', '36.359375', '49.428125', 'https://www.google.fr/maps/place/19, Rue des Bahutiers/', '2016-07-01 15:53:53', 'http://www.lewinebar-bordeaux.com/'),
-(5, 'saintpierre', 'La Contesse', 'assets/img/bar-1467381258jpg', 'Un lieu atypique où vous trouverez des mojitos au goût délicieux !', '05 56 51 03 07', '25 rue Parlement Saint-Pierre33000 Bordeaux', 'Lundi, Samedi, Dimanche', '8h à 12h et de 13h à 23h', '36.359375', '49.428125', 'https://www.google.fr/maps/place/25 rue Parlement Saint-Pierre33000 Bordeaux/', '2016-07-01 15:54:18', 'https://fr-fr.facebook.com/La-Comtesse-164106890312521/'),
-(6, 'saintpierre', 'L''Alchismiste', 'assets/img/bar-1467381277jpg', 'Bar à cocktails dans un endroit cozy et authentique !', '05 56 48 11 82', '16 rue Parlement Saint-Pierre33000 Bordeaux', 'Lundi, Samedi, Dimanche', '8h à 12h et de 13h à 23h', '36.359375', '49.428125', 'https://www.google.fr/maps/place/16 rue Parlement Saint-Pierre33000 Bordeaux/', '2016-07-01 15:54:37', 'http://www.lachimistebordeaux.com/'),
-(7, 'saintpierre', 'Cafécito', 'assets/img/bar-1467381289jpg', 'Le Café Cito, bar à bière ou à vin, cocktails et tapas situé dans les rues piétonnes, Place Saint Pierre, vous réserve un accueil des plus chaleureux.', '05 56 44 43 89', '7 Rue Parlement Saint-Pierre33000 Bordeaux', 'Lundi, Samedi, Dimanche', '8h à 12h et de 13h à 23h', '36.359375', '49.428125', 'https://www.google.fr/maps/place/7 Rue Parlement Saint-Pierre33000 Bordeaux/', '2016-07-01 15:54:49', 'http://www.cafecito-bar-vins-bieres-bordeaux.fr/'),
-(8, 'saintpierre', 'The Black Velvet Bar', 'assets/img/bar-1467381308jpg', 'Irish Pub\r\nVous pourrez y apprécier une bonne pint bien fraîche de Guinness en écoutant de la bonne musique ou en regardant un match sur grand écran.', '09 51 34 28 73', '9 Rue du Chai des Farines, 33000 Bordeaux', 'Lundi, Samedi, Dimanche', '8h à 12h et de 13h à 23h', '36.359375', '49.428125', 'https://www.google.fr/maps/place/9 Rue du Chai des Farines, 33000 Bordeaux/', '2016-07-01 15:55:08', 'http://www.blackvelvetbar.fr/'),
+(4, 'saintpierre', 'Le Wine Bar', 'assets/img/bar-1467381233jpg', 'Le Win Bar, vous accueille au coeur du vieux Bordeaux, dans le quartier historique de Saint Pierre.\r\nIci, le vin et les spécialités Italiennes sont à l''honneur !', '06 76 00 50 54', '19, Rue des Bahutiers', 'Lundi, Samedi, Dimanche', '8h à 12h et de 13h à 23h', '-2.7433349609375', '30.136669921875', 'https://www.google.fr/maps/place/19, Rue des Bahutiers/', '2016-07-02 11:57:09', 'http://www.lewinebar-bordeaux.com/'),
+(5, 'saintpierre', 'La Contesse', 'assets/img/bar-1467381258jpg', 'Un lieu atypique où vous trouverez des mojitos au goût délicieux !', '05 56 51 03 07', '25 rue Parlement Saint-Pierre33000 Bordeaux', 'Lundi, Samedi, Dimanche', '8h à 12h et de 13h à 23h', '26.2566650390625', '33.689999389648435', 'https://www.google.fr/maps/place/25 rue Parlement Saint-Pierre33000 Bordeaux/', '2016-07-02 11:57:29', 'https://fr-fr.facebook.com/La-Comtesse-164106890312521/'),
+(6, 'saintpierre', 'L''Alchismiste', 'assets/img/bar-1467381277jpg', 'Bar à cocktails dans un endroit cozy et authentique !', '05 56 48 11 82', '16 rue Parlement Saint-Pierre33000 Bordeaux', 'Lundi, Samedi, Dimanche', '8h à 12h et de 13h à 23h', '17.6566650390625', '41.53666687011719', 'https://www.google.fr/maps/place/16 rue Parlement Saint-Pierre33000 Bordeaux/', '2016-07-02 12:02:42', 'http://www.lachimistebordeaux.com/'),
+(7, 'saintpierre', 'Cafécito', 'assets/img/bar-1467381289jpg', 'Le Café Cito, bar à bière ou à vin, cocktails et tapas situé dans les rues piétonnes, Place Saint Pierre, vous réserve un accueil des plus chaleureux.', '05 56 44 43 89', '7 Rue Parlement Saint-Pierre33000 Bordeaux', 'Lundi, Samedi, Dimanche', '8h à 12h et de 13h à 23h', '19.6566650390625', '48.166665649414064', 'https://www.google.fr/maps/place/7 Rue Parlement Saint-Pierre33000 Bordeaux/', '2016-07-02 12:01:04', 'http://www.cafecito-bar-vins-bieres-bordeaux.fr/'),
+(8, 'saintpierre', 'The Black Velvet Bar', 'assets/img/bar-1467381308jpg', 'Irish Pub\r\nVous pourrez y apprécier une bonne pint bien fraîche de Guinness en écoutant de la bonne musique ou en regardant un match sur grand écran.', '09 51 34 28 73', '9 Rue du Chai des Farines, 33000 Bordeaux', 'Lundi, Samedi, Dimanche', '8h à 12h et de 13h à 23h', '-3.7433349609375', '56.289999389648436', 'https://www.google.fr/maps/place/9 Rue du Chai des Farines, 33000 Bordeaux/', '2016-07-02 12:01:49', 'http://www.blackvelvetbar.fr/'),
 (9, 'saintpaul', 'Vintage Bar', 'assets/img/bar-1467381328png', 'Bar à bières et rhums !\r\nHAPPY HOURS proposés tous le jours de 16h à 20h.\r\nLe VINTAGE BAR est l''endroit idéal pour passer des soirées conviviales et animées sur des airs de reggae, rock, soul, funk tout en dégustant d''excellents breuvages.', '( pas de tél )', '45 Rue Saint-James, 33000 Bordeaux', 'Lundi, Samedi, Dimanche', '8h à 12h et de 13h à 23h', '36.359375', '49.428125', 'https://www.google.fr/maps/place/45 Rue Saint-James, 33000 Bordeaux/', '2016-07-01 15:55:28', 'http://www.vintage-bar.fr/'),
 (10, 'saintpaul', 'Wine more time', 'assets/img/bar-1467381341jpg', 'Bar à vins et cave décoré dans un style contemporain propose des vins au verre différents chaque semaine.', '05 56 52 85 61', '8 Rue Saint-James, 33000 Bordeaux', 'Lundi, Samedi, Dimanche', '8h à 12h et de 13h à 23h', '36.359375', '49.428125', 'https://www.google.fr/maps/place/8 Rue Saint-James, 33000 Bordeaux/', '2016-07-01 15:55:41', 'http://winemoretime.blogspot.fr/'),
 (11, 'saintpaul', 'Ô plafond, bar éphémère', 'assets/img/bar-1467381365jpg', 'Association culturelle proposant des apéros chaleureux et convivaux.', '06 68 09 80 38', '14 Rue Saint-Vincent-de-Paul, 33800 Bordeaux', 'Lundi, Samedi, Dimanche', '8h à 12h et de 13h à 23h', '36.359375', '49.428125', 'https://www.google.fr/maps/place/14 Rue Saint-Vincent-de-Paul, 33800 Bordeaux/', '2016-07-01 15:56:05', 'http://o.bar.le.plafond.free.fr/'),
 (12, 'saintpaul', 'Le Chabi', 'assets/img/bar-1467381377jpg', 'Bar tabac proposant une terrasse ensoleillée pour partager un verre entre amis.', '05 56 52 88 61', '24 Rue Sainte-Colombe, 33000 Bordeaux', 'Lundi, Samedi, Dimanche', '8h à 12h et de 13h à 23h', '36.359375', '49.428125', 'https://www.google.fr/maps/place/24 Rue Sainte-Colombe, 33000 Bordeaux/', '2016-07-01 15:56:17', 'http://www.pagesjaunes.fr/pros/07100951'),
-(13, 'saintmichel', 'Purple Wine', 'assets/img/bar-1467381412jpg', 'Bar à vins, bar lounge & restaurant\r\nNiché dans une bâtisse du XVe siècle, ce restaurant français au cadre design sert une cuisine du marché.', '05 56 43 17 49', '23 Rue Neuve, 33000 Bordeaux', 'Lundi, Samedi, Dimanche', '8h à 12h et de 13h à 23h', '36.359375', '49.428125', 'https://www.google.fr/maps/place/23 Rue Neuve, 33000 Bordeaux/', '2016-07-01 15:56:52', 'https://m.facebook.com/Le-Purple-Wine-368780786472782/?ref=stream');
+(13, 'saintmichel', 'Purple Wine', 'assets/img/bar-1467381412jpg', 'Bar à vins, bar lounge & restaurant\r\nNiché dans une bâtisse du XVe siècle, ce restaurant français au cadre design sert une cuisine du marché.', '05 56 43 17 49', '23 Rue Neuve, 33000 Bordeaux', 'Lundi, Samedi, Dimanche', '8h à 12h et de 13h à 23h', '36.359375', '49.428125', 'https://www.google.fr/maps/place/23 Rue Neuve, 33000 Bordeaux/', '2016-07-01 15:56:52', 'https://m.facebook.com/Le-Purple-Wine-368780786472782/?ref=stream'),
+(19, 'saintpierre', 'Calle-Ocho', 'assets/img/bar-1467454262jpg', 'Ce bar cubain sert dans une ambiance latine des cocktails traditionnels et organise des soirées tapas & salsa', '05 56 81 89 99', '24 Rue Piliers des Tutelles', 'Lundi, Mardi, Mercredi, Jeudi, Vendredi, Samedi', '17h à 22h', '62.4566650390625', '19.4066650390625', 'https://www.google.fr/maps/place/24 Rue Piliers des Tutelles/', '2016-07-02 12:12:07', 'http://http://www.calle-ocho.eu/');
 
 -- --------------------------------------------------------
 
@@ -74,6 +75,14 @@ CREATE TABLE `contact` (
   `date_add` datetime NOT NULL,
   `message_state` enum('Lu','Non lu') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Contenu de la table `contact`
+--
+
+INSERT INTO `contact` (`id`, `firstname`, `lastname`, `email`, `content`, `date_add`, `message_state`) VALUES
+(4, 'Bumble', 'Brice', 'collilieux.brice@gmail.com', 'dftytrytryeytr', '2016-07-02 11:24:45', 'Non lu'),
+(5, 'Bumble', 'Brice', 'collilieux.brice@gmail.com', 'hioioyuioi', '2016-07-02 11:27:50', 'Non lu');
 
 -- --------------------------------------------------------
 
@@ -251,12 +260,12 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT pour la table `bar`
 --
 ALTER TABLE `bar`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 --
 -- AUTO_INCREMENT pour la table `contact`
 --
 ALTER TABLE `contact`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT pour la table `news`
 --
