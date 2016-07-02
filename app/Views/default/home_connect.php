@@ -156,7 +156,7 @@
             <h2>Saint Paul</h2>
             <a href="<?=$this->url('default_home_connect')?>#map">Retour au Quartiers</a>
         <?php endif; ?>
-        <section class="carte" style="position: relative;width: 55%;height: 55%;margin-left: 22.5%">
+        <section class="carte" style="position: relative;">
             <?php foreach($bars as $bar): ?>
                 <?php if($bar['quartiers'] == $quartiers): ?>
                     <div style=" left: <?=$bar['x']?>%; top: <?=$bar['y']?>%;" class="btBar">

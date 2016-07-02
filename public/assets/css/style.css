@@ -215,6 +215,9 @@ ul .nav .navbar-nav .navbar-right>a{
     height: auto !important;
     /*min-height: 80%;*/
 }
+.btQuartier{
+    font-size: 1rem !important;
+}
 
 
 /****************************************
@@ -271,11 +274,12 @@ ul .nav .navbar-nav .navbar-right>a{
 
     border-radius: 5px;
     background: #c14e5f;
-    padding: 6px 12px;
+    padding: 1px 2px;
     color : white;
 }
 .btBar a{
     text-transform: uppercase;
+
     font-size: 1.5rem;
     color: #c14e5f;
     text-decoration: none;
