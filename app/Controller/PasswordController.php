@@ -39,7 +39,7 @@ class PasswordController extends Controller
 					}
 					if(count($params['errors']) == 0){
 						if($tokenGet = $lostPasswordModel->tokenOk($token)){
-							if($lostPasswordModel->changePassword($tokenGet['email'], $auth->hashPassword($post['password']))){
+							if($lostPasswordModel->changePassword($tokenGet['email'], $post['password'])){
 								// supression du token
 								if($lostPasswordModel->delete($tokenGet['id'])){
 									$params['success'] = true;
