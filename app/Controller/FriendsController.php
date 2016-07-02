@@ -13,6 +13,10 @@ class FriendsController extends Controller
         $auth->refreshUser(); // actualise les données de l'utilisateur
         $loggedUser = $auth->getLoggedUser();
 
+        if(!$loggedUser){
+            $this->redirectToRoute('default_home');
+        }
+
         $params = [];
         $params['listFriends'] = [];
         $params['success'] = [];
