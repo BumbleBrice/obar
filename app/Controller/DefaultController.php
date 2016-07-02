@@ -24,7 +24,6 @@ class DefaultController extends Controller
 		$barModel = new Bar();
 		$newsModel = new News();
 		$presentationModel = new Presentation();
-
 		$messageController = new \Controller\MessageController();
 
 		$errors = [];// tableau de tablau d'erreurs
@@ -57,6 +56,10 @@ class DefaultController extends Controller
 					$quartiers = 'saintpaul';
 				}
 			}
+		}
+
+		if($authModel->getLoggedUser()){
+			$this->redirectToRoute('default_home_connect');
 		}
 
 		if(!empty($_POST)){
@@ -198,13 +201,13 @@ class DefaultController extends Controller
 				'x' => '45',
 				'y' => '52',
 				'name' => 'Saint Pierre',
-				'quartier' => 'Saint Pierre'
+				'quartier' => 'saintpierre'
 			],
 			[
 				'x' => '46',
 				'y' => '59',
 				'name' => 'Saint Paul',
-				'quartier' => 'Saint Paul'
+				'quartier' => 'saintpaul'
 			]
 		];
 
