@@ -151,8 +151,10 @@
             <h2>Choisissez votre quartier</h2>
         <?php elseif($quartiers == 'saintpierre'): ?>
             <h2>Saint Pierre</h2>
+            <a href="<?=$this->url('default_home_connect')?>#map">Retour au Quartiers</a>
         <?php elseif($quartiers == 'saintpaul'): ?>
             <h2>Saint Paul</h2>
+            <a href="<?=$this->url('default_home_connect')?>#map">Retour au Quartiers</a>
         <?php endif; ?>
         <section class="carte" style="position: relative;width: 55%;height: 55%;margin-left: 22.5%">
             <?php foreach($bars as $bar): ?>
