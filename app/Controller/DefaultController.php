@@ -232,6 +232,7 @@ class DefaultController extends Controller
 		$barModel = new Bar();
 		$presentationModel = new Presentation();
 		$newsModel = new News();
+		$messageController = new MessageController();
 
 		$authModel->refreshUser();
 		$loggedUser = $authModel->getLoggedUser();
@@ -243,6 +244,8 @@ class DefaultController extends Controller
 		$params['infos'] = $presentationModel->find(1);
 		$params['errors'] = [];
 		$params['errors']['connexion'] = [];
+		$params['errors']['contact'] = [];
+		$params['success']['contact'] = false;
 		$params['lastbars'] = $newsModel->findAll('id', 'DESC', 3);
 		$params['quartiers'] = 'aucain';
 		$params['pointQuartiers'] = [
@@ -286,27 +289,67 @@ class DefaultController extends Controller
 		if(!empty($_POST)){
 			$post = array_map('trim', array_map('strip_tags', $_POST));
 
-			if(isset($post['co_pseudo'])){
-				if(preg_match('#^([A-Z]{1}[A-Za-z0-9.-_]{2,15})||([a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3})$#', $post['co_pseudo']) == 0){
-					$params['errors']['connexion'][] = 'Votre pseudo doit commencer par une majuscule';
-				}
-			}
-			if(isset($post['co_pswd'])){
-				if(preg_match('#.*^(?=.{8,20})(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).*$#', $post['co_pswd']) == 0){
-					$params['errors']['connexion'][] = 'Votre mot de passe doit contenir au moins une majuscule et un chiffre.';
-				}
-			}
-
-			if(count($params['errors']['connexion']) == 0){
-				$idUser = $authModel->isValidLoginInfo($post['co_pseudo'], $post['co_pswd']);
-
-				if($idUser){
-					$user = $usersModel->find($idUser);
-					if($user['confirm'] == 1){
-						$authModel->logUserIn($user);
+			if(isset($post['form'])){
+				if($post['form'] == 'connexion'){
+					if(isset($post['co_pseudo'])){
+						if(preg_match('#^([A-Z]{1}[A-Za-z0-9.-_]{2,15})||([a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3})$#', $post['co_pseudo']) == 0){
+							$params['errors']['connexion'][] = 'Votre pseudo doit commencer par une majuscule';
+						}
 					}
-					else{
-						$params['errors']['connexion'][] = 'Votre compte n\'a pas était validé.';
+					if(isset($post['co_pswd'])){
+						if(preg_match('#.*^(?=.{8,20})(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).*$#', $post['co_pswd']) == 0){
+							$params['errors']['connexion'][] = 'Votre mot de passe doit contenir au moins une majuscule et un chiffre.';
+						}
+					}
+
+					if(count($params['errors']['connexion']) == 0){
+						$idUser = $authModel->isValidLoginInfo($post['co_pseudo'], $post['co_pswd']);
+
+						if($idUser){
+							$user = $usersModel->find($idUser);
+							if($user['confirm'] == 1){
+								$authModel->logUserIn($user);
+							}
+							else{
+								$params['errors']['connexion'][] = 'Votre compte n\'a pas était validé.';
+							}
+						}
+					}
+				}
+
+				if($post['form'] == 'contact'){//si le champ form vaut 'ct'
+					// ici le traitement pour le formulaire de contact
+					if(isset($post['ct_firstname'])){
+						if(preg_match('#^[A-Z]{1}[A-Za-z0-9.-_]{3,20}$#', $post['ct_firstname']) == 0){
+							$params['errors']['contact'][] = 'Votre nom doit commencer par une majuscule et comporter minimum 3 caractères';
+						}
+					}
+
+					if(isset($post['ct_lastname'])){
+						if(preg_match('#^[A-Z]{1}[A-Za-z0-9.-_]{3,20}$#', $post['ct_lastname']) == 0){
+							$params['errors']['contact'][] = 'Votre prénom doit commencer par une majuscule et comporter minimum 3 caractères';
+						}
+					}
+
+					if(isset($post['ct_email'])){
+						if(preg_match('#^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$#', $post['ct_email']) == 0){
+							$params['errors']['contact'][] = 'Votre email n\'est pas valide';
+						}
+					}
+
+					if(isset($post['ct_msg'])){
+						if(preg_match('#^.{1,}$#', $post['ct_msg']) == 0){
+							$params['errors']['contact'][] = 'Votre message ne doit pas être vide';
+						}
+					}
+
+					if(count($params['errors']['contact']) == 0){
+						if($messageController->addMessage($post['ct_firstname'], $post['ct_lastname'], $post['ct_email'], $post['ct_msg'])){
+							$params['success']['contact'] = true;
+						}
+						else{
+							$params['errors']['contact'][] = 'Erreur lors de l\'envoie du message';
+						}
 					}
 				}
 			}
