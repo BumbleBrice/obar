@@ -61,7 +61,7 @@
                         </ul>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#map">Carte</a>
+                        <a class="page-scroll" href="?quartiers=#map">Carte</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="#contact">Contact</a>
