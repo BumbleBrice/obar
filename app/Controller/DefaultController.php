@@ -233,12 +233,22 @@ class DefaultController extends Controller
 		$presentationModel = new Presentation();
 		$newsModel = new News();
 
+		$authModel->refreshUser();
+		$loggedUser = $authModel->getLoggedUser();
+		$listFriends= explode(',', $loggedUser['friends']);
+
 		$params = [];
 		$params['bars'] = $barModel->findAll();
 		$params['infos'] = $presentationModel->find(1);
 		$params['errors'] = [];
 		$params['errors']['connexion'] = [];
 		$params['lastbars'] = $newsModel->findAll('id', 'DESC', 3);
+
+		$params['Friends'] = [];
+
+		foreach($listFriends as $friend){
+			$params['Friends'][] = $usersModel->find($friend);
+		}
 
 
 		if(!empty($_POST)){

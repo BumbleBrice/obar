@@ -28,7 +28,7 @@
                     <input id="co_pswd" type="password" name="co_pswd" placeholder="Password..." required>
 
                     <input class="btn btn-primary" type="submit" value="connexion">
-                </form> 
+                </form>
             </div>
         </div>
     </div>
@@ -65,42 +65,14 @@
 
         <div class="container">
             <div class="row">
-                <div class="col-xs-4 col-sm-3 col-md-2">
-                    <div class="userStyle">
-                        <img src="<?=$this->assetUrl('img/1.jpg');?>" class="img-responsive img-circle centree" alt="">
-                        <p class="text-center">Paula Rie</p>
+                <?php foreach($Friends as $friend): ?>
+                    <div class="col-xs-4 col-sm-3 col-md-2">
+                        <div class="userStyle">
+                            <img src="<?=$this->assetUrl($friend['picture']);?>" class="img-responsive img-circle centree" alt="">
+                            <p class="text-center"><?=$friend['nickname']?></p>
+                        </div>
                     </div>
-                </div>
-                <div class="col-xs-4 col-sm-3 col-md-2">
-                    <div class="userStyle">
-                        <img src="<?=$this->assetUrl('img/2.jpg');?>" class="img-responsive img-circle centree" alt="">
-                        <p class="text-center">Rom 1</p>
-                    </div>
-                </div>
-                <div class="col-xs-4 col-sm-3 col-md-2">
-                    <div class="userStyle">
-                        <img src="<?=$this->assetUrl('img/audrey.jpg');?>" class="img-responsive img-circle centree" alt="">
-                        <p class="text-center">Kay Garland</p>
-                    </div>
-                </div>
-                <div class="col-xs-4 col-sm-3 col-md-2">
-                    <div class="userStyle">
-                        <img src="<?=$this->assetUrl('img/bb.jpg');?>" class="img-responsive img-circle centree" alt="">
-                        <p class="text-center">Rosa</p>
-                    </div>
-                </div>
-                <div class="col-xs-4 col-sm-3 col-md-2">
-                    <div class="userStyle">
-                        <img src="<?=$this->assetUrl('img/Indiana.jpg');?>" class="img-responsive img-circle centree" alt="">
-                        <p class="text-center">Indiana</p>
-                    </div>
-                </div>
-                <div class="col-xs-4 col-sm-3 col-md-2">
-                    <div class="userStyle">
-                        <img src="<?=$this->assetUrl('img/Anthony.jpg');?>" class="img-responsive img-circle centree" alt="">
-                        <p class="text-center">John Doe</p>
-                    </div>
-                </div>
+                <?php endforeach; ?>
             </div>
         </div>
     </div>
@@ -231,7 +203,7 @@
                                     <p class="text-left"><span class="titleInfBar">Télephone : </span><span class="infoBar">06 59 43 32 16</span></p>
                                     <p class="text-left"><span class="titleInfBar">Horaire : </span><span class="infoBar"> 11h à 14h </span><span class="titleInfBar">et de </span><span class="infoBar">17h à 01h</span></p>
                                     <a class="btn btn-default" href="https://goo.gl/maps/dzu5DsMRkYt">Google map</a>
-                                    
+
                                     <a class="btn btn-default" href="https://goo.gl/maps/dzu5DsMRkYt">Site du bar</a>
                                 </div>
                             </div>
