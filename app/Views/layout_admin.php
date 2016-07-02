@@ -4,7 +4,7 @@
 <head>
 
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge", chrome=1>
     <title><?= $this->e($title) ?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="language" content="fr">
@@ -12,6 +12,19 @@
     <meta name="description" content="Ô Bar vous permettra de visualiser les bars tendance des quartiers de Bordeaux.">
     <meta name="category" content="sortie, rencontre, amusement">
     <meta name="copyright" content="WF3, Jennifer, Alexis, Yoan, Brice">
+
+    <!-- Bootstrap Core CSS -->
+    <link href="<?= $this->assetUrl('css/bootstrap.min.css') ?>" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="<?= $this->assetUrl('css/simple-sidebar.css') ?>" rel="stylesheet">
+    <link href="<?= $this->assetUrl('css/style_admin.css') ?>" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Droid+serif|Rouge+Script|RalewayTrochut' rel='stylesheet' type='text/css'>
+     
+    <!-- Font axesome -->
+    <link rel="stylesheet" href="<?= $this->assetUrl('font-awesome/css/font-awesome.min.css') ?>">
     
 </head>
 <body>
