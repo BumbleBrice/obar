@@ -63,13 +63,13 @@
             </div>
         </div>
 
-        <?php if(!empty($Friend)): ?> <!-- ici les container d'amis qui va de ligne 66 a 77 -->
+        <?php if(!empty($Friends)): ?> <!-- ici les container d'amis qui va de ligne 66 a 77 -->
         <div class="container">
             <div class="row">
                 <?php foreach($Friends as $friend): ?>
                     <div class="col-xs-4 col-sm-3 col-md-2">
                         <div class="userStyle">
-                            <img src="<?=$this->assetUrl($friend['picture']);?>" class="img-responsive img-circle centree" alt="">
+                            <img src="<?=$this->assetUrl('img/'.$friend['picture']);?>" class="img-responsive img-circle centree" alt="">
                             <p class="text-center"><?=$friend['nickname']?></p>
                         </div>
                     </div>
