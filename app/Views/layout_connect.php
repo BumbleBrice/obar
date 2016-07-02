@@ -90,6 +90,11 @@
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
 
+    <!-- JS personnalisé -->
+    <script src="<?= $this->assetUrl('js/jquery.js') ?>"></script>
+    <script src="<?= $this->assetUrl('js/script_cookies.js'); ?>"></script>
+    <script src="<?= $this->assetUrl('js/bootstrap.js') ?>"></script>
+    <script src="<?= $this->assetUrl('js/js.js') ?>"></script>
     <!-- Custom Theme JavaScript -->
     <script>
     // Closes the sidebar menu
@@ -121,11 +126,6 @@
         });
     });
     </script>
-    <!-- JS personnalisé -->
-    <script src="<?= $this->assetUrl('js/jquery.js') ?>"></script>
-    <script src="<?= $this->assetUrl('js/script_cookies.js'); ?>"></script>
-    <script src="<?= $this->assetUrl('js/bootstrap.js') ?>"></script>
-    <script src="<?= $this->assetUrl('js/js.js') ?>"></script>
 </body>
 
 </html>

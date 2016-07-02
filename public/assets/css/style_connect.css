@@ -8,6 +8,8 @@ body{
     font-size: 18px;
     text-align: center;
 }
+
+
 .text-vertical-center h1 {
     font-family: 'Comfortaa', cursive;
     font-size: 5em;
@@ -42,6 +44,13 @@ h3{
     background-color: #fff;
     border-color: #ccc;
     float: right;
+}
+
+.connexion .btn-primary {
+    color: #333;
+    background-color: #fff;
+    border-color: #ccc;
+    float: inherit;
 }
 
 .btn-primary:hover{

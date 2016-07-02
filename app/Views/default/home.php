@@ -162,6 +162,8 @@
 					</div>
 				</div>
 		</section>
+	</div>
+</section>
 
 <!-- Inscription -->
 <section id="subs" class="subs">
