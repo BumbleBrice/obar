@@ -2,8 +2,6 @@
 
 <?php $this->start('main_content') ?>
 
-<?php if(isset($w_user)){ $this->redirectToRoute('default_home_connect'); } ?>
-
 <!-- Présentation -->
 <header id="top" class="header">
 	<div class="text-vertical-center">
