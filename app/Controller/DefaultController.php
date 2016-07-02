@@ -44,7 +44,7 @@ class DefaultController extends Controller
 			if(isset($get['deconnect']) && $get['deconnect'] == '1'){
 				$authModel->logUserOut(); //Permet de déconnecter l'utilisateur
 			}
-			// 'saintpierre','saintpaul','quinconces','meriadeck','gambetta','hoteldeville','saintmichel'
+
 			if(isset($get['quartiers'])){
 				if($get['quartiers'] == 'saintpierre'){
 					$quartiers = 'saintpierre';
@@ -237,12 +237,28 @@ class DefaultController extends Controller
 		$loggedUser = $authModel->getLoggedUser();
 		$listFriends= explode(',', $loggedUser['friends']);
 
+
 		$params = [];
 		$params['bars'] = $barModel->findAll();
 		$params['infos'] = $presentationModel->find(1);
 		$params['errors'] = [];
 		$params['errors']['connexion'] = [];
 		$params['lastbars'] = $newsModel->findAll('id', 'DESC', 3);
+		$params['quartiers'] = 'aucain';
+		$params['pointQuartiers'] = [
+			[
+				'x' => '45',
+				'y' => '52',
+				'name' => 'Saint Pierre',
+				'quartier' => 'saintpierre'
+			],
+			[
+				'x' => '46',
+				'y' => '59',
+				'name' => 'Saint Paul',
+				'quartier' => 'saintpaul'
+			]
+		];
 
 		$params['Friends'] = [];
 
@@ -250,6 +266,22 @@ class DefaultController extends Controller
 			$params['Friends'][] = $usersModel->find($friend);
 		}
 
+
+		if(!empty($_GET)){
+			$get = array_map('trim', array_map('strip_tags', $_GET));
+
+			if(isset($get['quartiers'])){
+				if($get['quartiers'] == 'saintpierre'){
+					$params['quartiers'] = 'saintpierre';
+				}
+			}
+
+			if(isset($get['quartiers'])){
+				if($get['quartiers'] == 'saintpaul'){
+					$params['quartiers'] = 'saintpaul';
+				}
+			}
+		}
 
 		if(!empty($_POST)){
 			$post = array_map('trim', array_map('strip_tags', $_POST));
