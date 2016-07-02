@@ -19,6 +19,7 @@
                     <div class="alert alert-success fade in">
                         <a href="#" class="close" data-dismiss="alert">&times;</a>
                         <strong>Félicitations!</strong> Vos modifications ont bien été enregistrées.
+                        <a class="btn btn-primary" href="<?=$this->url('default_home_connect')?>">Retour au profil</a>
                     </div>
                 <?php else: ?>
 

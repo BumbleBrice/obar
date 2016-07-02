@@ -250,6 +250,11 @@ section.users_profil{
      padding: 100px 0 100px 0;
 }
 
+.profil-pic{
+    max-width: 250px;
+    max-height: 250px;
+}
+
 
 /****************************************
 *************SECTION MAP*************

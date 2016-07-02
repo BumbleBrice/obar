@@ -11,7 +11,7 @@
         	 <a href="#" class="close" data-dismiss="alert">&times;</a>
         	 <strong>Erreur ! </strong><?=implode('<br>', $errors['connexion']); ?>
         </div>
-        <a href="<?$this->url('LostPassword_lostPassword')?>">Mot de passe oublier ?</a>
+        <a href="<?=$this->url('LostPassword_lostPassword')?>">Mot de passe oublier ?</a>
 <?php endif; ?>
 
 <!-- Connexion-->
@@ -42,7 +42,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <img class="img-circle img-responsive centree" src="<?=$this->assetUrl('img/3.jpg');?>" alt="">
+                <img class="img-circle img-responsive centree profil-pic" src="<?=$this->assetUrl('img/'.$w_user['picture']);?>" alt="photo profil">
             </div>
         </div>
         <div class="row">
