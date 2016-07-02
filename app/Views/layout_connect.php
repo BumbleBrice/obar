@@ -42,12 +42,13 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand page-scroll" href="#top">
-                <img alt="Brand" src="..."></a>
+                <!-- <a class="navbar-brand page-scroll" href="#top">
+                <img alt="Brand" src="..."></a> -->
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse">
+            
+            <div class="collapse navbar-collapse navbar-ex1-collapse nav_top">
                 <ul class="nav navbar-nav navbar-right">
                     <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
                     <li class="hidden">
