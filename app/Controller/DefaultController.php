@@ -26,10 +26,6 @@ class DefaultController extends Controller
 		$presentationModel = new Presentation();
 		$messageController = new \Controller\MessageController();
 
-		if($authModel->getLoggedUser()){
-			$this->redirectToRoute('default_home_connect');
-		}
-
 		$errors = [];// tableau de tablau d'erreurs
 		$errors['connexion'] = [];// tableau d'erreurs pour le formulaire de connexion
 		$errors['register'] = [];// tableau d'erreurs pour le formulaire d'inscription
@@ -60,6 +56,10 @@ class DefaultController extends Controller
 					$quartiers = 'saintpaul';
 				}
 			}
+		}
+
+		if($authModel->getLoggedUser()){
+			$this->redirectToRoute('default_home_connect');
 		}
 
 		if(!empty($_POST)){
