@@ -50,8 +50,6 @@ class MessageController extends Controller
 
 	public function getMessage()
 	{
-		$this->allowTo(['admin']);
-
 		$message = new MessageModel();
 
 		$message = $message->findAll('id', 'ASC');
@@ -61,8 +59,6 @@ class MessageController extends Controller
 
 	public function addMessage($firstname = '', $lastname = '', $email = '', $msg = '')
 	{
-		$this->allowTo(['admin']);
-
 		$message = new MessageModel();
 		$date = new \DateTime('NOW');
 		$date = $date->format('Y-m-d H:i:s');
@@ -84,8 +80,6 @@ class MessageController extends Controller
 
 	public function readMessage($id)
 	{
-		$this->allowTo(['admin']);
-
 		$message = new MessageModel();
 		$data = [
 			'message_state' => 'Lu'
@@ -95,8 +89,6 @@ class MessageController extends Controller
 	}
 	public function answerMessage($email, $reponse)
 	{
-		$this->allowTo(['admin']);
-
 		$app = getapp();
 		$mail = new \PHPMailer();
 
@@ -126,8 +118,6 @@ class MessageController extends Controller
 
 	public function message_delete($id, $delMessage)
 	{
-		// On limite l'accé à la page aux utilisateurs authentifiés et à ceux dont le rôle est admin ou éditor
-		$this->allowTo(['admin']);
 		$MessageModel = new MessageModel();
 		$Message = $MessageModel->find($id);
 
