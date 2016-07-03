@@ -8,6 +8,7 @@ use \Model\UsersModel as UsersModel;
 use \W\Security\AuthentificationModel as AuthModel;
 use \Controller\PresentationController as PresentationControl;
 
+
 use \finfo;
 
 
@@ -33,7 +34,6 @@ class UsersController extends Controller
 
 			// On instancie la classe UsersModel qui étend la classe Model
 			$usersModel = new UsersModel();
-			/*$auth = new AuthModel();*/
 
 			$post = [];
 			$errors = [];
@@ -51,6 +51,7 @@ class UsersController extends Controller
 			$user_picture = $user['picture'];
 			$user_role = $user['role'];
 			$user_password = $user['password'];
+			$auth = new AuthModel();
 
 			if(!empty($_FILES)){
 				if(isset($_FILES['picture']) && $_FILES['picture']['error'] == UPLOAD_ERR_OK) {
