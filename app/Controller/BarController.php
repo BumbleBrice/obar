@@ -67,7 +67,7 @@ class BarController extends Controller
 							$newFileName = explode('.', $fileName);
 							$fileExtension = end($newFileName); // Récupère l'extension du fichier
 
-							$finalFileName = 'bar-'.time().$fileExtension; // Le nom du fichier sera donc : user-1463058435.jpg (time() retourne un timestamp à la seconde). Cela permet de sécuriser l'upload de fichier
+							$finalFileName = 'bar-'.time().'.'.$fileExtension; // Le nom du fichier sera donc : user-1463058435.jpg (time() retourne un timestamp à la seconde). Cela permet de sécuriser l'upload de fichier
 
 
 							if(move_uploaded_file($fileTemp, $folder.$finalFileName)) {
@@ -281,7 +281,7 @@ class BarController extends Controller
 							$newFileName = explode('.', $fileName);
 							$fileExtension = end($newFileName); // Récupère l'extension du fichier
 
-							$finalFileName = 'bar-'.time().$fileExtension; // Le nom du fichier sera donc : user-1463058435.jpg (time() retourne un timestamp à la seconde). Cela permet de sécuriser l'upload de fichier
+							$finalFileName = 'bar-'.time().'.'.$fileExtension; // Le nom du fichier sera donc : user-1463058435.jpg (time() retourne un timestamp à la seconde). Cela permet de sécuriser l'upload de fichier
 
 
 							if(move_uploaded_file($fileTemp, $folder.$finalFileName)) {
