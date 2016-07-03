@@ -20,7 +20,7 @@
         <div class="row text-center">
             <div class="col-lg-10 col-lg-offset-1">
                 <form method="POST">
-                    <input type="hidden" name="form" value="Connexion">
+                    <input type="hidden" name="form" value="connexion">
                     <label for="co_pseudo"></label>
                     <input id="co_pseudo" type="text" name="co_pseudo" placeholder="Pseudo..." required>
 
