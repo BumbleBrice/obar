@@ -55,7 +55,7 @@
                     <div class="form-group">
                         <label for="picture" class="hidden-xs col-sm-2 control-label">Image</label>
                         <div class="col-sm-10">
-                            <input type="hidden" class="form-control" id="email" name="email" placeholder="Prénom" value="<?=$maxSize ?>">
+                            <input type="hidden" name="MAX_FILE_SIZE" value="<?=$maxSize; ?>">
                             <input type="file" class="form-control" id="picture" name="picture" placeholder="Prénom" value="<?=$w_user['picture'] ?>">
                             <span class="help-block">image (maximum 5Mo)</span>
                         </div>
