@@ -133,7 +133,7 @@
 			<?php elseif($quartiers == 'saintpierre'): ?>
 				<img src="<?=$this->assetUrl('img/Quartier-saint_pierre.svg'); ?>" alt="Le Quartier Saint Pierre" class="img-responsive">
 			<?php elseif($quartiers == 'saintpaul'): ?>
-				<img src="<?=$this->assetUrl('img/Quartier-saint_pierre.svg'); ?>" alt="Le Quartier Saint Paul" class="img-responsive">
+				<img src="<?=$this->assetUrl('img/saint_paul.svg'); ?>" alt="Le Quartier Saint Paul" class="img-responsive">
 			<?php endif; ?>
 				<div id="toggle" style="position: absolute;top: 0px;left: 0px">
 					<div class="">
