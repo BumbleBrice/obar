@@ -287,6 +287,21 @@ section.map{
 /********************/
 /*****PROFIL BAR*****/
 /********************/
+@media screen and (max-width: 700px){
+    .btBarHover{
+    background: white;
+    border-radius: 5px;
+    font-size: 12px;
+    }
+    .btBarHover:hover{
+
+        border-radius: 5px;
+        background: #c14e5f;
+        padding: 1px 2px;
+        color : white;
+        font-size: 13px;
+    }
+}
 .btBar {
     position: absolute;
     left: 15%;
