@@ -26,7 +26,7 @@
 
 <?php endif; ?>
 
-<?php 
+<?php
 
     if(isset($post['name']) && !empty($post['name'])){
         $name = $post['name'];
@@ -92,11 +92,11 @@
 							<input type="hidden" name="y" value="">
 
                             <div class="form-group">
-                                
+
                                 <label for="quartiers" class="display_block">Quartiers</label>
 
-                                <label  id="quartiers" class="radio-inline quartierAddBar"><input type="radio" name="quartiers" value="saintpierre">Saint Pierre</label>
-                                <label  id="quartiers" class="radio-inline quartierAddBar"><input type="radio" name="quartiers" value="saintpaul">Saint Paul</label>    
+                                <label  id="quartierSaintpierre" class="radio-inline quartierAddBar"><input type="radio" name="quartiers" value="saintpierre">Saint Pierre</label>
+                                <label  id="quartierSaintpaul" class="radio-inline quartierAddBar"><input type="radio" name="quartiers" value="saintpaul">Saint Paul</label>    
                             </div>
 
                             <div class="form-group">
