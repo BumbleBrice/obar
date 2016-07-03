@@ -68,7 +68,7 @@
                         <a class="page-scroll" href="<?=$this->url('default_home_connect')?>#newsletter">Newsletter</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="<?=$this->url('default_home_connect');?>?deconnect=1">Déconnexion</a>
+                        <a class="page-scroll" href="<?=$this->url('default_home');?>?deconnect=1">Déconnexion</a>
                     </li>
                 </ul>
             </div>
