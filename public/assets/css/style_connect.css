@@ -45,14 +45,12 @@ h3{
     border-color: #ccc;
     float: right;
 }
-
 .connexion .btn-primary {
     color: #333;
     background-color: #fff;
     border-color: #ccc;
     float: inherit;
 }
-
 .btn-primary:hover{
     background-color: #c14e5f;
     border-color: #025d70;
@@ -294,6 +292,10 @@ section.map{
 .btBar:active{
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.125) inset
 }
+.btBarHover{
+    background: white;
+    border-radius: 5px;
+}
 .btBarHover:hover{
 
     border-radius: 5px;
@@ -301,32 +303,22 @@ section.map{
     padding: 1px 2px;
     color : white;
 }
-@media(min-width: 769px) {
-    .btBar a{
-    font-size: 3rem;
-  
-
-}
-}
 .btBar a{
     text-transform: uppercase;
-    font-size: 2.5vw;
+    font-size: 2rem;
     color: #c14e5f;
     text-decoration: none;
 }
 .section-heading{
-    font-family: 'Playball',cursive;
+    font-family: 'Nunito', sans-serif;
 }
-
 h2.section-heading{
     color: white;
 }
-
 #barToggle img {
     max-width: 60%;
     max-height: 60%;
 }
-
 #toggle{
     left: 0;
     width: 100%;
@@ -337,9 +329,6 @@ h2.section-heading{
     border:2px solid #c14e5f; 
     color: white; 
     text-align:center
-}
-#toggle img{
-    /*width: 100%;*/
 }
 #toggle p{
 

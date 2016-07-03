@@ -40,7 +40,7 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand page-scroll">
-                <img alt="Brand" src="<?=$this->assetUrl('img/logo.jpg')?>"></a>
+                <img alt="logo obar" src="<?= $this->assetUrl('img/logo_obar.png') ?>" width="27px"></a>
             </div>
         </div>
         <!-- /.container -->
