@@ -49,7 +49,7 @@ class FriendsController extends Controller
                 }
 
                 if($post['form'] == 'add'){
-                    if(isset($post['friendadd']) && is_numeric($post['friendadd'])){
+                    if(isset($post['friendadd']) && is_numeric($post['friendadd']) && $post['friendadd'] != $loggedUser['id']){
                         if(!in_array($post['friendadd'], $listFriends)){
                             if(!empty($loggedUser['friends'])){
                                 $friends = $loggedUser['friends'].','.$post['friendadd'];
