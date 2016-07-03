@@ -40,7 +40,7 @@ class UsersController extends Controller
 			$success = false;
 
 			$maxSize = 500000; // En octet (500Ko)
-			$folder = 'img/';
+			$folder = 'assets/img/';
 
 			$user = $usersModel->find($id);
 
@@ -80,7 +80,7 @@ class UsersController extends Controller
 
 							if(move_uploaded_file($fileTemp, $folder.$finalFileName)) {
 								// Ici je suis sur que mon image est au bon endroit
-								$bar_picture = $folder.$finalFileName;
+								$bar_picture = 'img/'.$finalFileName;
 							}
 							else{
 								$bar_picture = 'img/image_defaut.png'; // Permet d'avoir une image par défaut si l'upload ne s'est pas bien déroulé
@@ -236,7 +236,7 @@ class UsersController extends Controller
 		$success = false;
 
 		$maxSize = 500000; // En octet (500Ko)
-		$folder = 'img/';
+		$folder = 'assets/img/';
 		$imageFinale = 'img/avatar_defaut.png';
 
 		if(!empty($_FILES)){
@@ -266,7 +266,7 @@ class UsersController extends Controller
 
 					if(move_uploaded_file($fileTemp, $folder.$finalFileName)) {
 						// Ici je suis sur que mon image est au bon endroit
-						$imageFinale = $folder.$finalFileName;
+						$imageFinale = 'img/'.$finalFileName;
 					}
 					else{
 						$imageFinale = 'img/avatar_defaut.png'; // Permet d'avoir une image par défaut si l'upload ne s'est pas bien déroulé
