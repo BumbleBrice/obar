@@ -96,14 +96,7 @@
                                 <label for="quartiers" class="display_block">Quartiers</label>
 
                                 <label  id="quartiers" class="radio-inline quartierAddBar"><input type="radio" name="quartiers" value="saintpierre">Saint Pierre</label>
-                                <label  id="quartiers" class="radio-inline quartierAddBar"><input type="radio" name="quartiers" value="saintpaul">Saint Paul</label>
-                                <label  id="quartiers" class="radio-inline quartierAddBar"><input type="radio" name="quartiers" value="quinconces">Quinconces</label>
-                                <label  id="quartiers" class="radio-inline quartierAddBar"><input type="radio" name="quartiers" value="meriadeck">Meriadeck</label>
-                                <label  id="quartiers" class="radio-inline quartierAddBar"><input type="radio" name="quartiers" value="quinconces">Quinconces</label>
-                                <label  id="quartiers" class="radio-inline quartierAddBar"><input type="radio" name="quartiers" value="gambetta">Gambetta</label>
-                                <label  id="quartiers" class="radio-inline quartierAddBar"><input type="radio" name="quartiers" value="hoteldeville">Hôtel de ville</label>
-                                <label  id="quartiers" class="radio-inline quartierAddBar"><input type="radio" name="quartiers" value="saintmichel">Saint Michel</label>
-                                
+                                <label  id="quartiers" class="radio-inline quartierAddBar"><input type="radio" name="quartiers" value="saintpaul">Saint Paul</label>    
                             </div>
 
                             <div class="form-group">
