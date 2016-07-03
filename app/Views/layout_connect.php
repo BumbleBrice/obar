@@ -42,8 +42,8 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <!-- <a class="navbar-brand page-scroll" href="#top">
-                <img alt="Brand" src="..."></a> -->
+                <a class="navbar-brand page-scroll" href="#top">
+                <img alt="Brand" src="<?= $this->assetUrl('img/logo_obar.png') ?>" width="27px"></a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->

@@ -78,7 +78,7 @@
         </div>
         <?php else: ?>
             <div>
-                <p>Vous ne pouvez pas voir ces personnes.</p>
+                <p>Vous n'avez aucun ami !</p>
             </div>
         <?php endif;?>
     </div>
