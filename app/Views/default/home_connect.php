@@ -11,7 +11,7 @@
         	 <a href="#" class="close" data-dismiss="alert">&times;</a>
         	 <strong>Erreur ! </strong><?=implode('<br>', $errors['connexion']); ?>
         </div>
-        <a href="<?=$this->url('LostPassword_lostPassword')?>">Mot de passe oublier ?</a>
+        <a href="<?=$this->url('LostPassword_lostPassword')?>">Mot de passe oublié ?</a>
 <?php endif; ?>
 
 <!-- Connexion-->
@@ -20,14 +20,14 @@
         <div class="row text-center">
             <div class="col-lg-10 col-lg-offset-1">
                 <form method="POST">
-                    <input type="hidden" name="form" value="connexion">
+                    <input type="hidden" name="form" value="Connexion">
                     <label for="co_pseudo"></label>
                     <input id="co_pseudo" type="text" name="co_pseudo" placeholder="Pseudo..." required>
 
                     <label for="co_pswd"></label>
-                    <input id="co_pswd" type="password" name="co_pswd" placeholder="Password..." required>
+                    <input id="co_pswd" type="password" name="co_pswd" placeholder="Mot de passe..." required>
 
-                    <input class="btn btn-primary" type="submit" value="connexion">
+                    <input class="btn btn-primary" type="submit" value="Connexion">
                 </form>
             </div>
         </div>
@@ -42,7 +42,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <img class="img-circle img-responsive centree profil-pic" src="<?=$this->assetUrl($w_user['picture']);?>" alt="photo profil">
+                <img class="img-circle img-responsive centree profil-pic" src="<?=$this->assetUrl($w_user['picture']);?>" alt="photo du profil de <?=$w_user['nickname'];?>">
             </div>
         </div>
         <div class="row">
@@ -60,7 +60,7 @@
             <div class="col-md-12 text-center">
                 <a class="btn btn-default" href="<?=$this->url('default_profil_membre', ['id' => $w_user['id']]);?>">Modifier mon profil</a>
                 <p class="subheading ">Vos ami(e)s !</p>
-                <a class="btn btn-default" href="<?=$this->url('friends_amis');?>">Ajouter un amis</a>
+                <a class="btn btn-default" href="<?=$this->url('friends_amis');?>">Chercher un ami</a>
             </div>
         </div>
 
@@ -132,7 +132,7 @@
             <!-- Left and right controls -->
             <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
                 <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-                <span class="sr-only">Précédent</span>
+                <span class="sr-only">Précèdent</span>
             </a>
 
             <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
@@ -152,10 +152,10 @@
             <h2>Choisissez votre quartier</h2>
         <?php elseif($quartiers == 'saintpierre'): ?>
             <h2>Saint Pierre</h2>
-            <a href="<?=$this->url('default_home_connect')?>#map">Retour au Quartiers</a>
+            <a href="<?=$this->url('default_home_connect')?>#map">Retour au Quartier</a>
         <?php elseif($quartiers == 'saintpaul'): ?>
             <h2>Saint Paul</h2>
-            <a href="<?=$this->url('default_home_connect')?>#map">Retour au Quartiers</a>
+            <a href="<?=$this->url('default_home_connect')?>#map">Retour au Quartier</a>
         <?php endif; ?>
         <section class="carte" style="position: relative;">
             <?php foreach($bars as $bar): ?>
@@ -209,7 +209,7 @@
                 <?php if(isset($success['contact']) && $success['contact'] === true): ?>
                     <div class="alert alert-success fade in">
                         <a href="#" class="close" data-dismiss="alert">&times;</a>
-                        <strong>Félicitations!</strong> Votre message a bien été envoyé.
+                        <strong>Félicitations !</strong> Votre message a bien été envoyé.
                     </div>
                 <?php endif; ?>
 
@@ -219,7 +219,7 @@
                         <label for="ct_firstname" class="hidden-xs col-sm-2 control-label">Prénom*</label>
                         <div class="col-sm-10">
                         <input type="text" name="ct_firstname" class="form-control" id="ct_firstname" placeholder="Prénom">
-                        <span id="helpBlock" class="help-block">* Commencer par une majuscule.</span>
+                        <span id="helpBlock" class="help-block">* Commence par une majuscule.</span>
                         </div>
                     </div>
 
@@ -227,7 +227,7 @@
                         <label for="ct_lastname" class="hidden-xs col-sm-2 control-label">Nom*</label>
                         <div class="col-sm-10">
                         <input type="text" class="form-control" name="ct_lastname" id="ct_lastname" placeholder="Nom">
-                        <span id="helpBlock" class="help-block">* Commencer par une majuscule.</span>
+                        <span id="helpBlock" class="help-block">* Commence par une majuscule.</span>
                         </div>
                     </div>
 
@@ -262,7 +262,7 @@
         <div class="row text-center">
             <div class="col-lg-10 col-lg-offset-1">
                 <h2>Newsletter</h2>
-                <p>Vous n'êtes pas encore abonné à notre newsletter ?</p>
+                <p>Vous n'êtes pas encore abonnés à notre newsletter ?</p>
                 <div id="mc_embed_signup">
                     <form action="//twitter.us13.list-manage.com/subscribe/post?u=7145e347cec5f3e12eec87b37&amp;id=ea200e434f" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
                         <div id="mc_embed_signup_scroll">
