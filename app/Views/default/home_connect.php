@@ -314,7 +314,7 @@
                         <a href="https://twitter.com"><i class="fa fa-twitter fa-fw fa-2x" aria-hidden="true"></i></a>
                     </li>
                     <li>
-                        <a href="https://twitter.com"><i class="fa fa-instagram fa-fw fa-2x" aria-hidden="true"></i></a>
+                        <a href="https://instagram.com"><i class="fa fa-instagram fa-fw fa-2x" aria-hidden="true"></i></a>
                     </li>
                 </ul>
                 <p>Copyright &copy; Ô Bar | Wf3 | 2016</p>
