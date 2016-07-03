@@ -556,7 +556,6 @@ class DefaultController extends Controller
 	                  <p class="text-left"><span class="titleInfBar">Adresse : </span><span class="infoBar">'.$bar['adress'].'</span></p>
 	                  <p class="text-left"><span class="titleInfBar">Télephone : </span><span class="infoBar">'.$bar['phone'].'</span></p>
 	                  <p class="text-left"><span class="titleInfBar">Horaire : </span><span class="infoBar">'.$bar['scheduleOpen'].'</span></p>
-	                  <p class="text-left"><span class="titleInfBar">Thème : </span><span class="infoBar">aze</span></p>
 					  <a class="btn btn-default" href="'.$bar['google_url'].'">Google map</a>
 					  <a class="btn btn-default" href="'.$bar['url'].'">Site du bar</a>
 	                </div>
