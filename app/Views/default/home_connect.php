@@ -213,7 +213,7 @@
                     </div>
                 <?php endif; ?>
 
-                <form class="form-horizontal" method="POST">
+                <form class="form-horizontal" method="POST" action="#contact">
                     <input type="hidden" name="form" value="contact">
                     <div class="form-group">
                         <label for="ct_firstname" class="hidden-xs col-sm-2 control-label">Prénom*</label>

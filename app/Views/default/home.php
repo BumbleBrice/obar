@@ -104,8 +104,10 @@
 			<h2>Choisissez votre quartier</h2>
 		<?php elseif($quartiers == 'saintpierre'): ?>
 			<h2>Saint Pierre</h2>
+			<a href="<?=$this->url('default_home')?>#map">Retour au Quartiers</a>
 		<?php elseif($quartiers == 'saintpaul'): ?>
 			<h2>Saint Paul</h2>
+			<a href="<?=$this->url('default_home')?>#map">Retour au Quartiers</a>
 		<?php endif; ?>
 		<section class="carte" style="position: relative;">
 			<?php foreach($bars as $bar): ?>
@@ -167,7 +169,7 @@
 		                </div>
 		            <?php endif; ?>
 
-	            <form class="form-horizontal" method="POST">
+	            <form class="form-horizontal" method="POST" action="#subs">
 	                <input type="hidden" name="form" value="register">
 	                <div class="form-group">
 	                    <label for="nickname" class="hidden-xs col-sm-2 control-label">Pseudo</label>
@@ -228,7 +230,7 @@
                 </div>
             <?php endif; ?>
 
-            <form class="form-horizontal" method="POST">
+            <form class="form-horizontal" method="POST" action="#contact">
                 <input type="hidden" name="form" value="contact">
                 <div class="form-group">
                     <label for="ct_firstname" class="hidden-xs col-sm-2 control-label">Prénom*</label>
