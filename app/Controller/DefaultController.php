@@ -553,7 +553,7 @@ class DefaultController extends Controller
 	              </div>
 	              <div class="row">
 	                <div class="col-lg-12 barStyle">
-	                  <img class="img-rounded img-responsive" src="'.$bar['picture'].'" alt="">
+	                  <img class="img-rounded img-responsive" src="'.$_SERVER['W_BASE'].'/assets/'.$bar['picture'].'" alt="">
 	                </div>
 	              </div>
 	              <div class="row">
