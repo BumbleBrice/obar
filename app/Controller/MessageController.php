@@ -40,6 +40,7 @@ class MessageController extends Controller
 
 			if(count($params['errors']) == 0) {
 				if($this->answerMessage($email, $post['reponse'])) {
+					$this->readMessage($id);
 					$this->redirectToRoute('admin_message');
 				}
 			}
