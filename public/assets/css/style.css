@@ -358,6 +358,10 @@ h2.section-heading{
     line-height: 1.7;
 }
 
+#barToggle img {
+    max-width: 50%;
+    max-height: 50%;
+}
 /*****Formulaire*****/
 .form-style-8{
     font-family: 'Open Sans Condensed', arial, sans;

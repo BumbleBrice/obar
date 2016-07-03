@@ -48,7 +48,7 @@
                     <div class="form-group">
                         <label for="email" class="hidden-xs col-sm-2 control-label">Email</label>
                         <div class="col-sm-10">
-                        <input type="text" class="form-control" id="email" name="email" placeholder="Prénom" value="<?=$w_user['email'] ?>">
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Email" value="<?=$w_user['email'] ?>">
                         </div>
                     </div>
 
