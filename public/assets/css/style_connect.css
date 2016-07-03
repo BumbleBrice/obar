@@ -321,6 +321,12 @@ section.map{
 h2.section-heading{
     color: white;
 }
+
+#barToggle img {
+    max-width: 60%;
+    max-height: 60%;
+}
+
 #toggle{
     left: 0;
     width: 100%;

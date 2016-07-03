@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Sam 02 Juillet 2016 à 12:13
+-- Généré le :  Dim 03 Juillet 2016 à 14:38
 -- Version du serveur :  10.1.13-MariaDB
--- Version de PHP :  5.6.20
+-- Version de PHP :  5.5.35
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -28,9 +28,9 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `bar` (
   `id` int(11) NOT NULL,
-  `quartiers` enum('saintpierre','saintpaul','quinconces','meriadeck','gambetta','hoteldeville','saintmichel') NOT NULL,
+  `quartiers` text NOT NULL,
   `name` varchar(255) NOT NULL,
-  `picture` varchar(255) NOT NULL,
+  `picture` varchar(255) NOT NULL DEFAULT 'defaut_bar.jpeg',
   `description` text NOT NULL,
   `phone` varchar(255) NOT NULL,
   `adress` varchar(255) NOT NULL,
@@ -48,17 +48,18 @@ CREATE TABLE `bar` (
 --
 
 INSERT INTO `bar` (`id`, `quartiers`, `name`, `picture`, `description`, `phone`, `adress`, `schedule`, `scheduleOpen`, `x`, `y`, `google_url`, `date`, `url`) VALUES
-(4, 'saintpierre', 'Le Wine Bar', 'assets/img/bar-1467381233jpg', 'Le Win Bar, vous accueille au coeur du vieux Bordeaux, dans le quartier historique de Saint Pierre.\r\nIci, le vin et les spécialités Italiennes sont à l''honneur !', '06 76 00 50 54', '19, Rue des Bahutiers', 'Lundi, Samedi, Dimanche', '8h à 12h et de 13h à 23h', '-2.7433349609375', '30.136669921875', 'https://www.google.fr/maps/place/19, Rue des Bahutiers/', '2016-07-02 11:57:09', 'http://www.lewinebar-bordeaux.com/'),
-(5, 'saintpierre', 'La Contesse', 'assets/img/bar-1467381258jpg', 'Un lieu atypique où vous trouverez des mojitos au goût délicieux !', '05 56 51 03 07', '25 rue Parlement Saint-Pierre33000 Bordeaux', 'Lundi, Samedi, Dimanche', '8h à 12h et de 13h à 23h', '26.2566650390625', '33.689999389648435', 'https://www.google.fr/maps/place/25 rue Parlement Saint-Pierre33000 Bordeaux/', '2016-07-02 11:57:29', 'https://fr-fr.facebook.com/La-Comtesse-164106890312521/'),
-(6, 'saintpierre', 'L''Alchismiste', 'assets/img/bar-1467381277jpg', 'Bar à cocktails dans un endroit cozy et authentique !', '05 56 48 11 82', '16 rue Parlement Saint-Pierre33000 Bordeaux', 'Lundi, Samedi, Dimanche', '8h à 12h et de 13h à 23h', '17.6566650390625', '41.53666687011719', 'https://www.google.fr/maps/place/16 rue Parlement Saint-Pierre33000 Bordeaux/', '2016-07-02 12:02:42', 'http://www.lachimistebordeaux.com/'),
-(7, 'saintpierre', 'Cafécito', 'assets/img/bar-1467381289jpg', 'Le Café Cito, bar à bière ou à vin, cocktails et tapas situé dans les rues piétonnes, Place Saint Pierre, vous réserve un accueil des plus chaleureux.', '05 56 44 43 89', '7 Rue Parlement Saint-Pierre33000 Bordeaux', 'Lundi, Samedi, Dimanche', '8h à 12h et de 13h à 23h', '19.6566650390625', '48.166665649414064', 'https://www.google.fr/maps/place/7 Rue Parlement Saint-Pierre33000 Bordeaux/', '2016-07-02 12:01:04', 'http://www.cafecito-bar-vins-bieres-bordeaux.fr/'),
-(8, 'saintpierre', 'The Black Velvet Bar', 'assets/img/bar-1467381308jpg', 'Irish Pub\r\nVous pourrez y apprécier une bonne pint bien fraîche de Guinness en écoutant de la bonne musique ou en regardant un match sur grand écran.', '09 51 34 28 73', '9 Rue du Chai des Farines, 33000 Bordeaux', 'Lundi, Samedi, Dimanche', '8h à 12h et de 13h à 23h', '-3.7433349609375', '56.289999389648436', 'https://www.google.fr/maps/place/9 Rue du Chai des Farines, 33000 Bordeaux/', '2016-07-02 12:01:49', 'http://www.blackvelvetbar.fr/'),
-(9, 'saintpaul', 'Vintage Bar', 'assets/img/bar-1467381328png', 'Bar à bières et rhums !\r\nHAPPY HOURS proposés tous le jours de 16h à 20h.\r\nLe VINTAGE BAR est l''endroit idéal pour passer des soirées conviviales et animées sur des airs de reggae, rock, soul, funk tout en dégustant d''excellents breuvages.', '( pas de tél )', '45 Rue Saint-James, 33000 Bordeaux', 'Lundi, Samedi, Dimanche', '8h à 12h et de 13h à 23h', '36.359375', '49.428125', 'https://www.google.fr/maps/place/45 Rue Saint-James, 33000 Bordeaux/', '2016-07-01 15:55:28', 'http://www.vintage-bar.fr/'),
-(10, 'saintpaul', 'Wine more time', 'assets/img/bar-1467381341jpg', 'Bar à vins et cave décoré dans un style contemporain propose des vins au verre différents chaque semaine.', '05 56 52 85 61', '8 Rue Saint-James, 33000 Bordeaux', 'Lundi, Samedi, Dimanche', '8h à 12h et de 13h à 23h', '36.359375', '49.428125', 'https://www.google.fr/maps/place/8 Rue Saint-James, 33000 Bordeaux/', '2016-07-01 15:55:41', 'http://winemoretime.blogspot.fr/'),
-(11, 'saintpaul', 'Ô plafond, bar éphémère', 'assets/img/bar-1467381365jpg', 'Association culturelle proposant des apéros chaleureux et convivaux.', '06 68 09 80 38', '14 Rue Saint-Vincent-de-Paul, 33800 Bordeaux', 'Lundi, Samedi, Dimanche', '8h à 12h et de 13h à 23h', '36.359375', '49.428125', 'https://www.google.fr/maps/place/14 Rue Saint-Vincent-de-Paul, 33800 Bordeaux/', '2016-07-01 15:56:05', 'http://o.bar.le.plafond.free.fr/'),
-(12, 'saintpaul', 'Le Chabi', 'assets/img/bar-1467381377jpg', 'Bar tabac proposant une terrasse ensoleillée pour partager un verre entre amis.', '05 56 52 88 61', '24 Rue Sainte-Colombe, 33000 Bordeaux', 'Lundi, Samedi, Dimanche', '8h à 12h et de 13h à 23h', '36.359375', '49.428125', 'https://www.google.fr/maps/place/24 Rue Sainte-Colombe, 33000 Bordeaux/', '2016-07-01 15:56:17', 'http://www.pagesjaunes.fr/pros/07100951'),
-(13, 'saintmichel', 'Purple Wine', 'assets/img/bar-1467381412jpg', 'Bar à vins, bar lounge & restaurant\r\nNiché dans une bâtisse du XVe siècle, ce restaurant français au cadre design sert une cuisine du marché.', '05 56 43 17 49', '23 Rue Neuve, 33000 Bordeaux', 'Lundi, Samedi, Dimanche', '8h à 12h et de 13h à 23h', '36.359375', '49.428125', 'https://www.google.fr/maps/place/23 Rue Neuve, 33000 Bordeaux/', '2016-07-01 15:56:52', 'https://m.facebook.com/Le-Purple-Wine-368780786472782/?ref=stream'),
-(19, 'saintpierre', 'Calle-Ocho', 'assets/img/bar-1467454262jpg', 'Ce bar cubain sert dans une ambiance latine des cocktails traditionnels et organise des soirées tapas & salsa', '05 56 81 89 99', '24 Rue Piliers des Tutelles', 'Lundi, Mardi, Mercredi, Jeudi, Vendredi, Samedi', '17h à 22h', '62.4566650390625', '19.4066650390625', 'https://www.google.fr/maps/place/24 Rue Piliers des Tutelles/', '2016-07-02 12:12:07', 'http://http://www.calle-ocho.eu/');
+(4, 'saintpierre', 'Le Wine Bar', 'img/bar-123456789.jpg', 'Le Win Bar, vous accueille au coeur du vieux Bordeaux, dans le quartier historique de Saint Pierre.\r\nIci, le vin et les spécialités Italiennes sont à l''honneur !', '06 76 00 50 54', '19, Rue des Bahutiers', 'Lundi, Samedi, Dimanche', '8h à 12h et de 13h à 23h', '-2.7433349609375', '30.136669921875', 'https://www.google.fr/maps/place/19, Rue des Bahutiers/', '2016-07-03 12:47:49', 'http://www.lewinebar-bordeaux.com/'),
+(5, 'saintpierre', 'La Comtesse', 'img/bar-1467540990.jpg', 'Un lieu atypique où vous trouverez des mojitos au goût délicieux !', '05 56 51 03 07', '25 rue Parlement Saint-Pierre33000 Bordeaux', 'Lundi, Samedi, Dimanche', '8h à 12h et de 13h à 23h', '31.9625', '45.778125', 'https://www.google.fr/maps/place/25 rue Parlement Saint-Pierre33000 Bordeaux/', '2016-07-03 12:16:30', 'https://fr-fr.facebook.com/La-Comtesse-164106890312521/'),
+(6, 'saintpierre', 'L''Alchismiste', 'img/bar-1467542885.jpg', 'Bar à cocktails dans un endroit cozy et authentique !', '05 56 48 11 82', '16 rue Parlement Saint-Pierre33000 Bordeaux', 'Lundi, Samedi, Dimanche', '8h à 12h et de 13h à 23h', '17.6566650390625', '41.53666687011719', 'https://www.google.fr/maps/place/16 rue Parlement Saint-Pierre33000 Bordeaux/', '2016-07-03 12:48:05', 'http://www.lachimistebordeaux.com/'),
+(7, 'saintpierre', 'Cafécito', 'img/bar-1467542904.jpg', 'Le Café Cito, bar à bière ou à vin, cocktails et tapas situé dans les rues piétonnes, Place Saint Pierre, vous réserve un accueil des plus chaleureux.', '05 56 44 43 89', '7 Rue Parlement Saint-Pierre33000 Bordeaux', 'Lundi, Samedi, Dimanche', '8h à 12h et de 13h à 23h', '19.6566650390625', '48.166665649414064', 'https://www.google.fr/maps/place/7 Rue Parlement Saint-Pierre33000 Bordeaux/', '2016-07-03 12:48:24', 'http://www.cafecito-bar-vins-bieres-bordeaux.fr/'),
+(8, 'saintpierre', 'The Black Velvet Bar', 'img/bar-1467542935.jpg', 'Irish Pub\r\nVous pourrez y apprécier une bonne pint bien fraîche de Guinness en écoutant de la bonne musique ou en regardant un match sur grand écran.', '09 51 34 28 73', '9 Rue du Chai des Farines, 33000 Bordeaux', 'Lundi, Samedi, Dimanche', '8h à 12h et de 13h à 23h', '-3.7433349609375', '56.289999389648436', 'https://www.google.fr/maps/place/9 Rue du Chai des Farines, 33000 Bordeaux/', '2016-07-03 12:48:55', 'http://www.blackvelvetbar.fr/'),
+(9, 'saintpaul', 'Vintage Bar', 'img/bar-1467542953.png', 'Bar à bières et rhums !\r\nHAPPY HOURS proposés tous le jours de 16h à 20h.\r\nLe VINTAGE BAR est l''endroit idéal pour passer des soirées conviviales et animées sur des airs de reggae, rock, soul, funk tout en dégustant d''excellents breuvages.', '( pas de tél )', '45 Rue Saint-James, 33000 Bordeaux', 'Lundi, Samedi, Dimanche', '8h à 12h et de 13h à 23h', '36.359375', '49.428125', 'https://www.google.fr/maps/place/45 Rue Saint-James, 33000 Bordeaux/', '2016-07-03 12:49:13', 'http://www.vintage-bar.fr/'),
+(10, 'saintpaul', 'Wine more time', 'img/bar-1467542968.jpg', 'Bar à vins et cave décoré dans un style contemporain propose des vins au verre différents chaque semaine.', '05 56 52 85 61', '8 Rue Saint-James, 33000 Bordeaux', 'Lundi, Samedi, Dimanche', '8h à 12h et de 13h à 23h', '36.359375', '49.428125', 'https://www.google.fr/maps/place/8 Rue Saint-James, 33000 Bordeaux/', '2016-07-03 12:49:28', 'http://winemoretime.blogspot.fr/'),
+(11, 'saintpaul', 'Ô plafond, bar éphémère', 'img/bar-8965412.jpg', 'Association culturelle proposant des apéros chaleureux et convivaux.', '06 68 09 80 38', '14 Rue Saint-Vincent-de-Paul, 33800 Bordeaux', 'Lundi, Samedi, Dimanche', '8h à 12h et de 13h à 23h', '36.359375', '49.428125', 'https://www.google.fr/maps/place/14 Rue Saint-Vincent-de-Paul, 33800 Bordeaux/', '2016-07-03 12:50:40', 'http://o.bar.le.plafond.free.fr/'),
+(12, 'saintpaul', 'Le Chabi', 'img/bar-1467542983.jpg', 'Bar tabac proposant une terrasse ensoleillée pour partager un verre entre amis.', '05 56 52 88 61', '24 Rue Sainte-Colombe, 33000 Bordeaux', 'Lundi, Samedi, Dimanche', '8h à 12h et de 13h à 23h', '36.359375', '49.428125', 'https://www.google.fr/maps/place/24 Rue Sainte-Colombe, 33000 Bordeaux/', '2016-07-03 12:49:43', 'http://www.pagesjaunes.fr/pros/07100951'),
+(13, 'saintpaul', 'Purple Wine', 'img/bar-1467542856.jpg', 'Bar à vins, bar lounge & restaurant\r\nNiché dans une bâtisse du XVe siècle, ce restaurant français au cadre design sert une cuisine du marché.', '05 56 43 17 49', '23 Rue Neuve, 33000 Bordeaux', 'Lundi, Samedi, Dimanche', '8h à 12h et de 13h à 23h', '36.359375', '49.428125', 'https://www.google.fr/maps/place/23 Rue Neuve, 33000 Bordeaux/', '2016-07-03 12:47:36', 'https://m.facebook.com/Le-Purple-Wine-368780786472782/?ref=stream'),
+(19, 'saintpierre', 'Calle-Ocho', 'img/bar-1467543059.jpg', 'Ce bar cubain sert dans une ambiance latine des cocktails traditionnels et organise des soirées tapas & salsa', '05 56 81 89 99', '24 Rue Piliers des Tutelles', 'Lundi, Mardi, Mercredi, Jeudi, Vendredi, Samedi', '17h à 22h', '62.4566650390625', '19.4066650390625', 'https://www.google.fr/maps/place/24 Rue Piliers des Tutelles/', '2016-07-03 12:50:59', 'http://http://www.calle-ocho.eu/'),
+(20, 'saintpierre', 'Le Café Brun', 'img/bar-1467540711.jpg', 'Pour des soirées jazz, des soirées rock, des soirées musique, venez aux apéros concert du bar Le Café Brun.', '05 56 52 00 40', '45 rue Saint-Rémi, 33000 Bordeaux', 'Lundi, Mardi, Mercredi, Jeudi, Vendredi, Samedi, Dimanche', '9h à 2h', '59.778125', '39.278125', 'https://www.google.fr/maps/place/45 rue Saint-Rémi, 33000 Bordeaux/', '2016-07-03 12:11:51', 'http://www.cafebrun.fr/');
 
 -- --------------------------------------------------------
 
@@ -82,7 +83,8 @@ CREATE TABLE `contact` (
 
 INSERT INTO `contact` (`id`, `firstname`, `lastname`, `email`, `content`, `date_add`, `message_state`) VALUES
 (4, 'Bumble', 'Brice', 'collilieux.brice@gmail.com', 'dftytrytryeytr', '2016-07-02 11:24:45', 'Non lu'),
-(5, 'Bumble', 'Brice', 'collilieux.brice@gmail.com', 'hioioyuioi', '2016-07-02 11:27:50', 'Non lu');
+(5, 'Bumble', 'Brice', 'collilieux.brice@gmail.com', 'hioioyuioi', '2016-07-02 11:27:50', 'Non lu'),
+(6, 'Jennifer', 'Villeroy', 'jennifer.villeroy@gmail.com', 'test djfkjfkldfhjfhjfhgkjhutuirfhkg fhkhfkghrghru hdrgj', '2016-07-03 11:19:05', 'Non lu');
 
 -- --------------------------------------------------------
 
@@ -104,9 +106,7 @@ CREATE TABLE `news` (
 INSERT INTO `news` (`id`, `what`, `bar`, `msg`) VALUES
 (1, 'evenement', 'Le Petit Brun', 'Concert tous les dimanches à 19h'),
 (2, 'nouveau', 'Le Wine Bar', 'Pour les amoureux de vins en toutes sortes.'),
-(3, 'evenement', 'Le Velvet Bar', 'Ecran géant pendant l''Euro 2016 !'),
-(4, 'evenementblabla', 'Le Velvet Barbla', 'Ecran géant pendant l''Euro 1985 !'),
-(5, 'Rien', 'Personne', 'Pas envie');
+(3, 'evenement', 'Le Velvet Bar', 'Ecran géant pendant l''Euro 2016 !');
 
 -- --------------------------------------------------------
 
@@ -183,21 +183,22 @@ CREATE TABLE `users` (
   `lastname` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
-  `picture` varchar(255) NOT NULL,
+  `picture` varchar(255) DEFAULT 'img/defaut_profil.jpg',
   `role` enum('user','owner','admin') NOT NULL,
-  `confirm` tinyint(1) NOT NULL
+  `confirm` tinyint(1) NOT NULL,
+  `friends` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Contenu de la table `users`
 --
 
-INSERT INTO `users` (`id`, `nickname`, `firstname`, `lastname`, `email`, `password`, `picture`, `role`, `confirm`) VALUES
-(11, 'Alexis', 'Alexis', 'Meunier', 'meunier_33@live.fr', '$2y$10$Uaj9LA.gKehNzOByHIrx2OBLK0JdRKptV0TucHnmA7KMuj0Thg9/q', 'assets/img/user-1467367823png', 'admin', 1),
-(12, 'Bumble', 'Brice', 'Collilieux', 'collilieux.brice@gmail.fr', '$2y$10$3GcwqsE51a4N3xA5Jk/X5Ov0Cfq/P3jRK8Bzb0VlRfwCHJDpieeCi', 'assets/img/user-1467367843png', 'admin', 1),
-(13, 'Jenjen', 'Jennifer', 'Villeroy', 'jennifer.villeroy@gmail.com', '$2y$10$KHaGjIcBRc8ger.JmO9tM.p1nWqhBTIZxIL4S0iBGPBiWcknxzol6', 'assets/img/user-1467367864jpg', 'admin', 1),
-(14, 'Yoan', 'Yoan', 'Garcia', 'yoan.gcia@hotmail.fr', '$2y$10$/0XS.OxWzkqEAM49EFzBX.imQVNr7S3DrfutkXZD7bdyn524oMTa6', 'assets/img/user-1467367879jpg', 'admin', 1),
-(15, 'Blablabla', 'Membre', 'Membre', 'membre@membre.fr', '$2y$10$14tMuS0WCZsP3AA.3E5QEO8LPYh5k240idmJiVhdjOwG043eHBwtK', 'assets/img/user-1467367937png', 'user', 1);
+INSERT INTO `users` (`id`, `nickname`, `firstname`, `lastname`, `email`, `password`, `picture`, `role`, `confirm`, `friends`) VALUES
+(11, 'Alexis', 'Alexis', 'Meunier', 'meunier_33@live.fr', '$2y$10$Uaj9LA.gKehNzOByHIrx2OBLK0JdRKptV0TucHnmA7KMuj0Thg9/q', 'assets/img/user-1467367823png', 'admin', 1, ''),
+(12, 'Bumble', 'Brice', 'Collilieux', 'collilieux.brice@gmail.fr', '$2y$10$3GcwqsE51a4N3xA5Jk/X5Ov0Cfq/P3jRK8Bzb0VlRfwCHJDpieeCi', 'assets/img/user-1467367843png', 'admin', 1, ''),
+(13, 'Jenjen', 'Elodie', 'Villeroy', 'jenniferwf3@projet.fr', '$2y$10$KHaGjIcBRc8ger.JmO9tM.p1nWqhBTIZxIL4S0iBGPBiWcknxzol6', 'Jen_avatar.jpg', 'admin', 1, ''),
+(14, 'Yoan', 'Yoan', 'Garcia', 'yoan.gcia@hotmail.fr', '$2y$10$/0XS.OxWzkqEAM49EFzBX.imQVNr7S3DrfutkXZD7bdyn524oMTa6', 'assets/img/user-1467367879jpg', 'admin', 1, ''),
+(15, 'Blablabla', 'Membre', 'Membre', 'membre@membre.fr', '$2y$10$14tMuS0WCZsP3AA.3E5QEO8LPYh5k240idmJiVhdjOwG043eHBwtK', 'assets/img/user-1467367937png', 'user', 1, '');
 
 --
 -- Index pour les tables exportées
@@ -260,12 +261,12 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT pour la table `bar`
 --
 ALTER TABLE `bar`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 --
 -- AUTO_INCREMENT pour la table `contact`
 --
 ALTER TABLE `contact`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT pour la table `news`
 --
