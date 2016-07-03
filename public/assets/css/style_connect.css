@@ -8,8 +8,6 @@ body{
     font-size: 18px;
     text-align: center;
 }
-
-
 .text-vertical-center h1 {
     font-family: 'Comfortaa', cursive;
     font-size: 5em;
@@ -19,11 +17,16 @@ body{
     border: 12px solid rgba(255, 255, 255, 0.6);
     padding: 20px 0 20px 0;
 }
+a{
+    text-decoration: none;
+    color :#c14e5f;
+}
 h2{
 	font-family: 'Nunito', sans-serif;
 	color:#2b8c9d;
 	text-align: center;
     padding-bottom: 20px;
+    font-size: 45px;
 }
 h3{
 	font-family: 'Nunito', sans-serif;
@@ -314,6 +317,7 @@ section.map{
 }
 h2.section-heading{
     color: white;
+    font-size: 30px;
 }
 #barToggle img {
     max-width: 60%;

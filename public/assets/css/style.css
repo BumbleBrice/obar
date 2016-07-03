@@ -20,11 +20,17 @@ body{
     padding: 20px 0 20px 0;
 }
 
+a{
+    text-decoration: none;
+    color :#c14e5f;
+}
+
 h2{
 	font-family: 'Nunito', sans-serif;
 	color:#2b8c9d;
 	text-align: center;
     padding-bottom: 20px;
+    font-size: 45px;
 }
 h3{
 	font-family: 'Nunito', sans-serif;
@@ -304,6 +310,7 @@ ul .nav .navbar-nav .navbar-right>a{
 }
 h2.section-heading{
     color: white;
+    font-size: 30px;
 }
 #toggle{
     left: 0;
