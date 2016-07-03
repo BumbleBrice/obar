@@ -44,7 +44,7 @@
             <tbody>
                 <?php foreach($listFriends as $friend): ?>
                     <tr>
-                        <td><?=$friend['picture']?></td>
+                        <td><img src="<?=$this->assetUrl($friend['picture']);?>" alt=""></td>
                         <td><?=$friend['nickname']?></td>
                         <td>
                             <form method="post">
