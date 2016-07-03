@@ -264,9 +264,10 @@ class DefaultController extends Controller
 		];
 
 		$params['Friends'] = [];
-
-		foreach($listFriends as $friend){
-			$params['Friends'][] = $usersModel->find($friend);
+		if(!empty($loggedUser['friends'])){
+			foreach($listFriends as $friend){
+				$params['Friends'][] = $usersModel->find($friend);
+			}
 		}
 
 
