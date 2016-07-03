@@ -1,4 +1,4 @@
-<?php $this->layout('layout', ['title' => 'Ajouter un ami']) ?>
+<?php $this->layout('layout_connect', ['title' => 'Ajouter un ami']) ?>
 
 <?php $this->start('main_content') ?>
 <br>

@@ -1,4 +1,4 @@
-<?php $this->layout('layout_profil_membre', ['title' => 'Ô Bar | Bordeaux']) ?>
+<?php $this->layout('layout_profil_membre', ['title' => 'Modifier profil']) ?>
 
 <?php $this->start('main_content') ?>
 
