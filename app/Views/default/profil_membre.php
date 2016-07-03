@@ -56,7 +56,7 @@
                         <label for="picture" class="hidden-xs col-sm-2 control-label">Image</label>
                         <div class="col-sm-10">
                             <input type="hidden" name="MAX_FILE_SIZE" value="<?=$maxSize; ?>">
-                            <input type="file" class="form-control" id="picture" name="picture">
+                            <input type="file" class="filestyle" id="picture" name="picture">
                             <span class="help-block">image (maximum 5Mo)</span>
                         </div>
                     </div>

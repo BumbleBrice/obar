@@ -37,7 +37,7 @@
     <nav id="custom-nav" class="navbar navbar-default navbar-fixed-top" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header page-scroll">
-                <a class="navbar-brand page-scroll" href="#top">
+                <a class="navbar-brand page-scroll" href="<?= $this->url('default_home')?>">
                 <img id="logo" alt="Brand" src="<?= $this->assetUrl('img/logo_obar.png') ?>" width="27px"></a>
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
                     <span class="sr-only">Toggle navigation</span>
@@ -62,13 +62,13 @@
                         </ul>
                     </li>
                     <li>
-                        <a class="page-scroll" href="?quartiers=#map">Carte</a>
+                        <a class="page-scroll" href="<?=$this->url('default_home')?>?quartiers=#map">Carte</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#subs">Inscription</a>
+                        <a class="page-scroll" href="<?=$this->url('default_home')?>#subs">Inscription</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#contact">Contact</a>
+                        <a class="page-scroll" href="<?=$this->url('default_home')?>#contact">Contact</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="<?= $this->url('default_home_connect')?>">Connexion</a>

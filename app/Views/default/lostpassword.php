@@ -1,6 +1,7 @@
 <?php $this->layout('layout', ['title' => 'Reset Password']) ?>
 
 <?php $this->start('main_content') ?>
+<section style="background:#b2ebe5;">
 	<br>
 	<br>
 	<br>
@@ -55,4 +56,5 @@
 			<input type="submit" value="Envoyer">
 		</form>
 	<?php endif; ?>
+	</section>
 <?php $this->stop('main_content') ?>

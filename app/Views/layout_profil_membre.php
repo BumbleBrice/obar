@@ -39,9 +39,40 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand page-scroll">
-                <img alt="logo obar" src="<?= $this->assetUrl('img/logo_obar.png') ?>" width="27px"></a>
+                <a class="navbar-brand page-scroll" href="#top">
+                <img alt="Brand" src="<?= $this->assetUrl('img/logo_obar.png') ?>" width="27px"></a>
             </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            
+            <div class="collapse navbar-collapse navbar-ex1-collapse nav_top">
+                <ul class="nav navbar-nav navbar-right">
+                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                    <li class="hidden">
+                        <a class="page-scroll" href="#page-top"></a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Les quartiers <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="<?=$this->url('default_home_connect')?>?quartiers=saintpierre#map">Saint-Pierre</a></li>
+                            <li><a href="<?=$this->url('default_home_connect')?>?quartiers=saintpaul#map">Saint-Paul</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                         <a class="page-scroll" href="<?=$this->url('default_home_connect')?>?quartiers=#map">Carte</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="<?=$this->url('default_home_connect')?>#contact">Contact</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="<?=$this->url('default_home_connect')?>#newsletter">Newsletter</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="<?=$this->url('default_home_connect');?>?deconnect=1">Déconnexion</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
         </div>
         <!-- /.container -->
     </nav>
@@ -91,6 +122,7 @@
     <script src="<?= $this->assetUrl('js/jquery.js') ?>"></script>
     <script src="<?= $this->assetUrl('js/bootstrap.js') ?>"></script>
     <script src="<?= $this->assetUrl('js/js.js') ?>"></script>
+    <script src="<?= $this->assetUrl('js/bootstrap-filestyle.min.js'); ?>"></script>
 </body>
 
 </html>

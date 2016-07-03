@@ -62,16 +62,16 @@
                         </ul>
                     </li>
                     <li>
-                        <a class="page-scroll" href="?quartiers=#map">Carte</a>
+                         <a class="page-scroll" href="<?=$this->url('default_home_connect')?>?quartiers=#map">Carte</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#contact">Contact</a>
+                        <a class="page-scroll" href="<?=$this->url('default_home_connect')?>#contact">Contact</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#newsletter">Newsletter</a>
+                        <a class="page-scroll" href="<?=$this->url('default_home_connect')?>#newsletter">Newsletter</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="<?=$this->url('default_home');?>?deconnect=1">Déconnexion</a>
+                        <a class="page-scroll" href="<?=$this->url('default_home_connect');?>?deconnect=1">Déconnexion</a>
                     </li>
                 </ul>
             </div>
@@ -96,6 +96,7 @@
     <script src="<?= $this->assetUrl('js/script_cookies.js'); ?>"></script>
     <script src="<?= $this->assetUrl('js/bootstrap.js') ?>"></script>
     <script src="<?= $this->assetUrl('js/js.js') ?>"></script>
+    <script src="<?= $this->assetUrl('js/bootstrap-filestyle.min.js'); ?>"></script>
     <!-- Custom Theme JavaScript -->
     <script>
     // Closes the sidebar menu
