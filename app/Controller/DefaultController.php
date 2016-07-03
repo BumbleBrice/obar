@@ -405,7 +405,7 @@ class DefaultController extends Controller
 		$success = false;
 
 		$maxSize = 500000; // En octet (500Ko)
-		$folder = 'assets/img/';
+		$folder = 'img/';
 
 		$user = $usersModel->find($getUser['id']);
 
@@ -447,7 +447,7 @@ class DefaultController extends Controller
 							$user_picture = $folder.$finalFileName;
 						}
 						else{
-							$user_picture = 'assets/img/avatar_defaut.png'; // Permet d'avoir une image par défaut si l'upload ne s'est pas bien déroulé
+							$user_picture = 'img/avatar_defaut.png'; // Permet d'avoir une image par défaut si l'upload ne s'est pas bien déroulé
 						}
 					}
 					else{

@@ -41,8 +41,8 @@ class BarController extends Controller
 			$success = false;
 
 			$maxSize = 500000; // En octet (500Ko)
-			$folder = 'assets/img/';
-			$imageFinale = 'assets/img/image_defaut.png';
+			$folder = 'img/';
+			$imageFinale = 'img/image_defaut.png';
 
 			if(!empty($_FILES)){
 				if(isset($_FILES['picture']) && $_FILES['picture']['error'] == UPLOAD_ERR_OK) {
@@ -75,7 +75,7 @@ class BarController extends Controller
 								$imageFinale = $folder.$finalFileName;
 							}
 							else{
-								$imageFinale = 'assets/img/image_defaut.png'; // Permet d'avoir une image par défaut si l'upload ne s'est pas bien déroulé
+								$imageFinale = 'img/image_defaut.png'; // Permet d'avoir une image par défaut si l'upload ne s'est pas bien déroulé
 							}
 						}
 						else{
@@ -243,7 +243,7 @@ class BarController extends Controller
 			$success = false;
 
 			$maxSize = 500000; // En octet (500Ko)
-			$folder = 'assets/img/';
+			$folder = 'img/';
 
 			$bar = $barModel->find($id);
 
@@ -289,7 +289,7 @@ class BarController extends Controller
 								$bar_picture = $folder.$finalFileName;
 							}
 							else{
-								$bar_picture = 'assets/img/image_defaut.png'; // Permet d'avoir une image par défaut si l'upload ne s'est pas bien déroulé
+								$bar_picture = 'img/image_defaut.png'; // Permet d'avoir une image par défaut si l'upload ne s'est pas bien déroulé
 							}
 						}
 						else{
