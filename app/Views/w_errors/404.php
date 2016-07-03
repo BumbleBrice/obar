@@ -1,5 +1,9 @@
 <?php $this->layout('layout', ['title' => 'Perdu ?']) ?>
 
 <?php $this->start('main_content'); ?>
-<h1>404. Perdu ?</h1>
+
+<div class="div404">
+	<h1 class="titre404">404. Perdu ?</h1>
+</div>
+
 <?php $this->stop('main_content'); ?>
