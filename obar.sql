@@ -194,11 +194,11 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `nickname`, `firstname`, `lastname`, `email`, `password`, `picture`, `role`, `confirm`, `friends`) VALUES
-(11, 'Alexis', 'Alexis', 'Meunier', 'meunier_33@live.fr', '$2y$10$Uaj9LA.gKehNzOByHIrx2OBLK0JdRKptV0TucHnmA7KMuj0Thg9/q', 'img/user-1467367823png', 'admin', 1, ''),
-(12, 'Bumble', 'Brice', 'Collilieux', 'collilieux.brice@gmail.fr', '$2y$10$3GcwqsE51a4N3xA5Jk/X5Ov0Cfq/P3jRK8Bzb0VlRfwCHJDpieeCi', 'img/user-1467367843png', 'admin', 1, ''),
-(13, 'Jenjen', 'Elodie', 'Villeroy', 'jenniferwf3@projet.fr', '$2y$10$KHaGjIcBRc8ger.JmO9tM.p1nWqhBTIZxIL4S0iBGPBiWcknxzol6', 'Jen_avatar.jpg', 'admin', 1, ''),
-(14, 'Yoan', 'Yoan', 'Garcia', 'yoan.gcia@hotmail.fr', '$2y$10$/0XS.OxWzkqEAM49EFzBX.imQVNr7S3DrfutkXZD7bdyn524oMTa6', 'img/user-1467367879jpg', 'admin', 1, ''),
-(15, 'Blablabla', 'Membre', 'Membre', 'membre@membre.fr', '$2y$10$14tMuS0WCZsP3AA.3E5QEO8LPYh5k240idmJiVhdjOwG043eHBwtK', 'img/user-1467367937png', 'user', 1, '');
+(11, 'Alexis', 'Alexis', 'Meunier', 'meunier_33@live.fr', '$2y$10$Uaj9LA.gKehNzOByHIrx2OBLK0JdRKptV0TucHnmA7KMuj0Thg9/q', 'img/Avatar_Alexis.png', 'admin', 1, ''),
+(12, 'Bumble', 'Brice', 'Collilieux', 'collilieux.brice@gmail.fr', '$2y$10$3GcwqsE51a4N3xA5Jk/X5Ov0Cfq/P3jRK8Bzb0VlRfwCHJDpieeCi', 'img/Avatar_Brice.png', 'admin', 1, ''),
+(13, 'Jenjen', 'Elodie', 'Villeroy', 'jenniferwf3@projet.fr', '$2y$10$KHaGjIcBRc8ger.JmO9tM.p1nWqhBTIZxIL4S0iBGPBiWcknxzol6', 'img/Jen_avatar.jpg', 'admin', 1, ''),
+(14, 'Yoan', 'Yoan', 'Garcia', 'yoan.gcia@hotmail.fr', '$2y$10$/0XS.OxWzkqEAM49EFzBX.imQVNr7S3DrfutkXZD7bdyn524oMTa6', 'img/Avatar_yoan.jpg', 'admin', 1, ''),
+(15, 'Blablabla', 'Membre', 'Membre', 'membre@membre.fr', '$2y$10$14tMuS0WCZsP3AA.3E5QEO8LPYh5k240idmJiVhdjOwG043eHBwtK', 'img/defaut_profil.jpg', 'user', 1, '');
 
 --
 -- Index pour les tables exportées
