@@ -122,7 +122,7 @@
 				<?php foreach($pointQuartiers as $point): ?>
 					<div style=" left: <?=$point['x']?>%; top: <?=$point['y']?>%;" class="btBar">
 						<a class="" href="<?=$this->url('default_home')?>?quartiers=<?=$point['quartier']?>#map" >
-							<!-- <i class="fa fa-beer fa-2x text-center" aria-hidden="true"></i><br> -->
+							<i class="fa fa-beer fa-2x text-center" aria-hidden="true"></i><br>
 							<span class="btBarHover"><?=$point['name']?></span>
 						</a>
 					</div>

@@ -161,7 +161,7 @@
                 <?php if($bar['quartiers'] == $quartiers): ?>
                     <div style=" left: <?=$bar['x']?>%; top: <?=$bar['y']?>%;" class="btBar">
                         <a class="" href="#" id="toggler" data-id="<?=$bar['id']?>">
-                            <!-- <i class="fa fa-beer fa-2x text-center" aria-hidden="true"></i><br> -->
+                            <i class="fa fa-beer fa-2x text-center" aria-hidden="true"></i><br>
                             <span class="btBarHover"><?=$bar['name']?></span>
                         </a>
                     </div>
