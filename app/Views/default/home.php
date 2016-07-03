@@ -226,7 +226,7 @@
                     <a href="#" class="close" data-dismiss="alert">&times;</a>
                     <strong>Félicitations!</strong> Votre message a bien été envoyé.
                 </div>
-            <?php else: ?>
+            <?php endif; ?>
 
             <form class="form-horizontal" method="POST">
                 <input type="hidden" name="form" value="contact">
@@ -269,8 +269,6 @@
         </div>
     </div>
 </div>
-
-<?php endif; ?>
 </section>
 
 <!-- Footer -->
