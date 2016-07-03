@@ -60,6 +60,7 @@
             <div class="col-md-12 text-center">
                 <a class="btn btn-default" href="<?=$this->url('default_profil_membre', ['id' => $w_user['id']]);?>">Modifier mon profil</a>
                 <p class="subheading ">Vos ami(e)s !</p>
+                <a class="btn btn-default" href="<?=$this->url('friends_amis');?>">Ajouter un amis</a>
             </div>
         </div>
 
