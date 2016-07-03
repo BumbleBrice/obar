@@ -9,6 +9,7 @@ use \Model\BarModel as Bar;
 use \Model\NewsModel as News;
 use \Model\ConfirmationModel as Confirmation;
 use \Model\PresentationModel as Presentation; //Permet d'importer la calsse PresentationModel pour la présentation du site
+use \finfo;
 
 class DefaultController extends Controller
 {
@@ -397,8 +398,6 @@ class DefaultController extends Controller
 		$usersModel = new UsersModel();
 		$authModel = new AuthModel();
 
-
-
 		$getUser = $this->getUser();
 
 		$post = [];
@@ -420,7 +419,8 @@ class DefaultController extends Controller
 		$user_picture = $user['picture'];
 
 		if(!empty($_FILES)){
-				if(isset($_FILES['picture']) && $_FILES['picture']['error'] == UPLOAD_ERR_OK && $_FILES['picture']['size'] < $maxSize) {
+			if(isset($_FILES['picture']) && $_FILES['picture']['error'] == UPLOAD_ERR_OK) {
+				if($_FILES['picture']['size'] < $maxSize){
 					$fileName = $_FILES['picture']['name']; // Nom de mon image
 					$fileTemp = $_FILES['picture']['tmp_name']; // Image temporaire
 
@@ -434,14 +434,14 @@ class DefaultController extends Controller
 						 * explode() permet de séparer une chaine de caractère en un tableau
 						 * Ici, on aura donc :
 						 * 		$newFileName = array(
-						 			0 => 'nom-de-mon-fichier',
-						 			1 => 'jpg'
+									0 => 'nom-de-mon-fichier',
+									1 => 'jpg'
 								);
 						 */
 						$newFileName = explode('.', $fileName);
 						$fileExtension = end($newFileName); // Récupère l'extension du fichier
 
-						$finalFileName = 'user-'.time().'.'.$fileExtension; // Le nom du fichier sera donc : user-1463058435.jpg (time() retourne un timestamp à la seconde). Cela permet de sécuriser l'upload de fichier
+						$finalFileName = 'bar-'.time().'.'.$fileExtension; // Le nom du fichier sera donc : user-1463058435.jpg (time() retourne un timestamp à la seconde). Cela permet de sécuriser l'upload de fichier
 
 
 						if(move_uploaded_file($fileTemp, $folder.$finalFileName)) {
@@ -460,6 +460,7 @@ class DefaultController extends Controller
 					$errors[] = 'L\'image est trop lourde';
 				}
 			}
+		}
 
 			if(!empty($_POST)){
 				foreach ($_POST as $key => $value) {
@@ -515,6 +516,7 @@ class DefaultController extends Controller
 						'picture' => $user_picture
 
 					];
+
 
 					// On passe le tableau $data à la méthode update() pour mofifier nos données en bdd
 					if ($usersModel->update($data, $id)) {
