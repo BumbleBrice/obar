@@ -43,7 +43,7 @@
                 <img src="<?=$this->assetUrl($friend['picture']);?>" class="img-responsive img-circle centree" alt="photo de <?=$friend['nickname']?>">
                 <p class="text-center"><?=$friend['nickname']?></p>
                 <form method="post">
-                    <input type="hidden" name="form" value="Ajouter">
+                    <input type="hidden" name="form" value="add">
                     <input type="hidden" name="friendadd" value="<?=$friend['id']?>">
 
                     <input class="btn btn-default" type="submit" value="Ajouter">
