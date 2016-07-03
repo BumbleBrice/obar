@@ -122,7 +122,11 @@
                     <div class="col-lg-1"></div>
 
                 	<div class="carte">
-                        <img src="<?=$this->assetUrl('img/Quartier-saint_pierre.svg'); ?>" alt="Carte Quartier Saint Pierre" class="img-responsive">
+						<?php if($bar['quartiers'] == 'saintpierre'): ?>
+                        	<img src="<?=$this->assetUrl('img/Quartier-saint_pierre.svg'); ?>" alt="Carte Quartier Saint Pierre" class="img-responsive">
+						<?php elseif($bar['quartiers'] == 'saintpaul'): ?>
+                        	<img src="<?=$this->assetUrl('img/saint_paul.svg'); ?>" alt="Carte Quartier Saint Pierre" class="img-responsive">
+						<?php endif; ?>
                     </div>
 
                     <div class="col-lg-1"></div>
