@@ -83,7 +83,7 @@ class UsersController extends Controller
 								$bar_picture = 'img/'.$finalFileName;
 							}
 							else{
-								$bar_picture = 'img/image_defaut.png'; // Permet d'avoir une image par défaut si l'upload ne s'est pas bien déroulé
+								$bar_picture = 'img/defaut_profil.jpg'; // Permet d'avoir une image par défaut si l'upload ne s'est pas bien déroulé
 							}
 						}
 						else{
@@ -146,15 +146,6 @@ class UsersController extends Controller
 					}
 					else{
 						$user_password = $auth->hashPassword($post['password']);
-					}
-				}
-
-				if(isset($post['picture'])){
-					if(preg_match('#^.{1,}$#', $post['picture']) == 0){
-						$errors[] = 'error picture';
-					}
-					else{
-						$user_picture = $post['picture'];
 					}
 				}
 
@@ -237,7 +228,7 @@ class UsersController extends Controller
 
 		$maxSize = 500000; // En octet (500Ko)
 		$folder = 'assets/img/';
-		$imageFinale = 'img/avatar_defaut.png';
+		$imageFinale = 'img/defaut_profil.jpg';
 
 		if(!empty($_FILES)){
 			if(isset($_FILES['picture']) && $_FILES['picture']['error'] == UPLOAD_ERR_OK && $_FILES['picture']['size'] < $maxSize) {
@@ -269,7 +260,7 @@ class UsersController extends Controller
 						$imageFinale = 'img/'.$finalFileName;
 					}
 					else{
-						$imageFinale = 'img/avatar_defaut.png'; // Permet d'avoir une image par défaut si l'upload ne s'est pas bien déroulé
+						$imageFinale = 'img/defaut_profil.jpg'; // Permet d'avoir une image par défaut si l'upload ne s'est pas bien déroulé
 					}
 				}
 				else{
@@ -311,12 +302,6 @@ class UsersController extends Controller
 			if(isset($post['password'])){
 				if(preg_match('#^.{1,}$#', $post['password']) == 0){
 					$errors[] = 'error password';
-				}
-			}
-
-			if(isset($post['picture'])){
-				if(preg_match('#^.{1,}$#', $post['picture']) == 0){
-					$errors[] = 'error picture';
 				}
 			}
 

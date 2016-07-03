@@ -405,7 +405,7 @@ class DefaultController extends Controller
 		$success = false;
 
 		$maxSize = 500000; // En octet (500Ko)
-		$folder = 'img/';
+		$folder = 'assets/img/';
 
 		$user = $usersModel->find($getUser['id']);
 
@@ -416,6 +416,7 @@ class DefaultController extends Controller
 		$user_password = $user['password'];
 		$user_role = $user['role'];
 		$user_password = $user['password'];
+		$user_picture = $user['picture'];
 
 		if(!empty($_FILES)){
 				if(isset($_FILES['picture']) && $_FILES['picture']['error'] == UPLOAD_ERR_OK && $_FILES['picture']['size'] < $maxSize) {
@@ -444,10 +445,10 @@ class DefaultController extends Controller
 
 						if(move_uploaded_file($fileTemp, $folder.$finalFileName)) {
 							// Ici je suis sur que mon image est au bon endroit
-							$user_picture = $folder.$finalFileName;
+							$user_picture = 'img/'.$finalFileName;
 						}
 						else{
-							$user_picture = 'img/avatar_defaut.png'; // Permet d'avoir une image par défaut si l'upload ne s'est pas bien déroulé
+							$user_picture = 'img/defaut_profil.jpg'; // Permet d'avoir une image par défaut si l'upload ne s'est pas bien déroulé
 						}
 					}
 					else{
@@ -497,15 +498,6 @@ class DefaultController extends Controller
 					}
 					else{
 						$user_email = $post['email'];
-					}
-				}
-
-				if(isset($post['picture'])){
-					if(preg_match('#^.{1,}$#', $post['picture']) == 0){
-						$errors[] = 'Veuillez insérer une image';
-					}
-					else{
-						$user_picture = $post['picture'];
 					}
 				}
 
