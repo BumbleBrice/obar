@@ -390,7 +390,7 @@ class DefaultController extends Controller
 		$this->show('default/confirm', $params);
 	}
 
-	public function profil_membre($id)
+	public function profil_membre()
 	{
 		// On limite l'accès à la page uniquement aux utilisateurs identifiés et à ceux dont le rôle est admin, soit editor
 		$this->allowTo(['user', 'admin']);
@@ -519,7 +519,7 @@ class DefaultController extends Controller
 
 
 					// On passe le tableau $data à la méthode update() pour mofifier nos données en bdd
-					if ($usersModel->update($data, $id)) {
+					if ($usersModel->update($data, $user['id'])) {
 
 						// Ici l'insertion en base est effectuée
 						$success = true;
