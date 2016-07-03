@@ -23,7 +23,7 @@
                     </div>
                 <?php else: ?>
 
-                <form class="form-horizontal" method="POST">
+                <form class="form-horizontal" method="POST" enctype="multipart/form-data">
                     <div class="form-group">
                         <label for="nickname" class="hidden-xs col-sm-2 control-label">Pseudo</label>
                         <div class="col-sm-10">
@@ -56,7 +56,7 @@
                         <label for="picture" class="hidden-xs col-sm-2 control-label">Image</label>
                         <div class="col-sm-10">
                             <input type="hidden" name="MAX_FILE_SIZE" value="<?=$maxSize; ?>">
-                            <input type="file" class="form-control" id="picture" name="picture" placeholder="Prénom" value="<?=$w_user['picture'] ?>">
+                            <input type="file" class="form-control" id="picture" name="picture">
                             <span class="help-block">image (maximum 5Mo)</span>
                         </div>
                     </div>
