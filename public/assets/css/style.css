@@ -278,11 +278,13 @@ ul .nav .navbar-nav .navbar-right>a{
     position: absolute;
     left: 15%;
     top: 35%;
-    background: white;
-    border-radius: 5px;
 }
 .btBar:active{
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.125) inset
+}
+.btBarHover{
+    background: white;
+    border-radius: 5px;
 }
 .btBarHover:hover{
 
