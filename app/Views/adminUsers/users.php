@@ -13,10 +13,10 @@
                         <div class="panel-body listUsers">
                             <div class="table-responsive">
                                 <table class="table table-striped">
-                                    
+
                                     <br>
                                     <a type="button" class="btn btn-default btnAddUser" href="<?= $this->url('admin_user_add') ?>">Ajouter un utilisateur</a>
-                                    
+
                                     <br><br>
                                     <thead>
                                         <tr>
@@ -30,18 +30,18 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                    <?php foreach($users as $user): ?>                             
+                                    <?php foreach($users as $user): ?>
                                         <tr>
                                             <td><?= $user['nickname'] ?></td>
                                             <td><?= $user['firstname'] ?></td>
                                             <td><?= $user['lastname'] ?></td>
-                                            <td><img class="imgListUser" src="<?=$user['picture']; ?>" alt="photo de '.<?=$user['nickname']; ?>.'"></td>
+                                            <td><img class="imgListUser" src="<?=$this->assetUrl($user['picture']); ?>" alt="photo de '.<?=$user['nickname']; ?>.'"></td>
                                             <td><?= $user['email'] ?></td>
                                             <td><?= $user['role'] ?></td>
                                             <td class="">
                                                 <div class="btn-group" role="group" aria-label="...">
                                                   <a type="button" class="btn btn-default" href="<?= $this->url('admin_user_edit', ['id' => $user['id']]) ?>">Modérer</a>
-                                     
+
                                                   <a type="button" class="btn btn-danger" href="<?= $this->url('admin_user_delete', ['id' => $user['id']]) ?>">Supprimer</a>
                                                 </div>
 												<!--<?php /* <a type="button" class="btn btn-info btnUsersBar" href="?id_message=<?=$mes['id'];?>">Voir</a>
@@ -56,7 +56,7 @@
                             <!-- /.table-responsive -->
                         </div>
                         <!-- /.panel-body -->
-                   
+
                 </div>
                 <!-- /.col-lg-6 -->
             </div>

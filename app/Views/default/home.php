@@ -136,28 +136,7 @@
 				<div id="toggle" style="position: absolute;top: 0px;left: 0px">
 					<div class="">
 						<div class="btn closeToggle btn-default"><a href="#" id="closeToggle">X</a></div><br>
-						<section id="barToggle">
-							<div class="row">
-								<div class="col-md-12 text-center">
-									<h2 class="section-heading">Le Wine Bar...</h2>
-									<a class="btn btn-default" href="#formulaire">Editer les infos du bar</a><br>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-lg-12 barStyle">
-									<img class="img-circle img-responsive" src="<?=$this->assetUrl('img/bar.jpg'); ?>" alt="">
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-lg-12">
-									<p class="text-left"><span class="titleInfBar">Adresse : </span><span class="infoBar">66 rue abbé de l'épee</span></p>
-									<p class="text-left"><span class="titleInfBar">Télephone : </span><span class="infoBar">06 59 43 32 16</span></p>
-									<p class="text-left"><span class="titleInfBar">Horaire : </span><span class="infoBar"> 11h à 14h </span><span class="titleInfBar">et de </span><span class="infoBar">17h à 01h</span></p>
-									<p class="text-left"><span class="titleInfBar">Thème : </span><span class="infoBar">Bar à vins et bar à pute</span></p>
-									<a class="btn btn-default" href="https://goo.gl/maps/dzu5DsMRkYt">Se rendre au Le Wine Bar</a>
-								</div>
-							</div>
-							<div class="clearfix"></div>
+						<section id="barToggle"><!-- doit étre vide serra rempli en ajax-->
 						</section>
 					</div>
 				</div>

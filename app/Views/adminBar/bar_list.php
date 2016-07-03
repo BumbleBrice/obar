@@ -24,7 +24,7 @@
 				<br><br>
 				<div class="row">
 					<div class="col-lg-6">
-						<img class="imgListBar" src="<?=$bar['picture']; ?>" alt="photo de '.<?=$bar['name']; ?>.'">
+						<img class="imgListBar" src="<?=$this->assetUrl($bar['picture']); ?>" alt="photo de '.<?=$bar['name']; ?>.'">
 					</div>
 
 					<div class="col-lg-6">
@@ -35,7 +35,7 @@
 						<p class="typeListBar">Jour d'ouverture :</p><p class="contentListBar"><?=$bar['schedule']; ?></p>
 						<p class="typeListBar">Horaire d'ouverture :</p><p class="contentListBar"><?=$bar['scheduleOpen']; ?></p>
 						<p class="typeListBar">Lien vers le site :</p><a class="contentListBar" href="<?=$bar['url']; ?>"><?=$bar['url']; ?></a>
-					</div>				
+					</div>
 				</div>
 
 				<br><br>
