@@ -96,12 +96,11 @@ h3{
         display: block;
     }
 }*/
-.navbar-default .navbar-collapse .navbar-default .navbar-form::before{
-    background-color:  #025d70;
-    opacity: 0.9;
-    -webkit-transition: background .5s ease-in-out, opacity .5s ease;
-    -moz-transition: background .5s ease-in-out, opacity .5s ease;
-    transition: background .5s ease-in-out, opacity .5s ease;
+
+@media (max-width: 767px){
+    .navbar-default .navbar-nav .open .dropdown-menu>li>a{
+        color: white;
+    }
 }
 ul .nav .navbar-nav .navbar-right>a{
     text-align: right;
