@@ -98,7 +98,7 @@ class BarController extends Controller
 				}
 
 				if(isset($post['quartiers'])){
-					if($post['quartiers']) != 'saintpierre' && $post['quartiers']) != 'saintpierre'){
+					if($post['quartiers'] != 'saintpierre' && $post['quartiers'] != 'saintpierre'){
 						$errors[] = 'error quartiers';
 					}
 				}
