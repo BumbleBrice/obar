@@ -228,6 +228,8 @@ section.connexion.btn-primary{
     .userStyle img{
     min-height: 170px !important;
     min-width: 170px !important;
+    max-height: 200px !important;
+    max-width: 200px !important;
     }
 }
 .userStyle img{
