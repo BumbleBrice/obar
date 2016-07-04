@@ -301,8 +301,8 @@ class UsersController extends Controller
 			}
 
 			if(isset($post['password'])){
-				if(preg_match('#^.{1,}$#', $post['password']) == 0){
-					$errors[] = 'error password';
+				if(preg_match('#.*^(?=.{8,20})(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).*$#', $post['password']) == 0){
+					$errors[] = 'Votre mot de passe doit contenir au moins une majuscule et un chiffre.';
 				}
 			}
 
