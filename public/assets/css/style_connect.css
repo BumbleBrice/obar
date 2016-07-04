@@ -301,6 +301,9 @@ section.map{
         color : white;
         font-size: 13px;
     }
+    .fa-beer{
+        font-size: 1em;
+    }
 }
 .btBar {
     position: absolute;

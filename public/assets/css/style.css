@@ -294,6 +294,9 @@ ul .nav .navbar-nav .navbar-right>a{
         color : white;
         font-size: 13px;
     }
+    .fa-beer{
+        font-size: 1em;
+    }
 }
 .btBar {
     position: absolute;
