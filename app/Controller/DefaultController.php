@@ -495,7 +495,7 @@ class DefaultController extends Controller
 				}
 
 				if(isset($post['email'])){
-					if(preg_match('#^.{1,}$#', $post['email']) == 0){
+					if(preg_match('#^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$#', $post['email']) == 0){
 						$errors[] = 'Votre email est incorrect';
 					}
 					else{
