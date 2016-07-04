@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Dim 03 Juillet 2016 à 18:53
+-- Généré le :  Lun 04 Juillet 2016 à 10:11
 -- Version du serveur :  10.1.13-MariaDB
--- Version de PHP :  5.5.35
+-- Version de PHP :  5.6.21
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -84,7 +84,9 @@ CREATE TABLE `contact` (
 INSERT INTO `contact` (`id`, `firstname`, `lastname`, `email`, `content`, `date_add`, `message_state`) VALUES
 (4, 'Bumble', 'Brice', 'collilieux.brice@gmail.com', 'dftytrytryeytr', '2016-07-02 11:24:45', 'Non lu'),
 (5, 'Bumble', 'Brice', 'collilieux.brice@gmail.com', 'hioioyuioi', '2016-07-02 11:27:50', 'Non lu'),
-(6, 'Jennifer', 'Villeroy', 'jennifer.villeroy@gmail.com', 'test djfkjfkldfhjfhjfhgkjhutuirfhkg fhkhfkghrghru hdrgj', '2016-07-03 11:19:05', 'Non lu');
+(6, 'Jennifer', 'Villeroy', 'jennifer.villeroy@gmail.com', 'test djfkjfkldfhjfhjfhgkjhutuirfhkg fhkhfkghrghru hdrgj', '2016-07-03 11:19:05', 'Non lu'),
+(7, 'Gghfghfgh', 'Fghfghfghfghgh', 'toto@toto.fr', 'fgdegsdfgdfgdfgdfgdfgdfgdfgdfgdfgdfg', '2016-07-04 09:24:33', 'Non lu'),
+(8, 'Jackie', 'Etmichelle', 'jackie@etmichelle.fr', 'azertyuiop', '2016-07-04 09:29:30', 'Non lu');
 
 -- --------------------------------------------------------
 
@@ -194,11 +196,19 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `nickname`, `firstname`, `lastname`, `email`, `password`, `picture`, `role`, `confirm`, `friends`) VALUES
-(11, 'Alexis', 'Alexis', 'Meunier', 'meunier_33@live.fr', '$2y$10$Uaj9LA.gKehNzOByHIrx2OBLK0JdRKptV0TucHnmA7KMuj0Thg9/q', 'img/Avatar_Alexis.png', 'admin', 1, ''),
+(11, 'Alexis', 'Alexis', 'Meunier', 'meunier_33@live.fr', '$2y$10$GRDPx0eiNDQIep2JjCAGg./HRcPjrt19Tmj.o/S2r/CCoevqaqCFy', 'img/Avatar_Alexis.png', 'admin', 1, ''),
 (12, 'Bumble', 'Brice', 'Collilieux', 'collilieux.brice@gmail.fr', '$2y$10$3GcwqsE51a4N3xA5Jk/X5Ov0Cfq/P3jRK8Bzb0VlRfwCHJDpieeCi', 'img/Avatar_Brice.png', 'admin', 1, ''),
 (13, 'Jenjen', 'Elodie', 'Villeroy', 'jenniferwf3@projet.fr', '$2y$10$KHaGjIcBRc8ger.JmO9tM.p1nWqhBTIZxIL4S0iBGPBiWcknxzol6', 'img/Jen_avatar.jpg', 'admin', 1, ''),
-(14, 'Yoan', 'Yoan', 'Garcia', 'yoan.gcia@hotmail.fr', '$2y$10$/0XS.OxWzkqEAM49EFzBX.imQVNr7S3DrfutkXZD7bdyn524oMTa6', 'img/Avatar_yoan.jpg', 'admin', 1, ''),
-(15, 'Blablabla', 'Membre', 'Membre', 'membre@membre.fr', '$2y$10$14tMuS0WCZsP3AA.3E5QEO8LPYh5k240idmJiVhdjOwG043eHBwtK', 'img/defaut_profil.jpg', 'user', 1, '');
+(14, 'Yoan', 'Yoan', 'Garcia', 'yoan.gcia@hotmail.fr', '$2y$10$/0XS.OxWzkqEAM49EFzBX.imQVNr7S3DrfutkXZD7bdyn524oMTa6', 'img/Avatar_yoan.jpg', 'admin', 1, '12,11,13'),
+(15, 'Blablabla', 'Membre', 'Membre', 'membre@membre.fr', '$2y$10$14tMuS0WCZsP3AA.3E5QEO8LPYh5k240idmJiVhdjOwG043eHBwtK', 'img/defaut_profil.jpg', 'user', 1, ''),
+(17, 'Billy', 'Billy', 'Jean', 'billy.jean@gmail.fr', '$2y$10$.0zSC7kIfqwmdo4N7KaFU.wm3ejAYr7C1LXLxBLFyy9NKtEfAlota', 'img/user-1467618135.gif', 'user', 0, ''),
+(18, 'Hélène24', 'Hélène', 'Gryst', 'helene.grist@gmail.fr', '$2y$10$LgWxdq/2vFYn0J58dC6BhOfe5UzYgOhOo1HgJwZWkWi6InD2r9HZa', 'img/user-1467618243.jpg', 'user', 0, ''),
+(19, 'Benji', 'Benjamin', 'Torbi', 'benjamin.torbi@gmail.fr', '$2y$10$kxtRt6NIBi9hJwpfeia5n.eJp1zhwoszjeMlWxuWr4pUqQYeL0dt.', 'img/user-1467618297.jpg', 'user', 0, ''),
+(20, 'Théo12', 'Théo', 'menhié', 'theo.mehie@gmail.fr', '$2y$10$0Db9xBI3c1FBA5saHSuoiuiUcyRbTPOsqSDyWWZ8x5gWchH9umIt2', 'img/user-1467618348.png', 'user', 0, ''),
+(21, 'Marine99', 'Marine', 'Duman', 'marine.duman@gmail.fr', '$2y$10$BilDnNm5CueN83zG4QZewO1mxjWCXcDHKB1c5GjAyOYwTJSVnXI7C', 'img/user-1467618387.jpg', 'user', 0, ''),
+(22, 'Paul4', 'Paul', 'Jirka', 'paul.jirka@gmail.fr', '$2y$10$ezeI95LXTOpTXd6HSe2mPe6SgLF4XVvJI1kRszNdGU.El2OrevXP6', 'img/user-1467618572.jpg', 'user', 0, ''),
+(23, 'Matt@', 'Mathieu', 'boset', 'mathieu.boset@gmail.fr', '$2y$10$Iys.pZvnkeEN/aJfZH.x/..WbpuX/9VQwHvENMjew5tvkYhzUo2KC', 'img/user-1467618646.png', 'user', 0, ''),
+(24, 'YopDonald', 'Donald', 'Oten', 'donald.oten@gmail.fr', '$2y$10$FxyvC.XJsqyFkobMg7eXCube5gm5Ml7q1/Q0NKKYXXSfJ8lCiQvDm', 'img/user-1467618700.jpg', 'user', 0, '');
 
 --
 -- Index pour les tables exportées
@@ -266,7 +276,7 @@ ALTER TABLE `bar`
 -- AUTO_INCREMENT pour la table `contact`
 --
 ALTER TABLE `contact`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT pour la table `news`
 --
@@ -296,7 +306,7 @@ ALTER TABLE `token_pswd`
 -- AUTO_INCREMENT pour la table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
