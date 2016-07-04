@@ -88,14 +88,14 @@ h3{
 /***************************************
 *************NAVIGATION*****************
 ****************************************/
-@media screen and (max-width: 760px) {
+/*@media screen and (max-width: 760px) {
     #logo {
         display: none;
     }
     .navbar-obar{
         display: block;
     }
-}
+}*/
 .navbar-default .navbar-collapse .navbar-default .navbar-form::before{
     background-color:  #025d70;
     opacity: 0.9;
