@@ -92,20 +92,14 @@ class BarController extends Controller
 				$post = array_map('trim', array_map('strip_tags', $_POST));
 
 				if(isset($post['name'])){
-					if(preg_match('#^.{1,}$#', $post['name']) == 0){
-						$errors[] = 'error name';
+					if(preg_match('#^[A-Z]{1,}.{3,25}$#', $post['name']) == 0){
+						$errors[] = '';
 					}
 				}
 
 				if(isset($post['quartiers'])){
-					if(preg_match('#^.{1,}$#', $post['quartiers']) == 0){
+					if($post['quartiers']) != 'saintpierre' && $post['quartiers']) != 'saintpierre'){
 						$errors[] = 'error quartiers';
-					}
-				}
-
-				if(isset($post['picture'])){
-					if(preg_match('#^.{1,}$#', $post['picture']) == 0){
-						$errors[] = 'error picture';
 					}
 				}
 
