@@ -531,6 +531,15 @@ class DefaultController extends Controller
 		$this->show('default/profil_membre', $params);
 	}
 
+	public function getW_base(){
+		if(!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest'){
+			echo $_SERVER['W_BASE'];
+		}
+		else{
+	      $this->show('w_errors/404');
+	    }
+	}
+
 	public function barDetail(){
 	    $barModel = new Bar();
 

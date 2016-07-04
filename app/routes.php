@@ -39,6 +39,7 @@
 
 		// ajax
     	['GET|POST', '/bar_detail', 'Default#barDetail', 'Default_barDetail'],
+    	['GET|POST', '/get_wbase', 'Default#getW_base', 'Default_getW_base']
 
 
 

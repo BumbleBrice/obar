@@ -25,7 +25,17 @@ $(function(){
         carte.append(point);
     });
 
-    var chemin = '/GitHub/obar/public/assets/';
+    var chemin = '';
+
+    $.ajax({
+        url : 'get_wbase',
+        method : 'POST',
+        async : true
+    }).done(function(data, textStatus, jqXHR){
+        chemin = data;
+    }).fail(function(jqXHR, textStatus, errorThrown){
+        console.log('erreur requéte ajax get_wbase');
+    });
 
     $('#quartierSaintpierre').on('click', function(){
         $('.carte img').attr('src', chemin + 'img/Quartier-saint_pierre.svg');
