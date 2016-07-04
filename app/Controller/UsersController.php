@@ -76,15 +76,15 @@ class UsersController extends Controller
 							$newFileName = explode('.', $fileName);
 							$fileExtension = end($newFileName); // Récupère l'extension du fichier
 
-							$finalFileName = 'bar-'.time().'.'.$fileExtension; // Le nom du fichier sera donc : user-1463058435.jpg (time() retourne un timestamp à la seconde). Cela permet de sécuriser l'upload de fichier
+							$finalFileName = 'user-'.time().'.'.$fileExtension; // Le nom du fichier sera donc : user-1463058435.jpg (time() retourne un timestamp à la seconde). Cela permet de sécuriser l'upload de fichier
 
 
 							if(move_uploaded_file($fileTemp, $folder.$finalFileName)) {
 								// Ici je suis sur que mon image est au bon endroit
-								$bar_picture = 'img/'.$finalFileName;
+								$user_picture = 'img/'.$finalFileName;
 							}
 							else{
-								$bar_picture = 'img/defaut_profil.jpg'; // Permet d'avoir une image par défaut si l'upload ne s'est pas bien déroulé
+								$user_picture = 'img/defaut_profil.jpg'; // Permet d'avoir une image par défaut si l'upload ne s'est pas bien déroulé
 							}
 						}
 						else{
@@ -301,8 +301,8 @@ class UsersController extends Controller
 			}
 
 			if(isset($post['password'])){
-				if(preg_match('#.*^(?=.{8,20})(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).*$#', $post['password']) == 0){
-					$errors[] = 'Votre mot de passe doit contenir au moins une majuscule et un chiffre.';
+				if(preg_match('#^.{1,}$#', $post['password']) == 0){
+					$errors[] = 'error password';
 				}
 			}
 
