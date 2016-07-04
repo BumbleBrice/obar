@@ -25,11 +25,13 @@ $(function(){
         carte.append(point);
     });
 
+    var chemin = '/GitHub/obar/public/assets/';
+
     $('#quartierSaintpierre').on('click', function(){
-        $('.carte img').attr('src', '/GitHub/obar/public/assets/img/Quartier-saint_pierre.svg');
+        $('.carte img').attr('src', chemin + 'img/Quartier-saint_pierre.svg');
     });
 
     $('#quartierSaintpaul').on('click', function(){
-        $('.carte img').attr('src', '/GitHub/obar/public/assets/img/saint_paul.svg');
+        $('.carte img').attr('src', chemin + '/img/saint_paul.svg');
     });
 });
